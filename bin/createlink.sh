@@ -9,6 +9,7 @@ rm ~/.ideavimrc
 
 rm ~/.config/flake8
 rm ~/.config/nvim/init.vim
+rm ~/vim/colors/gruvbox.vim
 
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
@@ -18,3 +19,4 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.ideavimrc  ~/.ideavimrc
 ln -s ~/dotfiles/.config/flake8 ~/.config/flake8
 ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s  ~/dotfiles/vim/colors/gruvbox.vim ~/vim/colors/gruvbox.vim
