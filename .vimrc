@@ -1,0 +1,105 @@
+set nocompatible              " be iMproved, required
+set noerrorbells
+set runtimepath+=~/vim/
+syntax on
+colorscheme gruvbox
+set nobackup noswapfile
+set background=dark
+set number
+set relativenumber
+set dictionary+=/usr/share/dict/words
+set splitbelow splitright
+" inoremap <F6> <Esc>/<++><Enter>"_c4l
+" inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+inoremap HH <Esc>/<++><Enter>"_c4l
+nmap <leader>H /<++><CR>"_c4l
+let mapleader = " "
+nmap <leader>Kk dt]
+nmap <leader>KK dt}
+noremap <leader>m `
+tnoremap <Esc> <C-\><C-n><C-W>
+nmap <leader>jj <C-W>j
+nmap <leader>kk <C-W>k
+nmap <leader>hh <C-W>h
+nmap <leader>ll <C-W>l
+nnoremap <leader>s <C-D>
+nnoremap <leader>a <C-U>
+inoremap <C-o> <C-x><C-p>
+inoremap <C-k> <C-x><C-k>
+vnoremap <C-c> "*y
+map <C-p> "*P
+map <leader><space> ^
+noremap <enter> $
+nnoremap <leader>o o
+" nnoremap o o<Esc>
+nnoremap o $a<Enter><Esc>
+nnoremap O O<Esc>
+noremap , "
+inoremap ; <esc>l
+tnoremap ZZ _
+tnoremap Dd -
+tnoremap FF =
+tnoremap DD +
+tnoremap QQ '
+tnoremap Jj [
+tnoremap Kk ]
+tnoremap JJ {
+tnoremap KK }
+tnoremap SS \
+imap ZZ _
+imap Dd -
+imap FF =
+imap DD +
+imap QQ '
+imap Jj [
+imap Kk ]
+imap JJ {
+imap KK }
+imap SS \
+set backspace=2
+set tw=100
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+autocmd BufWritePre * %s/\s\+$//e
+autocmd FileType tex set spell
+autocmd FileType tex set tabstop=2
+autocmd FileType tex set softtabstop=2
+autocmd FileType tex set shiftwidth=2
+autocmd FileType tex nmap <buffer> <leader>y :!pdflatex $file %<CR>
+autocmd FileType tex nmap <buffer> <leader>e :!pdflatex %<CR>
+autocmd FileType tex nmap <buffer> <leader>q :!build %<CR>
+autocmd FileType tex inoremap ,bb \textbf{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
+autocmd FileType tex inoremap ,tt \texttt{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,tc \textcolor{red}{<++>}<Space><++><Esc>0/red<Enter>i
+autocmd FileType tex map <leader>it A<Enter>\begin{itemize}<Esc><leader>o\end{itemize}<Esc>k<leader>o<Space><Space>\item<Space>
+autocmd FileType tex map <leader>en A<Enter>\begin{enumerate}<Esc><leader>o\end{enumerate}<Esc>k<leader>o<Space><Space>\item<Space>
+autocmd FileType tex inoremap ,ii \item<Space>
+autocmd FileType tex map <leader>Sum a\sum_{<++>}^{<++>}<Space><++><Esc>16hi
+autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\includegraphics[<++>]{<++>}<Esc>oi\caption{<++>.}\label{}<Esc>oi\end{figure}<Esc>2k^/<++><CR>i
+autocmd FileType tex map <leader>eq <leader>o\begin{equation*}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2X2k<leader>o
+autocmd FileType tex map <leader>fr a\frac{<++>}{<++>}<Space><++><Esc>15hi
+autocmd FileType tex map <leader>red a\textcolor{red}{<++>}<Esc>4hi
+autocmd FileType tex inoremap ,r ^{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,v _{}<++><Esc>T{i
+autocmd FileType tex inoremap ,ff \left(
+autocmd FileType tex inoremap ,jj \right)
+autocmd FileType tex inoremap π \pi
+autocmd FileType tex inoremap μ \mu
+autocmd FileType tex inoremap ε \epsilon
+autocmd FileType tex inoremap ξ \xi
+autocmd FileType tex inoremap σ \sigma
+autocmd FileType tex inoremap ς \varsigma
+autocmd FileType tex inoremap ψ \psi
+autocmd FileType tex inoremap τ \tau
+autocmd FileType tex inoremap λ \lambda
+autocmd FileType tex inoremap γ \gamma
+autocmd FileType tex inoremap φ \phi
+autocmd FileType tex inoremap δ \delta
+autocmd FileType tex inoremap Δ \Delta
+
+" autocmd VimLeave *.tex !texclean

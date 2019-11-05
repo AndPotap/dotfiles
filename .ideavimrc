@@ -1,0 +1,30 @@
+set visualbell
+set noerrorbells
+let mapleader = " "
+set relativenumber
+map <leader><space> ^
+map <enter> $
+noremap , "
+ nmap <leader>jj <C-W>j
+nmap <leader>kk <C-W>k
+nmap <leader>hh <C-W>h
+nmap <leader>ll <C-W>l
+nmap <leader>f <C-D>
+nmap <leader>b <C-U>
+noremap <leader>m `
+inoremap ; <Esc>l
+nnoremap o o<space><ESC>
+nnoremap O O<space><ESC>
+nmap <leader>Kk dt]
+nmap <leader>KK dt}
+nmap <leader>y my"a
+nmap <leader>p "ap
+imap ZZ _
+imap Dd -
+imap FF =
+imap DD +
+imap QQ '
+imap Jj [
+imap Kk ]
+imap JJ {
+imap KK }
