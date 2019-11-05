@@ -1,0 +1,8 @@
+#!/bin/sh
+
+tmux new-session \; \
+split-window -h \; \
+send-keys 'nvim' C-m \; \
+send-keys ':ter' C-m \; \
+send-keys 'i' \; \
+select-pane -t 0\;
