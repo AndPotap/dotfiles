@@ -83,8 +83,10 @@ fi
 export PYTHONPATH="/home/apotapczynski/uncountable_repamtrick/"
 export HISTCONTROL=ignoreboth:erasedups
 export f=~
-orange=$(tput setaf 166);
 
+bind '";":"\e"'
+
+orange=$(tput setaf 166);
 green=$(tput setaf 71);
 bold=$(tput bold);
 reset=$(tput sgr0);
