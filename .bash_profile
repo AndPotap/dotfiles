@@ -1,7 +1,5 @@
 # <<< conda init <<<
 export PATH=$PATH:/Users/andpotap/bin
-source ~/.bashrc
-# sh ~/.login_script.sh &
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
@@ -28,3 +26,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/Users/andpotap/anaconda3/bin:$PATH"
+source ~/.bashrc
