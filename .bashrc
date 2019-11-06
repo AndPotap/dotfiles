@@ -22,7 +22,6 @@ orange=$(tput setaf 166);
 green=$(tput setaf 71);
 bold=$(tput bold);
 reset=$(tput sgr0);
-
 PS1="\[${bold}\]\n";
 PS1+="\[${orange}\]\u@mac ";
 PS1+="\[${green}\]\w ";
