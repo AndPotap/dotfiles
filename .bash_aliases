@@ -4,6 +4,7 @@ alias un='cd ~/Documents/Projects/uncountable_repamtrick/'
 alias papers='cd ~/Documents/Papers/'
 alias gre='cd ~/Documents/Personal/GRE/gre/'
 alias white='open ~/Pictures/White\ Noise.mp4'
+alias tkill='tmux kill-session -t 0'
 
 alias c='clear'
 alias z='zathura'
