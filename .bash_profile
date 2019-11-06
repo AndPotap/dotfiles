@@ -1,6 +1,3 @@
-# <<< conda init <<<
-export PATH=$PATH:/Users/andpotap/bin
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
 
@@ -26,5 +23,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH=$PATH:/Users/andpotap/bin
 export PATH="/Users/andpotap/anaconda3/bin:$PATH"
+export PYTHONPATH=$PYTHONPATH:"/Users/andpotap/uncountable_repamtrick"
 source ~/.bashrc
