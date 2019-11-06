@@ -93,8 +93,8 @@ reset=$(tput sgr0);
 
 PS1="\[${bold}\]\n";
 PS1+="\[${orange}\]\u@mac ";
-PS1+="\[${green}\]\W ";
-PS1+="\[${orange}\]--> ";
+PS1+="\[${green}\]\w ";
+PS1+="\[${orange}\]\n --> ";
 PS1+="\[${reset}\]";
 export PS1;
 
