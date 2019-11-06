@@ -12,7 +12,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export PYTHONPATH="/home/apotapczynski/uncountable_repamtrick/"
 export HISTCONTROL=ignoreboth:erasedups
 export f=~
 
