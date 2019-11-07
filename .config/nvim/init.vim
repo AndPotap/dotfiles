@@ -40,6 +40,7 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
+let g:jedi#goto_stubs_command = ""
 let g:jedi#show_call_signatures = "1"
 let g:jedi#use_splits_not_buffers = "right"
 
@@ -142,6 +143,6 @@ set shiftwidth=4
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
-autocmd FileType python map <silent> <leader>b koibreakpoint()<Esc>j^
+autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 
 autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
