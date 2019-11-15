@@ -1,22 +1,22 @@
+alias lsa='ls -a'
 alias py='python3'
 
-alias un='cd ~/Documents/Projects/uncountable_repamtrick/'
+alias un='cd ~/uncountable_repamtrick/'
 alias papers='cd ~/Documents/Papers/'
-alias gre='cd ~/Documents/Personal/GRE/gre/'
 alias white='open ~/Pictures/White\ Noise.mp4'
 alias tkill='tmux kill-session -t 0'
 
 alias c='clear'
 alias z='zathura'
-alias speed='speedtest-cli'
 alias shut='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 
 alias gp='git pull'
-alias gpp='git push'
+alias gh='git push'
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
+alias gd='git diff'
 
 alias glist='gcloud compute instances list'
 alias gssh='gcloud compute ssh apotapczynski@$vm'
