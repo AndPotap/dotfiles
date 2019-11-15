@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'davidhalter/jedi-vim'
     Plug 'jpalardy/vim-slime'
     Plug 'morhetz/gruvbox'
-    Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="/usr/bin/python3"
+let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
@@ -74,6 +74,7 @@ let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
 " My NVIM/VIM configurations
 set noerrorbells
 set nohlsearch
+set clipboard=unnamed
 syntax on
 colorscheme gruvbox
 set background=dark
@@ -110,7 +111,7 @@ nmap <leader>t <C-W>li
 " map <C-p> "*P
 map <leader><space> ^
 noremap <enter> $
-nnoremap <leader>o o<Space><Esc>
+nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
 noremap , "
@@ -140,6 +141,7 @@ set tw=100
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set textwidth=110
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
