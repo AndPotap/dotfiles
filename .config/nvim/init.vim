@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
-    Plug 'habamax/vim-sendtoterm'
+    "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
 let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
@@ -34,16 +34,19 @@ let g:airline#extensions#tabline#enabled = 1
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Jedi-Vim Configurations
 let g:jedi#completions_command = "<C-l>"
+let g:jedi#goto_stubs_command = ""
+let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
-let g:jedi#goto_stubs_command = ""
 let g:jedi#show_call_signatures = "1"
-let g:jedi#use_splits_not_buffers = "right"
-
+let g:jedi#show_call_signatures_delay = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_call_signatures_modes = 'i'
+let g:jedi#enable_speed_debugging=0
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " ncm2 Configurations
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -54,21 +57,21 @@ let ncm2#complete_length = [[1, 1]]
 let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+let g:ncm2_jedi#python_version = 3
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 let g:ale_linters = {'python': ['flake8']}
-let g:ale_linters_explicit = 1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_linters_explicit = 1
+"let g:airline#extensions#ale#enabled = 1
+"let g:ale_echo_msg_error_str = 'E'
+"let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
-let b:ale_warn_about_trailing_whitespace = 0
-let g:ale_python_flake8_options = '--ignore=E129'
-let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
+let g:ale_sign_column_always = 1
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
