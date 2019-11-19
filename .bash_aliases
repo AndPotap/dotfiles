@@ -1,11 +1,11 @@
-alias lsa='ls -a'
-alias py='python3'
-
 alias un='cd ~/uncountable_repamtrick/'
 alias papers='cd ~/Documents/Papers/'
 alias white='open ~/Pictures/White\ Noise.mp4'
-alias tkill='tmux kill-session -t 0'
 
+alias tkill='tmux kill-session -t 0'
+alias ta='tmux a'
+alias lsa='ls -a'
+alias py='python3'
 alias c='clear'
 alias z='zathura'
 alias shut='sudo shutdown -h now'
