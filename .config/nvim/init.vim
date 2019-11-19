@@ -149,5 +149,6 @@ set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
-
+autocmd FileType python nnoremap <leader>f /def<Space><Enter>
+" For highlight changes to take place run below
 autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
