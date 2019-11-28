@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
+let g:python3_host_prog="~/anaconda3/bin/python3.7"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
@@ -150,5 +150,6 @@ set autoindent
 autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 autocmd FileType python nnoremap <leader>f /def<Space><Enter>
+autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
 " For highlight changes to take place run below
 autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
