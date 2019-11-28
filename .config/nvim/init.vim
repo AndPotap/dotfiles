@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="~/anaconda3/bin/python3.7"
+let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
