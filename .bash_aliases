@@ -17,6 +17,7 @@ alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
 alias gd='git diff'
+alias grr='git reset --hard & git fetch --all & git pull'
 
 alias glist='gcloud compute instances list'
 alias gssh='gcloud compute ssh apotapczynski@$vm'
