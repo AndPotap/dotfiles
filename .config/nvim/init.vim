@@ -89,6 +89,7 @@ set nobackup noswapfile
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
+nnoremap <leader>for :Autoformat<Enter>
 xmap <leader>r  <Plug>(SendToTerm)
 nmap <leader>r  <Plug>(SendToTerm)
 omap <leader>r  <Plug>(SendToTerm)
@@ -98,6 +99,9 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
+nnoremap <leader>qq :wq<Enter>
+nnoremap <leader>QQ :q!<Enter>
+nnoremap <leader>w :w<Enter>
 tnoremap <Esc> <C-\><C-n><C-W>h
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
@@ -107,11 +111,14 @@ nmap <leader>kk <C-W>k
 nmap <leader>hh <C-W>h
 nmap <leader>ll <C-W>l
 inoremap <C-o> <C-x><C-p>
-nnoremap <leader>s <C-D>
-nnoremap <leader>a <C-U>
+nnoremap <leader>ss <C-D>
+nnoremap <leader>aa <C-U>
+nnoremap <leader>as <C-F>
+nnoremap <leader>sa <C-B>
+nnoremap <leader>sp :split<space>
+nnoremap <leader>vv :vsplit<space>
+nnoremap <leader>y "a
 nmap <leader>t <C-W>li
-" vnoremap <C-c> "*y
-" map <C-p> "*P
 map <leader><space> ^
 noremap <enter> $
 nnoremap <leader>o o
