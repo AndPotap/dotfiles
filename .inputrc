@@ -1,1 +1,9 @@
 set editing-mode vi
+set keymap vi-command
+"  ": "^"
+",,": "$"
+",c": "c$"
+
+set keymap vi-insert
+"ZZ": "_"
+"AA": "~"
