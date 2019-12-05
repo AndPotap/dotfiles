@@ -1,6 +1,7 @@
+set runtimepath+=~/vim/
+
 set nocompatible              " be iMproved, required
 set noerrorbells
-set runtimepath+=~/vim/
 syntax on
 colorscheme gruvbox
 set nobackup noswapfile
@@ -9,11 +10,17 @@ set number
 set relativenumber
 set dictionary+=/usr/share/dict/words
 set splitbelow splitright
-" inoremap <F6> <Esc>/<++><Enter>"_c4l
-" inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
+nnoremap tn :tabnew<Space>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tl :tablast<CR>
+nnoremap <leader>qq :wq<Enter>
+nnoremap <leader>QQ :q!<Enter>
+nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 noremap <leader>m `
