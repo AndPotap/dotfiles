@@ -99,8 +99,8 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-nnoremap <leader>qq :wq<Enter>
-nnoremap <leader>QQ :q!<Enter>
+nnoremap <leader>q :wq<Enter>
+nnoremap <leader>Q :q!<Enter>
 nnoremap <leader>w :w<Enter>
 tnoremap <Esc> <C-\><C-n><C-W>h
 nmap <leader>Kk dt]

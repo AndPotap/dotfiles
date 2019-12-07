@@ -13,7 +13,7 @@ alias restart='sudo shutdown -r now'
 
 alias gp='git pull'
 alias gh='git push'
-alias gs='git status'
+alias gs='clear && git status'
 alias gc='git commit'
 alias ga='git add'
 alias gd='git diff'
