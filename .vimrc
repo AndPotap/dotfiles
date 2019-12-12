@@ -78,6 +78,7 @@ set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType tex set spell
+autocmd FileType tex nnoremap <leader>pa vipgq:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
