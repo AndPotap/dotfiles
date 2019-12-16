@@ -33,6 +33,7 @@ inoremap <C-o> <C-x><C-p>
 inoremap <C-k> <C-x><C-k>
 vnoremap <C-c> "*y
 map <C-p> "*P
+nnoremap ,z z=
 nnoremap <leader>ss <C-D>
 nnoremap <leader>aa <C-U>
 nnoremap <leader>as <C-F>
@@ -78,7 +79,7 @@ set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType tex set spell
-autocmd FileType tex nnoremap <leader>pa vipgq:%s/\s\s/<Space><Enter>
+autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
