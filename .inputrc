@@ -6,5 +6,6 @@ set keymap vi-command
 
 set keymap vi-insert
 "ZZ": "_"
+"FF": "+"
 "AA": "~"
 "Dd": "-"
