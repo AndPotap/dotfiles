@@ -80,6 +80,7 @@ set nohlsearch
 set clipboard=unnamed
 syntax on
 colorscheme gruvbox
+set wildmode=longest,list
 set background=dark
 set number
 set relativenumber
