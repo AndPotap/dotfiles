@@ -1,5 +1,4 @@
 set runtimepath+=~/vim/
-
 set nocompatible              " be iMproved, required
 set noerrorbells
 syntax on
@@ -78,6 +77,7 @@ set expandtab
 set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
+autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push
 autocmd FileType tex set spell
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2

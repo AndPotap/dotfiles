@@ -9,3 +9,7 @@ set keymap vi-insert
 "FF": "="
 "AA": "~"
 "Dd": "-"
+"Jj": "["
+"Kk": "]"
+"JJ": "{"
+"KK": "}"
