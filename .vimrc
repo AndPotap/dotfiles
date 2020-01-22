@@ -79,6 +79,7 @@ set autoindent
 autocmd BufWritePre * %s/\s\+$//e
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push
 autocmd FileType tex set spell
+autocmd FileType text set spell
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
