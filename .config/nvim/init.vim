@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="~/anaconda3/bin/python3"
+let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
@@ -25,6 +25,8 @@ let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pa
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
 nmap <C-u> <Plug>SlimeLineSend
+nmap <C-i> <Plug>SlimeParagraphSend
+xmap <C-i> <Plug>SlimeRegionSend
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Airline Configurations
@@ -157,7 +159,8 @@ set textwidth=110
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
-autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push
+autocmd ExitPre *.txt :!git commit % -q -m "Added Entry" && git push -q &
+autocmd FileType text set spell
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
