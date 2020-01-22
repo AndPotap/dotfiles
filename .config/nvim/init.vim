@@ -156,6 +156,7 @@ set textwidth=110
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
+autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
