@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="/home/pure/anaconda3/bin/python3.7"
+let g:python3_host_prog="~/anaconda3/bin/python3"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
@@ -137,6 +137,7 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap SS \
+imap AA ~
 imap ZZ _
 imap Dd -
 imap FF =
