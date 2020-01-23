@@ -1,4 +1,5 @@
-alias un='cd ~/uncountable_repamtrick/'
+alias pro='cd ~/igr/'
+alias not='cd ~/notes'
 alias papers='cd ~/Documents/Papers/'
 alias white='open ~/Pictures/White\ Noise.mp4'
 
