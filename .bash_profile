@@ -20,9 +20,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH=$PATH:/Users/andpotap/bin
-export PATH="/Users/andpotap/anaconda3/bin:$PATH"
-export PYTHONPATH=$PYTHONPATH:"/Users/andpotap/uncountable_repamtrick"
+export PATH=$PATH:/home/pure/bin
+export PATH="/home/pure/anaconda3/bin:$PATH"
+export PYTHONPATH=$PYTHONPATH:"/home/pure/uncountable_repamtrick"
+export PYTHONPATH=$PYTHONPATH:"/home/pure/igr"
 source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.
