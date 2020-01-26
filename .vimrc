@@ -78,6 +78,8 @@ set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push
+autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
+autocmd FileType python nnoremap <leader>un ^xxj^
 autocmd FileType tex set spell
 autocmd FileType text set spell
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>

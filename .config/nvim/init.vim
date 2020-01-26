@@ -92,6 +92,7 @@ set nobackup noswapfile
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
+nnoremap ,z z=
 nnoremap <leader>for :Autoformat<Enter>
 xmap <leader>r  <Plug>(SendToTerm)
 nmap <leader>r  <Plug>(SendToTerm)
