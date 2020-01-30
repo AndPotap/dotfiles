@@ -1,20 +1,20 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'davidhalter/jedi-vim'
-    Plug 'jpalardy/vim-slime'
-    Plug 'morhetz/gruvbox'
+    " Plug 'davidhalter/jedi-vim'
+    " Plug 'ncm2/ncm2'
+    " Plug 'roxma/nvim-yarp'
+    " Plug 'ncm2/ncm2-bufword'
+    " Plug 'ncm2/ncm2-path'
+    " Plug 'ncm2/ncm2-jedi'
+    " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
+    Plug 'jpalardy/vim-slime'
+    Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-jedi'
-    "Plug 'habamax/vim-sendtoterm'
 call plug#end()
 
-let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
+" let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
@@ -51,15 +51,15 @@ let g:jedi#show_call_signatures_modes = 'i'
 let g:jedi#enable_speed_debugging=0
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " ncm2 Configurations
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-let g:ncm2#matcher = 'substrfuzzy'
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-let g:ncm2_jedi#python_version = 3
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=noinsert,menuone,noselect
+" set shortmess+=c
+" let ncm2#popup_delay = 5
+" let ncm2#complete_length = [[1, 1]]
+" let g:ncm2#matcher = 'substrfuzzy'
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" let g:ncm2_jedi#python_version = 3
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
