@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
     " Plug 'ncm2/ncm2-bufword'
     " Plug 'ncm2/ncm2-path'
     " Plug 'ncm2/ncm2-jedi'
-    "Plug 'habamax/vim-sendtoterm'
+    " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'jpalardy/vim-slime'
@@ -14,11 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:python3_host_prog="/home/pure/anaconda3/bin/python3.7"
 let g:kite_tab_complete=1
-set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-set laststatus=2  " always display the status line
-
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
