@@ -106,6 +106,7 @@ nnoremap tl :tablast<CR>
 nnoremap <leader>q :wq<Enter>
 nnoremap <leader>Q :q!<Enter>
 nnoremap <leader>w :w<Enter>
+nnoremap <leader>au :Autoformat<Enter>
 tnoremap <Esc> <C-\><C-n><C-W>h
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
