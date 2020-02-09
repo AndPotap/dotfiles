@@ -1,21 +1,20 @@
 call plug#begin('~/.vim/plugged')
     Plug 'davidhalter/jedi-vim'
-    Plug 'jpalardy/vim-slime'
-    Plug 'morhetz/gruvbox'
-    Plug 'dense-analysis/ale'
-    Plug 'Chiel92/vim-autoformat'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'ncm2/ncm2'
     Plug 'roxma/nvim-yarp'
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
-    "Plug 'habamax/vim-sendtoterm'
+    " Plug 'habamax/vim-sendtoterm'
+    Plug 'dense-analysis/ale'
+    Plug 'Chiel92/vim-autoformat'
+    Plug 'jpalardy/vim-slime'
+    Plug 'morhetz/gruvbox'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:python3_host_prog="/home/debby/anaconda3/bin/python3.7"
-
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -92,6 +91,7 @@ set nobackup noswapfile
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
+nnoremap ,z z=
 nnoremap <leader>for :Autoformat<Enter>
 xmap <leader>r  <Plug>(SendToTerm)
 nmap <leader>r  <Plug>(SendToTerm)
@@ -105,9 +105,11 @@ nnoremap tl :tablast<CR>
 nnoremap <leader>q :wq<Enter>
 nnoremap <leader>Q :q!<Enter>
 nnoremap <leader>w :w<Enter>
+nnoremap <leader>au :Autoformat<Enter>
 tnoremap <Esc> <C-\><C-n><C-W>h
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
+nmap <leader>Z ct_
 noremap <leader>m `
 nmap <leader>jj <C-W>j
 nmap <leader>kk <C-W>k
@@ -159,9 +161,9 @@ set textwidth=110
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
-autocmd ExitPre *.txt :!git commit % -q -m "Added Entry" && git push -q &
+autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push &
 autocmd FileType text set spell
-autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
+autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
 autocmd FileType python nnoremap <leader>un ^xxj^
