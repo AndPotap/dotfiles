@@ -14,5 +14,5 @@ set keymap vi-insert
 "Kk": "]"
 "JJ": "{"
 "KK": "}"
-"SS": "\"
+"SS": "\\"
 "DD": "+"
