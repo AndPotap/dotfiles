@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
 let g:kite_tab_complete=1
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
