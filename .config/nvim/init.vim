@@ -14,8 +14,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:python3_host_prog="/Users/andpotap/anaconda3/bin/python3.7"
-" let g:kite_tab_complete=1
+let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -162,7 +162,7 @@ set textwidth=110
 set expandtab
 set autoindent
 autocmd BufWritePre * %s/\s\+$//e
-autocmd ExitPre *.txt :!git commit % -m "Added Entry" && git push &
+autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text set spell
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
