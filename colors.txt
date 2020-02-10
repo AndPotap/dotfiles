@@ -1,0 +1,3 @@
+#!/bin/bash
+# for (( i = 0; i < 51; i++)); do echo "$(tput setaf $i) This is ($i) $(tput sgr0)"; done
+for (( i = 0; i < 256; i++)); do printf "$(tput bold) $(tput setaf $i) This is ($i) $(tput sgr0)"; done
