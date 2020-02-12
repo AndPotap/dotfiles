@@ -93,6 +93,8 @@ inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
 nnoremap ,z z=
+nnoremap <leader>rl <C-w><C-l>
+nnoremap <leader>rh <C-w><C-h>
 nnoremap <leader>for :Autoformat<Enter>
 xmap <leader>r  <Plug>(SendToTerm)
 nmap <leader>r  <Plug>(SendToTerm)
@@ -122,7 +124,7 @@ nnoremap <leader>aa <C-U>
 nnoremap <leader>as <C-F>
 nnoremap <leader>sa <C-B>
 nnoremap <leader>sp :split<space>
-nnoremap <leader>vv :vsplit<space>
+nnoremap <leader>vp :vsplit<space>
 nnoremap <leader>y "a
 nmap <leader>t <C-W>li
 map <leader><space> ^
@@ -131,7 +133,9 @@ nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
 noremap , "
+nnoremap Q <Nop>
 inoremap ; <esc>l
+inoremap <C-l> <C-x><C-k>
 tnoremap ZZ _
 tnoremap Dd -
 tnoremap FF =
@@ -153,6 +157,17 @@ imap Kk ]
 imap JJ {
 imap KK }
 imap SS \
+cmap AA ~
+cmap ZZ _
+cmap Dd -
+cmap FF =
+cmap DD +
+cmap QQ '
+cmap Jj [
+cmap Kk ]
+cmap JJ {
+cmap KK }
+cmap SS \
 set backspace=2
 set tw=100
 set tabstop=4
