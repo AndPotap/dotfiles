@@ -77,6 +77,7 @@ let g:ale_sign_column_always = 1
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
+set runtimepath+=~/.config/syntax
 set noerrorbells
 set nohlsearch
 set clipboard=unnamed
@@ -181,6 +182,7 @@ set autoindent
 autocmd BufWritePre * %s/\s\+$//e
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text set spell
+autocmd FileType text set syntax=txt
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
