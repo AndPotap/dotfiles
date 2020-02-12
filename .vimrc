@@ -29,6 +29,7 @@ nmap <leader>hh <C-W>h
 nmap <leader>ll <C-W>l
 inoremap <C-o> <C-x><C-p>
 inoremap <C-k> <C-x><C-k>
+inoremap <C-l> <C-x><C-k>
 vnoremap <C-c> "*y
 map <C-p> "*P
 nnoremap ,z z=
@@ -37,7 +38,7 @@ nnoremap <leader>aa <C-U>
 nnoremap <leader>as <C-F>
 nnoremap <leader>sa <C-B>
 nnoremap <leader>sp :split<space>
-nnoremap <leader>vv :vsplit<space>
+nnoremap <leader>vp :vsplit<space>
 nnoremap <leader>y "a
 map <leader><space> ^
 noremap <enter> $
@@ -47,6 +48,7 @@ nnoremap o $a<Enter><Esc>
 nnoremap O O<Esc>
 noremap , "
 inoremap ; <esc>l
+imap AA ~
 imap ZZ _
 imap Dd -
 imap FF =
@@ -57,6 +59,17 @@ imap Kk ]
 imap JJ {
 imap KK }
 imap SS \
+cmap AA ~
+cmap ZZ _
+cmap Dd -
+cmap FF =
+cmap DD +
+cmap QQ '
+cmap Jj [
+cmap Kk ]
+cmap JJ {
+cmap KK }
+cmap SS \
 set backspace=2
 set tw=100
 set tabstop=4
