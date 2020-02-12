@@ -1,2 +1,3 @@
-syn match textComment "#.*$"
-hi def link textComment Comment
+syn match textComment "@\((.*)\)"
+syn match textTitle1 "%%%%.*$"
+syn match textTitle2 "##.*$"
