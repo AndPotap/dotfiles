@@ -93,8 +93,6 @@ inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 let mapleader = " "
 nnoremap ,z z=
-nnoremap <leader>rl <C-w><C-l>
-nnoremap <leader>rh <C-w><C-h>
 nnoremap <leader>for :Autoformat<Enter>
 xmap <leader>r  <Plug>(SendToTerm)
 nmap <leader>r  <Plug>(SendToTerm)
@@ -118,6 +116,10 @@ nmap <leader>jj <C-W>j
 nmap <leader>kk <C-W>k
 nmap <leader>hh <C-W>h
 nmap <leader>ll <C-W>l
+nnoremap <leader>rl <C-w>L
+nnoremap <leader>rh <C-w>H
+nnoremap <leader>rj <C-w>J
+nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
 nnoremap <leader>ss <C-D>
 nnoremap <leader>aa <C-U>
