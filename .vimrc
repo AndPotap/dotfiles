@@ -23,7 +23,6 @@ nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 noremap <leader>m `
-tnoremap <Esc> <C-\><C-n><C-W>
 nmap <leader>jj <C-W>j
 nmap <leader>kk <C-W>k
 nmap <leader>hh <C-W>h
@@ -48,16 +47,6 @@ nnoremap o $a<Enter><Esc>
 nnoremap O O<Esc>
 noremap , "
 inoremap ; <esc>l
-tnoremap ZZ _
-tnoremap Dd -
-tnoremap FF =
-tnoremap DD +
-tnoremap QQ '
-tnoremap Jj [
-tnoremap Kk ]
-tnoremap JJ {
-tnoremap KK }
-tnoremap SS \
 imap ZZ _
 imap Dd -
 imap FF =
@@ -77,7 +66,6 @@ set expandtab
 set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
-autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
