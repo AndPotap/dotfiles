@@ -183,10 +183,12 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text set spell
 autocmd FileType text set syntax=txt
+autocmd FileType text nnoremap <leader>ff /##<cr>
+autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
+autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
 autocmd FileType python nnoremap <leader>un ^xxj^
-autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
 " For highlight changes to take place run below
 autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
