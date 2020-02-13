@@ -1,3 +1,6 @@
-syn match textComment "@\((.*)\)"
+syn match textComment "\".*\""
+syn match textAr "@\((.*)\)"
+syn match textCode "\$\[.*\]"
 syn match textTitle1 "%%%%.*$"
 syn match textTitle2 "##.*$"
+syn match textBullet "*\s"
