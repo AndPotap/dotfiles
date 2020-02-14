@@ -27,7 +27,7 @@ reset=$(tput sgr0);
 
 PS1="\[${bold}\]\n";
 PS1+="\[${orange}\]\u";
-PS1+="\[${gray}\]@\h: ";
+PS1+="\[${blue}\]@\h: ";
 PS1+="\[${green}\]\w ";
 PS1+="\[${orange}\]\n --> ";
 PS1+="\[${reset}\]";
@@ -37,3 +37,5 @@ source ~/.bash_aliases
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
