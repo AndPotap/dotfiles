@@ -23,13 +23,13 @@ nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 noremap <leader>m `
-tnoremap <Esc> <C-\><C-n><C-W>
 nmap <leader>jj <C-W>j
 nmap <leader>kk <C-W>k
 nmap <leader>hh <C-W>h
 nmap <leader>ll <C-W>l
 inoremap <C-o> <C-x><C-p>
 inoremap <C-k> <C-x><C-k>
+inoremap <C-l> <C-x><C-k>
 vnoremap <C-c> "*y
 map <C-p> "*P
 nnoremap ,z z=
@@ -38,7 +38,7 @@ nnoremap <leader>aa <C-U>
 nnoremap <leader>as <C-F>
 nnoremap <leader>sa <C-B>
 nnoremap <leader>sp :split<space>
-nnoremap <leader>vv :vsplit<space>
+nnoremap <leader>vp :vsplit<space>
 nnoremap <leader>y "a
 map <leader><space> ^
 noremap <enter> $
@@ -48,16 +48,7 @@ nnoremap o $a<Enter><Esc>
 nnoremap O O<Esc>
 noremap , "
 inoremap ; <esc>l
-tnoremap ZZ _
-tnoremap Dd -
-tnoremap FF =
-tnoremap DD +
-tnoremap QQ '
-tnoremap Jj [
-tnoremap Kk ]
-tnoremap JJ {
-tnoremap KK }
-tnoremap SS \
+imap AA ~
 imap ZZ _
 imap Dd -
 imap FF =
@@ -68,6 +59,17 @@ imap Kk ]
 imap JJ {
 imap KK }
 imap SS \
+cmap AA ~
+cmap ZZ _
+cmap Dd -
+cmap FF =
+cmap DD +
+cmap QQ '
+cmap Jj [
+cmap Kk ]
+cmap JJ {
+cmap KK }
+cmap SS \
 set backspace=2
 set tw=100
 set tabstop=4
@@ -77,7 +79,6 @@ set expandtab
 set autoindent
 
 autocmd BufWritePre * %s/\s\+$//e
-autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q
 autocmd FileType python map <silent> <leader>b A<Enter>import pdb<Enter>pdb.set_trace()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
