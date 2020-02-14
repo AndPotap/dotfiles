@@ -3,7 +3,12 @@ set noerrorbells
 let mapleader = " "
 set relativenumber
 set splitbelow splitright
-let mapleader = " "
+
+" with actionlist <PATTERN> you can find all options
+map <leader>r :action RenameElement<CR>
+map <leader>U :action ShowUsages<CR>
+map <leader>T :action ActivateTerminalToolWindow<CR>
+
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
 nnoremap tn :tabnew<Space>
@@ -63,3 +68,7 @@ cmap Kk ]
 cmap JJ {
 cmap KK }
 cmap SS \
+nnoremap <leader>ff /def<Space><Enter>
+nnoremap <leader>cc ^i# <Esc>j^
+nnoremap <leader>un ^xxj^
+nnoremap <leader>cl /class<Space><Enter>
