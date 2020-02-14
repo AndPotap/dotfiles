@@ -23,6 +23,7 @@ unset __conda_setup
 export PATH=$PATH:/Users/andpotap/bin
 export PATH="/Users/andpotap/anaconda3/bin:$PATH"
 export PYTHONPATH=$PYTHONPATH:"/Users/andpotap/uncountable_repamtrick"
+export PYTHONSTARTUP="$(python -m jedi repl)"
 source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.
