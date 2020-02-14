@@ -20,7 +20,7 @@ bind '";":"\e"'
 orange=$(tput setaf 166);
 green=$(tput setaf 71);
 blue=$(tput setaf 4);
-gray=$(tput setaf 241);
+gray=$(tput setaf 242);
 red=$(tput setaf 9);
 bold=$(tput bold);
 reset=$(tput sgr0);
