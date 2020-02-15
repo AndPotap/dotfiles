@@ -6,7 +6,8 @@ set splitbelow splitright
 
 " with actionlist <PATTERN> you can find all options
 map <leader>r :action RenameElement<CR>
-map <leader>U :action ShowUsages<CR>
+map <leader>su :action ShowUsages<CR>
+map <leader>U :action FindUsages<CR>
 map <leader>T :action ActivateTerminalToolWindow<CR>
 
 inoremap HH <Esc>/<++><Enter>"_c4l
