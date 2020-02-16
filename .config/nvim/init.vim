@@ -122,10 +122,10 @@ nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
-nnoremap <leader>ss <C-D>
-nnoremap <leader>aa <C-U>
-nnoremap <leader>as <C-F>
-nnoremap <leader>sa <C-B>
+nnoremap M Mzt2k2j
+nnoremap U zbM
+nnoremap <leader>D <C-F>
+nnoremap <leader>U <C-B>H
 nnoremap <leader>sp :split<space>
 nnoremap <leader>vp :vsplit<space>
 nnoremap <leader>y "a
@@ -149,6 +149,7 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap SS \
+imap TT `
 imap AA ~
 imap ZZ _
 imap Dd -
@@ -160,6 +161,7 @@ imap Kk ]
 imap JJ {
 imap KK }
 imap SS \
+cmap TT `
 cmap AA ~
 cmap ZZ _
 cmap Dd -
