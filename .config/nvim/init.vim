@@ -124,6 +124,7 @@ nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
 nnoremap M Mzt2k2j
 nnoremap U zbM
+nnoremap <leader>m M
 nnoremap <leader>D <C-F>
 nnoremap <leader>U <C-B>H
 nnoremap <leader>sp :split<space>
