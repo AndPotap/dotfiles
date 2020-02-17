@@ -113,10 +113,10 @@ nmap <leader>Kk dt]
 nmap <leader>KK dt}
 nmap <leader>Z ct_
 noremap <leader>m `
-nmap <leader>jj <C-W>j
-nmap <leader>kk <C-W>k
-nmap <leader>hh <C-W>h
-nmap <leader>ll <C-W>l
+nmap <leader>j <C-W>j
+nmap <leader>k <C-W>k
+nmap <leader>h <C-W>h
+nmap <leader>l <C-W>l
 nnoremap <leader>rl <C-w>L
 nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
