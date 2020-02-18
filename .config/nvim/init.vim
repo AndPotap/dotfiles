@@ -80,6 +80,7 @@ let g:ale_sign_column_always = 1
 set runtimepath+=~/.config/syntax
 set noerrorbells
 set nohlsearch
+set ignorecase
 set clipboard=unnamed
 syntax on
 colorscheme gruvbox
@@ -112,7 +113,7 @@ tnoremap <Esc> <C-\><C-n><C-W>h
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 nmap <leader>Z ct_
-noremap <leader>m `
+nnoremap <leader>m `
 nmap <leader>j <C-W>j
 nmap <leader>k <C-W>k
 nmap <leader>h <C-W>h
@@ -122,9 +123,8 @@ nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
-nnoremap M Mzt2k2j
+nnoremap S Mzt2k2j
 nnoremap U zbM
-nnoremap <leader>m M
 nnoremap <leader>D <C-F>
 nnoremap <leader>U <C-B>H
 nnoremap <leader>sp :split<space>
