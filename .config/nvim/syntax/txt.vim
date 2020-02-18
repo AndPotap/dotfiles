@@ -1,5 +1,5 @@
 syn match textComment "\"\_.\{-}\""
-syn match textAr "@\((.*)\)"
+syn match textAr "@\((\_.\{-})\)"
 syn match textCode "\$\[\_.\{-}\]"
 syn match textTitle1 "%%%%.*$"
 syn match textTitle2 "##.*$"
