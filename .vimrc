@@ -1,7 +1,12 @@
+" The instruction to download the plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
 set runtimepath+=~/vim/
 source ~/.config/nvim/maps.vim
+setlocal cm=blowfish2
+set viminfo=
 set complete+=k/usr/share/dict/words
-set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
