@@ -1,5 +1,10 @@
 set runtimepath+=~/vim/
 source ~/.config/nvim/maps.vim
+set complete+=k/usr/share/dict/words
+set completeopt=noinsert,menuone,noselect
+set shortmess+=c
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 autocmd FileType tex set spell
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
