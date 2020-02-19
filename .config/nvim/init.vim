@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
+    Plug 'filipekiss/ncm2-look.vim'
     " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
@@ -49,6 +50,7 @@ let g:jedi#show_call_signatures_delay = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#show_call_signatures_modes = 'i'
 let g:jedi#enable_speed_debugging=0
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " ncm2 Configurations
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -56,11 +58,11 @@ set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
+let ncm2#total_popup_limit = 25
 let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
-
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 let g:ale_linters = {'python': ['flake8']}
@@ -78,10 +80,12 @@ let g:ale_sign_column_always = 1
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 set runtimepath+=~/.config/syntax
+set dictionary+=/usr/share/dict/words
 nnoremap <leader>au :Autoformat<Enter>
 source ~/.config/nvim/maps.vim
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
 autocmd BufNewFile,BufRead *.op set filetype=op
+autocmd FileType text let b:ncm2_look_enabled = 1
 autocmd FileType op set spell syntax=txt
 autocmd FileType op nnoremap <leader>ff /##<cr>
 autocmd FileType op nnoremap <leader>cl /%%%%<cr>
