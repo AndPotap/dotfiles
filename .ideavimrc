@@ -3,16 +3,22 @@ set noerrorbells
 let mapleader = " "
 set relativenumber
 set splitbelow splitright
-let mapleader = " "
-inoremap HH <Esc>/<++><Enter>"_c4l
-nmap <leader>H /<++><CR>"_c4l
-nnoremap tn :tabnew<Space>
+
+" with actionlist <PATTERN> you can find all options
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>U :action FindUsages<CR>
+nnoremap <leader>T :action ActivateTerminalToolWindow<CR>
+nnoremap tn :action GotoFile<CR>
+nnoremap th :action GoToTab1<CR>
+nnoremap tl :action GoToLastTab<CR>
+nnoremap <leader>sp :action SplitVertically<CR>
+nnoremap <leader>vp :action SplitHorizontally<CR>
+nnoremap <leader>au :action ReformatCode<CR>
+map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
+
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
 nnoremap <leader>q :wq<Enter>
-nnoremap <leader>Q :q!<Enter>
 nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
@@ -31,8 +37,6 @@ nnoremap <leader>ss <C-D>
 nnoremap <leader>aa <C-U>
 nnoremap <leader>as <C-F>
 nnoremap <leader>sa <C-B>
-nnoremap <leader>sp :split<space>
-nnoremap <leader>vp :vsplit<space>
 nnoremap <leader>y "a
 map <leader><space> ^
 noremap <enter> $
@@ -63,3 +67,7 @@ cmap Kk ]
 cmap JJ {
 cmap KK }
 cmap SS \
+nnoremap <leader>ff /def<Space><Enter>
+nnoremap <leader>cc ^i# <Esc>j^
+nnoremap <leader>un ^xxj^
+nnoremap <leader>cl /class<Space><Enter>

@@ -1,3 +1,6 @@
+" The instruction to download the plug
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
     Plug 'davidhalter/jedi-vim'
     Plug 'ncm2/ncm2'
@@ -5,6 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
+    Plug 'filipekiss/ncm2-look.vim'
     " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
@@ -49,6 +53,7 @@ let g:jedi#show_call_signatures_delay = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#show_call_signatures_modes = 'i'
 let g:jedi#enable_speed_debugging=0
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " ncm2 Configurations
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -56,11 +61,11 @@ set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 let ncm2#popup_delay = 5
 let ncm2#complete_length = [[1, 1]]
+let ncm2#total_popup_limit = 25
 let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
-
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 let g:ale_linters = {'python': ['flake8']}
@@ -78,117 +83,23 @@ let g:ale_sign_column_always = 1
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 set runtimepath+=~/.config/syntax
-set noerrorbells
-set nohlsearch
-set clipboard=unnamed
-syntax on
-colorscheme gruvbox
-set wildmode=longest,list
-set background=dark
-set number
-set relativenumber
 set dictionary+=/usr/share/dict/words
-set splitbelow splitright
-set nobackup noswapfile
-inoremap HH <Esc>/<++><Enter>"_c4l
-nmap <leader>H /<++><CR>"_c4l
-let mapleader = " "
-nnoremap ,z z=
-nnoremap <leader>for :Autoformat<Enter>
-xmap <leader>r  <Plug>(SendToTerm)
-nmap <leader>r  <Plug>(SendToTerm)
-omap <leader>r  <Plug>(SendToTerm)
-nmap <leader>rr <Plug>(SendToTermLine)
-nnoremap tn :tabnew<Space>
-nnoremap tk :tabnext<CR>
-nnoremap tj :tabprev<CR>
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
-nnoremap <leader>q :wq<Enter>
-nnoremap <leader>Q :q!<Enter>
-nnoremap <leader>w :w<Enter>
 nnoremap <leader>au :Autoformat<Enter>
-tnoremap <Esc> <C-\><C-n><C-W>h
-nmap <leader>Kk dt]
-nmap <leader>KK dt}
-nmap <leader>Z ct_
-noremap <leader>m `
-nmap <leader>jj <C-W>j
-nmap <leader>kk <C-W>k
-nmap <leader>hh <C-W>h
-nmap <leader>ll <C-W>l
-nnoremap <leader>rl <C-w>L
-nnoremap <leader>rh <C-w>H
-nnoremap <leader>rj <C-w>J
-nnoremap <leader>rk <C-w>K
-inoremap <C-o> <C-x><C-p>
-nnoremap <leader>ss <C-D>
-nnoremap <leader>aa <C-U>
-nnoremap <leader>as <C-F>
-nnoremap <leader>sa <C-B>
-nnoremap <leader>sp :split<space>
-nnoremap <leader>vp :vsplit<space>
-nnoremap <leader>y "a
-nmap <leader>t <C-W>li
-map <leader><space> ^
-noremap <enter> $
-nnoremap <leader>o o
-nnoremap o o<Esc>
-nnoremap O O<Esc>
-noremap , "
-nnoremap Q <Nop>
-inoremap ; <esc>l
-inoremap <C-l> <C-x><C-k>
-tnoremap ZZ _
-tnoremap Dd -
-tnoremap FF =
-tnoremap DD +
-tnoremap QQ '
-tnoremap Jj [
-tnoremap Kk ]
-tnoremap JJ {
-tnoremap KK }
-tnoremap SS \
-imap AA ~
-imap ZZ _
-imap Dd -
-imap FF =
-imap DD +
-imap QQ '
-imap Jj [
-imap Kk ]
-imap JJ {
-imap KK }
-imap SS \
-cmap AA ~
-cmap ZZ _
-cmap Dd -
-cmap FF =
-cmap DD +
-cmap QQ '
-cmap Jj [
-cmap Kk ]
-cmap JJ {
-cmap KK }
-cmap SS \
-set backspace=2
-set tw=100
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set textwidth=110
-set expandtab
-set autoindent
-autocmd BufWritePre * %s/\s\+$//e
+source ~/.config/nvim/maps.vim
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
-autocmd FileType text set spell
-autocmd FileType text set syntax=txt
-autocmd FileType text nnoremap <leader>ff /##<cr>
-autocmd FileType text nnoremap <leader>cl /%%%%<cr>
-autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
-autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
-autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
-autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
-autocmd FileType python nnoremap <leader>un ^xxj^
-" For highlight changes to take place run below
-autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
+autocmd BufNewFile,BufRead *.op set filetype=op
+autocmd FileType text let b:ncm2_look_enabled = 1
+autocmd FileType op set spell syntax=txt
+autocmd FileType op nnoremap <leader>ff /##<cr>
+autocmd FileType op nnoremap <leader>cl /%%%%<cr>
+
+" set backupskip+=*.asc
+" set viminfo=
+" augroup GPG
+"   autocmd!
+"   autocmd BufReadPost  *.asc :%!gpg -q -d
+"  autocmd BufReadPost  *.asc |redraw!
+"  autocmd BufWritePre  *.asc :%!gpg -q -e -a
+"  autocmd BufWritePost *.asc u
+"  autocmd VimLeave     *.asc :!clear
+"augroup END
