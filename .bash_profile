@@ -20,9 +20,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH=$PATH:/Users/andpotap/bin
-export PATH="/Users/andpotap/anaconda3/bin:$PATH"
-export PYTHONPATH=$PYTHONPATH:"/Users/andpotap/igr"
+export PATH=$PATH:$HOME/bin
+export PATH="$HOME/anaconda3/bin:$PATH"
+export PYTHONPATH=$PYTHONPATH:"$HOME/igr"
 export PYTHONSTARTUP="$(python -m jedi repl)"
 source ~/.bashrc
 
