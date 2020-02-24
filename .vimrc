@@ -18,7 +18,7 @@ autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex %<CR>
-autocmd FileType tex nmap <buffer> <leader>EE :!build %<CR>
+autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
 autocmd FileType tex inoremap ,bb \textbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
 autocmd FileType tex inoremap ,tt \texttt{}<Space><++><Esc>T{i
