@@ -12,8 +12,7 @@ done
 files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .inputrc .tmux.conf .ideavimrc .config/flake8
                  vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
-                 .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim
-                 bin/build_tex)
+                 .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim)
 for f in "${files_to_create[@]}"
 do
     path=~/$f
@@ -25,5 +24,22 @@ do
         ln -s ~/dotfiles/$f $path
     else
         ln -s ~/dotfiles/$f $path
+    fi
+done
+
+for f in ~/dotfiles/bin/*
+do
+    if [[ $f != *.sh ]]
+    then
+        base=$(basename $f)
+        path=~/bin/$base
+        echo "linked $path"
+        if [ -h $path ]
+        then
+            rm $path
+            ln -s $f $path
+        else
+            ln -s $f $path
+        fi
     fi
 done
