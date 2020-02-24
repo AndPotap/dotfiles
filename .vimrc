@@ -5,6 +5,7 @@
 set runtimepath+=~/vim/
 source ~/.config/nvim/maps.vim
 setlocal cm=blowfish2
+colorscheme gruv
 set viminfo=
 set complete+=k/usr/share/dict/words
 set shortmess+=c
