@@ -1,6 +1,5 @@
 let mapleader = " "
 syntax on
-colorscheme gruv
 set background=dark
 set noerrorbells
 set nohlsearch
