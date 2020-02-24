@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
     Plug 'jpalardy/vim-slime'
-    " Plug 'morhetz/gruvbox'
+    Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -83,7 +83,6 @@ let g:ale_sign_column_always = 1
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 set runtimepath+=~/.config/nvim/
-set dictionary+=/usr/share/dict/words
 nnoremap <leader>au :Autoformat<Enter>
 source ~/.config/nvim/maps.vim
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &

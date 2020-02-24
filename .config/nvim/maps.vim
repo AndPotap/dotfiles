@@ -1,6 +1,6 @@
 let mapleader = " "
 syntax on
-colorscheme gruvbox
+colorscheme gruv
 set dictionary+=/usr/share/dict/words
 set noerrorbells
 set nohlsearch
