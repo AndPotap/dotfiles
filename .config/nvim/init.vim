@@ -82,24 +82,9 @@ let g:ale_sign_column_always = 1
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
-set runtimepath+=~/.config/syntax
-set dictionary+=/usr/share/dict/words
-nnoremap <leader>au :Autoformat<Enter>
+set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
+colorscheme gruv
+nnoremap <leader>au :Autoformat<Enter>
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
-autocmd BufNewFile,BufRead *.op set filetype=op
 autocmd FileType text let b:ncm2_look_enabled = 1
-autocmd FileType op set spell syntax=txt
-autocmd FileType op nnoremap <leader>ff /##<cr>
-autocmd FileType op nnoremap <leader>cl /%%%%<cr>
-
-" set backupskip+=*.asc
-" set viminfo=
-" augroup GPG
-"   autocmd!
-"   autocmd BufReadPost  *.asc :%!gpg -q -d
-"  autocmd BufReadPost  *.asc |redraw!
-"  autocmd BufWritePre  *.asc :%!gpg -q -e -a
-"  autocmd BufWritePost *.asc u
-"  autocmd VimLeave     *.asc :!clear
-"augroup END

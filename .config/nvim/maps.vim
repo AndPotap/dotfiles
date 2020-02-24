@@ -1,13 +1,11 @@
 let mapleader = " "
 syntax on
-colorscheme gruvbox
-set dictionary+=/usr/share/dict/words
+set background=dark
 set noerrorbells
 set nohlsearch
 set ignorecase
 set clipboard=unnamed
 set wildmode=longest,list
-set background=dark
 set number relativenumber
 set splitbelow splitright
 set nobackup noswapfile nowritebackup
@@ -130,4 +128,4 @@ autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
 autocmd FileType python nnoremap <leader>cc ^i# <Esc>j^
 autocmd FileType python nnoremap <leader>un ^xxj^
 " For highlight changes to take place run below
-autocmd FileType python source ~/.vim/plugged/gruvbox/colors/gruvbox.vim
+autocmd FileType python source ~/.config/nvim/colors/gruv.vim
