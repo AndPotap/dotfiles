@@ -34,11 +34,13 @@ do
         base=$(basename $f)
         path=~/bin/$base
         echo "linked $path"
-        if [ -h $path ]
+        if [ -h $path ] || [ -f $path ]
         then
             rm $path
+            # cp $f $path
             ln -s $f $path
         else
+            # cp $f $path
             ln -s $f $path
         fi
     fi
