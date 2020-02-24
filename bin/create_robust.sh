@@ -9,13 +9,15 @@ do
     fi
 done
 
-files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases .inputrc .tmux.conf .ideavimrc .config/flake8)
-files_to_create+=(vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim)
-files_to_create+=(.config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim)
+files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
+                 .inputrc .tmux.conf .ideavimrc .config/flake8
+                 vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
+                 .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim)
 for f in "${files_to_create[@]}"
 do
-    # -h Returns true if file exists and is a symlink
     path=~/$f
+    echo "linked $path"
+    # -h Returns true if file exists and is a symlink
     if [ -h $path ]
     then
         rm $path
