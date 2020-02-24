@@ -84,6 +84,7 @@ let g:ale_sign_column_always = 1
 " My NVIM/VIM configurations
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
+colorscheme gruv
 nnoremap <leader>au :Autoformat<Enter>
 autocmd ExitPre *.txt :!git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text let b:ncm2_look_enabled = 1
