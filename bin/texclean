@@ -1,6 +1,0 @@
-#!/bin/bash
-
-rm *.log | rm *.aux | rm *.bbl | rm *.blg 
-
-# chmod u+x texclean (don't forget to do this) 
-
