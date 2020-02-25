@@ -1,4 +1,4 @@
-alias pro='cd ~/cbeta/src'
+alias pro='cd ~/cbetadir/src'
 alias not='cd ~/notes'
 alias white='open ~/Pictures/White\ Noise.mp4'
 
