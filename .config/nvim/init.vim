@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
-    Plug 'filipekiss/ncm2-look.vim'
     " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
