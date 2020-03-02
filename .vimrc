@@ -28,7 +28,7 @@ autocmd FileType tex map <leader>en A<Enter>\begin{enumerate}<Esc><leader>o\end{
 autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex map <leader>Sum a\sum_{<++>}^{<++>}<Space><++><Esc>16hi
 autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\includegraphics[<++>]{<++>}<Esc>oi\caption{<++>.}\label{}<Esc>oi\end{figure}<Esc>2k^/<++><CR>i
-autocmd FileType tex map <leader>eq <leader>o\begin{equation*}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2X2k<leader>o
+autocmd FileType tex map <leader>eq <leader>o\begin{equation}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o
 autocmd FileType tex map <leader>fr a\frac{<++>}{<++>}<Space><++><Esc>15hi
 autocmd FileType tex map <leader>red a\textcolor{red}{<++>}<Esc>4hi
 autocmd FileType tex inoremap ,r ^{}<Space><++><Esc>T{i
