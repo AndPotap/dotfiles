@@ -8,11 +8,12 @@ setlocal cm=blowfish2
 colorscheme gruv
 set viminfo=
 set completeopt=noinsert,menuone,noselect
-set complete+=k/usr/share/dict/words
 set shortmess+=c
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 autocmd FileType tex set spell
+autocmd FileType tex nnoremap <leader>q nop
+autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
@@ -33,8 +34,10 @@ autocmd FileType tex inoremap ,fr \frac{<++>}{<++>}<Space><++><Esc>15hi
 autocmd FileType tex map <leader>red a\textcolor{red}{<++>}<Esc>4hi
 autocmd FileType tex inoremap ,u ^{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,l _{}<++><Esc>T{i
-autocmd FileType tex inoremap ,ff \left(<Space>
-autocmd FileType tex inoremap ,jj <Space>\right)
+autocmd FileType tex inoremap ,ff \left(<Space>\right)<Space><++><Esc>12hi
+autocmd FileType tex inoremap ,4 $$<Space><++><Esc>5hi
+autocmd FileType tex inoremap ,su \sum_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap ,in \int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap π \pi
 autocmd FileType tex inoremap μ \mu
 autocmd FileType tex inoremap ε \epsilon
