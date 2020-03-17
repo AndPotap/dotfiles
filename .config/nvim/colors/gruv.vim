@@ -1377,9 +1377,11 @@ hi! link jsonString GruvboxFg1
 
 " Mine: {{{
 syntax match Selfie "self"
+syntax match PRange "numba.prange"
 syntax match Staticmethod "@staticmethod"
 syntax match BreakPoint "breakpoint()"
 hi def link Selfie GruvboxPurple
+hi def link PRange GruvboxFg4
 hi def link Staticmethod GruvboxYellow
 hi def link BreakPoint GruvboxRed
 
