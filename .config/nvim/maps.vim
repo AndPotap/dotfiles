@@ -16,12 +16,12 @@ set softtabstop=4
 set shiftwidth=4
 set textwidth=110
 set expandtab autoindent
-nnoremap x "ax
-nnoremap s "as
-nnoremap d "ad
-nnoremap dd "add
-nnoremap <leader>p "ap
-nnoremap <leader>P "aP
+nnoremap <leader>1p ""p
+nnoremap <leader>1P ""P
+nnoremap <leader>2p "0p
+nnoremap <leader>2P "0P
+nnoremap <leader>3p "1p
+nnoremap <leader>3P "1P
 inoremap ; <esc>l
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
