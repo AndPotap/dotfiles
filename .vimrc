@@ -18,7 +18,7 @@ autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
-autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex %<CR>
+autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % <CR><CR>
 autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
 autocmd FileType tex inoremap ,bb \textbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
@@ -38,16 +38,22 @@ autocmd FileType tex inoremap ,ff \left(<Space>\right)<Space><++><Esc>12hi
 autocmd FileType tex inoremap ,4 $$<Space><++><Esc>5hi
 autocmd FileType tex inoremap ,su \sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap ,in \int_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap π \pi
-autocmd FileType tex inoremap μ \mu
-autocmd FileType tex inoremap ε \epsilon
-autocmd FileType tex inoremap ξ \xi
-autocmd FileType tex inoremap σ \sigma
-autocmd FileType tex inoremap ς \varsigma
-autocmd FileType tex inoremap ψ \psi
-autocmd FileType tex inoremap τ \tau
-autocmd FileType tex inoremap λ \lambda
-autocmd FileType tex inoremap γ \gamma
-autocmd FileType tex inoremap φ \phi
-autocmd FileType tex inoremap δ \delta
-autocmd FileType tex inoremap Δ \Delta
+autocmd FileType tex nnoremap <leader>no i\noindent<Space><Esc>
+autocmd FileType tex inoremap <a \alpha
+autocmd FileType tex inoremap <b \beta
+autocmd FileType tex inoremap <g \gamma
+autocmd FileType tex inoremap <G \Gamma
+autocmd FileType tex inoremap <d \delta
+autocmd FileType tex inoremap <p \pi
+autocmd FileType tex inoremap <m \mu
+autocmd FileType tex inoremap <e \epsilon
+autocmd FileType tex inoremap <x \xi
+autocmd FileType tex inoremap <s \sigma
+autocmd FileType tex inoremap <p \psi
+autocmd FileType tex inoremap <h \eta
+autocmd FileType tex inoremap <t \theta
+autocmd FileType tex inoremap <u \phi
+autocmd FileType tex inoremap <P \phi
+autocmd FileType tex inoremap <t \tau
+autocmd FileType tex inoremap <l \lambda
+autocmd FileType tex inoremap <D \Delta
