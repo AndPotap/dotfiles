@@ -46,6 +46,8 @@ autocmd FileType tex inoremap <G \Gamma
 autocmd FileType tex inoremap <d \delta
 autocmd FileType tex inoremap <p \pi
 autocmd FileType tex inoremap <m \mu
+autocmd FileType tex inoremap <n \nu
+autocmd FileType tex inoremap <N \Nu
 autocmd FileType tex inoremap <e \epsilon
 autocmd FileType tex inoremap <x \xi
 autocmd FileType tex inoremap <s \sigma
