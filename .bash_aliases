@@ -1,3 +1,6 @@
+alias vim='/usr/bin/vim.basic'
+alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
+
 alias pro='cd ~/cbetadir/src'
 alias not='cd ~/notes'
 alias white='open ~/Pictures/White\ Noise.mp4'
