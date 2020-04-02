@@ -53,7 +53,7 @@ autocmd FileType tex inoremap <x \xi
 autocmd FileType tex inoremap <s \sigma
 autocmd FileType tex inoremap <p \psi
 autocmd FileType tex inoremap <h \eta
-autocmd FileType tex inoremap <t \theta
+autocmd FileType tex inoremap <y \theta
 autocmd FileType tex inoremap <u \phi
 autocmd FileType tex inoremap <P \phi
 autocmd FileType tex inoremap <t \tau
