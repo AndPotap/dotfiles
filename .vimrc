@@ -38,7 +38,7 @@ autocmd FileType tex inoremap ,ff \left(<Space>\right)<Space><++><Esc>12hi
 autocmd FileType tex inoremap ,4 $$<Space><++><Esc>5hi
 autocmd FileType tex inoremap ,su \sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap ,in \int_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex nnoremap <leader>no i\noindent<Space><Esc>
+autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 autocmd FileType tex inoremap <a \alpha
 autocmd FileType tex inoremap <b \beta
 autocmd FileType tex inoremap <g \gamma
