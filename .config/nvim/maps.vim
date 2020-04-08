@@ -129,7 +129,7 @@ autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text set spell syntax=txt
 autocmd FileType gpg set spell syntax=txt
-autocmd FileType gpg nnoremap<leader>w :w<Enter><Enter>
+autocmd FileType gpg nnoremap<leader>w mx:w<Enter><Enter>`x
 autocmd FileType text nnoremap <leader>ff /##<cr>
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
