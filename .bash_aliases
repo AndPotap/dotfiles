@@ -2,7 +2,7 @@ alias vim='/usr/bin/vim.basic'
 alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
 
 alias pro='cd ~/cbetadir/src'
-alias not='cd ~/notes'
+alias not='cd ~/notes && gp'
 alias white='open ~/Pictures/White\ Noise.mp4'
 
 alias tkill='tmux kill-session -t 0'
