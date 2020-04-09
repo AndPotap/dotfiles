@@ -86,5 +86,6 @@ source ~/.config/nvim/maps.vim
 colorscheme gruv
 nnoremap <leader>au :Autoformat<Enter>
 autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
+autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd BufLeave *.txt :!cd ~/notes && git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text let b:ncm2_look_enabled = 1
