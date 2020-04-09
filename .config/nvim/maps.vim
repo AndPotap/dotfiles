@@ -131,6 +131,10 @@ autocmd FileType text set spell syntax=txt
 autocmd FileType gpg set spell syntax=txt
 autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType text nnoremap <leader>ff /##<cr>
+autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
+autocmd FileType gpg set spell syntax=txt
+autocmd FileType gpg nnoremap <leader>ff /##<cr>
+autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
