@@ -136,7 +136,9 @@ autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
-autocmd FileType python nnoremap <leader>cc 04xi<Tab># <Esc>j^
+autocmd FileType python nnoremap <leader>cc ^<C-V>I#<Space><Esc>j^
+autocmd FileType python vnoremap <silent> # :s/^/#<Space><cr>:noh<cr>
+autocmd FileType python vnoremap <silent> ! :s/^#<Space>//<cr>:noh<cr>
 autocmd FileType python nnoremap <leader>un ^xxj^
 " For highlight changes to take place run below
 autocmd FileType python source ~/.config/nvim/colors/gruv.vim
