@@ -125,18 +125,20 @@ augroup encrypted
 augroup END
 
 autocmd BufWritePre * %s/\s\+$//e
-autocmd BufRead *.gpg set filetype=gpg
-autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text set spell syntax=txt
+autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text nnoremap <leader>ff /##<cr>
-autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
+autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType gpg set spell syntax=txt
+autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
 autocmd FileType gpg nnoremap <leader>ff /##<cr>
 autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
-autocmd FileType python nnoremap <leader>cc 04xi<Tab># <Esc>j^
+autocmd FileType python nnoremap <leader>cc ^<C-V>I#<Space><Esc>j^
 autocmd FileType python nnoremap <leader>un ^xxj^
+autocmd FileType python vnoremap <silent> # :s/^/#<Space><cr>:noh<cr>
+autocmd FileType python vnoremap <silent> ! :s/^#<Space>//<cr>:noh<cr>
 " For highlight changes to take place run below
 autocmd FileType python source ~/.config/nvim/colors/gruv.vim
