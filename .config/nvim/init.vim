@@ -85,6 +85,7 @@ set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
 nnoremap <leader>au :Autoformat<Enter>
+autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
 autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text let b:ncm2_look_enabled = 1
