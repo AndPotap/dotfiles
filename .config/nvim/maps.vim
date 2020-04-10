@@ -23,7 +23,7 @@ nnoremap <leader>2P "0P
 nnoremap <leader>3p "1p
 nnoremap <leader>3P "1P
 " Reload syntax"
-nnoremap <leader>hi <C-L>
+nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 inoremap ; <esc>l
 inoremap HH <Esc>/<++><Enter>"_c4l
 nmap <leader>H /<++><CR>"_c4l
