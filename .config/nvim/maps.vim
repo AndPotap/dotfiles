@@ -63,7 +63,6 @@ nnoremap <leader>y "a
 map <leader><space> ^
 noremap <enter> $
 imap TT `
-imap EE |
 imap AA ~
 imap ZZ _
 imap Dd -
@@ -75,7 +74,6 @@ imap Kk ]
 imap JJ {
 imap KK }
 imap SS \
-cmap EE |
 cmap TT `
 cmap AA ~
 cmap ZZ _
