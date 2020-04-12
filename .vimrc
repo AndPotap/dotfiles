@@ -15,14 +15,16 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
-autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
-autocmd FileType tex inoremap <C-O> \left(\right)<++><Esc>10hi
-autocmd FileType tex inoremap <C-Y> \left[\right]<++><Esc>10hi
-autocmd FileType tex inoremap <C-S> \sum_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-I> \int_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-H> ^{}<++><Esc>T{i
-autocmd FileType tex inoremap <C-L> _{}<++><Esc>T{i
-autocmd FileType tex inoremap <C-F> \frac{<++>}{<++>}<Space><++><Esc>15hi
+autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+autocmd FileType tex inoremap <C-O> <Esc>i\left(\right)<++><Esc>10hi
+autocmd FileType tex inoremap <C-Y> <Esc>i\left[\right]<++><Esc>10hi
+autocmd FileType tex inoremap <C-S>s <Esc>i\sum_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>i <Esc>i\int_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>p <Esc>i\prod_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>f <Esc>i\frac{<++>}{<++>}<Space><++><Esc>15hi
+autocmd FileType tex inoremap <C-H> <Esc>i^{}<++><Esc>T{i
+autocmd FileType tex inoremap <C-L> <Esc>i_{}<++><Esc>T{i
 autocmd FileType tex inoremap ,4 $$<Space><++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
@@ -39,34 +41,34 @@ autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\inc
 autocmd FileType tex map <leader>eq <leader>o\begin{equation}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space>
 autocmd FileType tex map <leader>red i\textcolor{red}{<++>}<Esc>4hi
 autocmd FileType tex nnoremap <leader>no i\noindent<Space>
-autocmd FileType tex inoremap <a \alpha
-autocmd FileType tex inoremap <b \beta
-autocmd FileType tex inoremap <g \gamma
-autocmd FileType tex inoremap <d \delta
-autocmd FileType tex inoremap <m \mu
-autocmd FileType tex inoremap <n \nu
-autocmd FileType tex inoremap <e \epsilon
-autocmd FileType tex inoremap <x \xi
-autocmd FileType tex inoremap <s \sigma
-autocmd FileType tex inoremap <p \psi
-autocmd FileType tex inoremap <h \eta
-autocmd FileType tex inoremap <y \theta
-autocmd FileType tex inoremap <u \phi
-autocmd FileType tex inoremap <t \tau
-autocmd FileType tex inoremap <l \lambda
+autocmd FileType tex inoremap <C-G>a \alpha
+autocmd FileType tex inoremap <C-G>b \beta
+autocmd FileType tex inoremap <C-G>g \gamma
+autocmd FileType tex inoremap <C-G>d \delta
+autocmd FileType tex inoremap <C-G>m \mu
+autocmd FileType tex inoremap <C-G>n \nu
+autocmd FileType tex inoremap <C-G>e \epsilon
+autocmd FileType tex inoremap <C-G>x \xi
+autocmd FileType tex inoremap <C-G>s \sigma
+autocmd FileType tex inoremap <C-G>p \psi
+autocmd FileType tex inoremap <C-G>h \eta
+autocmd FileType tex inoremap <C-G>y \theta
+autocmd FileType tex inoremap <C-G>u \phi
+autocmd FileType tex inoremap <C-G>t \tau
+autocmd FileType tex inoremap <C-G>l \lambda
 
-autocmd FileType tex inoremap <A \Alpha
-autocmd FileType tex inoremap <B \Beta
-autocmd FileType tex inoremap <G \Gamma
-autocmd FileType tex inoremap <D \Delta
-autocmd FileType tex inoremap <M \Mu
-autocmd FileType tex inoremap <N \Nu
-autocmd FileType tex inoremap <E \Epsilon
-autocmd FileType tex inoremap <X \Xi
-autocmd FileType tex inoremap <S \Sigma
-autocmd FileType tex inoremap <P \Psi
-autocmd FileType tex inoremap <H \Eta
-autocmd FileType tex inoremap <Y \Theta
+autocmd FileType tex inoremap <C-G>A \Alpha
+autocmd FileType tex inoremap <C-G>B \Beta
+autocmd FileType tex inoremap <C-G>G \Gamma
+autocmd FileType tex inoremap <C-G>D \Delta
+autocmd FileType tex inoremap <C-G>M \Mu
+autocmd FileType tex inoremap <C-G>N \Nu
+autocmd FileType tex inoremap <C-G>E \Epsilon
+autocmd FileType tex inoremap <C-G>X \Xi
+autocmd FileType tex inoremap <C-G>S \Sigma
+autocmd FileType tex inoremap <C-G>P \Psi
+autocmd FileType tex inoremap <C-G>H \Eta
+autocmd FileType tex inoremap <C-G>Y \Theta
 autocmd FileType tex inoremap <U \Phi
 autocmd FileType tex inoremap <T \Tau
 autocmd FileType tex inoremap <L \Lambda
