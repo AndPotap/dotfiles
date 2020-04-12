@@ -59,3 +59,4 @@ autocmd FileType tex inoremap <P \phi
 autocmd FileType tex inoremap <t \tau
 autocmd FileType tex inoremap <l \lambda
 autocmd FileType tex inoremap <D \Delta
+
