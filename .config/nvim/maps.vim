@@ -14,7 +14,7 @@ set tw=100
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=110
+set textwidth=100
 set expandtab autoindent
 nnoremap <leader>1p ""p
 nnoremap <leader>1P ""P
