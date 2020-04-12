@@ -17,15 +17,15 @@ autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
 autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
-autocmd FileType tex inoremap <C-O> <Esc>i\left(\right)<++><Esc>10hi
-autocmd FileType tex inoremap <C-Y> <Esc>i\left[\right]<++><Esc>10hi
+autocmd FileType tex inoremap <C-O> \left(\right)<++><Esc>10hi
+autocmd FileType tex inoremap <C-Y> \left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <Esc>i\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <Esc>i\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <Esc>i\prod_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>f <Esc>i\frac{<++>}{<++>}<Space><++><Esc>15hi
-autocmd FileType tex inoremap <C-H> <Esc>i^{}<++><Esc>T{i
-autocmd FileType tex inoremap <C-L> <Esc>i_{}<++><Esc>T{i
-autocmd FileType tex inoremap ,4 $$<Space><++><Esc>5hi
+autocmd FileType tex imap <C-H> ^{}<++><Esc>T{i
+autocmd FileType tex imap <C-L> _{}<++><Esc>T{i
+autocmd FileType tex imap ,4 $$<Space><++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
