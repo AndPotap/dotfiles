@@ -24,6 +24,8 @@ export PATH=$PATH:$HOME/bin
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PYTHONPATH=$PYTHONPATH:"$HOME/igr"
 export PYTHONSTARTUP="$(python -m jedi repl)"
+bind -r '\C-s'
+stty -ixon
 source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.
