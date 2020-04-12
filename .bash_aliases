@@ -1,3 +1,5 @@
+alias vt='nvim /tmp/cmd.txt'
+
 alias pro='cd ~/cbetadir/src'
 alias not='cd ~/notes && gp'
 alias white='open ~/Pictures/White\ Noise.mp4'
@@ -14,8 +16,10 @@ alias restart='sudo shutdown -r now'
 
 alias gp='git pull'
 alias gh='git push'
+alias gpp='git pull && git push'
 alias gs='clear && git status'
 alias gc='git commit'
 alias ga='git add'
+alias go='git checkout'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
