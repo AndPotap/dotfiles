@@ -24,7 +24,7 @@ nnoremap <leader>3p "1p
 nnoremap <leader>3P "1P
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
-inoremap ; <esc>l
+imap ; <esc>l
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
