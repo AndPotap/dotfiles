@@ -1,12 +1,14 @@
-alias vt='nvim /tmp/cmd.txt'
+alias vc='nvim /tmp/command.txt'
 
 alias pro='cd ~/cbetadir/src'
 alias not='cd ~/notes && gp'
 alias white='open ~/Pictures/White\ Noise.mp4'
 
-alias tkill='tmux kill-session -t 0'
-alias ta='tmux a'
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
 alias tas='tmux attach-session -t'
+alias ta='tmux a'
+
 alias lsa='ls -a'
 alias py='python3'
 alias c='clear'
