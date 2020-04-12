@@ -9,6 +9,7 @@ colorscheme gruv
 set viminfo=
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
+set nocompatible
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 autocmd FileType tex set spell
@@ -19,13 +20,13 @@ autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> \left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> \left[\right]<++><Esc>10hi
-autocmd FileType tex inoremap <C-S>s <Esc>i\sum_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>i <Esc>i\int_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>p <Esc>i\prod_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>f <Esc>i\frac{<++>}{<++>}<Space><++><Esc>15hi
-autocmd FileType tex imap <C-H> ^{}<++><Esc>T{i
-autocmd FileType tex imap <C-L> _{}<++><Esc>T{i
-autocmd FileType tex imap ,4 $$<Space><++><Esc>5hi
+autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>f <C-G>u\frac{<++>}{<++>}<Space><++><Esc>15hi
+autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
+autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
+autocmd FileType tex imap ,4 <C-G>u$$<Space><++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
@@ -53,7 +54,6 @@ autocmd FileType tex inoremap <C-G>s \sigma
 autocmd FileType tex inoremap <C-G>p \psi
 autocmd FileType tex inoremap <C-G>h \eta
 autocmd FileType tex inoremap <C-G>y \theta
-autocmd FileType tex inoremap <C-G>u \phi
 autocmd FileType tex inoremap <C-G>t \tau
 autocmd FileType tex inoremap <C-G>l \lambda
 
@@ -69,6 +69,5 @@ autocmd FileType tex inoremap <C-G>S \Sigma
 autocmd FileType tex inoremap <C-G>P \Psi
 autocmd FileType tex inoremap <C-G>H \Eta
 autocmd FileType tex inoremap <C-G>Y \Theta
-autocmd FileType tex inoremap <U \Phi
-autocmd FileType tex inoremap <T \Tau
-autocmd FileType tex inoremap <L \Lambda
+autocmd FileType tex inoremap <C-G>T \Tau
+autocmd FileType tex inoremap <C-G>L \Lambda
