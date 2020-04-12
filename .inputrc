@@ -2,10 +2,13 @@ set editing-mode vi
 set keymap vi-command
 "  ": "^"
 ",,": "$"
-"c,": "c$"
+",c": "c$"
 
 set keymap vi-insert
+",t": "| tee /tmp/command.txt"
+",o": "| tee command.txt"
 "ZZ": "_"
+"EE": "|"
 "QQ": "'"
 "FF": "="
 "AA": "~"
