@@ -5,7 +5,9 @@ set keymap vi-command
 "c,": "c$"
 
 set keymap vi-insert
+",t": "| tee -a /tmp/cmd.txt"
 "ZZ": "_"
+"EE": "|"
 "QQ": "'"
 "FF": "="
 "AA": "~"
