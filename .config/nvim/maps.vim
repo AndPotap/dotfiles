@@ -14,7 +14,7 @@ set tw=100
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=110
+set textwidth=100
 set expandtab autoindent
 nnoremap <leader>1p ""p
 nnoremap <leader>1P ""P
@@ -24,9 +24,7 @@ nnoremap <leader>3p "1p
 nnoremap <leader>3P "1P
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
-inoremap ; <esc>l
-inoremap HH <Esc>/<++><Enter>"_c4l
-nmap <leader>H /<++><CR>"_c4l
+imap ; <esc>l
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
