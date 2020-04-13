@@ -18,12 +18,12 @@ autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
 autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
-autocmd FileType tex inoremap <C-O> \left(\right)<++><Esc>10hi
-autocmd FileType tex inoremap <C-Y> \left[\right]<++><Esc>10hi
+autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
+autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>f <C-G>u\frac{<++>}{<++>}<Space><++><Esc>15hi
+autocmd FileType tex inoremap <C-S>f <C-G>u\frac{<++>}{<++>}<++><Esc>14hi
 autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
 autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
 autocmd FileType tex imap ,4 <C-G>u$$<Space><++><Esc>5hi
@@ -32,15 +32,15 @@ autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % <CR><CR>
 autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
-autocmd FileType tex inoremap ,bb \textbf{}<Space><++><Esc>T{i
-autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
-autocmd FileType tex inoremap ,tt \texttt{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
+autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex inoremap ,it \begin{itemize}<Enter>\end{itemize}<Esc>2k<leader>o<Space><Space>\item<Space>
 autocmd FileType tex map <leader>en A<Enter>\begin{enumerate}<Esc><leader>o\end{enumerate}<Esc>k<leader>o<Space><Space>\item<Space>
 autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\includegraphics[<++>]{<++>}<Esc>oi\caption{<++>.}\label{}<Esc>oi\end{figure}<Esc>2k^/<++><CR>i
 autocmd FileType tex map <leader>eq <leader>o\begin{equation}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
-autocmd FileType tex map <leader>red i\textcolor{red}{<++>}<Esc>4hi
+autocmd FileType tex map <leader>red <C-G>ui\textcolor{red}{<++>}<Esc>4hi
 autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 autocmd FileType tex inoremap <C-G>a <C-G>u\alpha
 autocmd FileType tex inoremap <C-G>b <C-G>u\beta
