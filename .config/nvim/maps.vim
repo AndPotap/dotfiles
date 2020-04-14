@@ -69,6 +69,7 @@ imap Dd -
 imap FF =
 imap DD +
 imap QQ '
+imap Qq "
 imap Jj [
 imap Kk ]
 imap JJ {
@@ -81,6 +82,7 @@ cmap Dd -
 cmap FF =
 cmap DD +
 cmap QQ '
+cmap Qq "
 cmap Jj [
 cmap Kk ]
 cmap JJ {
@@ -92,6 +94,7 @@ tnoremap Dd -
 tnoremap FF =
 tnoremap DD +
 tnoremap QQ '
+tnoremap Qq "
 tnoremap Jj [
 tnoremap Kk ]
 tnoremap JJ {
