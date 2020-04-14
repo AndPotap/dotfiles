@@ -22,6 +22,10 @@ nnoremap <leader>2p "0p
 nnoremap <leader>2P "0P
 nnoremap <leader>3p "1p
 nnoremap <leader>3P "1P
+nnoremap <leader>4p "2p
+nnoremap <leader>4P "2P
+nnoremap <leader>5p "3p
+nnoremap <leader>5P "3P
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 imap ; <esc>l
@@ -41,8 +45,10 @@ inoremap <C-l> <C-x><C-k>
 nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
-nmap <leader>Z ct_
+nmap <leader>ZZ dt_
 nnoremap <leader>m `
+nnoremap <C-S>m :%! fmt -w 100<CR>
+nnoremap <C-S>u :%! fmt -w 9999<CR>
 nmap <leader>j <C-W>j
 nmap <leader>k <C-W>k
 nmap <leader>h <C-W>h
@@ -59,7 +65,6 @@ nnoremap <leader>D <C-F>
 nnoremap <leader>U <C-B>H
 nnoremap <leader>sp :split<space>
 nnoremap <leader>vp :vsplit<space>
-nnoremap <leader>y "a
 map <leader><space> ^
 noremap <enter> $
 imap TT `
