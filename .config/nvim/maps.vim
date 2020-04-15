@@ -9,12 +9,11 @@ set wildmode=longest,list
 set number relativenumber
 set splitbelow splitright
 set nobackup noswapfile nowritebackup
+set textwidth=100
 set backspace=2
-set tw=100
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set textwidth=100
 set expandtab autoindent
 nnoremap <leader>1p ""p
 nnoremap <leader>1P ""P
@@ -46,9 +45,9 @@ nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 nmap <leader>ZZ dt_
+nmap <C-S>m :set formatoptions+=w<CR>gggqG
+nmap <C-S>u :set formatoptions+=w textwidth=9999<CR>gggqG
 nnoremap <leader>m `
-nnoremap <C-S>m :%! fmt -w 100<CR>
-nnoremap <C-S>u :%! fmt -w 9999<CR>
 nmap <leader>j <C-W>j
 nmap <leader>k <C-W>k
 nmap <leader>h <C-W>h
