@@ -40,7 +40,7 @@ autocmd FileType tex inoremap ,it \begin{itemize}<Enter>\end{itemize}<Esc>2k<lea
 autocmd FileType tex map <leader>en A<Enter>\begin{enumerate}<Esc><leader>o\end{enumerate}<Esc>k<leader>o<Space><Space>\item<Space>
 autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\includegraphics[<++>]{<++>}<Esc>oi\caption{<++>.}\label{}<Esc>oi\end{figure}<Esc>2k^/<++><CR>i
 autocmd FileType tex map <leader>eq <leader>o\begin{equation}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
-autocmd FileType tex map <leader>red <C-G>ui\textcolor{red}{<++>}<Esc>4hi
+autocmd FileType tex map <leader>red i<C-G>u\textcolor{red}{<++>}<Esc>4hi
 autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 autocmd FileType tex inoremap <C-G>a <C-G>u\alpha
 autocmd FileType tex inoremap <C-G>b <C-G>u\beta
