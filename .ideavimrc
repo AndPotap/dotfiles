@@ -2,23 +2,50 @@ set visualbell
 set noerrorbells
 let mapleader = " "
 set relativenumber
-map <leader><space> ^
-map <enter> $
-noremap , "
- nmap <leader>jj <C-W>j
+set splitbelow splitright
+
+" with actionlist <PATTERN> you can find all options
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>U :action FindUsages<CR>
+nnoremap <leader>T :action ActivateTerminalToolWindow<CR>
+nnoremap tn :action GotoFile<CR>
+nnoremap th :action GoToTab1<CR>
+nnoremap tl :action GoToLastTab<CR>
+nnoremap <leader>sp :action SplitVertically<CR>
+nnoremap <leader>vp :action SplitHorizontally<CR>
+nnoremap <leader>au :action ReformatCode<CR>
+map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
+
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap <leader>q :wq<Enter>
+nnoremap <leader>w :w<Enter>
+nmap <leader>Kk dt]
+nmap <leader>KK dt}
+noremap <leader>m `
+nmap <leader>jj <C-W>j
 nmap <leader>kk <C-W>k
 nmap <leader>hh <C-W>h
 nmap <leader>ll <C-W>l
-nmap <leader>f <C-D>
-nmap <leader>b <C-U>
-noremap <leader>m `
-inoremap ; <Esc>l
-nnoremap o o<space><ESC>
-nnoremap O O<space><ESC>
-nmap <leader>Kk dt]
-nmap <leader>KK dt}
-nmap <leader>y my"a
-nmap <leader>p "ap
+inoremap <C-o> <C-x><C-p>
+inoremap <C-k> <C-x><C-k>
+inoremap <C-l> <C-x><C-k>
+vnoremap <C-c> "*y
+map <C-p> "*P
+nnoremap ,z z=
+nnoremap <leader>ss <C-D>
+nnoremap <leader>aa <C-U>
+nnoremap <leader>as <C-F>
+nnoremap <leader>sa <C-B>
+nnoremap <leader>y "a
+map <leader><space> ^
+noremap <enter> $
+nnoremap <leader>o o
+nnoremap o $a<Enter><Esc>
+nnoremap O O<Esc>
+noremap , "
+inoremap ; <esc>l
+imap AA ~
 imap ZZ _
 imap Dd -
 imap FF =
@@ -28,3 +55,19 @@ imap Jj [
 imap Kk ]
 imap JJ {
 imap KK }
+imap SS \
+cmap AA ~
+cmap ZZ _
+cmap Dd -
+cmap FF =
+cmap DD +
+cmap QQ '
+cmap Jj [
+cmap Kk ]
+cmap JJ {
+cmap KK }
+cmap SS \
+nnoremap <leader>ff /def<Space><Enter>
+nnoremap <leader>cc ^i# <Esc>j^
+nnoremap <leader>un ^xxj^
+nnoremap <leader>cl /class<Space><Enter>

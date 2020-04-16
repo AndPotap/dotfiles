@@ -18,6 +18,7 @@ export f=~
 bind '";":"\e"'
 
 orange=$(tput setaf 166);
+yellow=$(tput setaf 11);
 green=$(tput setaf 71);
 blue=$(tput setaf 27);
 gray=$(tput setaf 242);

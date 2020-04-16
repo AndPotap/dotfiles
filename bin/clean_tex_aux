@@ -1,0 +1,13 @@
+#!/bin/bash
+
+aux=(.log .aux .bbl .blg .out)
+echo "running"
+for a in ${aux[@]}
+do
+    echo "*$a"
+    hits=($(find ./ -maxdepth 1 -name "*$a"))
+    if [ ${#hits[@]} -gt 0 ]
+    then
+        rm *$a
+    fi
+done
