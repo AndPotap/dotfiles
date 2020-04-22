@@ -16,19 +16,20 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
-autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>f <C-G>u\frac{<++>}{<++>}<++><Esc>14hi
-autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{<++>}<++><Esc>8hi
-autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{<++>}<++><Esc>8hi
+autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
+autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
 autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
 autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
 autocmd FileType tex imap ,4 <C-G>u$$<Space><++><Esc>5hi
+autocmd FileType tex inoremap <C-F> <C-G>u$$<Space><++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
