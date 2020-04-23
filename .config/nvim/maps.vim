@@ -49,8 +49,10 @@ nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
-" nnoremap S Mzt2k2j
-" nnoremap U zbM
+nnoremap S Mzt2k2j
+nnoremap U zbM
+nnoremap <leader>D <C-F>
+nnoremap <leader>U <C-B>H
 map <leader><space> ^
 noremap <enter> $
 imap TT `
@@ -92,6 +94,13 @@ tnoremap JJ {
 tnoremap KK }
 tnoremap SS \
 vnoremap <C-U> <Nop>
+
+nnoremap ,? <C-W>=
+function EqualizePanes()
+    normal ,?
+endfunction
+command Eq call EqualizePanes()
+
 
 nnoremap ,? <C-W>=
 function EqualizePanes()
