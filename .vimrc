@@ -39,11 +39,34 @@ autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
 autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
-autocmd FileType tex inoremap ,it \begin{itemize}<Enter>\end{itemize}<Esc>2k<leader>o<Space><Space>\item<Space>
-autocmd FileType tex map <leader>en A<Enter>\begin{enumerate}<Esc><leader>o\end{enumerate}<Esc>k<leader>o<Space><Space>\item<Space>
-autocmd FileType tex map <leader>fig a\begin{figure}<Esc>oi\centering<Esc>oi\includegraphics[<++>]{<++>}<Esc>oi\caption{<++>.}\label{}<Esc>oi\end{figure}<Esc>2k^/<++><CR>i
-autocmd FileType tex map <leader>eq <leader>o\begin{equation}<Esc><leader>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
-autocmd FileType tex map <leader>red i<C-G>u\textcolor{red}{<++>}<Esc>4hi
+autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
+function AddItemize()
+    normal ,4
+    startinsert
+endfunction
+command Item call AddItemize()
+
+autocmd FileType tex nnoremap ,3 o\begin{figure}<Esc>o\centering<Esc>o\includegraphics[<++>]{<++>}<Esc>o\caption{<++>}\label{<++>}<Esc>o\end{figure}<Esc>2k^/<++><CR>h
+function AddFigure()
+    normal ,3
+    startinsert
+endfunction
+command Fig call AddFigure()
+
+autocmd FileType tex nnoremap ,2 o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
+function AddEquation()
+    normal ,2
+    startinsert
+endfunction
+command Math call AddEquation()
+
+autocmd FileType tex nnoremap ,1 i<C-G>u\textcolor{}{<++>}<Esc>T{2ha
+function AddColor()
+    normal ,1
+    startinsert
+endfunction
+command Color call AddColor()
+
 autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 autocmd FileType tex inoremap <C-G>a <C-G>u\alpha
 autocmd FileType tex inoremap <C-G>b <C-G>u\beta
