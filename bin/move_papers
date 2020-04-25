@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Succesfully moved $1"
+mv $1 ~/Documents/Papers/CurrentlyChecking
