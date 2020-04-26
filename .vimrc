@@ -26,6 +26,7 @@ autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
+autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
 autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
 autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
 autocmd FileType tex imap ,4 <C-G>u$$<Space><++><Esc>5hi
@@ -36,6 +37,7 @@ autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % <CR><CR>
 autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
 autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
 autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
