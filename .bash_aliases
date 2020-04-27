@@ -1,3 +1,4 @@
+alias white='totem /tmp/white.mp4'
 alias vc='nvim /tmp/command.txt'
 alias vim='/usr/bin/vim.basic'
 alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
