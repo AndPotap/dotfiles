@@ -84,6 +84,9 @@ let g:ale_sign_column_always = 1
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
+" Next two lines allow for opacity to be different
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 nnoremap <leader>au :Autoformat<Enter>
 autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
 autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
