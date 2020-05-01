@@ -584,6 +584,7 @@ background_opacity: 0.9
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
 key_bindings:
+  #- { key: N,        mods: Command,              command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
   - { key: N,         mods: Control,             action:  SpawnNewInstance }
   - { key: H,         mods: Super,                 chars:   "\x1b[D" }
   - { key: J,         mods: Super,                 chars:   "\x1b[B" }
