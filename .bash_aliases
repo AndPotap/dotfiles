@@ -1,4 +1,6 @@
 alias vc='nvim /tmp/command.txt'
+alias rm='rm -i'
+alias mv='mv -i'
 
 alias pro='cd ~/cbetadir/src'
 alias not='cd ~/notes && gp'
