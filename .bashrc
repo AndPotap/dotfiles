@@ -17,6 +17,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export f=~
 
 bind '";":"\e"'
+bind "set completion-ignore-case on"
 
 orange=$(tput setaf 166);
 yellow=$(tput setaf 11);
