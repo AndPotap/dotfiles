@@ -1,4 +1,5 @@
 alias vc='nvim /tmp/command.txt'
+alias dot='cd ~/dotfiles'
 alias rm='rm -i'
 alias mv='mv -i'
 
