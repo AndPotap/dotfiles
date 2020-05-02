@@ -1,6 +1,7 @@
 alias white='totem ~/Videos/white.mp4'
 alias v='nvim'
 alias vc='nvim /tmp/command.txt'
+alias dot='cd ~/dotfiles'
 alias rm='rm -i'
 alias mv='mv -i'
 
