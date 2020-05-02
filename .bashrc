@@ -18,8 +18,6 @@ export f=~
 
 bind '";":"\e"'
 bind "set completion-ignore-case on"
-shopt -s cdspell
-complete -d cd
 
 orange=$(tput setaf 166);
 yellow=$(tput setaf 11);
