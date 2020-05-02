@@ -1,9 +1,7 @@
 alias white='totem ~/Videos/white.mp4'
 alias v='nvim'
 alias vc='nvim /tmp/command.txt'
-alias vim='/usr/bin/vim.basic'
-alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
-alias rm='rm -I'
+alias rm='rm -i'
 alias mv='mv -i'
 
 alias pro='cd ~/cbetadir/src'
