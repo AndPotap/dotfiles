@@ -1,6 +1,6 @@
-xmodmap ~/.xmodmap
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -17,21 +17,24 @@ export HISTCONTROL=ignoreboth:erasedups
 export f=~
 
 bind '";":"\e"'
+bind "set completion-ignore-case on"
+shopt -s cdspell
+complete -d cd
 
 orange=$(tput setaf 166);
 yellow=$(tput setaf 11);
 green=$(tput setaf 71);
-blue=$(tput setaf 4);
+blue=$(tput setaf 27);
 gray=$(tput setaf 242);
 red=$(tput setaf 9);
 bold=$(tput bold);
 reset=$(tput sgr0);
 
 PS1="\[${bold}\]\n";
-PS1+="\[${blue}\]\u";
+PS1+="\[${orange}\]\u";
 PS1+="\[${gray}\]@\h: ";
 PS1+="\[${green}\]\w ";
-PS1+="\[${blue}\]\n --> ";
+PS1+="\[${orange}\]\n --> ";
 PS1+="\[${reset}\]";
 export PS1;
 
