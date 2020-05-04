@@ -28,3 +28,5 @@ alias ga='git add'
 alias go='git checkout'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
+
+alias o='open'
