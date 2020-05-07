@@ -3,7 +3,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -11,6 +11,7 @@
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -97,9 +98,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Operator Mono Book
+    #family: monospace
+    family: Menlo
 
     # The `style` can be specified to pick a specific face.
+    #style: Regular
     style: Regular
 
   # Bold font face
@@ -108,7 +111,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Operator Mono Book
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -165,10 +168,10 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  #use_thin_strokes: true
+  use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: false
 #
 # Colors (Gruvbox dark)
 colors:
