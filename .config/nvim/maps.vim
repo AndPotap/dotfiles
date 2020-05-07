@@ -154,3 +154,5 @@ autocmd FileType python vnoremap <silent> # :s/^/#<Space><cr>:noh<cr>
 autocmd FileType python vnoremap <silent> ! :s/^#<Space>//<cr>:noh<cr>
 " For highlight changes to take place run below
 autocmd FileType python source ~/.config/nvim/colors/gruv.vim
+autocmd FileType python hi! Normal ctermbg=NONE guibg=NONE
+autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
