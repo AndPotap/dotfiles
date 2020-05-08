@@ -102,13 +102,6 @@ endfunction
 command Eq call EqualizePanes()
 
 
-nnoremap ,? <C-W>=
-function EqualizePanes()
-    normal ,?
-endfunction
-command Eq call EqualizePanes()
-
-
 " Transparent editing of gpg encrypted files.
 " By Wouter Hanegraaff
 augroup encrypted
