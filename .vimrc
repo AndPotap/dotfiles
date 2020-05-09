@@ -120,7 +120,6 @@ autocmd FileType tex inoremap <C-G>n <C-G>u\nu
 autocmd FileType tex inoremap <C-G>p <C-G>u\pi
 autocmd FileType tex inoremap <C-G>r <C-G>u\rho
 autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
-autocmd FileType tex inoremap <C-G>u <C-G>u\theta
 autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
 autocmd FileType tex inoremap <C-G>v <C-G>u\omega
 autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
@@ -132,6 +131,5 @@ autocmd FileType tex inoremap <C-G>J <C-G>u\Xi
 autocmd FileType tex inoremap <C-G>L <C-G>u\Lambda
 autocmd FileType tex inoremap <C-G>P <C-G>u\Pi
 autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
-autocmd FileType tex inoremap <C-G>U <C-G>u\Theta
 autocmd FileType tex inoremap <C-G>V <C-G>u\Omega
 
