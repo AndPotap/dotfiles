@@ -102,6 +102,7 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap SS \
+vnoremap <C-U> <Nop>
 
 nnoremap ,? <C-W>=
 function EqualizePanes()
