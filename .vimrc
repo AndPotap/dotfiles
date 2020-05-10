@@ -16,8 +16,10 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
-autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
+" autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
+" autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
+autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
@@ -34,7 +36,7 @@ autocmd FileType tex inoremap <C-F> <C-G>u$$<Space><++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
-autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % <CR><CR>
+autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
 autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
 autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<Space><++><Esc>T{i
