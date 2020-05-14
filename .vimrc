@@ -91,6 +91,7 @@ autocmd FileType tex inoremap π <C-G>u\pi
 autocmd FileType tex inoremap ρ <C-G>u\rho
 autocmd FileType tex inoremap σ <C-G>u\sigma
 autocmd FileType tex inoremap θ <C-G>u\theta
+autocmd FileType tex inoremap τ <C-G>u\tau
 autocmd FileType tex inoremap ς <C-G>u\varsigma
 autocmd FileType tex inoremap ω <C-G>u\omega
 autocmd FileType tex inoremap υ <C-G>u\upsilon
