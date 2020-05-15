@@ -44,6 +44,8 @@ autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
 autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
+autocmd FileType tex nnoremap <leader>eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
+
 function AddItemize()
     normal ,4
     startinsert
@@ -64,7 +66,7 @@ function AddEquation()
 endfunction
 command Math call AddEquation()
 
-autocmd FileType tex nnoremap ,1 i<C-G>u\textcolor{}{<++>}<Esc>T{2ha
+autocmd FileType tex nnoremap ,1 i<C-G>u \textcolor{}{<++>}<Esc>T{2ha
 function AddColor()
     normal ,1
     startinsert
