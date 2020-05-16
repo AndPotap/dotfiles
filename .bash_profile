@@ -20,6 +20,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+eval `gdircolors ~/.dir_colors`
 export PATH=$PATH:$HOME/bin
 export PATH="$HOME/anaconda3/bin:$PATH"
 export PYTHONPATH=$PYTHONPATH:"$HOME/igr"
