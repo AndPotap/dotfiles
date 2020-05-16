@@ -13,6 +13,7 @@ done
 files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .inputrc .tmux.conf .ideavimrc .config/flake8
                  .config/alacritty/alacritty.yml
+                 .dir_colors
                  .config/zathura/zathurarc
                  vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
                  .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim
