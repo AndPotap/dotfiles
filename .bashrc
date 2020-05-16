@@ -38,6 +38,9 @@ PS1+="\[${orange}\]\n --> ";
 PS1+="\[${reset}\]";
 export PS1;
 
+export CLICOLOR=1
+export LSCOLORS=exxxxxxxxxxxxxxxxxxxxx
+
 source ~/.bash_aliases
 set -o vi
 
