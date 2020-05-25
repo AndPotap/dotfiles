@@ -62,8 +62,6 @@ nnoremap S Mzt2k2j
 nnoremap U zbM
 nnoremap <leader>D <C-F>
 nnoremap <leader>U <C-B>H
-nnoremap <leader>sp :split<space>
-nnoremap <leader>vp :vsplit<space>
 map <leader><space> ^
 noremap <enter> $
 imap TT `
@@ -104,6 +102,14 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap SS \
+vnoremap <C-U> <Nop>
+
+nnoremap ,? <C-W>=
+function EqualizePanes()
+    normal ,?
+endfunction
+command Eq call EqualizePanes()
+
 
 " Transparent editing of gpg encrypted files.
 " By Wouter Hanegraaff
@@ -149,3 +155,5 @@ autocmd FileType python vnoremap <silent> # :s/^/#<Space><cr>:noh<cr>
 autocmd FileType python vnoremap <silent> ! :s/^#<Space>//<cr>:noh<cr>
 " For highlight changes to take place run below
 autocmd FileType python source ~/.config/nvim/colors/gruv.vim
+autocmd FileType python hi! Normal ctermbg=NONE guibg=NONE
+autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE

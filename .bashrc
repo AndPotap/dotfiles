@@ -1,5 +1,6 @@
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -16,6 +17,9 @@ export HISTCONTROL=ignoreboth:erasedups
 export f=~
 
 bind '";":"\e"'
+bind "set completion-ignore-case on"
+shopt -s cdspell
+complete -d cd
 
 orange=$(tput setaf 166);
 yellow=$(tput setaf 11);
@@ -33,6 +37,9 @@ PS1+="\[${green}\]\w ";
 PS1+="\[${orange}\]\n --> ";
 PS1+="\[${reset}\]";
 export PS1;
+
+# export CLICOLOR=1
+# export LSCOLORS=exxxxxxxxxxxxxxxxxxxxx
 
 source ~/.bash_aliases
 set -o vi
