@@ -27,6 +27,7 @@ autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
 autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
 autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
