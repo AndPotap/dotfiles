@@ -2,7 +2,7 @@ alias ls='gls --color=auto'
 alias vc='nvim /tmp/command.txt'
 alias dot='cd ~/dotfiles'
 alias v='nvim'
-alias rm='rm -I'
+alias rm='grm -I'
 alias mv='mv -i'
 
 alias pro='cd ~/cbetadir/src'
