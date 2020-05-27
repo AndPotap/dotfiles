@@ -1,4 +1,3 @@
-alias ls='gls --color=auto'
 alias vc='nvim /tmp/command.txt'
 alias dot='cd ~/dotfiles'
 alias v='nvim'
