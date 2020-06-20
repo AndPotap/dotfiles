@@ -58,10 +58,8 @@ nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
-nnoremap S Mzt2k2j
-nnoremap U zbM
-nnoremap <leader>D <C-F>
-nnoremap <leader>U <C-B>H
+" nnoremap S Mzt2k2j
+" nnoremap U zbM
 map <leader><space> ^
 noremap <enter> $
 imap TT `
