@@ -27,6 +27,7 @@ autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
 autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
 autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
@@ -38,7 +39,8 @@ autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
-autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r.<CR>
+autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
+autocmd FileType tex nnoremap <Space><CR> ki\bigskip<Esc>j
 autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
@@ -46,6 +48,14 @@ autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
 autocmd FileType tex nnoremap <leader>eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2X2k<leader>o<Space><Space><C-G>u
+
+autocmd FileType tex nnoremap ,5 o<C-G>u\textcolor{blue}{\textbf{Note:}} \textcolor{gray}{}<Esc>T{
+function AddNote()
+    normal ,5
+    startinsert
+endfunction
+command Note call AddNote()
+
 
 function AddItemize()
     normal ,4
