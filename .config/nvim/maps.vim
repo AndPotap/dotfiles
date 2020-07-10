@@ -15,19 +15,10 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab autoindent
-nnoremap <leader>1p ""p
-nnoremap <leader>1P ""P
-nnoremap <leader>2p "0p
-nnoremap <leader>2P "0P
-nnoremap <leader>3p "1p
-nnoremap <leader>3P "1P
-nnoremap <leader>4p "2p
-nnoremap <leader>4P "2P
-nnoremap <leader>5p "3p
-nnoremap <leader>5P "3P
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 imap ; <esc>l
+inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
@@ -58,10 +49,8 @@ nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
 inoremap <C-o> <C-x><C-p>
-nnoremap S Mzt2k2j
-nnoremap U zbM
-nnoremap <leader>D <C-F>
-nnoremap <leader>U <C-B>H
+" nnoremap S Mzt2k2j
+" nnoremap U zbM
 map <leader><space> ^
 noremap <enter> $
 imap TT `
