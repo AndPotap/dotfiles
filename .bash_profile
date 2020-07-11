@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
 
