@@ -18,6 +18,7 @@ set expandtab autoindent
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 imap ; <esc>l
+inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
