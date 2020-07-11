@@ -1,2 +1,10 @@
 unmap a
 unmap <Tab>
+
+set adjust-open "width"
+set recolor-darkcolor "#F0EAD6"
+set recolor-lightcolor "#0F0F0F"
+set scroll-step 1
+set selection-clipboard "primary"
+unmap r
+map r reload
