@@ -8,3 +8,5 @@ set scroll-step 1
 set selection-clipboard "primary"
 unmap r
 map r reload
+set window-width 1300
+set window-height 1100
