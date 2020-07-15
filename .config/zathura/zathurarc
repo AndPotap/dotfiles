@@ -2,8 +2,10 @@ unmap a
 unmap <Tab>
 
 set adjust-open "width"
-set recolor-darkcolor "#F0EAD6"
-set recolor-lightcolor "#0F0F0F"
+# set recolor-darkcolor "#555555"
+# set recolor-lightcolor "#0F0F0F"
+set recolor-lightcolor "#212225"
+set recolor-darkcolor "#A9AAAE"
 set scroll-step 1
 set selection-clipboard clipboard
 unmap r
