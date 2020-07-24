@@ -6,7 +6,7 @@ set adjust-open "width"
 # set recolor-lightcolor "#0F0F0F"
 set recolor-lightcolor "#212225"
 set recolor-darkcolor "#A9AAAE"
-set scroll-step 1
+set scroll-step 300
 set selection-clipboard clipboard
 unmap r
 map r reload
