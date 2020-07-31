@@ -131,6 +131,10 @@ let s:gb.faded_purple   = ['#8f3f71', 96]      " 143-63-113
 let s:gb.faded_aqua     = ['#427b58', 66]      " 66-123-88
 let s:gb.faded_orange   = ['#af3a03', 130]     " 175-58-3
 
+" My palette
+let s:gb.fff   = ['#b16286', 189]     " 175-58-3
+
+
 " }}}
 " Setup Emphasis: {{{
 
@@ -197,6 +201,8 @@ if s:is_dark
   let s:purple = s:gb.bright_purple
   let s:aqua   = s:gb.bright_aqua
   let s:orange = s:gb.bright_orange
+  let s:faded_purple = s:gb.faded_purple
+  let s:fff = s:gb.fff
 else
   let s:bg0  = s:gb.light0
   if g:gruvbox_contrast_light == 'soft'
@@ -454,6 +460,10 @@ call s:HL('GruvboxYellowSign', s:yellow, s:sign_column, s:invert_signs)
 call s:HL('GruvboxBlueSign', s:blue, s:sign_column, s:invert_signs)
 call s:HL('GruvboxPurpleSign', s:purple, s:sign_column, s:invert_signs)
 call s:HL('GruvboxAquaSign', s:aqua, s:sign_column, s:invert_signs)
+
+" Mine
+call s:HL('MineUnder', s:green, s:none, s:underline)
+call s:HL('FFF', s:fff)
 
 " }}}
 
@@ -1387,12 +1397,14 @@ hi def link BreakPoint GruvboxRed
 
 " Text
 " hi! link textComment GruvboxGreen
-hi! link textComment GruvboxGray
-hi! link textCode    GruvboxRed
-hi! link textTitle1  GruvboxPurple
-hi! link textTitle2  GruvboxBlue
-hi! link textAr      GruvboxOrange
-hi! link textBullet  GruvboxGray
+hi! link textComment   GruvboxGray
+hi! link textComment2  FFF
+hi! link textUnderline MineUnder
+hi! link textCode      GruvboxRed
+hi! link textTitle1    GruvboxPurple
+hi! link textTitle2    GruvboxBlue
+hi! link textAr        GruvboxOrange
+hi! link textBullet    GruvboxGray
 " }}}
 
 " Functions -------------------------------------------------------------------
