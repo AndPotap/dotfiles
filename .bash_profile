@@ -8,3 +8,5 @@ bind -r '\C-s'
 stty -ixon
 xmodmap ~/.xmodmap
 source ~/.bashrc
+
+export PATH="$HOME/.cargo/bin:$PATH"
