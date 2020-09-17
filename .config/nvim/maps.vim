@@ -9,7 +9,7 @@ set wildmode=longest,list
 set number relativenumber
 set splitbelow splitright
 set nobackup noswapfile nowritebackup
-set textwidth=100
+set textwidth=89
 set backspace=2
 set tabstop=4
 set softtabstop=4
