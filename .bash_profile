@@ -6,7 +6,6 @@ export PYTHONPATH=$PYTHONPATH:"/home/pure/cbetadir"
 export PYTHONSTARTUP="$(python -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
-xmodmap ~/.xmodmap
 source ~/.bashrc
 
 export PATH="$HOME/.cargo/bin:$PATH"

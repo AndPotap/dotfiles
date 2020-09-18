@@ -39,6 +39,7 @@ PS1+="\[${reset}\]";
 export PS1;
 
 source ~/.bash_aliases
+xmodmap ~/.xmodmap
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
