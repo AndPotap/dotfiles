@@ -1,5 +1,6 @@
 let mapleader = " "
 syntax on
+set nowrap
 set background=dark
 set noerrorbells
 set nohlsearch
