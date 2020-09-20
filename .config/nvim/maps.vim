@@ -1,5 +1,7 @@
 let mapleader = " "
 syntax on
+" let $PAGER=''
+let $MANPAGER=''
 set nowrap
 set background=dark
 set noerrorbells
