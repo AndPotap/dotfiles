@@ -39,7 +39,7 @@ PS1+="\[${reset}\]";
 export PS1;
 
 source ~/.bash_aliases
-xmodmap ~/.xmodmap
+# xmodmap ~/.xmodmap
 set -o vi
 
 # export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
