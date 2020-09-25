@@ -5,3 +5,4 @@ disable=
     C0116, # missing-function-docstring
     C0103, # snake_case naming
     E1130, # bad operand for unary
+    R0914, # too many local variables
