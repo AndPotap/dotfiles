@@ -6,3 +6,7 @@ disable=
     C0103, # snake_case naming
     E1130, # bad operand for unary
     R0914, # too many local variables
+    R0901, # too many ancestors
+    R0902, # too many instance attributes
+    R0912, # too many branches
+    W0221, # parameters differ from overriden call method
