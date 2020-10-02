@@ -43,6 +43,7 @@ export PS1;
 # export LSCOLORS=exxxxxxxxxxxxxxxxxxxxx
 
 source ~/.bash_aliases
+xmodmap ~/.xmodmap
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

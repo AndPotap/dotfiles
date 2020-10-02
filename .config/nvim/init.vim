@@ -18,11 +18,13 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 let g:python3_host_prog="/home/debby/anaconda3/bin/python3.7"
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:slime_target="tmux"
-let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+"# let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
@@ -66,6 +68,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
+" let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_linters = {'python': ['flake8']}
 "let g:ale_linters_explicit = 1
 "let g:airline#extensions#ale#enabled = 1

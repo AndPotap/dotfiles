@@ -1,7 +1,8 @@
 #!/bin/bash
 
 dirs_to_create=(vim vim/colors .config .config/nvim .config/nvim/syntax
-               .config/nvim/colors bin .config/alacritty .config/kitty .config/zathura)
+               .config/nvim/colors bin .config/alacritty .config/kitty
+               .config/zathura)
 for dir in "${dirs_to_create[@]}"
 do
     if [ ! -d ~/$dir ]
@@ -17,7 +18,12 @@ files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .config/zathura/zathurarc
                  vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
                  .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim
-                 .config/kitty/kitty.conf)
+                 .config/kitty/kitty.conf
+                 .spectrwm.conf
+                 .pylintrc
+                 .xmodmap
+                 baraction.sh
+                 .spectrwm_us.conf)
 for f in "${files_to_create[@]}"
 do
     path=~/$f
