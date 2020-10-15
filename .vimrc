@@ -18,6 +18,8 @@ autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
 " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
 " autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
+autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
+autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
 autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
