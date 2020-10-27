@@ -6,3 +6,5 @@ export PYTHONSTARTUP="$(python -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
 source ~/.bashrc
+
+export PATH="$HOME/.cargo/bin:$PATH"
