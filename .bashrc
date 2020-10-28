@@ -28,14 +28,16 @@ blue=$(tput setaf 4);
 gray=$(tput setaf 242);
 red=$(tput setaf 9);
 bold=$(tput bold);
-reset=$(tput sgr0);
+# reset=$(tput sgr0);
+text=$(tput setaf 249);
 
 PS1="\[${bold}\]\n";
 PS1+="\[${blue}\]\u";
 PS1+="\[${gray}\]@\h: ";
 PS1+="\[${green}\]\w ";
-PS1+="\[${blue}\]\n --> ";
-PS1+="\[${reset}\]";
+# PS1+="\[${blue}\]\n --> ";
+# PS1+="\[${reset}\]";
+PS1+="\[${text}\]\n --> ";
 export PS1;
 
 source ~/.bash_aliases
