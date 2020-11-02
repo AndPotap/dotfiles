@@ -1,5 +1,5 @@
 # General aliases
-alias v='nvim'
+alias nv='nvim'
 alias py='python3'
 alias rm='rm -I'
 alias mv='mv -i'
@@ -18,7 +18,9 @@ alias tas='tmux attach-session -t'
 alias ta='tmux a'
 
 # Linux only aliases
-alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 alias pic='eog'
