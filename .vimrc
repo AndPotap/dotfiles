@@ -41,6 +41,7 @@ autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
+autocmd FileType tex nmap <buffer> <C-E> :!pdflatex % && clear<CR><CR>
 autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
 autocmd FileType tex nnoremap <Space><CR> ki\bigskip<Esc>j
 autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
