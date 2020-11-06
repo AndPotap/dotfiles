@@ -5,8 +5,11 @@ disable=
     C0116, # missing-function-docstring
     C0103, # snake_case naming
     E1130, # bad operand for unary
-    R0914, # too many local variables
+    E1101, # no-member
+    E1102, # not-callable
     R0901, # too many ancestors
     R0902, # too many instance attributes
+    R0903, # too few public methods
     R0912, # too many branches
+    R0914, # too many local variables
     W0221, # parameters differ from overriden call method
