@@ -7,7 +7,7 @@ alias lsa='ls -a'
 alias c='clear'
 
 # Shortcuts to proyects
-alias pro='cd ~/cbetadir/src'
+alias pro='cd ~/r-roulette-gps'
 alias not='cd ~/notes && gp'
 alias dot='cd ~/dotfiles'
 
