@@ -69,7 +69,7 @@ let g:ncm2_jedi#python_version = 3
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 " let g:ale_linters = {'python': ['flake8', 'pylint']}
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8'], 'tex': ['']}
 "let g:ale_linters_explicit = 1
 "let g:airline#extensions#ale#enabled = 1
 "let g:ale_echo_msg_error_str = 'E'
