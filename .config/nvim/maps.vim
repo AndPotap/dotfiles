@@ -135,6 +135,7 @@ autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text nnoremap <leader>ff /##<cr>
 autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType gpg set spell syntax=txt
+autocmd FileType gpg set fo=aw2tq " break paragraphs
 autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
 autocmd FileType gpg nnoremap <leader>ff /##<cr>
 autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
