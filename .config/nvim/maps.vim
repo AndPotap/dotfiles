@@ -142,7 +142,6 @@ autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType gpg nnoremap<leader>q <nop>
 autocmd FileType gpg nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType text nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
-autocmd FileType tex nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
 autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
 autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
@@ -161,14 +160,15 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
+autocmd FileType tex nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
 autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
 autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
-autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
-" autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
-" autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+" autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
+" autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
+autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
@@ -289,7 +289,7 @@ autocmd FileType tex inoremap <C-G>r <C-G>u\rho
 autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
 autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
 autocmd FileType tex inoremap <C-G>v <C-G>u\omega
-autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
+autocmd FileType tex inoremap <C-G>y <C-G>u\theta
 autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
 autocmd FileType tex inoremap <C-G>G <C-G>u\Gamma
 autocmd FileType tex inoremap <C-G>D <C-G>u\Delta
