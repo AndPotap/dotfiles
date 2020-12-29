@@ -130,21 +130,21 @@ augroup encrypted
 augroup END
 
 autocmd BufWritePre * %s/\s\+$//e
+autocmd FileType text,gpg nnoremap <silent> <leader>cl :let @/='%%%%'<CR>
+autocmd FileType text,gpg nnoremap <silent> <leader>ff :let @/='##'<CR>
+autocmd FileType text,gpg nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType text set spell syntax=txt
-autocmd FileType text nnoremap <leader>cl /%%%%<cr>
-autocmd FileType text nnoremap <leader>ff /##<cr>
+" autocmd FileType text nnoremap <leader>cl /%%%%<cr>
+" autocmd FileType text nnoremap <leader>ff /##<cr>
 autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType gpg set spell syntax=txt
 autocmd FileType gpg set fo=aw2tq " break paragraphs
-autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
-autocmd FileType gpg nnoremap <leader>ff /##<cr>
 autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType gpg nnoremap<leader>q <nop>
-autocmd FileType gpg nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
-autocmd FileType text nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
-autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
-autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
+autocmd FileType python nnoremap <silent> <leader>cl :let @/='class'<CR>
+autocmd FileType python nnoremap <silent> <leader>ff :let @/='def'<CR>
+" Commenting in python
 autocmd FileType python nnoremap <leader>cc ^<C-V>I#<Space><Esc>j^
 autocmd FileType python nnoremap <leader>un ^xxj^
 " autocmd FileType python nnoremap <leader>cc :s/^/# /<Enter>j
@@ -163,12 +163,13 @@ autocmd FileType tex set shiftwidth=2
 autocmd FileType tex nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
 autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
-autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
+" autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
+" autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
 " autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
 " autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
-autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+" Tab searches
+" autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+" autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
@@ -275,7 +276,8 @@ autocmd FileType tex inoremap <C-G>b <C-G>u\beta
 autocmd FileType tex inoremap <C-G>c <C-G>u\psi
 autocmd FileType tex inoremap <C-G>d <C-G>u\delta
 autocmd FileType tex inoremap <C-G>e <C-G>u\epsilon
-autocmd FileType tex inoremap <C-G>f <C-G>u\phi
+autocmd FileType tex inoremap <C-G>o <C-G>u\phi
+autocmd FileType tex inoremap <C-G>f <C-G>u\varphi
 autocmd FileType tex inoremap <C-G>g <C-G>u\gamma
 autocmd FileType tex inoremap <C-G>h <C-G>u\eta
 autocmd FileType tex inoremap <C-G>i <C-G>u\iota
@@ -294,6 +296,7 @@ autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
 autocmd FileType tex inoremap <C-G>G <C-G>u\Gamma
 autocmd FileType tex inoremap <C-G>D <C-G>u\Delta
 autocmd FileType tex inoremap <C-G>P <C-G>u\Phi
+autocmd FileType tex inoremap <C-G>O <C-G>u\Varphi
 autocmd FileType tex inoremap <C-G>J <C-G>u\Xi
 autocmd FileType tex inoremap <C-G>L <C-G>u\Lambda
 autocmd FileType tex inoremap <C-G>P <C-G>u\Pi
