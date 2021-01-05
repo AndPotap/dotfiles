@@ -1,3 +1,7 @@
+" cgn -> change the next match
+" :ab fsf -> for abbreviations, use <C-V> to avoid filling in
+" :w !sudo tee %
+" vimgrep -> vimgrep "<args>" $NOTES_DIR/**/*.txt
 let mapleader = " "
 syntax on
 " let $PAGER=''
@@ -160,6 +164,8 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
+autocmd FileType tex inoremap ,f \
+autocmd FileType tex nnoremap <leader>P dt\
 autocmd FileType tex nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
 autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
@@ -167,9 +173,9 @@ autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
 " autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
 " autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
 " autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
-" Tab searches
-" autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
-" autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+" Tab searches ttt (comment or uncomment the two lines below)
+autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
