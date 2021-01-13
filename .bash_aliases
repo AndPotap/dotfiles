@@ -26,6 +26,7 @@ alias restart='sudo shutdown -r now'
 alias pic='eog'
 
 # Git aliases
+alias gac='git add . && git commit'
 alias gp='git pull'
 alias gh='git push'
 alias gpp='git pull && git push'

@@ -165,6 +165,7 @@ autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
 autocmd FileType tex inoremap ,f \
+autocmd FileType tex inoremap SS SS
 autocmd FileType tex nnoremap <leader>P dt\
 autocmd FileType tex nnoremap<leader>g msvipgwvip:s/  */ /g<CR>`s
 autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
