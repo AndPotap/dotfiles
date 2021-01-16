@@ -37,3 +37,9 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/pure/google-cloud-sdk/path.bash.inc' ]; then . '/home/pure/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/pure/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pure/google-cloud-sdk/completion.bash.inc'; fi
