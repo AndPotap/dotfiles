@@ -17,8 +17,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:python3_host_prog="/home/ubu/anaconda3/bin/python3.8"
-
+let g:python3_host_prog="/usr/bin/python3.7"
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
