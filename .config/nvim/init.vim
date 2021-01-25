@@ -41,7 +41,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Jedi-Vim Configurations
 let g:jedi#completions_command = "<C-l>"
 let g:jedi#goto_stubs_command = ""
-let g:jedi#use_splits_not_buffers = "right"
+" let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#use_splits_not_buffers = "bottom"
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
