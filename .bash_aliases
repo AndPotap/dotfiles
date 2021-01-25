@@ -5,7 +5,7 @@ alias vi='nvim'
 alias rm='rm -I'
 alias mv='mv -i'
 
-alias pro='cd ~/cbetadir/src'
+alias pro='cd ~/r-roulette-gps'
 alias not='cd ~/notes && gp'
 alias white='open ~/Pictures/White\ Noise.mp4'
 
