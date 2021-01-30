@@ -142,7 +142,8 @@ autocmd FileType text set spell syntax=txt
 " autocmd FileType text nnoremap <leader>ff /##<cr>
 autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType gpg set spell syntax=txt
-autocmd FileType gpg set fo=aw2tq " break paragraphs
+" autocmd FileType gpg set fo=aw2tq " break paragraphs
+autocmd FileType gpg set fo=tcqj " break paragraphs
 autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
 autocmd FileType gpg nnoremap<leader>q <nop>
 autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
@@ -172,11 +173,11 @@ autocmd FileType tex nnoremap <leader>cc :s/^/% /<Enter>j
 autocmd FileType tex nnoremap <leader>un :s/^% //<Enter>j
 " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
 " autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
-" autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
-" autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
+autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
 " Tab searches ttt (comment or uncomment the two lines below)
-autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
-autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
+" autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
+" autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i

@@ -33,7 +33,7 @@ alias gpp='git pull && git push'
 alias gs='clear && git status'
 alias gc='git commit'
 alias ga='git add'
-alias go='git checkout'
+# alias go='git checkout'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
