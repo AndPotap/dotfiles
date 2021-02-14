@@ -143,11 +143,23 @@ bash_prompt() {
 	## I use them for different hosts. Test them out ;)                       ##
 	############################################################################
 
+
+	## CALL FORMATING HELPER FUNCTION: effect + font color + BG color
+	local TEXT_FORMAT_1
+	local TEXT_FORMAT_2
+	local TEXT_FORMAT_3
+	local TEXT_FORMAT_4
+
+    TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
+    TEXT_FORMAT_2=$S2
+    PROMT_FORMAT=$S3
+
 	if [ "$HOSTNAME" = ubu ]; then
 		FONT_COLOR_1=$CHH; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
 		FONT_COLOR_2=$L_MAGENTA; BACKGROUND_2=$BLACK; TEXTEFFECT_2=$BOLD
+        TEXT_FORMAT_1=$S1
 		FONT_COLOR_3=$BLACK; BACKGROUND_3=$L_CYAN; TEXTEFFECT_3=$BOLD
-		PROMT_FORMAT=$WHITE_BOLD
+		# PROMT_FORMAT=$WHITE_BOLD
 	fi
 
 	## CONVERT CODES: add offset
@@ -167,19 +179,8 @@ bash_prompt() {
 	BG4=$(($BACKGROUND_4+$BG))
 	FE4=$(($TEXTEFFECT_4+$EFFECT))
 
-	## CALL FORMATING HELPER FUNCTION: effect + font color + BG color
-	local TEXT_FORMAT_1
-	local TEXT_FORMAT_2
-	local TEXT_FORMAT_3
-	local TEXT_FORMAT_4
 	# format_font TEXT_FORMAT_1 $FE1 $FC1 $BG1
 	# format_font TEXT_FORMAT_2 $FE2 $FC2 $BG2
-    # local TEXT_FORMAT_1=$(tput setaf 6)
-    # local TEXT_FORMAT_2=$(tput setaf 50)
-    TEXT_FORMAT_1=$S1
-    TEXT_FORMAT_2=$S2
-    PROMT_FORMAT=$S3
-
 	format_font TEXT_FORMAT_3 $FC3 $FE3 $BG3
 	format_font TEXT_FORMAT_4 $FC4 $FE4 $BG4
 
