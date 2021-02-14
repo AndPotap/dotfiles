@@ -2,6 +2,7 @@ alias alacritty='~/alacritty/target/release/alacritty'
 alias vc='nvim /tmp/command.txt'
 alias dot='cd ~/dotfiles'
 alias vi='nvim'
+alias vim='/usr/bin/vim.basic'
 alias rm='rm -I'
 alias mv='mv -i'
 
