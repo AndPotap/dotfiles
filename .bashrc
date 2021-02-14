@@ -188,7 +188,7 @@ bash_prompt() {
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$NO_FORMAT$PROMT_FORMAT"
-	local PROMT_INPUT=$"$PROMT_FORMAT--> "
+	local PROMT_INPUT=$"$PROMT_FORMAT --> "
 
 	############################################################################
 	## SEPARATOR FORMATING                                                    ##
@@ -215,10 +215,14 @@ bash_prompt() {
 	format_font SEPARATOR_FORMAT_3 $TSFC3 $TSBG3
 
 	# GENERATE SEPARATORS WITH FANCY TRIANGLE
-	local TRIANGLE=$'\uE0B0'
+    # Look for a unicode table and add after \u
+	# local TRIANGLE=$'\uE0B0'
+	local TRIANGLE=$'\u058D'' '$'\u05D0'' '$'\u07F7'' '$'\u0809'' '$'\u058D'
+	# local MINE=$'\uE4A0'
+	local MINE=$'\uE4A0'$'\uE4A0'$'\uE4A0'
 	local SEPARATOR_1=$SEPARATOR_FORMAT_1$TRIANGLE
 	local SEPARATOR_2=$SEPARATOR_FORMAT_2$TRIANGLE
-	local SEPARATOR_3=$SEPARATOR_FORMAT_3$TRIANGLE
+	local SEPARATOR_3=$SEPARATOR_FORMAT_3$MINE
 
 	############################################################################
 	## WINDOW TITLE                                                           ##
@@ -249,84 +253,6 @@ bash_prompt() {
 }
 
 
-################################################################################
-##  MAIN                                                                      ##
-################################################################################
-
-##	Bash provides an environment variable called PROMPT_COMMAND.
-##	The contents of this variable are executed as a regular Bash command
-##	just before Bash displays a prompt.
-##	We want it to call our own command to truncate PWD and store it in NEW_PWD
 PROMPT_COMMAND=bash_prompt_command
-
-##	Call bash_promnt only once, then unset it (not needed any more)
-##	It will set $PS1 with colors and relative to $NEW_PWD,
-##	which gets updated by $PROMT_COMMAND on behalf of the terminal
 bash_prompt
 unset bash_prompt
-
-
-################################################################################
-##  DOCUMENTATION
-################################################################################
-##	+-----------------------------------+-----------------------------------+
-##	|                                                                       |
-##	|                            FANCY BASH PROMT                           |
-##	|                                                                       |
-##	| Copyright (c) 2018, Andres Gongora <mail@andresgongora.com>.          |
-##	|                                                                       |
-##	| This program is free software: you can redistribute it and/or modify  |
-##	| it under the terms of the GNU General Public License as published by  |
-##	| the Free Software Foundation, either version 3 of the License, or     |
-##	| (at your option) any later version.                                   |
-##	|                                                                       |
-##	| This program is distributed in the hope that it will be useful,       |
-##	| but WITHOUT ANY WARRANTY; without even the implied warranty of        |
-##	| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         |
-##	| GNU General Public License for more details.                          |
-##	|                                                                       |
-##	| You should have received a copy of the GNU General Public License     |
-##	| along with this program. If not, see <http://www.gnu.org/licenses/>.  |
-##	|                                                                       |
-##	+-----------------------------------------------------------------------+
-
-##
-##	DESCRIPTION:
-##	This script updates your "PS1" environment variable to display colors.
-##	Additionally, it also shortens the name of your current part to maximum
-##	25 characters, which is quite useful when working in deeply nested folders.
-##
-##
-##	INSTALLATION:
-##	Copy this script to your home folder and rename it to ".fancy-bash-promt.sh"
-##	Run this command from any terminal:
-##		echo "source ~/.fancy-bash-promt.sh" >> ~/.bashrc
-##
-##	Alternatively, copy the content of this file into your .bashrc file
-##
-##
-##	FUNCTIONS:
-##
-##	* bash_prompt_command()
-##	  This function takes your current working directory and stores a shortened
-##	  version in the variable "NEW_PWD".
-##
-##	* format_font()
-##	  A small helper function to generate color formating codes from simple
-##	  number codes (defined below as local variables for convenience).
-##
-##	* bash_prompt()
-##	  This function colorizes the bash promt. The exact color scheme can be
-##	  configured here. The structure of the function is as follows:
-##		1. A. Definition of available colors for 16 bits.
-##		1. B. Definition of some colors for 256 bits (add your own).
-##		2. Configuration >> EDIT YOUR PROMT HERE<<.
-##		4. Generation of color codes.
-##		5. Generation of window title (some terminal expect the first
-##		   part of $PS1 to be the window title)
-##		6. Formating of the bash promt ($PS1).
-##
-##	* Main script body:
-##	  It calls the adequate helper functions to colorize your promt and sets
-##	  a hook to regenerate your working directory "NEW_PWD" when you change it.
-##
