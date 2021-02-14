@@ -1,7 +1,6 @@
 export PATH=$PATH:/home/ubu/bin
-# export PATH="/home/ubu/anaconda3/bin:$PATH"
-export PYTHONPATH=$PYTHONPATH:"/home/pure/gpytorch"
-export PYTHONPATH=$PYTHONPATH:"/home/pure/r-roulette-gps"
+export PATH="/home/ubu/anaconda3/bin:$PATH"
+export PYTHONPATH=$PYTHONPATH:"/home/ubu/gpytorch"
 # export PATH=$PATH:/usr/local/go/bin
 export PYTHONSTARTUP="$(python3 -m jedi repl)"
 export PATH="$HOME/.cargo/bin:$PATH"
