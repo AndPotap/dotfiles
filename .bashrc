@@ -67,7 +67,7 @@ bash_prompt() {
 	local NO_FORMAT="\[\033[0m\]"
 	local S1="\[\033[0;38;5;4m\]"
 	local S2="\[\033[1;38;5;242m\]"
-	local S3="\[\033[1;38;5;250m\]"
+	local S3="\[\033[1;38;5;242m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
 	local WHITE_BOLD="\[\033[1;38;5;15m\]"
 	local BLUE_BOLD="\[\033[1;38;5;74m\]"
