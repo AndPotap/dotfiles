@@ -64,26 +64,24 @@ bash_prompt_command() {
 
 bash_prompt() {
 
-	local NO_FORMAT="\[\033[0m\]"
-	local S1="\[\033[0;38;5;4m\]"
-	local S2="\[\033[1;38;5;242m\]"
-	local S3="\[\033[1;38;5;242m\]"
+	local EliminatFormat="\[\033[0m\]"
+
+	local DarkBlue="\[\033[0;38;5;4m\]"
+	local DarkGrey="\[\033[1;38;5;242m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
-	local WHITE_BOLD="\[\033[1;38;5;15m\]"
-	local BLUE_BOLD="\[\033[1;38;5;74m\]"
 
     local TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
-	local TEXT_FORMAT_2=$S2
+	local TEXT_FORMAT_2=$DarkGrey
 	local TEXT_FORMAT_3="\[\033[1;38;5;0m\]"
-    PROMT_FORMAT=$S3
+    PROMT_FORMAT=$DarkGrey
 
 	if [ "$HOSTNAME" = Pure ]; then
-        TEXT_FORMAT_1=$S1
+        TEXT_FORMAT_1=$DarkBlue
 	fi
 
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
-	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$NO_FORMAT$PROMT_FORMAT"
+	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
 	local ICONS=$'\u058D'' '$'\u058D'' '$'\u058D'' '
@@ -108,7 +106,6 @@ bash_prompt() {
 	none="$(tput sgr0)"
 	trap 'echo -ne "${none}"' DEBUG
 }
-
 
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
