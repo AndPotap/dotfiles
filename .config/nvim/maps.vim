@@ -1,5 +1,6 @@
 let mapleader = " "
 syntax on
+source ~/.config/nvim/latex.vim
 " let $PAGER=''
 let $MANPAGER=''
 set nowrap

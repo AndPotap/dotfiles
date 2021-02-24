@@ -1,17 +1,3 @@
-" The instruction to download the plug
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
-set runtimepath+=~/vim/
-source ~/.config/nvim/maps.vim
-setlocal cm=blowfish2
-colorscheme gruv
-set viminfo=
-set completeopt=noinsert,menuone,noselect
-set shortmess+=c
-set nocompatible
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
