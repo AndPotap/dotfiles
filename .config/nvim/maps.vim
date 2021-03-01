@@ -1,6 +1,6 @@
 let mapleader = " "
 syntax on
-source ~/.config/nvim/latex.vim
+" source ~/.config/nvim/latex.vim
 set background=dark
 set noerrorbells
 set nohlsearch
