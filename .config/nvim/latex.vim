@@ -136,3 +136,4 @@ autocmd FileType tex inoremap <C-G>L <C-G>u\Lambda
 autocmd FileType tex inoremap <C-G>P <C-G>u\Pi
 autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
 autocmd FileType tex inoremap <C-G>V <C-G>u\Omega
+
