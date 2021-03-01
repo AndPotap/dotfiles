@@ -1,5 +1,6 @@
 alias ls='gls --color=auto'
 alias vc='nvim /tmp/command.txt'
+alias vi='nvim'
 alias dot='cd ~/dotfiles'
 alias rm='grm -I'
 alias white='totem ~/Videos/white.mp4'
