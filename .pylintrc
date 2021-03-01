@@ -1,0 +1,15 @@
+[MASTER]
+disable=
+    C0114, # missing-module-docstring
+    C0115, # missing-class-docstring
+    C0116, # missing-function-docstring
+    C0103, # snake_case naming
+    E1130, # bad operand for unary
+    E1101, # no-member
+    E1102, # not-callable
+    R0901, # too many ancestors
+    R0902, # too many instance attributes
+    R0903, # too few public methods
+    R0912, # too many branches
+    R0914, # too many local variables
+    W0221, # parameters differ from overriden call method

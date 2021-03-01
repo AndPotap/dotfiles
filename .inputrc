@@ -1,10 +1,15 @@
 set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string "[i]"
+set vi-cmd-mode-string "[n]"
+
 set keymap vi-command
 "  ": "^"
 ",,": "$"
 ",c": "c$"
 
 set keymap vi-insert
+";":"\e"
 ",t": "| tee /tmp/command.txt"
 ",o": "| tee command.txt"
 "ZZ": "_"
