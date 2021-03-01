@@ -82,8 +82,10 @@ bash_prompt() {
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
-	local ICONS=$'\u058D'' '$'\u058D'' '$'\u058D'' '
-	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	# local ICONS=$u'058D'' '$'\u058D'' '$'\u058D'' '
+	local ICONS='+++'
+	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	local ARROWS='--> --> --> '
 	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
