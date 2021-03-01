@@ -29,6 +29,7 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/igr"
 export PYTHONSTARTUP="$(python -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
+xmodmap ~/.xmodmap
 source ~/.bashrc
 
 # The next line updates PATH for the Google Cloud SDK.
