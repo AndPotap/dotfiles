@@ -5,8 +5,7 @@ shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
-
-eval `dircolors ~/.dir_colors`
+# eval `dircolors ~/.dir_colors`
 
 bind '";":"\e"'
 bind "set completion-ignore-case on"
@@ -77,13 +76,17 @@ bash_prompt() {
         TEXT_FORMAT_1=$DarkBlue
 	fi
 
+	if [ "$HOSTNAME" = 'Andress-MBP' ]; then
+        TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
+	fi
+
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
 	# local ICONS=$u'058D'' '$'\u058D'' '$'\u058D'' '
-	local ICONS='+++'
+	local ICONS=':::'
 	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
 	local ARROWS='--> --> --> '
 	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
