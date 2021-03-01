@@ -66,6 +66,7 @@ bash_prompt() {
 	local DarkBlue="\[\033[0;38;5;4m\]"
 	local DarkGrey="\[\033[1;38;5;242m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
+	local Orange="\[\033[1;38;5;166m\]"
 
     local TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
 	local TEXT_FORMAT_2=$DarkGrey
@@ -77,7 +78,7 @@ bash_prompt() {
 	fi
 
 	if [ "$HOSTNAME" = 'Andress-MBP' ]; then
-        TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
+        TEXT_FORMAT_1=$Orange
 	fi
 
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
