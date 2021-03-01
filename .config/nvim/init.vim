@@ -40,7 +40,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Jedi-Vim Configurations
 let g:jedi#completions_command = "<C-l>"
 let g:jedi#goto_stubs_command = ""
-let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#use_splits_not_buffers = "bottom"
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
@@ -88,7 +88,7 @@ colorscheme gruv
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 nnoremap <leader>au :Autoformat<Enter>
-autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
-autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
+" autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
+" autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text let b:ncm2_look_enabled = 1
