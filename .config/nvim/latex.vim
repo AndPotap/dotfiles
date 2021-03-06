@@ -23,8 +23,8 @@ autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
 autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
 autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
-autocmd FileType tex imap ,4 <C-G>u$$<Space><++><Esc>5hi
-autocmd FileType tex inoremap <C-F> <C-G>u$$<Space><++><Esc>5hi
+autocmd FileType tex imap ,4 <C-G>u$$<++><Esc>5hi
+autocmd FileType tex inoremap <C-F> <C-G>u$$<++><Esc>5hi
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
@@ -32,10 +32,10 @@ autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
 autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
 autocmd FileType tex nmap <buffer> <C-E> :!pdflatex % && clear<CR>
 autocmd FileType tex nnoremap <Space><CR> ki\bigskip<Esc>j
-autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<Space><++><Esc>T{i
-autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
+autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<++><Esc>T{i
 autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
-autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<Space><++><Esc>T{i
+autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<++><Esc>T{i
 autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
 autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
