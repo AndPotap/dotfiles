@@ -21,10 +21,10 @@ autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T
 autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
 autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
-autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>T{i
-autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>T{i
-autocmd FileType tex imap ,4 <C-G>u$$<++><Esc>5hi
-autocmd FileType tex inoremap <C-F> <C-G>u$$<++><Esc>5hi
+autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>F{a
+autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>F{a
+autocmd FileType tex imap ,4 <C-G>u$$<++><Esc>F$i
+autocmd FileType tex inoremap <C-F> <C-G>u$$<++><Esc>F$i
 autocmd FileType tex nnoremap <leader>q nop
 autocmd FileType tex nnoremap <leader>qq :wq<Enter>
 autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
