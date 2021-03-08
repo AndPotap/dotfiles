@@ -6,6 +6,8 @@ autocmd FileType tex inoremap ,f \
 autocmd FileType tex inoremap SS SS
 " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
 " autocmd Filetype tex nnoremap <C-J>  /<++><Enter>"_c4l
+autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
+autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
 autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
