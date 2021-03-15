@@ -4,7 +4,6 @@ export PATH="/home/pure/anaconda3/bin:$PATH"
 export PYTHONPATH=$PYTHONPATH:"/home/pure/igr"
 export EDITOR=vim
 export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
-export PATH="$HOME/.cargo/bin:$PATH"
 bind -r '\C-s'
 stty -ixon
 source ~/.bashrc
@@ -16,3 +15,4 @@ if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpo
 if [ -f '/Users/andpotap/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/completion.bash.inc'; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
