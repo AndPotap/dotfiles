@@ -3,6 +3,7 @@ HISTFILESIZE=2000
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
+# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 # eval `dircolors ~/.dir_colors`
@@ -66,19 +67,14 @@ bash_prompt() {
 	local DarkBlue="\[\033[0;38;5;4m\]"
 	local DarkGrey="\[\033[1;38;5;242m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
-	local Orange="\[\033[1;38;5;166m\]"
 
     local TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
 	local TEXT_FORMAT_2=$DarkGrey
 	local TEXT_FORMAT_3="\[\033[1;38;5;0m\]"
     PROMT_FORMAT=$DarkGrey
 
-	if [ "$HOSTNAME" = Pure ]; then
+	if [ "$HOSTNAME" = ubu ]; then
         TEXT_FORMAT_1=$DarkBlue
-	fi
-
-	if [ "$HOSTNAME" = 'Andress-MBP' ]; then
-        TEXT_FORMAT_1=$Orange
 	fi
 
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
@@ -86,10 +82,9 @@ bash_prompt() {
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
-	# local ICONS=$u'058D'' '$'\u058D'' '$'\u058D'' '
+	# local ICONS=$'\u058D'' '$'\u058D'' '$'\u058D'' '
 	local ICONS=':::'
-	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
-	local ARROWS='--> --> --> '
+	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
 	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
