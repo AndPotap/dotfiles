@@ -2,6 +2,12 @@ autocmd FileType tex set spell
 autocmd FileType tex set tabstop=2
 autocmd FileType tex set softtabstop=2
 autocmd FileType tex set shiftwidth=2
+autocmd FileType tex nnoremap <leader>q nop
+autocmd FileType tex nnoremap <leader>qq :wq<Enter>
+autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
+autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
+autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
+autocmd FileType tex nmap <buffer> <C-E> :!pdflatex % && clear<CR><CR>
 autocmd FileType tex inoremap ,f \
 autocmd FileType tex inoremap SS SS
 " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
@@ -25,12 +31,6 @@ autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>F{a
 autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>F{a
 autocmd FileType tex imap ,4 <C-G>u$$<++><Esc>F$i
 autocmd FileType tex inoremap <C-F> <C-G>u$$<++><Esc>F$i
-autocmd FileType tex nnoremap <leader>q nop
-autocmd FileType tex nnoremap <leader>qq :wq<Enter>
-autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
-autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
-autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
-autocmd FileType tex nmap <buffer> <C-E> :!pdflatex % && clear<CR>
 autocmd FileType tex nnoremap <Space><CR> ki\bigskip<Esc>j
 autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
 autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<++><Esc>T{i
