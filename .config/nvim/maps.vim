@@ -130,7 +130,8 @@ augroup encrypted
     autocmd BufWritePost,FileWritePost *.gpg u
 augroup END
 
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
+autocmd FileType text nnoremap <leader>0 %s/\s\+$//e
 autocmd FileType text set spell syntax=txt
 autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text nnoremap <leader>ff /##<cr>
