@@ -102,8 +102,8 @@ bash_prompt() {
     PS1+="${SEPARATOR_2}${PROMT_PWD} \n"
     PS1+="${SEPARATOR_3}${PROMT_INPUT}"
 
-	none="$(tput sgr0)"
-	trap 'echo -ne "${none}"' DEBUG
+	# none="$(tput sgr0)"
+	# trap 'echo -ne "${none}"' DEBUG
 }
 
 PROMPT_COMMAND=bash_prompt_command
