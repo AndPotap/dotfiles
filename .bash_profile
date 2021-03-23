@@ -7,3 +7,5 @@ export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
 source ~/.bashrc
+source "$HOME/.cargo/env"
+# Cargo is for alacritty
