@@ -21,6 +21,8 @@ set shiftwidth=4
 set expandtab autoindent
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
+nnoremap <C-Y> "+y
+vnoremap <C-Y> "+y
 imap ; <esc>l
 inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
