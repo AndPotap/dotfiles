@@ -18,6 +18,7 @@ autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
 autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
+autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
