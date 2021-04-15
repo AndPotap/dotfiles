@@ -144,8 +144,9 @@ autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
 autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
 autocmd FileType tex inoremap <C-G>t <C-G>u\theta
 autocmd FileType tex inoremap <C-G>T <C-G>u\Theta
-autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
-autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
+" Upsilon is disabled since it affect upper scripts, not sure why
+" autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
+" autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
 autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
 autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
 autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
