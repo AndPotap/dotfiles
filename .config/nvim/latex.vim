@@ -19,6 +19,7 @@ autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
 autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
+autocmd FileType tex inoremap ,h <C-G>u\hspace{0.2cm} 
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
@@ -115,11 +116,12 @@ autocmd FileType tex inoremap Ω <C-G>u\Omega
 autocmd FileType tex inoremap <C-G>a <C-G>u\alpha
 autocmd FileType tex inoremap <C-G>b <C-G>u\beta
 autocmd FileType tex inoremap <C-G>c <C-G>u\psi
+autocmd FileType tex inoremap <C-G>C <C-G>u\Psi
 autocmd FileType tex inoremap <C-G>d <C-G>u\delta
 autocmd FileType tex inoremap <C-G>D <C-G>u\Delta
 autocmd FileType tex inoremap <C-G>e <C-G>u\epsilon
-autocmd FileType tex inoremap <C-G>f <C-G>u\phi
-autocmd FileType tex inoremap <C-G>F <C-G>u\Phi
+autocmd FileType tex inoremap <C-G>f <C-G>u\varphi
+autocmd FileType tex inoremap <C-G>F <C-G>u\varPhi
 autocmd FileType tex inoremap <C-G>g <C-G>u\gamma
 autocmd FileType tex inoremap <C-G>G <C-G>u\Gamma
 autocmd FileType tex inoremap <C-G>h <C-G>u\eta
@@ -131,19 +133,21 @@ autocmd FileType tex inoremap <C-G>l <C-G>u\lambda
 autocmd FileType tex inoremap <C-G>L <C-G>u\Lambda
 autocmd FileType tex inoremap <C-G>m <C-G>u\mu
 autocmd FileType tex inoremap <C-G>n <C-G>u\nu
+autocmd FileType tex inoremap <C-G>o <C-G>u\omega
+autocmd FileType tex inoremap <C-G>O <C-G>u\Omega
 autocmd FileType tex inoremap <C-G>p <C-G>u\pi
 autocmd FileType tex inoremap <C-G>P <C-G>u\Pi
+autocmd FileType tex inoremap <C-G>q <C-G>u\phi
+autocmd FileType tex inoremap <C-G>Q <C-G>u\Phi
 autocmd FileType tex inoremap <C-G>r <C-G>u\rho
 autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
 autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
 autocmd FileType tex inoremap <C-G>t <C-G>u\theta
 autocmd FileType tex inoremap <C-G>T <C-G>u\Theta
+" Upsilon is disabled since it affect upper scripts, not sure why
 " autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
 " autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
 autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
-autocmd FileType tex inoremap <C-G>v <C-G>u\omega
-autocmd FileType tex inoremap <C-G>V <C-G>u\Omega
 autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
 autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
 autocmd FileType tex inoremap <C-G>Z <C-G>u\Zeta
-
