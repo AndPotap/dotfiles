@@ -1,4 +1,4 @@
-alias alacritty='/home/ubu/alacritty/target/release/alacritty'
+alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='python3.8'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'

@@ -7,12 +7,5 @@ export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
 source ~/.bashrc
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/andpotap/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/completion.bash.inc'; fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
 source "$HOME/.cargo/env"
+# Cargo is for alacritty
