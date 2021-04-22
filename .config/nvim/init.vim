@@ -84,6 +84,7 @@ let g:ale_sign_column_always = 1
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
+" XXX
 " set bg=light
 " Next two lines allow for opacity to be different
 hi! Normal ctermbg=NONE guibg=NONE
