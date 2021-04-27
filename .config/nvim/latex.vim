@@ -21,9 +21,9 @@ autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
 autocmd FileType tex inoremap ,h <C-G>u\hspace{0.2cm} 
 autocmd FileType tex inoremap ,i <C-G>u\infty
-autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
-autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>i <C-G>u\int_{}^{<++>} <++><Esc>2T{i
+autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
 autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
 autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
