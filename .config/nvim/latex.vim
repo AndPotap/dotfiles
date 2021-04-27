@@ -20,6 +20,7 @@ autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
 autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
 autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
 autocmd FileType tex inoremap ,h <C-G>u\hspace{0.2cm} 
+autocmd FileType tex inoremap ,i <C-G>u\infty
 autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>i <C-G>u\int_{<++>}^{<++>} <++><Esc>2T{i
 autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{<++>}^{<++>} <++><Esc>2T{i
@@ -38,7 +39,6 @@ autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
 autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<++><Esc>T{i
 autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
 autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<++><Esc>T{i
-autocmd FileType tex inoremap ,ii \item<Space>
 autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
 autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
 autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
