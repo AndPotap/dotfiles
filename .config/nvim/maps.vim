@@ -137,6 +137,7 @@ autocmd FileType text nnoremap <leader>0 %s/\s\+$//e
 autocmd FileType text set spell syntax=txt
 autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text nnoremap <leader>ff /##<cr>
+autocmd FileType text nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
 autocmd BufRead *.gpg set filetype=gpg
 autocmd FileType gpg set spell syntax=txt
 autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
