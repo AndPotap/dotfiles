@@ -311,9 +311,7 @@ schemes:
       white:   '0xe6d5ae'
 
 # Apply the color scheme.
-# XXX colors
 colors: *gruvbox_material_medium_dark
-# colors: *gruvbox_material_hard_light
 #
 # Colors (Gruvbox dark)
 # colors:
