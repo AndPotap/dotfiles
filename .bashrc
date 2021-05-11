@@ -106,7 +106,7 @@ bash_prompt() {
     PS1+="@${PROMT_HOST} "
     PS1+="${SEPARATOR_2}${PROMT_PWD} \n"
     PS1+="${SEPARATOR_3}${PROMT_INPUT}"
-    # PS1+="${EliminatFormat}"
+    PS1+="${EliminatFormat}"
 
 	# none="$(tput sgr0)"
 	# trap 'echo -ne "${none}"' DEBUG
