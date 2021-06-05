@@ -37,7 +37,7 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
 
 bash_prompt_command() {
 	# How many characters of the $PWD should be kept
-	local pwdmaxlen=25
+	local pwdmaxlen=250
 
 	# Indicate that there has been dir truncation
 	local trunc_symbol=".."
