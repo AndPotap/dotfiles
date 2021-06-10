@@ -1,5 +1,9 @@
 let mapleader = " "
 syntax on
+source ~/.config/nvim/latex.vim
+" let $PAGER=''
+let $MANPAGER=''
+set nowrap
 set background=dark
 set noerrorbells
 set nohlsearch
@@ -9,7 +13,7 @@ set wildmode=longest,list
 set number relativenumber
 set splitbelow splitright
 set nobackup noswapfile nowritebackup
-set textwidth=100
+set textwidth=89
 set backspace=2
 set tabstop=4
 set softtabstop=4
@@ -17,6 +21,8 @@ set shiftwidth=4
 set expandtab autoindent
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
+nnoremap <C-Y> "+y
+vnoremap <C-Y> "+y
 imap ; <esc>l
 inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
@@ -126,7 +132,8 @@ augroup encrypted
     autocmd BufWritePost,FileWritePost *.gpg u
 augroup END
 
-autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
+autocmd FileType text nnoremap <leader>0 %s/\s\+$//e
 autocmd FileType text set spell syntax=txt
 autocmd FileType text nnoremap <leader>cl /%%%%<cr>
 autocmd FileType text nnoremap <leader>ff /##<cr>

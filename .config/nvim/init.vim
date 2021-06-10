@@ -1,6 +1,3 @@
-" The instruction to download the plug
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
     Plug 'davidhalter/jedi-vim'
     Plug 'ncm2/ncm2'
@@ -17,13 +14,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
-
+" let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
+let g:python3_host_prog="/bin/python3.8"
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:slime_target="tmux"
-let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+"# let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
@@ -40,7 +38,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Jedi-Vim Configurations
 let g:jedi#completions_command = "<C-l>"
 let g:jedi#goto_stubs_command = ""
-let g:jedi#use_splits_not_buffers = "right"
+" let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#use_splits_not_buffers = "bottom"
 let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
@@ -67,7 +66,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
-let g:ale_linters = {'python': ['flake8']}
+" let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_linters = {'python': ['flake8'], 'tex': ['']}
 "let g:ale_linters_explicit = 1
 "let g:airline#extensions#ale#enabled = 1
 "let g:ale_echo_msg_error_str = 'E'
@@ -84,11 +84,13 @@ let g:ale_sign_column_always = 1
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
+" XXX
+" set bg=light
 " Next two lines allow for opacity to be different
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 nnoremap <leader>au :Autoformat<Enter>
-autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
-autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
-autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
+" autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
+" autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
+" autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
 autocmd FileType text let b:ncm2_look_enabled = 1

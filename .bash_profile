@@ -1,40 +1,11 @@
+export PATH=$PATH:/home/pure/bin
+export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+export PATH="/home/pure/anaconda3/bin:$PATH"
+export PYTHONPATH=$PYTHONPATH:"/home/pure/igr"
 export EDITOR=vim
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
-
-# MacPorts Installer addition on 2019-10-22_at_16:21:59: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/andpotap/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/andpotap/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/andpotap/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/andpotap/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-eval `gdircolors ~/.dir_colors`
-export PATH=$PATH:$HOME/bin
-export PATH="$HOME/anaconda3/bin:$PATH"
-export PYTHONPATH=$PYTHONPATH:"$HOME/igr"
-export PYTHONSTARTUP="$(python -m jedi repl)"
+export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
 bind -r '\C-s'
 stty -ixon
 source ~/.bashrc
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andpotap/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/andpotap/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/andpotap/google-cloud-sdk/completion.bash.inc'; fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
+# Cargo is for alacritty
