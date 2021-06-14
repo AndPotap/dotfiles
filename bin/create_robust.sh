@@ -21,6 +21,7 @@ files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .config/kitty/kitty.conf
                  .spectrwm.conf
                  .pylintrc
+                 .config/nvim/latex.vim
                  .xmodmap
                  baraction.sh
                  .spectrwm_us.conf)
