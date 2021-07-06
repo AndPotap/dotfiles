@@ -8,8 +8,6 @@ GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 # eval `dircolors ~/.dir_colors`
 
-bind '";":"\e"'
-bind "set completion-ignore-case on"
 shopt -s cdspell
 complete -d cd
 source ~/.bash_aliases

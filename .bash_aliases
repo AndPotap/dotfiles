@@ -19,11 +19,6 @@ alias tkill='tmux kill-session -t'
 alias tas='tmux attach-session -t'
 alias ta='tmux a'
 
-# Linux only aliases
-<<<<<<< HEAD
-# alias ls='ls --color=auto'
-=======
->>>>>>> 284fa345a2e6577c68077c4f90ea569513ed0250
 alias grep='grep --color=auto'
 alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
@@ -43,6 +38,6 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-alias white='totem ~/Videos/white.mp4'
-alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
-alias vim='/usr/bin/vim.basic'
+# alias white='totem ~/Videos/white.mp4'
+# alias pdflatex='/usr/local/texlive/2019/bin/x86_64-linux/pdflatex'
+# alias vim='/usr/bin/vim.basic'
