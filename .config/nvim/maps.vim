@@ -126,6 +126,8 @@ augroup encrypted
     autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
     " Convert all text to encrypted text before writing
+    " XXX
+    " autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg ubuntu -ae 2>/dev/null
     autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --default-recipient-self -ae 2>/dev/null
     " Undo the encryption so we are back in the normal text, directly
     " after the file has been written.
