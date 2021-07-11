@@ -7,6 +7,7 @@ alias mv='mv -i'
 alias lsa='ls --color -a'
 alias ls='ls --color'
 alias c='clear'
+alias myip='curl ifconfig.me'
 
 # Shortcuts to proyects
 alias pro='cd ~/r-roulette-gps'
