@@ -3,22 +3,14 @@ syntax on
 source ~/.config/nvim/latex.vim
 " let $PAGER=''
 let $MANPAGER=''
-set nowrap
 set background=dark
-set noerrorbells
-set nohlsearch
-set ignorecase
+set nowrap noerrorbells nohlsearch ignorecase
 set clipboard=unnamed
 set wildmode=longest,list
-set number relativenumber
-set splitbelow splitright
+set number relativenumber splitbelow splitright
 set nobackup noswapfile nowritebackup
-set textwidth=89
-set backspace=2
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab autoindent
+set textwidth=89 backspace=2 tabstop=4
+set softtabstop=4 shiftwidth=4 expandtab autoindent
 " Reload syntax"
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 nnoremap <C-Y> "+y
