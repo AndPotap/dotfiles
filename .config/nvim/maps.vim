@@ -1,6 +1,8 @@
-let mapleader = " "
 syntax on
 source ~/.config/nvim/latex.vim
+" autocmd BufWritePre * %s/\s\+$//e
+" Basic settings --- {{{
+let mapleader = " "
 " let $PAGER=''
 let $MANPAGER=''
 set background=dark
@@ -11,7 +13,7 @@ set number relativenumber splitbelow splitright
 set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
-" Reload syntax"
+" --- }}}
 " Commands inspired by book XXX ------------------ {{{
 onoremap p i(
 onoremap il( :<C-U>normal! F)vi(<CR>
@@ -23,11 +25,10 @@ iabbrev waht what
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
 nnoremap <space> <nop>
 " }}}
+" Normal model remaps --- {{{
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
-imap ; <esc>l
-inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
@@ -40,29 +41,29 @@ nnoremap tl :tablast<CR>
 nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
-nnoremap Q <Nop>
-inoremap <C-l> <C-x><C-k>
-nmap <leader>Kk dt]
-nmap <leader>KK dt}
-nmap <leader>ZZ dt_
+nnoremap <leader>Kk dt]
+nnoremap <leader>KK dt}
+nnoremap <leader>ZZ dt_
 nnoremap <leader>m `
-nmap <leader>j <C-W>j
-nmap <leader>k <C-W>k
-nmap <leader>h <C-W>h
-nmap <leader>l <C-W>l
-nmap <leader>t <C-W>li
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>h <C-W>h
+nnoremap <leader>l <C-W>l
+nnoremap <leader>t <C-W>li
 nnoremap <leader>rl <C-w>L
 nnoremap <leader>rh <C-w>H
 nnoremap <leader>rj <C-w>J
 nnoremap <leader>rk <C-w>K
-inoremap <C-o> <C-x><C-p>
-" nnoremap S Mzt2k2j
-" nnoremap U zbM
-map <leader><space> ^
+noremap <leader><space> ^
 noremap <enter> $
-nmap <C-S>m :set formatoptions+=w<CR>gggqG
-nmap <C-S>u :set formatoptions+=w textwidth=9999<CR>gggqG
-vnoremap <C-U> <Nop>
+nnoremap <C-S>m :set formatoptions+=w<CR>gggqG
+nnoremap <C-S>u :set formatoptions+=w textwidth=9999<CR>gggqG
+" --- }}}
+" Insert mode remaps --- {{{
+inoremap ; <esc>l
+inoremap <C-j> :<Esc>r;a
+inoremap <C-o> <C-x><C-p>
+inoremap <C-l> <C-x><C-k>
 inoremap TT `
 inoremap AA ~
 inoremap ZZ _
@@ -76,6 +77,12 @@ inoremap Kk ]
 inoremap JJ {
 inoremap KK }
 inoremap ,f \
+" --- }}}
+" Nop remappings --- {{{
+nnoremap Q <Nop>
+vnoremap <C-U> <Nop>
+" --- }}}
+" Cmaps --- {{{
 cmap TT `
 cmap AA ~
 cmap ZZ _
@@ -89,6 +96,8 @@ cmap Kk ]
 cmap JJ {
 cmap KK }
 cmap ,f \
+" --- }}}
+" Terminal maps --- {{{
 tnoremap <Esc> <C-\><C-n><C-W>h
 tnoremap ZZ _
 tnoremap Dd -
@@ -101,16 +110,15 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap ,f \
+" --- }}}
 
 nnoremap ,? <C-W>=
 function EqualizePanes()
     normal ,?
 endfunction
 command Eq call EqualizePanes()
-
-" autocmd BufWritePre * %s/\s\+$//e
-
-" Transparent editing of gpg encrypted files. ---------- {{{
+"
+" Commands for GPG. ---------- {{{
 " By Wouter Hanegraaff
 augroup encrypted
     au!
@@ -153,7 +161,7 @@ augroup text
 augroup END
 " --- }}}
 
-" Comands for VIM ----- {{{
+" Commands for VIM ----- {{{
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
