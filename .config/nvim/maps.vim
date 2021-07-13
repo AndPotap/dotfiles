@@ -12,6 +12,13 @@ set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
 " Reload syntax"
+" New commands from book XXX
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+iabbrev waht what
+vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
+nnoremap <space> <nop>
+" New commands from book XXX
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
@@ -23,14 +30,14 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-nnoremap <leader>q :wq<Enter>
-nnoremap <leader>Q :q!<Enter>
+" nnoremap <leader>q :wq<Enter>
+" nnoremap <leader>Q :q!<Enter>
+" nnoremap <leader>w :w<Enter>
 nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
 nnoremap Q <Nop>
 inoremap <C-l> <C-x><C-k>
-nnoremap <leader>w :w<Enter>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 nmap <leader>ZZ dt_
@@ -63,7 +70,7 @@ imap Jj [
 imap Kk ]
 imap JJ {
 imap KK }
-imap SS \
+imap ,f \
 cmap TT `
 cmap AA ~
 cmap ZZ _
@@ -76,7 +83,7 @@ cmap Jj [
 cmap Kk ]
 cmap JJ {
 cmap KK }
-cmap SS \
+cmap ,f \
 tnoremap <Esc> <C-\><C-n><C-W>h
 tnoremap ZZ _
 tnoremap Dd -
@@ -88,7 +95,7 @@ tnoremap Jj [
 tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
-tnoremap SS \
+tnoremap ,f \
 vnoremap <C-U> <Nop>
 
 nnoremap ,? <C-W>=
