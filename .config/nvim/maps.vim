@@ -12,13 +12,17 @@ set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
 " Reload syntax"
-" New commands from book XXX
+" Commands inspired by book XXX ------------------ {{{
+onoremap p i(
+onoremap il( :<C-U>normal! F)vi(<CR>
+    " Operator pending mappings
+onoremap ih :<C-U> execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 iabbrev waht what
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
 nnoremap <space> <nop>
-" New commands from book XXX
+" }}}
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
@@ -41,8 +45,6 @@ inoremap <C-l> <C-x><C-k>
 nmap <leader>Kk dt]
 nmap <leader>KK dt}
 nmap <leader>ZZ dt_
-nmap <C-S>m :set formatoptions+=w<CR>gggqG
-nmap <C-S>u :set formatoptions+=w textwidth=9999<CR>gggqG
 nnoremap <leader>m `
 nmap <leader>j <C-W>j
 nmap <leader>k <C-W>k
@@ -58,19 +60,22 @@ inoremap <C-o> <C-x><C-p>
 " nnoremap U zbM
 map <leader><space> ^
 noremap <enter> $
-imap TT `
-imap AA ~
-imap ZZ _
-imap Dd -
-imap FF =
-imap DD +
-imap QQ '
-imap Qq "
-imap Jj [
-imap Kk ]
-imap JJ {
-imap KK }
-imap ,f \
+nmap <C-S>m :set formatoptions+=w<CR>gggqG
+nmap <C-S>u :set formatoptions+=w textwidth=9999<CR>gggqG
+vnoremap <C-U> <Nop>
+inoremap TT `
+inoremap AA ~
+inoremap ZZ _
+inoremap Dd -
+inoremap FF =
+inoremap DD +
+inoremap QQ '
+inoremap Qq "
+inoremap Jj [
+inoremap Kk ]
+inoremap JJ {
+inoremap KK }
+inoremap ,f \
 cmap TT `
 cmap AA ~
 cmap ZZ _
@@ -96,7 +101,6 @@ tnoremap Kk ]
 tnoremap JJ {
 tnoremap KK }
 tnoremap ,f \
-vnoremap <C-U> <Nop>
 
 nnoremap ,? <C-W>=
 function EqualizePanes()
@@ -104,10 +108,9 @@ function EqualizePanes()
 endfunction
 command Eq call EqualizePanes()
 
-
 " autocmd BufWritePre * %s/\s\+$//e
 
-" Transparent editing of gpg encrypted files.
+" Transparent editing of gpg encrypted files. ---------- {{{
 " By Wouter Hanegraaff
 augroup encrypted
     au!
@@ -139,14 +142,26 @@ augroup encrypted
     " after the file has been written.
     autocmd BufWritePost,FileWritePost *.gpg u
 augroup END
+" ----- }}}
 
+" Commands for Text  ---- {{{
 augroup text
     autocmd FileType text nnoremap <leader>0 %s/\s\+$//e
     autocmd FileType text set spell syntax=txt
     autocmd FileType text nnoremap <leader>cl /%%%%<cr>
     autocmd FileType text nnoremap <leader>ff /##<cr>
 augroup END
+" --- }}}
 
+" Comands for VIM ----- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldlevelstart=0
+augroup END
+" ----- }}}
+
+" Commands for Python ---- {{{
 augroup pythonops
     autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
     autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
@@ -160,3 +175,4 @@ augroup pythonops
     autocmd FileType python hi! Normal ctermbg=NONE guibg=NONE
     autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 augroup END
+" ----- }}}
