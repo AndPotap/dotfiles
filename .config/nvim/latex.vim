@@ -1,4 +1,5 @@
 augroup latex
+    let @p = "\\begin{proof}\n\\end{proof}\n"
     autocmd FileType tex set spell
     autocmd FileType tex set tabstop=2
     autocmd FileType tex set softtabstop=2
