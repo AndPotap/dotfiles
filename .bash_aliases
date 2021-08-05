@@ -40,3 +40,5 @@ alias gc='git commit'
 alias ga='git add'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
+
+## Computer Specific
