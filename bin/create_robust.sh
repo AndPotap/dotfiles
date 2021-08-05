@@ -22,6 +22,7 @@ files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .spectrwm.conf
                  .pylintrc
                  .config/nvim/latex.vim
+                 .gnupg/gpg-agent.conf
                  .xmodmap
                  baraction.sh
                  .spectrwm_us.conf)
