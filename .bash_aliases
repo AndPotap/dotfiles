@@ -1,8 +1,10 @@
 alias py='python3'
+alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias dot='cd ~/dotfiles'
 alias rm='rm -I'
+alias white='totem ~/Videos/white.mp4'
 alias mv='mv -i'
 alias lsa='ls --color -a'
 alias ls='ls --color'
