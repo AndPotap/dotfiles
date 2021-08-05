@@ -23,7 +23,6 @@ alias tas='tmux attach-session -t'
 alias ta='tmux a'
 
 # Linux only aliases
-# alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
