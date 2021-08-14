@@ -10,5 +10,5 @@ bind '";":"\e"'
 bind "set completion-ignore-case on"
 stty -ixon
 source ~/.bashrc
-source "$HOME/.cargo/env"
 # Cargo is for alacritty
+. "$HOME/.cargo/env"
