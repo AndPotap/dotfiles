@@ -1,9 +1,17 @@
 augroup latex
     let @p = "\\begin{proof}\n\\end{proof}\n"
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
     autocmd FileType tex set spell
     autocmd FileType tex set tabstop=2
     autocmd FileType tex set softtabstop=2
     autocmd FileType tex set shiftwidth=2
+    autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
+    autocmd FileType tex nnoremap j gj
+    autocmd FileType tex nnoremap k gk
+    " autocmd FileType tex set columns=150
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev prop \begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev defi \begin{defi*}<Enter>\end{defi*}<esc>F\kf}a[]<esc>T[i
