@@ -29,6 +29,8 @@ nnoremap <space> <nop>
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
+imap ; <esc>l
+inoremap <C-j> :<Esc>r;a
 nnoremap ,z z=
 nnoremap tn :tabnew<Space>
 nnoremap tk :tabnext<CR>
