@@ -100,6 +100,10 @@ augroup latex
 
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 
+    autocmd FileType tex inoremap <C-B>x <C-G>u\bx
+    autocmd FileType tex inoremap <C-B>y <C-G>u\by
+    autocmd FileType tex inoremap <C-B>t <C-G>u\bt
+
     autocmd FileType tex inoremap α <C-G>u\alpha
     autocmd FileType tex inoremap β <C-G>u\beta
     autocmd FileType tex inoremap ψ <C-G>u\psi
