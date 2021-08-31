@@ -103,6 +103,10 @@ augroup latex
     autocmd FileType tex inoremap <C-B> <C-G>u\b
     autocmd FileType tex inoremap <C-B><C-G>m <C-G>u\bmu
     autocmd FileType tex inoremap <C-B><C-G>t <C-G>u\btheta
+    autocmd FileType tex inoremap <C-B><C-G>a <C-G>u\balpha
+    autocmd FileType tex inoremap <C-B><C-G>S <C-G>u\bSigma
+    autocmd FileType tex inoremap <C-B><C-G>s <C-G>u\bsigma
+    autocmd FileType tex inoremap <C-B><C-G>L <C-G>u\bLambda
     " autocmd FileType tex inoremap <C-B>x <C-G>u\bx
     " autocmd FileType tex inoremap <C-B>y <C-G>u\by
     " autocmd FileType tex inoremap <C-B>t <C-G>u\bt
