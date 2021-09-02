@@ -67,7 +67,7 @@ inoremap <C-j> :<Esc>r;a
 inoremap <C-o> <C-x><C-p>
 inoremap <C-l> <C-x><C-k>
 inoremap TT `
-inoremap RR |
+inoremap RR \|
 inoremap AA ~
 inoremap ZZ _
 inoremap Dd -
@@ -87,7 +87,7 @@ vnoremap <C-U> <Nop>
 " --- }}}
 " Cmaps --- {{{
 cmap TT `
-cmap RR |
+cmap RR \|
 cmap AA ~
 cmap ZZ _
 cmap Dd -
@@ -104,7 +104,7 @@ cmap ,f \
 " Terminal maps --- {{{
 tnoremap <Esc> <C-\><C-n><C-W>h
 tnoremap ZZ _
-tnoremap RR |
+tnoremap RR \|
 tnoremap Dd -
 tnoremap FF =
 tnoremap DD +
