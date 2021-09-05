@@ -11,6 +11,8 @@ augroup latex
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
     autocmd FileType tex nnoremap j gj
     autocmd FileType tex nnoremap k gk
+    autocmd FileType tex nnoremap <Enter> g$
+    autocmd FileType tex nnoremap <leader><space> g^
     " autocmd FileType tex set columns=150
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev prop \begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
