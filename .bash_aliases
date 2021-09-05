@@ -41,5 +41,5 @@ alias ga='git add'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
-## Computer specific aliases
+# Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
