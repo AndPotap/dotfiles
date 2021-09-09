@@ -172,6 +172,8 @@ augroup latex
     " Upsilon is disabled since it affect upper scripts, not sure why
     " autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
     " autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
+    autocmd FileType tex inoremap <C-G>v <C-G>u\tau
+    autocmd FileType tex inoremap <C-G>V <C-G>u\Tau
     autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
     autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
     autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
