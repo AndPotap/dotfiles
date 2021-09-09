@@ -9,6 +9,8 @@ augroup latex
     autocmd FileType tex set softtabstop=2
     autocmd FileType tex set shiftwidth=2
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
+    autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-Q> <C-G>u\hat{}<++><Esc>T{ha
     autocmd FileType tex nnoremap j gj
     autocmd FileType tex nnoremap k gk
     autocmd FileType tex nnoremap <Enter> g$
@@ -102,17 +104,6 @@ augroup latex
 
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 
-    autocmd FileType tex inoremap <C-B> <C-G>u\b
-    autocmd FileType tex inoremap <C-B><C-G>m <C-G>u\bmu
-    autocmd FileType tex inoremap <C-B><C-G>t <C-G>u\btheta
-    autocmd FileType tex inoremap <C-B><C-G>a <C-G>u\balpha
-    autocmd FileType tex inoremap <C-B><C-G>S <C-G>u\bSigma
-    autocmd FileType tex inoremap <C-B><C-G>s <C-G>u\bsigma
-    autocmd FileType tex inoremap <C-B><C-G>L <C-G>u\bLambda
-    " autocmd FileType tex inoremap <C-B>x <C-G>u\bx
-    " autocmd FileType tex inoremap <C-B>y <C-G>u\by
-    " autocmd FileType tex inoremap <C-B>t <C-G>u\bt
-
     autocmd FileType tex inoremap α <C-G>u\alpha
     autocmd FileType tex inoremap β <C-G>u\beta
     autocmd FileType tex inoremap ψ <C-G>u\psi
@@ -153,6 +144,7 @@ augroup latex
     autocmd FileType tex inoremap <C-G>d <C-G>u\delta
     autocmd FileType tex inoremap <C-G>D <C-G>u\Delta
     autocmd FileType tex inoremap <C-G>e <C-G>u\epsilon
+    autocmd FileType tex inoremap <C-G>E <C-G>u\varepsilon
     autocmd FileType tex inoremap <C-G>f <C-G>u\varphi
     autocmd FileType tex inoremap <C-G>F <C-G>u\varPhi
     autocmd FileType tex inoremap <C-G>g <C-G>u\gamma
