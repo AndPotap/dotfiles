@@ -11,6 +11,7 @@ augroup latex
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
     autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-Q> <C-G>u\hat{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-T> <C-G>u\tilde{}<++><Esc>T{ha
     autocmd FileType tex nnoremap j gj
     autocmd FileType tex nnoremap k gk
     autocmd FileType tex nnoremap <Enter> g$
