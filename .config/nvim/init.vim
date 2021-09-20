@@ -69,6 +69,7 @@ let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -93,7 +94,7 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:formatters_vue = ['autopep8']
 let g:run_all_formatters_vue = 1
-"
+
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
