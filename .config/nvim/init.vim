@@ -16,7 +16,7 @@ call plug#end()
 
 " let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
 let g:python3_host_prog="/bin/python3.8"
-"
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -26,7 +26,6 @@ let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pa
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
-" fix paste issues in ipython
 let g:slime_python_ipython = 1
 nmap <C-i> <Plug>SlimeLineSend
 nmap <C-q> <Plug>SlimeParagraphSend
@@ -70,7 +69,6 @@ let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
-"
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
