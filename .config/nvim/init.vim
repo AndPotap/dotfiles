@@ -16,6 +16,7 @@ call plug#end()
 
 " let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
 let g:python3_host_prog="/bin/python3.8"
+
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -25,7 +26,6 @@ let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pa
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
-" fix paste issues in ipython
 let g:slime_python_ipython = 1
 nmap <C-i> <Plug>SlimeLineSend
 nmap <C-q> <Plug>SlimeParagraphSend
@@ -33,11 +33,13 @@ xmap <C-i> <Plug>SlimeRegionSend
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Airline Configurations
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Jedi-Vim Configurations
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:jedi#completions_command = "<C-l>"
 let g:jedi#goto_stubs_command = ""
 " let g:jedi#use_splits_not_buffers = "right"
@@ -56,6 +58,7 @@ let g:jedi#enable_speed_debugging=0
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " ncm2 Configurations
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
@@ -68,6 +71,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale Configurations
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_linters = {'python': ['flake8'], 'tex': ['']}
 "let g:ale_linters_explicit = 1
@@ -82,12 +86,21 @@ let g:ale_lint_on_enter = 0
 let g:ale_sign_column_always = 1
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" Vim Autoformat
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+let g:formatters_vue = ['autopep8']
+let g:run_all_formatters_vue = 1
+"
+" :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+set bg=dark
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
-" XXX
-" set bg=light
 " Next two lines allow for opacity to be different
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
