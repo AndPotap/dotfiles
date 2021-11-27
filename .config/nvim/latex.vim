@@ -68,6 +68,7 @@ augroup latex
     autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
     autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
     autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
+    autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
 
     autocmd FileType tex nnoremap ,5 o<C-G>u\textcolor{blue}{\textbf{Note:}} \textcolor{gray}{}<Esc>T{
     function AddNote()
