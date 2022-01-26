@@ -1,5 +1,5 @@
 alias alacritty="$HOME/alacritty/target/release/alacritty"
-alias py='/usr/bin/python3'
+alias py='/usr/bin/python3.9'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias dot='cd ~/dotfiles'
