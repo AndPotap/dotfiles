@@ -1,5 +1,8 @@
 export EDITOR=vim
 export PATH=$PATH:/home/pure/bin
+# export PATH=$PATH:/usr/local/go/bin
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
 # export PATH="/home/ubu/anaconda/bin:$PATH"
 export PYTHONPATH=$PYTHONPATH:"/home/ubu"
