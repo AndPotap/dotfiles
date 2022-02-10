@@ -9,6 +9,7 @@ export PYTHONPATH=$PYTHONPATH:"/home/ubu"
 export PYTHONPATH=$PYTHONPATH:"/home/ubu/gpytorch"
 export PYTHONPATH=$PYTHONPATH:"/home/ubu/bayesian_benchmarks"
 export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
+eval `dircolors /home/ubu/.dir_colors`
 bind -r '\C-s'
 bind '";":"\e"'
 bind "set completion-ignore-case on"

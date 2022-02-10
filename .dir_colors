@@ -8,6 +8,8 @@
 # Below are TERM entries, which can be a glob patterns, to match
 # against the TERM environment variable to determine if it is colorizable.
 TERM Eterm
+TERM xterm*
+TERM screen*
 TERM ansi
 TERM *color*
 TERM con[0-9]*x[0-9]*
@@ -179,7 +181,6 @@ EXEC 01;32
 .opus 00;36
 .spx 00;36
 .xspf 00;36
-
 # Added extensions
 .py 38;5;46
 .ipynb 38;5;46
