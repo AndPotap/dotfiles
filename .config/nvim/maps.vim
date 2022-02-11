@@ -185,6 +185,13 @@ augroup text
     autocmd FileType text nnoremap <leader>ff /##<cr>
 augroup END
 " --- }}}
+"
+" Commands for sh  ---- {{{
+augroup sh_file
+    autocmd BufRead *.sh set filetype=sh
+    autocmd FileType sh setlocal textwidth=599
+augroup END
+" --- }}}
 
 " Commands for VIM ----- {{{
 augroup filetype_vim
