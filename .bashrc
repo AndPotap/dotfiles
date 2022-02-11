@@ -44,8 +44,10 @@ bash_prompt() {
 
 	local EliminatFormat="\[\033[0m\]"
 
+    # before the m is the color <COLOR_NUM>m
 	local DarkBlue="\[\033[0;38;5;4m\]"
 	local DarkGrey="\[\033[1;38;5;242m\]"
+	local DarkPurple="\[\033[1;38;5;135m\]"
 	local Red="\[\033[1;38;5;196m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
 
@@ -58,8 +60,12 @@ bash_prompt() {
         TEXT_FORMAT_1=$DarkBlue
 	fi
 
-	if [ "$HOSTNAME" = root ]; then
+	if [ "$USER" = root ]; then
         TEXT_FORMAT_1=$Red
+	fi
+
+	if [ "$USER" = pop ]; then
+        TEXT_FORMAT_1=$DarkPurple
 	fi
 
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
