@@ -79,7 +79,7 @@ let g:ale_linters = {'python': ['flake8'], 'tex': ['']}
 "let g:airline#extensions#ale#enabled = 1
 "let g:ale_echo_msg_error_str = 'E'
 "let g:ale_echo_msg_warning_str = 'W'
-let g:ale_python_flake8_options = '--max-line-length=89'
+let g:ale_python_flake8_options = '--max-line-length=99'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_save = 1
