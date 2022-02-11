@@ -3,10 +3,8 @@ HISTFILESIZE=2000
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
-# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
-# eval `dircolors ~/.dir_colors`
 
 shopt -s cdspell
 complete -d cd
@@ -16,22 +14,6 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
-
-# orange=$(tput setaf 166);
-# yellow=$(tput setaf 11);
-# green=$(tput setaf 71);
-# blue=$(tput setaf 4);
-# gray=$(tput setaf 242);
-# red=$(tput setaf 9);
-# bold=$(tput bold);
-# text=$(tput setaf 249);
-#
-# PS1="\[${bold}\]\n";
-# PS1+="\[${blue}\]\u";
-# PS1+="\[${gray}\]@\h: ";
-# PS1+="\[${green}\]\w ";
-# PS1+="\[${text}\]\n --> ";
-# export PS1;
 
 bash_prompt_command() {
 	# How many characters of the $PWD should be kept
@@ -85,7 +67,6 @@ bash_prompt() {
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
-	# local ICONS=$'\u058D'' '$'\u058D'' '$'\u058D'' '
 	local ICONS=':::'
 	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
 	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
@@ -106,13 +87,12 @@ bash_prompt() {
     PS1+="${SEPARATOR_3}${PROMT_INPUT}"
     PS1+="${EliminatFormat}"
 
-	# none="$(tput sgr0)"
-	# trap 'echo -ne "${none}"' DEBUG
 }
 
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ubu/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/google-cloud-sdk/path.bash.inc'; fi
 # The next line enables shell command completion for gcloud.
