@@ -1,6 +1,6 @@
 #!/bin/bash
 
-aux=(.log .aux .bbl .blg .out)
+aux=(.log .aux .bbl .blg .out .nav .snm .toc)
 echo "running"
 for a in ${aux[@]}
 do
