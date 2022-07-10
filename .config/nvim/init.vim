@@ -16,6 +16,7 @@ call plug#end()
 
 " let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
 let g:python3_host_prog="/bin/python3.8"
+"let g:python3_host_prog="/usr/bin/python3.9"
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime Configurations
