@@ -24,6 +24,7 @@ files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
                  .config/nvim/latex.vim
                  .gnupg/gpg-agent.conf
                  .xmodmap
+                 .ssh/config
                  baraction.sh
                  .spectrwm_us.conf)
 for f in "${files_to_create[@]}"
