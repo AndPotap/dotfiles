@@ -7,7 +7,6 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/gpytorch"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/bayesian_benchmarks"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/equivariant-MLP"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/nnet-compression-generalization"
-export PYTHONPATH=$PYTHONPATH:"/$HOME/pactl/src"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/pytorch-image-models"
 export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
 eval `dircolors -b $HOME/.dir_colors`
