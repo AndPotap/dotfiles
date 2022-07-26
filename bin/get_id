@@ -1,3 +1,3 @@
 #!/bin/bash
-gpg -d ~/notes/id.gpg | sed -n '1p' | grep "[A-Z][a-z]*$" | xclip -sel clip
+gpg -d ~/notes/id.gpg | sed -n '1p' | grep "[0-9a-zA-Z]" | xclip -sel clip
 
