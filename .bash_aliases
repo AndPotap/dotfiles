@@ -21,6 +21,7 @@ alias dot='cd ~/dotfiles'
 alias tls='tmux ls'
 alias tkill='tmux kill-session -t'
 alias tas='tmux attach-session -t'
+alias tn='tmux new -s'
 alias ta='tmux a'
 
 # Linux only aliases
