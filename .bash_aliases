@@ -45,3 +45,5 @@ alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
+alias zpa='zathura ~/Documents/Papers/projects/pactl/pactl_neurips2022.pdf &'
+alias dpp='cd ~/Documents/Papers/projects'
