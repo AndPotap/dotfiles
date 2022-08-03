@@ -147,8 +147,10 @@ augroup encrypted
     autocmd BufRead *.gpg set columns=100
     autocmd FileType gpg set wrap linebreak textwidth=0 wrapmargin=0
     " autocmd FileType gpg cmap w <nop>
-    autocmd FileType gpg nnoremap j gj
-    autocmd FileType gpg nnoremap k gk
+    autocmd FileType gpg vnoremap <Down> gj
+    autocmd FileType gpg vnoremap <Up> gk
+    autocmd FileType gpg nnoremap <Down> gj
+    autocmd FileType gpg nnoremap <Up> gk
     autocmd FileType gpg set spell syntax=txt
     autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
     autocmd FileType gpg nnoremap <leader>ff /##<cr>

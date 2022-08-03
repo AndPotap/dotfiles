@@ -2,7 +2,7 @@
 
 dirs_to_create=(vim vim/colors .config .config/nvim .config/nvim/syntax
                .config/nvim/colors bin .config/alacritty .config/kitty
-               .config/zathura)
+               .ssh .config/zathura)
 for dir in "${dirs_to_create[@]}"
 do
     if [ ! -d ~/$dir ]
