@@ -92,7 +92,7 @@ bash_prompt() {
     if [[ ${IS_SINGULARITY} == "1" ]]; then
         PS1="$TITLEBAR\n${PROMT_SINGULARITY} "
     else
-	    PS1="$TITLEBAR\n${PROMT_USER}"
+        PS1="$TITLEBAR\n${PROMT_USER}"
         PS1+="@${PROMT_HOST} "
     fi
 	PS1="$TITLEBAR\n${PROMT_USER}"
