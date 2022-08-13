@@ -102,37 +102,6 @@ cmap KK }
 cmap ,f \
 " --- }}}
 " Terminal maps --- {{{
-tnoremap <Esc> <C-\><C-n><C-W>h
-tnoremap ZZ _
-tnoremap RR \|
-tnoremap Dd -
-tnoremap FF =
-tnoremap DD +
-tnoremap QQ '
-tnoremap Qq "
-tnoremap Jj [
-tnoremap Kk ]
-tnoremap JJ {
-tnoremap KK }
-tnoremap ,f \
-" --- }}}
-
-function! SaveLastReg()
-    if v:event['regname']==""
-        if v:event['operator']=='d'
-            for i in range(8,1,-1)
-                exe "let @".string(i+1)." = @". string(i) 
-            endfor
-            if exists("g:last_yank")
-                let @1=g:last_yank
-            endif
-            let g:last_yank=@"
-        endif 
-    endif
-endfunction 
-
-autocmd TextYankPost * call SaveLastReg()
-
 nnoremap ,? <C-W>=
 function EqualizePanes()
     normal ,?
