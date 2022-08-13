@@ -20,6 +20,7 @@ alias dot='cd ~/dotfiles'
 alias tls='tmux ls'
 alias tkill='tmux kill-session -t'
 alias tas='tmux attach-session -t'
+alias tn='tmux new -s '
 alias ta='tmux a'
 
 # Linux only aliases
@@ -42,4 +43,6 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-alias white='totem ~/Videos/white.mp4'
+alias snv='singularity shell --nv jax_nvim.sif'
+alias sin='singularity shell jax_nvim.sif'
+alias sq='squeue -u ap6604'
