@@ -71,7 +71,7 @@ bash_prompt() {
         TEXT_FORMAT_1=$DarkPurple
 	fi
 
-	local PROMT_SINGULARITY=$"$TEXT_FORMAT_1<SINGULARITY>"
+	local PROMT_SINGULARITY=$"$TEXT_FORMAT_1<SIN>"
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
@@ -79,7 +79,7 @@ bash_prompt() {
 
 	local ICONS=':::'
 	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
-	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
+	local SEPARATOR_2="\[\033[48;5;172m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
 	case $TERM in
@@ -92,10 +92,11 @@ bash_prompt() {
 	esac
 
     if [[ ${IS_SINGULARITY} == "1" ]]; then
-        PS1="$TITLEBAR\n${PROMT_SINGULARITY} "
+        PS1="$TITLEBAR\n${PROMT_SINGULARITY}"
     else
-        PS1="$TITLEBAR\n${PROMT_SINGULARITY} "
+        PS1="$TITLEBAR\n${PROMT_USER}"
     fi
+    PS1+="@${PROMT_HOST} "
     PS1+="${SEPARATOR_2}${PROMT_PWD} \n"
     PS1+="${SEPARATOR_3}${PROMT_INPUT}"
     PS1+="${EliminatFormat}"
