@@ -15,9 +15,10 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
+IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
 bash_prompt_command() {
 	# How many characters of the $PWD should be kept
-	local pwdmaxlen=25
+	local pwdmaxlen=250
 
 	# Indicate that there has been dir truncation
 	local trunc_symbol=".."
@@ -68,6 +69,7 @@ bash_prompt() {
         TEXT_FORMAT_1=$DarkPurple
 	fi
 
+	local PROMT_SINGULARITY=$"$TEXT_FORMAT_1<SINGULARITY>"
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
