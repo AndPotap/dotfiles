@@ -1,6 +1,6 @@
 export EDITOR=vim
 export PATH=$PATH:"/home/$USER/bin"
-export PYTHONPATH=$PYTHONPATH:"/home$USER/tetradic-delights"
+export PYTHONPATH=$PYTHONPATH:"/home/$USER/tetradic-delights"
 export PYTHONSTARTUP="$(python3 -m jedi repl)"
 export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 export WANDB_DISABLE_CODE=true
