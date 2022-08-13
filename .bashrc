@@ -90,14 +90,12 @@ bash_prompt() {
 		local TITLEBAR=""
 		;;
 	esac
+
     if [[ ${IS_SINGULARITY} == "1" ]]; then
         PS1="$TITLEBAR\n${PROMT_SINGULARITY} "
     else
-        PS1="$TITLEBAR\n${PROMT_USER}"
-        PS1+="@${PROMT_HOST} "
+        PS1="$TITLEBAR\n${PROMT_SINGULARITY} "
     fi
-	PS1="$TITLEBAR\n${PROMT_USER}"
-    PS1+="@${PROMT_HOST} "
     PS1+="${SEPARATOR_2}${PROMT_PWD} \n"
     PS1+="${SEPARATOR_3}${PROMT_INPUT}"
     PS1+="${EliminatFormat}"
