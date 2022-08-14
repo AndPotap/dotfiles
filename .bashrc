@@ -1,3 +1,5 @@
+source ~/.bash_aliases
+source ~/.bash_profile
 HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s histappend
@@ -10,7 +12,6 @@ export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 
 shopt -s cdspell
 complete -d cd
-source ~/.bash_aliases
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
@@ -53,6 +54,7 @@ bash_prompt() {
 	local DarkPurple="\[\033[1;38;5;135m\]"
 	local Red="\[\033[1;38;5;196m\]"
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
+	local ORANGE_BOLD="\[\033[1;38;5;172m\]"
 
     local TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
 	local TEXT_FORMAT_2=$DarkGrey
@@ -71,7 +73,7 @@ bash_prompt() {
         TEXT_FORMAT_1=$DarkPurple
 	fi
 
-	local PROMT_SINGULARITY=$"$TEXT_FORMAT_1<SIN>"
+	local PROMT_SINGULARITY=$"$ORANGE_BOLD<SIN>"
 	local PROMT_USER=$"$TEXT_FORMAT_1\u"
 	local PROMT_HOST=$"$TEXT_FORMAT_2\h$PROMT_FORMAT"
 	local PROMT_PWD=$"$TEXT_FORMAT_3 \${NEW_PWD}$EliminatFormat$PROMT_FORMAT"
