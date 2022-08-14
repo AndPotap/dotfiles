@@ -43,6 +43,7 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-alias snv='singularity shell --nv jax_nvim.sif'
+alias snv='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3 --nv /scratch/ap6604/im.sif '
+alias son='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3 /scratch/ap6604/im.sif '
 alias sin='singularity shell /scratch/ap6604/im.sif'
 alias sq='squeue -u ap6604'
