@@ -1,10 +1,4 @@
-HISTSIZE=1000
-HISTFILESIZE=2000
-shopt -s histappend
-shopt -s checkwinsize
-export HISTCONTROL=ignoreboth:erasedups
-GCC_COLORS='error=01;31:warning=01;35:note=01;36'
-export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
+source ~/.bash_aliases
 
 shopt -s cdspell
 complete -d cd
