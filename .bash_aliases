@@ -1,3 +1,6 @@
+function findd {
+    find . | grep -i ${@}
+}
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='/usr/bin/python3.9'
 alias vc='nvim /tmp/command.txt'
