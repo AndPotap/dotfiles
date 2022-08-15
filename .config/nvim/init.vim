@@ -1,10 +1,10 @@
 call plug#begin('~/.vim/plugged')
     Plug 'davidhalter/jedi-vim'
     Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
     Plug 'ncm2/ncm2-bufword'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
+    Plug 'roxma/nvim-yarp'
     " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'Chiel92/vim-autoformat'
@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'sirver/ultisnips'
 call plug#end()
 
 " let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
@@ -97,6 +98,14 @@ let g:autoformat_remove_trailing_spaces = 1
 let g:formatters_vue = ['autopep8', 'flake8']
 let g:run_all_formatters_vue = 1
 
+" :::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" UltiSnips
+" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
+"
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
