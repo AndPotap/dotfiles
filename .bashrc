@@ -7,11 +7,11 @@ complete -d cd
 shopt -s cdspell
 shopt -s histappend
 shopt -s checkwinsize
+export EDITOR=vim
 export HISTCONTROL=ignoreboth:erasedups
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 
-export EDITOR=vim
 export PATH=$PATH:"$HOME/bin"
 export GOPATH=${HOME}/go
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin

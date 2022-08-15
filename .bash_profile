@@ -9,6 +9,8 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
+GCC_COLORS='error=01;31:warning=01;35:note=01;36'
+export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 
 IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
 bash_prompt_command() {
