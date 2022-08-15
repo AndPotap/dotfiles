@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'sirver/ultisnips'
+    " Plug 'sirver/ultisnips'
 call plug#end()
 
 " let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
@@ -101,11 +101,11 @@ let g:run_all_formatters_vue = 1
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " UltiSnips
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
-"
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
+
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM configurations
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
