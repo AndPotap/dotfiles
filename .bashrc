@@ -1,5 +1,10 @@
+source ~/.bash_aliases
+source ~/.bash_profile
+
 HISTSIZE=1000
 HISTFILESIZE=2000
+complete -d cd
+shopt -s cdspell
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
@@ -22,8 +27,6 @@ bind -r '\C-s'
 bind '";":"\e"'
 bind "set completion-ignore-case on"
 stty -ixon
-source ~/.bashrc
-# Cargo is for alacritty
 . "$HOME/.cargo/env"
 
 # The next line updates PATH for the Google Cloud SDK.
