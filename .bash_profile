@@ -1,5 +1,5 @@
 if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+	source "$HOME/.bashrc"
 fi
 
 export PATH=$PATH:"$HOME/bin"

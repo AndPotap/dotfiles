@@ -22,8 +22,8 @@ bind "set completion-ignore-case on"
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-. "$HOME/.cargo/env"
-. "$HOME/.bash_aliases"
+source "$HOME/.cargo/env"
+source "$HOME/.bash_aliases"
 
 IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
 bash_prompt_command() {
