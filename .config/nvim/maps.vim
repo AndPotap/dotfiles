@@ -13,6 +13,7 @@ set number relativenumber splitbelow splitright
 set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
+set fileformat=unix
 " --- }}}
 " Commands inspired by book XXX ------------------ {{{
 onoremap p i(
