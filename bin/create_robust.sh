@@ -1,14 +1,14 @@
 #!/bin/bash
 
 dirs_to_create=(
-    vim vim/colors 
-    bin 
-    .ssh 
-    .config 
-    .config/nvim 
+    vim vim/colors
+    bin
+    .ssh
+    .config
+    .config/nvim
     .config/nvim/syntax
     .config/nvim/colors 
-    .config/alacritty 
+    .config/alacritty
     .config/kitty
     .config/my_snippets
     .config/zathura
