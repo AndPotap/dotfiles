@@ -3,6 +3,7 @@ source ~/.bash_aliases
 complete -d cd
 bind "set completion-ignore-case on"
 shopt -s cdspell
+export NVIMPY=$(which python3)
 export EDITOR=vim
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
