@@ -1,18 +1,19 @@
 #!/bin/bash
 
 dirs_to_create=(
-    vim vim/colors
-    bin
     .ssh
+    bin
+    vim
+    vim/colors
     .config
     .config/nvim
     .config/nvim/syntax
-    .config/nvim/colors 
+    .config/nvim/colors
     .config/alacritty
     .config/kitty
-    .config/my_snippets
     .config/zathura
 )
+
 for dir in "${dirs_to_create[@]}"
 do
     if [ ! -d ~/$dir ]
@@ -21,23 +22,35 @@ do
     fi
 done
 
-files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
-                 .inputrc .tmux.conf .ideavimrc .config/flake8
-                 .config/alacritty/alacritty.yml
-                 .dir_colors
-                 .config/zathura/zathurarc
-                 vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
-                 .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim
-                 .config/kitty/kitty.conf
-                 .spectrwm.conf
-                 .pylintrc
-                 .config/nvim/latex.vim
-                 .gnupg/gpg-agent.conf
-                 .xmodmap
-                 .ssh/config
-                 .config/nvim/my_snippets/tex.snippets
-                 baraction.sh
-                 .spectrwm_us.conf)
+files_to_create=(
+    .ssh/config
+    .xmodmap
+    .bashrc
+    .bash_profile
+    .bash_aliases
+    .profile
+    .inputrc
+    .dir_colors
+    .tmux.conf
+    .vimrc
+    vim/colors/gruv.vim
+    .config/alacritty/alacritty.yml
+    .config/nvim/init.vim
+    .config/nvim/maps.vim
+    .config/nvim/latex.vim
+    .config/nvim/syntax/txt.vim
+    .config/nvim/colors/gruv.vim
+    .config/flake8
+    .config/zathura/zathurarc
+    .config/kitty/kitty.conf
+    .pylintrc
+    .gnupg/gpg-agent.conf
+    .spectrwm.conf
+    .spectrwm_us.conf
+    .ideavimrc
+    baraction.sh
+)
+
 for f in "${files_to_create[@]}"
 do
     path=~/$f
