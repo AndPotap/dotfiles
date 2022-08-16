@@ -15,12 +15,10 @@ call plug#begin('~/.vim/plugged')
     " Plug 'sirver/ultisnips'
 call plug#end()
 
-" let g:python3_host_prog="$HOME/anaconda3/bin/python3.7"
-let g:python3_host_prog="/bin/python3.8"
-"let g:python3_host_prog="/usr/bin/python3.9"
+let g:python3_host_prog=expand("$NVIMPY")
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Slime Configurations
+" Slime
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
@@ -34,32 +32,42 @@ nmap <C-q> <Plug>SlimeParagraphSend
 xmap <C-i> <Plug>SlimeRegionSend
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Airline Configurations
+" Airline
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Jedi-Vim Configurations
+" Jedi-Vim
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-let g:jedi#completions_command = "<C-l>"
-let g:jedi#goto_stubs_command = ""
-" let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#use_splits_not_buffers = "bottom"
-let g:jedi#auto_initialization = 1
+" Uses: Function signatures, go to def, rename
+"     Jedi reads the function signatures from its python version
+" Defaults: https://github.com/davidhalter/jedi-vim/blob/master/autoload/jedi.vim
+"     Almost a complete list of defaults above.
+" let g:jedi#environment_path = '/usr/bin/python3'
+"     Might need to enable in case I'm using other python3
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#completions_command = "<C-Space>"
 let g:jedi#completions_enabled = 0
+let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures_delay = 0
+let g:jedi#show_call_signatures_modes = 'i'
+let g:jedi#goto_stubs_command = ""
+let g:jedi#use_splits_not_buffers = "bottom"
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-let g:jedi#show_call_signatures_delay = 0
 let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#show_call_signatures_modes = 'i'
 let g:jedi#enable_speed_debugging=0
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" ncm2 Configurations
+" ncm2
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
@@ -73,7 +81,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Ale Configurations
+" Ale
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_linters = {'python': ['flake8'], 'tex': ['']}
@@ -107,7 +115,7 @@ let g:run_all_formatters_vue = 1
 " let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" My NVIM/VIM configurations
+" My NVIM/VIM
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 set bg=dark
 set runtimepath+=~/.config/nvim/
