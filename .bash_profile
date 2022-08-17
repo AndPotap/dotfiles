@@ -3,6 +3,7 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 export PATH=$PATH:"$HOME/bin"
+export PATH=$PATH:"$HOME/.local/bin"
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 export GOPATH=${HOME}/go
 export PYTHONSTARTUP="$(python3.8 -m jedi repl)"
