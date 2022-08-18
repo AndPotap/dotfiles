@@ -1,9 +1,9 @@
-HISTSIZE=1000
-HISTFILESIZE=2000
 complete -d cd
 shopt -s cdspell
 shopt -s histappend
 shopt -s checkwinsize
+HISTSIZE=1000
+HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:history"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
