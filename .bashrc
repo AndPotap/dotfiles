@@ -5,6 +5,7 @@ shopt -s cdspell
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE="ls:history"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
@@ -136,3 +137,5 @@ if [ -f '/home/ubu/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/go
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
