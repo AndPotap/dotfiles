@@ -27,6 +27,7 @@ bind "set completion-ignore-case on"
 
 source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
 bash_prompt_command() {
@@ -118,10 +119,10 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/ubu/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/google-cloud-sdk/path.bash.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/ubu/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/google-cloud-sdk/completion.bash.inc'; fi
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/ubu/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/google-cloud-sdk/path.bash.inc'; fi
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/home/ubu/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/google-cloud-sdk/completion.bash.inc'; fi
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
@@ -137,5 +138,3 @@ if [ -f '/home/ubu/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/go
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
