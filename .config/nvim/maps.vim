@@ -3,6 +3,7 @@ source ~/.config/nvim/latex.vim
 " autocmd BufWritePre * %s/\s\+$//e
 " Basic settings --- {{{
 let mapleader = " "
+set wildignorecase
 " let $PAGER=''
 let $MANPAGER=''
 set background=dark
