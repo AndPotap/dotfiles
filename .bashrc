@@ -22,6 +22,9 @@ export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
 bind -r '\C-s'
 bind '";":"\e"'
 bind "set completion-ignore-case on"
+bind -m vi-command '"\C-f": "\C-z\ec\C-z"'
+bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
+# https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash
 # stty -ixon
 #   Not sure why I added this command on the first place
 
