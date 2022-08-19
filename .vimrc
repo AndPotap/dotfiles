@@ -3,6 +3,7 @@
 "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
 set runtimepath+=~/vim/
+set paste
 source ~/.config/nvim/maps.vim
 colorscheme gruv
 set viminfo=
