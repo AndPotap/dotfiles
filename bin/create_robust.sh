@@ -1,5 +1,20 @@
 #!/bin/bash
 
+if [ -f "$HOME/.bashrc" ]; then
+	cp "$HOME/.bashrc" "$HOME/.bashrc_bk"
+	rm "$HOME/.bashrc"
+fi
+
+if [ -f "$HOME/.bash_profile" ]; then
+	cp "$HOME/.bash_profile" "$HOME/.bash_profile_bk"
+	rm "$HOME/.bash_profile"
+fi
+
+if [ -f "$HOME/.profile" ]; then
+	cp "$HOME/.profile" "$HOME/.profile_bk"
+	rm "$HOME/.profile"
+fi
+
 dirs_to_create=(
     .ssh
     bin
