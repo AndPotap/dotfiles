@@ -39,9 +39,9 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-" nnoremap <leader>q :wq<Enter>
-" nnoremap <leader>Q :q!<Enter>
-" nnoremap <leader>w :w<Enter>
+nnoremap <leader>q :wq<Enter>
+nnoremap <leader>Q :q!<Enter>
+nnoremap <leader>w :w<Enter>
 nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
