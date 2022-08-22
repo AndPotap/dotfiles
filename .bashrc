@@ -5,7 +5,7 @@ shopt -s checkwinsize
 HISTSIZE=1000
 HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE="ls:history"
+export HISTIGNORE="ls:history:c:cg:g[sd]:\s*"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
