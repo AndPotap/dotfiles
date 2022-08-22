@@ -15,6 +15,8 @@ set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
 set fileformat=unix
+set colorcolumn=50,100
+" highlight ColorColumn ctermbg=9
 " --- }}}
 " Commands inspired by book XXX ------------------ {{{
 onoremap p i(
@@ -29,6 +31,9 @@ nnoremap <space> <nop>
 " }}}
 " Normal model remaps --- {{{
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
+" nnoremap M 050l
+nnoremap <silent> M :call cursor(0, 50)<CR>
+nnoremap <silent> T :call cursor(0, 100)<CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
 imap ; <esc>l
