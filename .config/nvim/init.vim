@@ -5,14 +5,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-jedi'
     Plug 'roxma/nvim-yarp'
-    " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
     Plug 'vim-autoformat/vim-autoformat'
     Plug 'jpalardy/vim-slime'
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'sirver/ultisnips'
 call plug#end()
 
 let g:python3_host_prog=expand("$NVIMPY")
@@ -21,9 +19,8 @@ let g:python3_host_prog=expand("$NVIMPY")
 " Slime
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:slime_target="tmux"
-let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
-"# let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
-" let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
+" let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+let g:slime_default_config={"socket_name": "default", "target_pane": "{last}"}
 let g:slime_paste_file="$HOME/.slime_paste"
 let g:slime_dont_ask_default=1
 let g:slime_python_ipython = 1
@@ -79,6 +76,7 @@ let g:ncm2#matcher = 'substrfuzzy'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ncm2_jedi#python_version = 3
+autocmd FileType text let b:ncm2_look_enabled = 1
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Ale
@@ -107,14 +105,7 @@ let g:autoformat_remove_trailing_spaces = 1
 let g:formatters_vue = ['yapf']
 let g:run_all_formatters_vue = 1
 let g:formatter_yapf_style = 'pep8'
-
-" :::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" UltiSnips
-" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" let g:UltiSnipsExpandTrigger = '<tab>'
-" let g:UltiSnipsJumpForwardTrigger = '<tab>'
-" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-" let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
+nnoremap <leader>au :Autoformat<Enter>
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " My NVIM/VIM
@@ -123,11 +114,5 @@ set bg=dark
 set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 colorscheme gruv
-" Next two lines allow for opacity to be different
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-nnoremap <leader>au :Autoformat<Enter>
-" autocmd FileType text nnoremap <leader>q :!git add % && git commit % -m "Added Entry" -q && git push -q & <Enter><Enter>:wq<Enter>
-" autocmd ExitPre *.txt :!git add % && git commit % -m "Added Entry" -q && git push -q &
-" autocmd ExitPre *.gpg :!git add % && git commit % -m "Added Entry" -q && git push -q &
-autocmd FileType text let b:ncm2_look_enabled = 1
