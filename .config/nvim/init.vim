@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'roxma/nvim-yarp'
     " Plug 'habamax/vim-sendtoterm'
     Plug 'dense-analysis/ale'
-    Plug 'Chiel92/vim-autoformat'
+    Plug 'vim-autoformat/vim-autoformat'
     Plug 'jpalardy/vim-slime'
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
@@ -103,8 +103,10 @@ let g:ale_sign_column_always = 1
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 1
-let g:formatters_vue = ['autopep8', 'flake8']
+" let g:formatters_vue = ['autopep8', 'flake8']
+let g:formatters_vue = ['yapf']
 let g:run_all_formatters_vue = 1
+let g:formatter_yapf_style = 'pep8'
 
 " :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " UltiSnips
