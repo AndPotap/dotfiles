@@ -11,7 +11,7 @@ require('ap.telescope')
 EOF
 
 set bg=dark
-colorscheme gruvbox
+colorscheme gruv
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime
