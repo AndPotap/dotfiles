@@ -4,6 +4,7 @@ source ~/.config/nvim/latex.vim
 " Basic settings --- {{{
 let mapleader = " "
 set wildignorecase
+set signcolumn=yes
 " let $PAGER=''
 let $MANPAGER=''
 set background=dark
