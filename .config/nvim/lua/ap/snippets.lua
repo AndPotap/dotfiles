@@ -17,7 +17,7 @@ ls.setup({
     },
     ext_base_prio = 300,
     ext_prio_increase = 1,
-    enable_autosnippets = true,
+    enable_autosnippets = false,
     store_selection_keys = "<Tab>",
     ft_func = function()
         return vim.split(vim.bo.filetype, ".", true)
