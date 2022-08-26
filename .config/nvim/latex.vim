@@ -13,12 +13,8 @@ augroup latex
     autocmd FileType tex inoremap <C-Q> <C-G>u\hat{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-T> <C-G>u\text{}<++><Esc>T{ha
-    autocmd FileType tex nnoremap j gj
-    autocmd FileType tex nnoremap k gk
     autocmd FileType tex nnoremap <Enter> g$
-    autocmd FileType tex nnoremap <leader><space> g^
     " autocmd FileType tex set columns=150
-    autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev prop \begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev defi \begin{defi*}<Enter>\end{defi*}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev thm \begin{thm}<Enter>\end{thm}<esc>F\kf}a[]<esc>T[i
@@ -26,9 +22,15 @@ augroup latex
     autocmd FileType tex iabbrev ppf \begin{proof}<Enter>\end{proof}<esc>k<leader>o
     autocmd FileType tex nnoremap <leader>q nop
     autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
-    autocmd FileType tex nmap <buffer> <leader>EE :!build_tex %:r<CR><CR>
-    autocmd FileType tex nmap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
-    autocmd FileType tex nmap <buffer> <C-E> :!pdflatex % && clear<CR><CR>
+    autocmd FileType tex nnoremap <leader><space> g^
+    autocmd FileType tex nnoremap <leader>no i\noindent<Space>
+    autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
+    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
+    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
+    autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
+    autocmd FileType tex nnoremap <buffer> <leader>EE :!build_tex %:r<CR><CR>
+    autocmd FileType tex nnoremap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
+    autocmd FileType tex nnoremap <buffer> <C-E> :!pdflatex % && clear<CR><CR>
     autocmd FileType tex inoremap ,f \
     autocmd FileType tex inoremap SS SS
     " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
@@ -36,8 +38,8 @@ augroup latex
     " autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
     " autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <Left> <nop>
-    autocmd FileType tex inoremap <Up> <nop>
-    autocmd FileType tex inoremap <Down> <nop>
+    autocmd FileType tex inoremap <Up> gk
+    autocmd FileType tex inoremap <Down> gj
     autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
     autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
@@ -56,9 +58,9 @@ augroup latex
     autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
     autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
     autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
-    autocmd FileType tex imap <C-H> <C-G>u^{}<++><Esc>F{a
-    autocmd FileType tex imap <C-L> <C-G>u_{}<++><Esc>F{a
-    autocmd FileType tex imap ,4 <C-G>u$$<++><Esc>F$i
+    autocmd FileType tex inoremap <C-H> <C-G>u^{}<++><Esc>F{a
+    autocmd FileType tex inoremap <C-L> <C-G>u_{}<++><Esc>F{a
+    autocmd FileType tex inoremap ,4 <C-G>u$$<++><Esc>F$i
     autocmd FileType tex inoremap <C-F> <C-G>u$$<++><Esc>F$i
     autocmd FileType tex nnoremap <Space><CR> ki\bigskip<Esc>j
     autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
@@ -66,9 +68,6 @@ augroup latex
     autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
     autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<++><Esc>T{i
     autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
-    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
-    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
-    autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
 
     autocmd FileType tex nnoremap ,5 o<C-G>u\textcolor{blue}{\textbf{Note:}} \textcolor{gray}{}<Esc>T{
     function AddNote()
@@ -76,7 +75,6 @@ augroup latex
         startinsert
     endfunction
     command Note call AddNote()
-
 
     function AddItemize()
         normal ,4
@@ -104,8 +102,6 @@ augroup latex
         startinsert
     endfunction
     command Color call AddColor()
-
-    autocmd FileType tex nnoremap <leader>no i\noindent<Space>
 
     autocmd FileType tex inoremap α <C-G>u\alpha
     autocmd FileType tex inoremap β <C-G>u\beta
@@ -170,13 +166,13 @@ augroup latex
     autocmd FileType tex inoremap <C-G>r <C-G>u\rho
     autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
     autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
-    autocmd FileType tex inoremap <C-G>t <C-G>u\theta
-    autocmd FileType tex inoremap <C-G>T <C-G>u\Theta
+    autocmd FileType tex inoremap <C-G>th <C-G>u\theta
+    autocmd FileType tex inoremap <C-G>Th <C-G>u\Theta
     " Upsilon is disabled since it affect upper scripts, not sure why
     " autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
     " autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
-    autocmd FileType tex inoremap <C-G>v <C-G>u\tau
-    autocmd FileType tex inoremap <C-G>V <C-G>u\Tau
+    autocmd FileType tex inoremap <C-G>ta <C-G>u\tau
+    autocmd FileType tex inoremap <C-G>Ta <C-G>u\Tau
     autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
     autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
     autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
