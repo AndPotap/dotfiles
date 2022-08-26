@@ -22,8 +22,10 @@ dirs_to_create=(
     vim/colors
     .config
     .config/nvim
-    .config/nvim/syntax
-    .config/nvim/colors
+    .config/nvim/lua
+    .config/nvim/lua/ap
+    .config/nvim/lua/ap/lsp
+    .config/nvim/lua/ap/lsp/settings
     .config/alacritty
     .config/kitty
     .config/zathura
@@ -53,8 +55,21 @@ files_to_create=(
     .config/nvim/init.vim
     .config/nvim/maps.vim
     .config/nvim/latex.vim
-    .config/nvim/syntax/txt.vim
-    .config/nvim/colors/gruv.vim
+    .config/nvim/lua/ap/auto.lua
+    .config/nvim/lua/ap/cmp.lua
+    .config/nvim/lua/ap/color.lua
+    .config/nvim/lua/ap/keybindings.lua
+    .config/nvim/lua/ap/plugins.lua
+    .config/nvim/lua/ap/settings.lua
+    .config/nvim/lua/ap/signature.lua
+    .config/nvim/lua/ap/status.lua
+    .config/nvim/lua/ap/telescope.lua
+    .config/nvim/lua/ap/tree.lua
+    .config/nvim/lua/ap/lsp/handlers.lua
+    .config/nvim/lua/ap/lsp/init.lua
+    .config/nvim/lua/ap/lsp/lsp-installer.lua
+    .config/nvim/lua/ap/lsp/settings/pyright.lua
+    .config/nvim/lua/ap/lsp/settings/sumneko_lua.lua
     .config/flake8
     .config/zathura/zathurarc
     .config/kitty/kitty.conf
