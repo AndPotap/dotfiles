@@ -54,6 +54,8 @@ augroup latex
     autocmd FileType tex inoremap <C-S>n <C-G>u\norm{}<++><Esc>T{i
     autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
     autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>a ,1,
+    " Above is connected to the snips
     autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
     autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
     autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi

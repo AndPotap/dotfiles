@@ -17,7 +17,7 @@ ls.setup({
     },
     ext_base_prio = 300,
     ext_prio_increase = 1,
-    enable_autosnippets = false,
+    enable_autosnippets = true,
     store_selection_keys = "<Tab>",
     ft_func = function()
         return vim.split(vim.bo.filetype, ".", true)
@@ -28,7 +28,7 @@ ls.add_snippets("tex", {
     s({ trig = "par1", dscr = "first parenthesis" },
         {
             t({ "\\bigl( " }),
-            i(0),
+            i(1),
             t({ " \\bigr)<++>" }),
         }),
     s({ trig = "par2", dscr = "second parenthesis" },
@@ -51,4 +51,18 @@ ls.add_snippets("tex", {
         }),
 }, {
     key = "tex",
+})
+
+ls.add_snippets("tex", {
+    s({ trig = ",1,", dscr = "Test" },
+        {
+            t({ "\\frac{" }),
+            i(1),
+            t({ "}{" }),
+            i(2),
+            t({ "}" }),
+            i(0),
+        }),
+}, {
+    type = "autosnippets",
 })
