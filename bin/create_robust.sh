@@ -22,6 +22,7 @@ dirs_to_create=(
     vim/colors
     .config
     .config/nvim
+    .config/nvim/syntax
     .config/nvim/lua
     .config/nvim/lua/ap
     .config/nvim/lua/ap/lsp
@@ -55,6 +56,7 @@ files_to_create=(
     .config/nvim/init.vim
     .config/nvim/maps.vim
     .config/nvim/latex.vim
+    .config/nvim/syntax/txt.vim
     .config/nvim/lua/ap/auto.lua
     .config/nvim/lua/ap/cmp.lua
     .config/nvim/lua/ap/color.lua
