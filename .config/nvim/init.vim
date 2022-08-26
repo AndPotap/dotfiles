@@ -23,6 +23,8 @@ colorscheme tokyonight
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+" set notermguicolors
+    " the setting above renders equal colors
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime
