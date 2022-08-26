@@ -1,8 +1,6 @@
 return require('packer').startup(function(use)
     use 'jpalardy/vim-slime'
-    use 'morhetz/gruvbox'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+    use 'folke/tokyonight.nvim'
     use 'wbthomason/packer.nvim'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
@@ -14,15 +12,16 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'ray-x/lsp_signature.nvim'
     use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'BurntSushi/ripgrep'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-treesitter/nvim-treesitter'
-    --use({ "iamcco/markdown-preview.nvim",
-    --    run = function() vim.fn["mkdp#util#install"]() end,
-    --})
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

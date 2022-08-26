@@ -7,11 +7,20 @@ require('ap.cmp')
 require('ap.lsp')
 require('ap.tree')
 require('ap.signature')
+require('ap.status')
 require('ap.telescope')
 EOF
 
-set bg=dark
-colorscheme gruv
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_terminal_colors = 0
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+let g:tokyonight_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000'
+\ }
+colorscheme tokyonight
+
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
@@ -26,9 +35,3 @@ let g:slime_python_ipython = 1
 nnoremap <C-i> <Plug>SlimeLineSend
 nnoremap <C-q> <Plug>SlimeParagraphSend
 xnoremap <C-i> <Plug>SlimeRegionSend
-
-" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Airline
-" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-let g:airline_theme='gruvbox'
-let g:airline#extensions#tabline#enabled = 1
