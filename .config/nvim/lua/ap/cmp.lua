@@ -1,5 +1,6 @@
 local luasnip = require 'luasnip'
-require("luasnip.loaders.from_snipmate").load({ path = { "./my-snippets" } })
+-- require("luasnip.loaders.from_snipmate").load({ path = { "./snippets" } })
+-- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 
 local kind_icons = {
     Text = "T",
