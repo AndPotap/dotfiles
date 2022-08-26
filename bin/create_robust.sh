@@ -68,6 +68,7 @@ files_to_create=(
     .config/nvim/lua/ap/plugins.lua
     .config/nvim/lua/ap/settings.lua
     .config/nvim/lua/ap/signature.lua
+    .config/nvim/lua/ap/snippets.lua
     .config/nvim/lua/ap/status.lua
     .config/nvim/lua/ap/telescope.lua
     .config/nvim/lua/ap/tree.lua

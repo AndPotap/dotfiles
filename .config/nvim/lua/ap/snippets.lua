@@ -31,21 +31,24 @@ ls.add_snippets("tex", {
             i(0),
             t({ " \\bigr)<++>" }),
         }),
-    s("par2", {
-        t({ "\\Bigl( " }),
-        i(0),
-        t({ " \\Bigr)<++>" }),
-    }),
-    s("par3", {
-        t({ "\\biggl( " }),
-        i(0),
-        t({ " \\biggr)<++>" }),
-    }),
-    s("par4", {
-        t({ "\\Biggl( " }),
-        i(0),
-        t({ " \\Biggr)<++>" }),
-    }),
+    s({ trig = "par2", dscr = "second parenthesis" },
+        {
+            t({ "\\Bigl( " }),
+            i(0),
+            t({ " \\Bigr)<++>" }),
+        }),
+    s({ trig = "par3", dscr = "third parenthesis" },
+        {
+            t({ "\\biggl( " }),
+            i(0),
+            t({ " \\biggr)<++>" }),
+        }),
+    s({ trig = "par4", dscr = "fourth parenthesis" },
+        {
+            t({ "\\Biggl( " }),
+            i(0),
+            t({ " \\Biggr)<++>" }),
+        }),
 }, {
     key = "tex",
 })
