@@ -14,6 +14,7 @@ eval `dircolors -b $HOME/.dir_colors`
 export NVIMPY=$(which python3)
 
 export EDITOR=nvim
+export TERM=screen-256color
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
