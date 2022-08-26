@@ -9,6 +9,7 @@ require('ap.tree')
 require('ap.signature')
 require('ap.status')
 require('ap.telescope')
+require('ap.snippets')
 EOF
 
 let g:tokyonight_style = "night"
