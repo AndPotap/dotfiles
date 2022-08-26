@@ -1,4 +1,5 @@
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_snipmate").load({ path = { "./my-snippets" } })
 
 local kind_icons = {
     Text = "T",
