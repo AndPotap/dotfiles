@@ -6,6 +6,7 @@ require('ap.plugins')
 require('ap.cmp')
 require('ap.lsp')
 require('ap.tree')
+require('ap.status')
 require('ap.signature')
 require('ap.telescope')
 EOF
@@ -35,9 +36,3 @@ let g:slime_python_ipython=1
 nnoremap <C-i> <Plug>SlimeLineSend
 nnoremap <C-q> <Plug>SlimeParagraphSend
 xnoremap <C-i> <Plug>SlimeRegionSend
-
-" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" Airline
-" ::::::::::::::::::::::::::::::::::::::::::::::::::::::
-let g:airline_theme='gruvbox'
-let g:airline#extensions#tabline#enabled = 1
