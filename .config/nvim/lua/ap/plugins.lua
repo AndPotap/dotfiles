@@ -1,6 +1,5 @@
 return require('packer').startup(function(use)
     use 'jpalardy/vim-slime'
-    -- use 'folke/tokyonight.nvim'
     use 'AndPotap/tokyonight.nvim'
     use 'wbthomason/packer.nvim'
     use 'neovim/nvim-lspconfig'

@@ -1,15 +1,101 @@
 # Dotfiles
 
-## Notes on vim
+## Neovim notes
 * **Lua is faster and smaller than Python**, that is why it was embedded to Neovim as
   default.
-* **Lua is much faster than VimScript**, and so the pluggins based on lua deliver
+* **Lua is much faster than VimScript**, and so the plugins based on lua deliver
   snappier responses.
 * **I don't think moving completely to Lua is necessary**. Neovim still expects to
   leverage the work on thousands of plugins that were written in VimScript.
 * **Lua files are ran before VimScript files**. Not sure how relevant is this note.
 
+## Todos
+* Explain the structure of lua folders
+* Discuss what is an LSP
+
 ### Purpose of each plugin
+I ordered the plugins by importance.
+
+The next set of plugins allows me to get autocompletion.
+```lua
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'saadparwaiz1/cmp_luasnip'
+use 'L3MON4D3/LuaSnip'
+```
+`hrsh7th/nvim-cmp` is the completion engine written in lua. This mostly handles the
+mappings and leverages the snippets suggestion engine `L3MON4D3/LuaSnip` via
+`saadparwaiz1/cmp_luasnip`. Then `hrsh7th/cmp-nvim-lsp` creates a **client**a for
+Neovim's LSP. To my understanding it somewhat overrides the omnifunc capabilities and
+adds some more. Illustrated in this lines:
+```lua
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+```
+finally, `hrsh7th/cmp-buffer` and `hrsh7th/cmp-path` provide completion suggestions from
+the buffer or path respectively.
+
+The next set of plugins allows me to use LSP for linter, formatting and suggestions for
+the autocompletion engine.
+```lua
+use 'neovim/nvim-lspconfig'
+use 'williamboman/nvim-lsp-installer'
+```
+the last one helping me install some LSP like `sumneko_lua`. **For this last plugin to work
+properly I have to install node and npm**.
+```bash
+curl -sL install-node.vercel.app/lts | sudo bash -s -- -y
+```
+
+The next set of plugins allow me to use fuzzy search
+```lua
+use {'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+    use 'BurntSushi/ripgrep'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+```
+the `BurntSushi/ripgrep` helps on the grep type searches and
+`nvim-telescope/telescope-fzf-native.nvim` is supposed to make the fuzzy finder work
+faster.
+
+This plugin is the installer of all the others.
+```lua
+use 'wbthomason/packer.nvim'
+```
+
+The next plugin allows me to see the signature of the function while I'm typing:
+```lua
+use 'ray-x/lsp_signature.nvim'
+```
+
+The next set of plugins generate the colorscheme and the status line.
+```lua
+use 'AndPotap/tokyonight.nvim'
+use {'nvim-lualine/lualine.nvim',
+     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+```
+
+I don't fully understand the value of the Tree sitter but it is supposed to be a relevant
+feature. Also it is asked by the Telescope plugin.
+```lua
+use 'nvim-treesitter/nvim-treesitter'
+```
+
+Vim slime allows me to push a line of text from Neovim to my other TMUX pane (I mostly do
+this when debugging).
+```lua
+use 'jpalardy/vim-slime'
+```
+
+Finally, this plugin allows me to render markdown locally!
+```lua
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+```
 
 ### Custom syntax and highlighting
 This complicated as it involves many moving pieces (`alacritty.yml`, `init.vim`) and concepts that I
