@@ -80,6 +80,7 @@ cmp.setup {
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
                 buffer = "[Buffer]",
+                fuzzy_buffer = "[FZF]",
                 path = "[Path]",
             })[entry.source.name]
             return vim_item
