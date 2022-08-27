@@ -6,24 +6,26 @@ require('ap.plugins')
 require('ap.cmp')
 require('ap.lsp')
 require('ap.tree')
-require('ap.status')
 require('ap.signature')
+require('ap.status')
 require('ap.telescope')
+require('ap.snippets')
 EOF
 
-" set bg=dark
-" colorscheme gruv
-
-" let g:termguicolors = 0
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
-let g:tokyonight_terminal_colors = 0
+let g:tokyonight_terminal_colors = 1
 let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 let g:tokyonight_colors = {
   \ 'hint': 'orange',
   \ 'error': '#ff0000'
 \ }
 colorscheme tokyonight
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+" set notermguicolors
+    " the setting above renders equal colors
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime

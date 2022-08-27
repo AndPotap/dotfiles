@@ -310,7 +310,7 @@ schemes:
       magenta: '0x945e80'
       cyan:    '0x4c7a5d'
       white:   '0xe6d5ae'
-    tokyo-night-storm: &tokyo-night-storm
+  tokyo-night-storm: &tokyo-night-storm
       primary:
         background: '0x24283b'
         foreground: '0xc0caf5'
@@ -335,7 +335,7 @@ schemes:
       indexed_colors:
         - { index: 16, color: '0xff9e64' }
         - { index: 17, color: '0xdb4b4b' }
-    tokyo-night: &tokyo-night
+  tokyo-night: &tokyo-night
       primary:
         background: '0x1a1b26'
         foreground: '0xc0caf5'
@@ -348,8 +348,6 @@ schemes:
         magenta: '0xbb9af7'
         cyan:    '0x7dcfff'
         white:   '0xa9b1d6'
-
-      # Bright colors
       bright:
         black:   '0x414868'
         red:     '0xf7768e'
@@ -366,9 +364,9 @@ schemes:
 
 # Apply the color scheme.
 # XXX colors
+# colors: *tokyo-night
+colors: *tokyo-night-storm
 # colors: *gruvbox_material_medium_dark
-# colors: *tokyo-night-storm
-colors: *tokyo-night
 # colors: *gruvbox_material_hard_light
 #
 # Colors (Gruvbox dark)

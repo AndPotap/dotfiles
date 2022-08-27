@@ -33,6 +33,7 @@ nnoremap <space> <nop>
 " }}}
 " Normal model remaps --- {{{
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
+nnoremap <silent> * *N
 " nnoremap M 050l
 nnoremap <silent> M :call cursor(0, 50)<CR>
 nnoremap <silent> T :call cursor(0, 100)<CR>
