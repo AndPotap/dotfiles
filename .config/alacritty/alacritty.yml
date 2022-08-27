@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  # TERM: alacritty
   # TERM: xterm-256color
   TERM: screen-256color
 
@@ -348,8 +348,6 @@ schemes:
         magenta: '0xbb9af7'
         cyan:    '0x7dcfff'
         white:   '0xa9b1d6'
-
-      # Bright colors
       bright:
         black:   '0x414868'
         red:     '0xf7768e'
