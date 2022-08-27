@@ -66,10 +66,10 @@ cmp.setup {
         end, { 'i', 's' }),
     }),
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = "buffer" },
-        { name = "path" },
+        { name = 'nvim_lsp', max_item_count = 10 },
+        { name = 'luasnip', max_item_count = 5},
+        { name = "buffer", max_item_count = 10 },
+        { name = "path", max_item_count = 5 },
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
