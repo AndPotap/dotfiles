@@ -17,7 +17,7 @@ set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
 set fileformat=unix
 set colorcolumn=50,100
-" highlight ColorColumn ctermbg=9
+set cursorline
 set scrolloff=7
 " --- }}}
 " Commands inspired by book XXX ------------------ {{{
