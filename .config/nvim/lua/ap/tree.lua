@@ -5,7 +5,7 @@ require 'nvim-treesitter.configs'.setup {
     ignore_install = { "c" },
     highlight = {
         enable = true,
-        disable = { "markdown", "vim" },
+        disable = { "markdown", "vim", "latex" },
         additional_vim_regex_highlighting = false,
     },
 }
