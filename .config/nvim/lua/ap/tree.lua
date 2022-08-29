@@ -8,5 +8,4 @@ require 'nvim-treesitter.configs'.setup {
         disable = { "markdown", "vim" },
         additional_vim_regex_highlighting = false,
     },
-    indent = { enable = true, disable = { "css" } },
 }
