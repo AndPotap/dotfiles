@@ -76,6 +76,7 @@ files_to_create=(
     .config/nvim/lua/ap/lsp/init.lua
     .config/nvim/lua/ap/lsp/lsp-installer.lua
     .config/nvim/lua/ap/lsp/settings/pyright.lua
+    .config/nvim/lua/ap/lsp/settings/pylsp.lua
     .config/nvim/lua/ap/lsp/settings/sumneko_lua.lua
     .config/flake8
     .config/zathura/zathurarc
