@@ -39,8 +39,8 @@ augroup latex
     " autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
     " autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <Left> <nop>
-    autocmd FileType tex inoremap <Up> gk
-    autocmd FileType tex inoremap <Down> gj
+    autocmd FileType tex nnoremap <Up> gk
+    autocmd FileType tex nnoremap <Down> gj
     autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
     autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
