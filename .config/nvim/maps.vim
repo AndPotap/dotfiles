@@ -162,11 +162,10 @@ augroup encrypted
     autocmd FileType gpg nnoremap <Down> gj
     autocmd FileType gpg nnoremap <Up> gk
     autocmd FileType gpg set spell syntax=txt
-    autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
-    autocmd FileType gpg nnoremap <leader>ff /##<cr>
+    autocmd FileType gpg nnoremap <leader>cl mJ/%%%%<cr>`J
+    autocmd FileType gpg nnoremap <leader>ff mJ/##<cr>`J
     autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
-    " First make sure nothing is written to ~/.viminfo while editing
-    " an encrypted file.
+    " First make sure nothing is written to ~/.viminfo while editing an encrypted file.
     autocmd BufReadPre,FileReadPre *.gpg set viminfo=
     " We don't want a various options which write unencrypted data to disk
     autocmd BufReadPre,FileReadPre *.gpg set noswapfile noundofile nobackup
@@ -181,7 +180,6 @@ augroup encrypted
     autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
     " Convert all text to encrypted text before writing
-    " XXX
     " autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg ubuntu -ae 2>/dev/null
     autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --default-recipient-self -ae 2>/dev/null
     " Undo the encryption so we are back in the normal text, directly
