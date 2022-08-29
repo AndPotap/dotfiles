@@ -4,6 +4,8 @@ local t = ls.text_node
 local i = ls.insert_node
 local types = require("luasnip.util.types")
 
+require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "./snippets" } })
+
 ls.setup({
     history = true,
     update_events = "TextChanged,TextChangedI",

@@ -4,6 +4,7 @@ augroup latex
       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
       \ |   exe "normal! g`\""
       \ | endif
+    autocmd BufRead *.tex set filetype=tex
     autocmd FileType tex set spell
     autocmd FileType tex set tabstop=2
     autocmd FileType tex set softtabstop=2
