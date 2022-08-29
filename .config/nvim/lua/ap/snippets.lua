@@ -53,6 +53,25 @@ ls.add_snippets("tex", {
     key = "tex",
 })
 
+ls.add_snippets("bib", {
+    s({ trig = "article", dscr = "bib template" },
+        {
+            t({ "@article{" }),
+            i(1),
+            t({ ",", "    title={{" }),
+            i(2),
+            t({ "}},", "    author={" }),
+            i(3),
+            t({ "},", "    journal={Preprint arXiv " }),
+            i(4),
+            t({ "},", "    year={20" }),
+            i(5),
+            t({ "},", "}" }),
+        }),
+}, {
+    key = "bib",
+})
+
 ls.add_snippets("tex", {
     s({ trig = ",1,", dscr = "Test" },
         {
