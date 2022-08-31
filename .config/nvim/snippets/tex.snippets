@@ -1,2 +1,17 @@
-snippet lr left right
-	\\left${1} ${0:${VISUAL}} \\right$1
+snippet tmplt "Template"
+	\\documentclass{article}
+	\\usepackage{natbib}
+	\\bibliographystyle{abbrvnat}
+	\\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+	\\usepackage{algorithmic}
+	\\input {$HOME/notes/code/latexcommands.tex}
+	
+	\\begin{document}
+	Notes for \citep{}
+	
+	\\begin{itemize}
+	  \item $1
+	\\end{itemize}
+	
+	\\bibliography{$HOME/notes/research/ref.bib}{}
+	\\end{document}

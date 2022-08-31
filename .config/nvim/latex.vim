@@ -4,6 +4,7 @@ augroup latex
       \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
       \ |   exe "normal! g`\""
       \ | endif
+    autocmd BufRead *.tex set filetype=tex
     autocmd FileType tex set spell
     autocmd FileType tex set tabstop=2
     autocmd FileType tex set softtabstop=2
@@ -20,7 +21,7 @@ augroup latex
     autocmd FileType tex iabbrev thm \begin{thm}<Enter>\end{thm}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev rem \begin{rem}<Enter>\end{rem}<esc>F\kf}a[]<esc>T[i
     autocmd FileType tex iabbrev ppf \begin{proof}<Enter>\end{proof}<esc>k<leader>o
-    autocmd FileType tex nnoremap <leader>q nop
+    " autocmd FileType tex nnoremap <leader>q nop
     autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
@@ -38,8 +39,8 @@ augroup latex
     " autocmd Filetype tex inoremap <C-I>  <Esc>/<++><Enter>"_c4l
     " autocmd Filetype tex nnoremap <C-I>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <Left> <nop>
-    autocmd FileType tex inoremap <Up> gk
-    autocmd FileType tex inoremap <Down> gj
+    autocmd FileType tex nnoremap <Up> gk
+    autocmd FileType tex nnoremap <Down> gj
     autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
     autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
     autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi

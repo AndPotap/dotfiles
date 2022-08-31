@@ -67,9 +67,9 @@ cmp.setup {
     }),
     sources = {
         { name = 'nvim_lsp', max_item_count = 10, keyword_length  = 3},
-        { name = 'luasnip', max_item_count = 5, keyword_length  = 3},
-        { name = 'fuzzy_buffer', max_item_count = 10,  keyword_length  = 3},
+        { name = 'luasnip', max_item_count = 5, keyword_length  = 2},
         -- { name = 'buffer', max_item_count = 10 },
+        { name = 'fuzzy_buffer', max_item_count = 10,  keyword_length  = 3},
         { name = "path", max_item_count = 5, keyword_length  = 3},
     },
     formatting = {
@@ -79,7 +79,7 @@ cmp.setup {
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
-                buffer = "[Buffer]",
+                -- buffer = "[Buffer]",
                 fuzzy_buffer = "[FZF]",
                 path = "[Path]",
             })[entry.source.name]
