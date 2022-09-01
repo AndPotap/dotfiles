@@ -10,6 +10,7 @@ augroup latex
     autocmd FileType tex set softtabstop=2
     autocmd FileType tex set shiftwidth=2
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
+    autocmd FileType tex inoremap <C-D> <Nop>
     autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-Q> <C-G>u\hat{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
