@@ -27,8 +27,8 @@ augroup latex
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
-    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
-    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
+    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<C-G>u
+    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<C-G>u
     autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
     autocmd FileType tex nnoremap <buffer> <leader>EE :!build_tex %:r<CR><CR>
     autocmd FileType tex nnoremap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
