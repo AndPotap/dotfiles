@@ -44,8 +44,15 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
         },
+        -- ['<CR>'] = cmp.mapping(function(fallback)
+        --     if cmp.visible() then
+        --         cmp.confirm()
+        --     else
+        --         fallback()
+        --     end
+        -- end, { 'i', 's' }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -69,7 +76,7 @@ cmp.setup {
         { name = 'nvim_lsp', max_item_count = 10, keyword_length  = 3},
         { name = 'luasnip', max_item_count = 5, keyword_length  = 2},
         -- { name = 'buffer', max_item_count = 10 },
-        { name = 'fuzzy_buffer', max_item_count = 10,  keyword_length  = 3},
+        { name = 'fuzzy_buffer', max_item_count = 10,  keyword_length  = 3, group_index=2},
         { name = "path", max_item_count = 5, keyword_length  = 3},
     },
     formatting = {
