@@ -10,8 +10,10 @@ augroup latex
     autocmd FileType tex set softtabstop=2
     autocmd FileType tex set shiftwidth=2
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
+    autocmd FileType tex inoremap <C-D> <Nop>
     autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-Q> <C-G>u\hat{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-S>q <C-G>u\hat{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-S>z <C-G>u\bar{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-T> <C-G>u\text{}<++><Esc>T{ha
     autocmd FileType tex nnoremap <Enter> g$
@@ -26,8 +28,8 @@ augroup latex
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
-    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<Space><Space><C-G>u
-    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<Space><Space><C-G>u
+    autocmd FileType tex nnoremap <leader>Eq o\begin{equation}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation}<Esc>^2k<leader>o<C-G>u
+    autocmd FileType tex nnoremap <leader>eq o\begin{equation*}<Esc>o<Space><Space>\begin{split}<Enter>\end{split}<Enter>\end{equation*}<Esc>^2k<leader>o<C-G>u
     autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
     autocmd FileType tex nnoremap <buffer> <leader>EE :!build_tex %:r<CR><CR>
     autocmd FileType tex nnoremap <buffer> <leader>ee :!pdflatex % && clear<CR><CR>
