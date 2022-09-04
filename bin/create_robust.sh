@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source $HOME/dotfiles/util_fns.sh
 
 files2back=(".bashrc" ".bash_profile" ".profile")
