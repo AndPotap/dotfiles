@@ -41,10 +41,10 @@ function createDirs() {
     for dir in ${!dirs2Create}
     do
         aux=$(stripFirstTwo $dir)
-        path="$HOME/$aux"
-        if [ ! -d path ]
+        path="$HOME/$aux/"
+        if [ ! -d $path ]
         then
-            mkdir path
+            mkdir $path
         fi
     done
 }
