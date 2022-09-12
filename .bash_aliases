@@ -4,8 +4,8 @@ function findd {
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='python3'
 alias vc='nvim /tmp/command.txt'
-alias vi='nvim'
-alias vim='nvim'
+alias vi='$HOME/nvim-linux64/bin/nvim'
+alias vim='$HOME/nvim-linux64/bin/nvim'
 alias dot='cd ~/dotfiles'
 alias rm='rm -I'
 alias mv='mv -i'
@@ -48,6 +48,4 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-alias white='totem ~/Videos/white.mp4'
-alias zpa='zathura ~/Documents/Papers/projects/pactl/pactl_neurips2022.pdf &'
-alias dpp='cd ~/Documents/Papers/projects'
+source $HOME/.bash_additional_alises
