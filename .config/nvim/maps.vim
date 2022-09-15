@@ -3,6 +3,7 @@ source ~/.config/nvim/latex.vim
 " autocmd BufWritePre * %s/\s\+$//e
 " Basic settings --- {{{
 let mapleader = " "
+set mouse=
 set wildignorecase
 set signcolumn=yes
 " let $PAGER=''
