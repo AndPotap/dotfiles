@@ -71,7 +71,7 @@ bash_prompt() {
 	local TOXIC_GREEN_BOLD="\[\033[1;38;5;118m\]"
 	local ORANGE_BOLD="\[\033[1;38;5;172m\]"
 
-    local TEXT_FORMAT_1=$TOXIC_GREEN_BOLD
+    local TEXT_FORMAT_1=$ORANGE_BOLD
 	local TEXT_FORMAT_2=$DarkGrey
 	local TEXT_FORMAT_3="\[\033[1;38;5;0m\]"
     PROMT_FORMAT=$DarkGrey
@@ -96,7 +96,7 @@ bash_prompt() {
 
 	local ICONS=':::'
 	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
-	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
+	local SEPARATOR_2="\[\033[48;5;172m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
 	case $TERM in
