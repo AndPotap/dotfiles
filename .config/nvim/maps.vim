@@ -1,5 +1,5 @@
 syntax on
-source ~/.config/nvim/latex.vim
+" source ~/.config/nvim/latex.vim
 " autocmd BufWritePre * %s/\s\+$//e
 " Basic settings --- {{{
 let mapleader = " "
