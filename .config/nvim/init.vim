@@ -2,13 +2,13 @@ set runtimepath+=~/.config/nvim/
 source ~/.config/nvim/maps.vim
 
 lua << EOF
-require('ap.plugins')
+-- require('ap.plugins')
 require('ap.cmp')
 require('ap.lsp')
 require('ap.tree')
 require('ap.signature')
 require('ap.status')
-require('ap.telescope')
+-- require('ap.telescope')
 require('ap.snippets')
 EOF
 
