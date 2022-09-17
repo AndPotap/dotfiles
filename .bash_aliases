@@ -48,4 +48,10 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-# source $HOME/.bash_additional_alises
+# source $HOME/.bash_additional_aliases
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
+}
