@@ -48,4 +48,4 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-source $HOME/.bash_additional_alises
+# source $HOME/.bash_additional_alises
