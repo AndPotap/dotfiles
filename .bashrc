@@ -13,7 +13,7 @@ eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 
-export EDITOR=vi
+export EDITOR=$HOME/nvim-linux64/bin/nvim
 export TERM=screen-256color
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
@@ -30,6 +30,7 @@ bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
 #   Not sure why I added this command on the first place
 
 source "$HOME/.bash_aliases"
+source "$HOME/fix_ssh.sh"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
