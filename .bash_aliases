@@ -55,3 +55,10 @@ function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
     echo $CUDA_VISIBLE_DEVICES
 }
+
+function BranchGit {
+    echo "Branch named ${1}"
+    git push origin HEAD:${1}
+    git branch --set-upstream-to=origin/${1} ${1}
+    git push --set-upstream origin ${1}
+}
