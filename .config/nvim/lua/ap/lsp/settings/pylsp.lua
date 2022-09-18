@@ -7,6 +7,7 @@ return {
                     enabled = false
                 },
                 pycodestyle = {
+                    enabled = false,
                     maxLineLength = 100
                 },
                 yapf = {
