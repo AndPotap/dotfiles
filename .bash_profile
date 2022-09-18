@@ -1,6 +1,7 @@
 if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
+source $HOME/fix_ssh.sh
 
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"

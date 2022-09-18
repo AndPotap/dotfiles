@@ -30,7 +30,7 @@ bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
 #   Not sure why I added this command on the first place
 
 source "$HOME/.bash_aliases"
-source "$HOME/fix_ssh.sh"
+# source "$HOME/fix_ssh.sh"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 IS_SINGULARITY=$([[ ! -z "${SINGULARITY_NAME}" ]] && echo 1 || echo 0)
