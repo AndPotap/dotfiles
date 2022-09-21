@@ -49,3 +49,11 @@ alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
+alias zpa='zathura ~/Documents/Papers/projects/neural_pdes/Neural_Galerkin_Scheme_with_Active_Learning.pdf &'
+alias dpp='cd ~/Documents/Papers/projects'
+function BranchGit {
+    echo "Branch named ${1}"
+    git push origin HEAD:${1}
+    git branch --set-upstream-to=origin/${1} ${1}
+    git push --set-upstream origin ${1}
+}
