@@ -25,7 +25,7 @@ augroup latex
     autocmd FileType tex iabbrev ppf \begin{proof}<Enter>\end{proof}<esc>k<leader>o
     " autocmd FileType tex nnoremap <leader>q nop
     autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
-    autocmd FileType tex nnoremap <leader>au :%s/\s\+$//e
+    autocmd FileType tex nnoremap <silent> <leader>au :%s/\s\+$//e<Enter>
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
