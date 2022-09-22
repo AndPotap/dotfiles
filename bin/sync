@@ -1,0 +1,21 @@
+#! /usr/bin/python3
+import os
+
+home = os.environ["HOME"]
+location = os.getcwd()
+web_location = "/home/andpotap" + location[len(home):]
+
+
+def rsync(do_dry=True):
+    code = "nvc"
+    if not do_dry:
+        code = "vc"
+    print(f"Syncing {location}/*")
+    cmd = f"rsync -{code} {location}/* webpage:{web_location}"
+    os.system(cmd)
+
+
+if __name__ == "__main__":
+    aux = input("Sync actual contents (YES/n) ")
+    do_dry = False if aux == "YES" else True
+    rsync(do_dry)
