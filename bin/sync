@@ -8,9 +8,11 @@ web_location = "/home/andpotap" + location[len(home):]
 
 def rsync(do_dry=True):
     code = "nvc"
+    text = "Dry run"
     if not do_dry:
         code = "vc"
-    print(f"Syncing {location}/*")
+        text = "Syncing"
+    print(f"{text} {location}/*")
     cmd = f"rsync -{code} {location}/* webpage:{web_location}"
     os.system(cmd)
 
