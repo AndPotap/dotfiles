@@ -18,6 +18,6 @@ def rsync(do_dry=True):
 
 
 if __name__ == "__main__":
-    aux = input("Sync actual contents (YES/n) ")
+    aux = input("Sync actual contents (YES - case sensitive) ")
     do_dry = False if aux == "YES" else True
     rsync(do_dry)
