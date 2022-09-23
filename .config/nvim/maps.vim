@@ -215,7 +215,7 @@ augroup END
 " Commands for Python ---- {{{
 augroup pythonops
     autocmd FileType python map <silent> <leader>b A<Enter>breakpoint()<Esc>j^
-    autocmd FileType python nnoremap <leader>cd /def<Space><Enter>
+    autocmd FileType python nnoremap <leader>ff /def<Space><Enter>
     autocmd FileType python nnoremap <leader>cl /class<Space><Enter>
     autocmd FileType python nnoremap <leader>cc ^<C-V>I#<Space><Esc>j^
     autocmd FileType python nnoremap <leader>un ^xxj^
