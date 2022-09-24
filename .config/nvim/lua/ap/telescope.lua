@@ -1,12 +1,24 @@
 -- Naming this file telescope.lua generates problems
-require('telescope').setup {
-    extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+telescope.setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<CR>"] = actions.select_vertical,
+            },
+            n = {
+                ["<CR>"] = actions.select_vertical,
+            },
+        },
+        extensions = {
+            fzf = {
+                fuzzy = true,
+                override_generic_sorter = true,
+                override_file_sorter = true,
+                case_mode = "smart_case",
+            }
         }
     }
 }
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
