@@ -1,14 +1,19 @@
+function findd {
+    find . | grep -i ${@}
+}
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='/usr/bin/python3'
 alias vc='nvim /tmp/command.txt'
-alias vi='nvim'
+alias vi='$HOME/nvim-linux64/bin/nvim'
+alias vim='$HOME/nvim-linux64/bin/nvim'
 alias dot='cd ~/dotfiles'
 alias rm='rm -I'
 alias mv='mv -i'
-alias lsa='ls --color -a'
-alias lsl='ls -l'
-alias ls='ls --color'
 alias c='clear'
+alias ls='ls --color'
+alias lsa='ls --color -a'
+alias lst='ls --color -t'
+alias lsl='ls --color -l'
 alias myip='curl ifconfig.me'
 
 # Shortcuts to proyects
@@ -47,3 +52,18 @@ alias snv='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3
 alias son='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3 /scratch/ap6604/im.sif '
 alias sin='singularity shell /scratch/ap6604/im.sif'
 alias sq='squeue -u ap6604'
+# source $HOME/.bash_additional_aliases
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
+alias gsg='gpustat -cpu'
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
+}
+
+function BranchGit {
+    echo "Branch named ${1}"
+    git push origin HEAD:${1}
+    git branch --set-upstream-to=origin/${1} ${1}
+    git push --set-upstream origin ${1}
+}

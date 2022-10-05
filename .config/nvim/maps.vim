@@ -1,18 +1,24 @@
 syntax on
-source ~/.config/nvim/latex.vim
+" source ~/.config/nvim/latex.vim
 " autocmd BufWritePre * %s/\s\+$//e
 " Basic settings --- {{{
 let mapleader = " "
+set wildignorecase
+set signcolumn=yes
 " let $PAGER=''
 let $MANPAGER=''
 set background=dark
 set nowrap noerrorbells nohlsearch ignorecase
-set clipboard=unnamed
+" set clipboard=unnamed
 set wildmode=longest,list
 set number relativenumber splitbelow splitright
 set nobackup noswapfile nowritebackup
 set textwidth=89 backspace=2 tabstop=4
 set softtabstop=4 shiftwidth=4 expandtab autoindent
+set fileformat=unix
+set colorcolumn=50,100
+set cursorline
+set scrolloff=7
 " --- }}}
 " Commands inspired by book XXX ------------------ {{{
 onoremap p i(
@@ -27,6 +33,10 @@ nnoremap <space> <nop>
 " }}}
 " Normal model remaps --- {{{
 nnoremap <silent> <C-L> :syntax sync fromstart <CR>
+nnoremap <silent> * *N
+" nnoremap M 050l
+nnoremap <silent> M :call cursor(0, 50)<CR>
+nnoremap <silent> T :call cursor(0, 100)<CR>
 nnoremap <C-Y> "+y
 vnoremap <C-Y> "+y
 imap ; <esc>l
@@ -37,9 +47,9 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
-" nnoremap <leader>q :wq<Enter>
-" nnoremap <leader>Q :q!<Enter>
-" nnoremap <leader>w :w<Enter>
+nnoremap <leader>q :wq<Enter>
+nnoremap <leader>Q :q!<Enter>
+nnoremap <leader>w :w<Enter>
 nnoremap <leader>o o
 nnoremap o o<Esc>
 nnoremap O O<Esc>
@@ -102,6 +112,37 @@ cmap KK }
 cmap ,f \
 " --- }}}
 " Terminal maps --- {{{
+tnoremap <Esc> <C-\><C-n><C-W>h
+tnoremap ZZ _
+tnoremap RR \|
+tnoremap Dd -
+tnoremap FF =
+tnoremap DD +
+tnoremap QQ '
+tnoremap Qq "
+tnoremap Jj [
+tnoremap Kk ]
+tnoremap JJ {
+tnoremap KK }
+tnoremap ,f \
+" --- }}}
+
+function! SaveLastReg()
+    if v:event['regname']==""
+        if v:event['operator']=='d'
+            for i in range(8,1,-1)
+                exe "let @".string(i+1)." = @". string(i)
+            endfor
+            if exists("g:last_yank")
+                let @1=g:last_yank
+            endif
+            let g:last_yank=@"
+        endif
+    endif
+endfunction
+
+autocmd TextYankPost * call SaveLastReg()
+
 nnoremap ,? <C-W>=
 function EqualizePanes()
     normal ,?
@@ -113,15 +154,18 @@ command Eq call EqualizePanes()
 augroup encrypted
     au!
     autocmd BufRead *.gpg set filetype=gpg
+    autocmd BufRead *.gpg set columns=100
     autocmd FileType gpg set wrap linebreak textwidth=0 wrapmargin=0
-    autocmd FileType gpg nnoremap j gj
-    autocmd FileType gpg nnoremap k gk
+    " autocmd FileType gpg cmap w <nop>
+    autocmd FileType gpg vnoremap <Down> gj
+    autocmd FileType gpg vnoremap <Up> gk
+    autocmd FileType gpg nnoremap <Down> gj
+    autocmd FileType gpg nnoremap <Up> gk
     autocmd FileType gpg set spell syntax=txt
-    autocmd FileType gpg nnoremap <leader>cl /%%%%<cr>
-    autocmd FileType gpg nnoremap <leader>ff /##<cr>
+    autocmd FileType gpg nnoremap <leader>cl mJ/%%%%<cr>`J
+    autocmd FileType gpg nnoremap <leader>ff mJ/##<cr>`J
     autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
-    " First make sure nothing is written to ~/.viminfo while editing
-    " an encrypted file.
+    " First make sure nothing is written to ~/.viminfo while editing an encrypted file.
     autocmd BufReadPre,FileReadPre *.gpg set viminfo=
     " We don't want a various options which write unencrypted data to disk
     autocmd BufReadPre,FileReadPre *.gpg set noswapfile noundofile nobackup
@@ -136,7 +180,6 @@ augroup encrypted
     autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
     " Convert all text to encrypted text before writing
-    " XXX
     " autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg ubuntu -ae 2>/dev/null
     autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --default-recipient-self -ae 2>/dev/null
     " Undo the encryption so we are back in the normal text, directly
@@ -151,6 +194,13 @@ augroup text
     autocmd FileType text set spell syntax=txt
     autocmd FileType text nnoremap <leader>cl /%%%%<cr>
     autocmd FileType text nnoremap <leader>ff /##<cr>
+augroup END
+" --- }}}
+"
+" Commands for sh  ---- {{{
+augroup sh_file
+    autocmd BufRead *.sh set filetype=sh
+    autocmd FileType sh setlocal textwidth=599
 augroup END
 " --- }}}
 
@@ -171,9 +221,9 @@ augroup pythonops
     autocmd FileType python nnoremap <leader>un ^xxj^
     autocmd FileType python vnoremap <silent> # :s/^/#<Space><cr>:noh<cr>
     autocmd FileType python vnoremap <silent> ! :s/^#<Space>//<cr>:noh<cr>
-    autocmd FileType python source ~/.config/nvim/colors/gruv.vim
-        " For highlight changes to take place run below
-    autocmd FileType python hi! Normal ctermbg=NONE guibg=NONE
-    autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+    " autocmd FileType python source ~/.config/nvim/colors/gruv.vim
+    "     " For highlight changes to take place run below
+    " autocmd FileType python hi! Normal ctermbg=NONE guibg=NONE
+    " autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 augroup END
 " ----- }}}
