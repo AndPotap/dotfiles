@@ -7,10 +7,10 @@ web_location = "/home/andpotap" + location[len(home):]
 
 
 def rsync(do_dry=True):
-    code = "nvc"
+    code = "nvcr"
     text = "Reverse Dry run"
     if not do_dry:
-        code = "vc"
+        code = "vcr"
         text = "Reverse Syncing"
     print(f"{text} from {web_location} to {location}/*")
     cmd = f"rsync -{code} webpage:{web_location}/* {location}"
