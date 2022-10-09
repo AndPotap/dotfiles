@@ -4,7 +4,6 @@ import os
 home = os.environ["HOME"]
 location = os.getcwd()
 web_location = "/home/andpotap" + location[len(home):]
-breakpoint()
 
 
 def rsync(do_dry=True):
