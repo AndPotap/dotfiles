@@ -25,6 +25,7 @@ augroup latex
     autocmd FileType tex iabbrev ppf \begin{proof}<Enter>\end{proof}<esc>k<leader>o
     " autocmd FileType tex nnoremap <leader>q nop
     autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
+    autocmd FileType tex nnoremap <silent> <leader>au :%s/\s\+$//e<Enter>
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
@@ -173,15 +174,15 @@ augroup latex
     autocmd FileType tex inoremap <C-G>r <C-G>u\rho
     autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
     autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
-    autocmd FileType tex inoremap <C-G>th <C-G>u\theta
-    autocmd FileType tex inoremap <C-G>Th <C-G>u\Theta
+    autocmd FileType tex inoremap <C-G>t <C-G>u\theta
+    autocmd FileType tex inoremap <C-G>T <C-G>u\Theta
     " Upsilon is disabled since it affect upper scripts, not sure why
     " autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
     " autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
-    autocmd FileType tex inoremap <C-G>ta <C-G>u\tau
-    autocmd FileType tex inoremap <C-G>Ta <C-G>u\Tau
+    autocmd FileType tex inoremap <C-G>y <C-G>u\tau
+    autocmd FileType tex inoremap <C-G>y <C-G>u\Tau
     autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
-    autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
+    autocmd FileType tex inoremap <C-G>v <C-G>u\upsilon
     autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
     autocmd FileType tex inoremap <C-G>Z <C-G>u\Zeta
 augroup END
