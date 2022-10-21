@@ -4,8 +4,8 @@ function findd {
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='/usr/bin/python3'
 alias vc='nvim /tmp/command.txt'
-alias vi='$HOME/nvim-linux64/bin/nvim'
-alias vim='$HOME/nvim-linux64/bin/nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias dot='cd ~/dotfiles'
 alias rm='rm -I'
 alias mv='mv -i'
@@ -48,11 +48,11 @@ alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
-alias snv='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3 --nv /scratch/ap6604/im.sif '
-alias son='singularity shell --overlay /scratch/ap6604/overlayfs/neural_pde.ext3 /scratch/ap6604/im.sif '
-alias sin='singularity shell /scratch/ap6604/im.sif'
-alias sq='squeue -u ap6604'
 # source $HOME/.bash_additional_aliases
+alias sq='squeue -u ap6604'
+alias s1='singularity shell --overlay /scratch/ap6604/overlayfs/general.ext3:ro /scratch/ap6604/greene.sif'
+alias s2='singularity shell --overlay /scratch/ap6604/overlayfs/input.ext3:ro /scratch/ap6604/greene.sif'
+alias s2nv='singularity shell --overlay /scratch/ap6604/overlayfs/input.ext3:ro --nv /scratch/ap6604/greene.sif'
 alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
@@ -67,3 +67,5 @@ function BranchGit {
     git branch --set-upstream-to=origin/${1} ${1}
     git push --set-upstream origin ${1}
 }
+function sto { tail -n100 -f "./slurm-${1}.out"; }
+function slo { less "./slurm-${1}.out"; }
