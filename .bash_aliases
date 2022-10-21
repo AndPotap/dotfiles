@@ -2,7 +2,7 @@ function findd {
     find . | grep -i ${@}
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
-alias py='/usr/bin/python3'
+alias py='/ext3/miniconda3/bin/python3'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
