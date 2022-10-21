@@ -1,7 +1,8 @@
 syntax on
 " source ~/.config/nvim/latex.vim
 " autocmd BufWritePre * %s/\s\+$//e
-" Basic settings --- {{{
+ " Basic settings --- {{{
+set mouse=
 let mapleader = " "
 set wildignorecase
 set signcolumn=yes
