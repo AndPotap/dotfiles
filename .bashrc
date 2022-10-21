@@ -5,15 +5,15 @@ shopt -s checkwinsize
 HISTSIZE=1000
 HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth:erasedups
-# export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac:\s*"
-export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac:[\t]*"
+export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 
-export EDITOR=$HOME/nvim-linux64/bin/nvim
+# export EDITOR=$HOME/nvim-linux64/bin/nvim
+export EDITOR=nvim
 export TERM=screen-256color
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
@@ -125,14 +125,14 @@ unset bash_prompt
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/andres_p/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/ext3/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/andres_p/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/andres_p/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/ext3/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/ext3/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/andres_p/anaconda3/bin:$PATH"
+        export PATH="/ext3/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
