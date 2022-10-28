@@ -95,7 +95,8 @@ bash_prompt() {
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
 	local ICONS=':::'
-	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	local ARROWS='->->->'
 	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
