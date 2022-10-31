@@ -160,8 +160,10 @@ augroup encrypted
     " autocmd FileType gpg cmap w <nop>
     autocmd FileType gpg vnoremap <Down> gj
     autocmd FileType gpg vnoremap <Up> gk
-    autocmd FileType gpg nnoremap <Down> gj
-    autocmd FileType gpg nnoremap <Up> gk
+    " autocmd FileType gpg nnoremap <Down> gj
+    " autocmd FileType gpg nnoremap <Up> gk
+    autocmd FileType gpg nnoremap j gj
+    autocmd FileType gpg nnoremap k gk
     autocmd FileType gpg set spell syntax=txt
     autocmd FileType gpg nnoremap <leader>cl mJ/%%%%<cr>`J
     autocmd FileType gpg nnoremap <leader>ff mJ/##<cr>`J
