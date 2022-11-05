@@ -12,6 +12,7 @@ def rsync(do_dry=True):
     if not do_dry:
         code = "vcr"
         text = "Reverse Syncing"
+    print(f"{text} from server to local")
     print(f"{text} from {web_location} to {location}/*")
     cmd = f"rsync -{code} webpage:{web_location}/* {location}"
     os.system(cmd)
