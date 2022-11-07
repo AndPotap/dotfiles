@@ -10,6 +10,7 @@ export GOPATH=${HOME}/go
 export PYTHONSTARTUP="$(python3 -m jedi repl)"
 export PYTHONPATH=$PYTHONPATH:"$HOME"
 export PYTHONPATH=$PYTHONPATH:"$HOME/gpytorch"
+export PYTHONPATH=$PYTHONPATH:"$HOME/break_gps"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/linear_operator"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/equivariant-MLP"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/nnet-compression-generalization"
