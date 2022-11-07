@@ -55,6 +55,8 @@ alias s2='singularity shell --overlay /scratch/ap6604/overlayfs/input.ext3:ro /s
 alias s2nv='singularity shell --overlay /scratch/ap6604/overlayfs/input.ext3:ro --nv /scratch/ap6604/greene.sif'
 alias s3='singularity shell --overlay /scratch/ap6604/overlayfs/pactl.ext3:ro /scratch/ap6604/greene.sif'
 alias s3nv='singularity shell --overlay /scratch/ap6604/overlayfs/pactl.ext3:ro --nv /scratch/ap6604/greene.sif'
+alias s4='singularity shell --overlay /scratch/ap6604/overlayfs/pytorch.ext3:ro /scratch/ap6604/greene.sif'
+alias s4nv='singularity shell --overlay /scratch/ap6604/overlayfs/pytorch.ext3:ro --nv /scratch/ap6604/greene.sif'
 alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
