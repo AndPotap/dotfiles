@@ -128,21 +128,21 @@ tnoremap KK }
 tnoremap ,f \
 " --- }}}
 
-function! SaveLastReg()
-    if v:event['regname']==""
-        if v:event['operator']=='d'
-            for i in range(8,1,-1)
-                exe "let @".string(i+1)." = @". string(i)
-            endfor
-            if exists("g:last_yank")
-                let @1=g:last_yank
-            endif
-            let g:last_yank=@"
-        endif
-    endif
-endfunction
-
-autocmd TextYankPost * call SaveLastReg()
+" function! SaveLastReg()
+"     if v:event['regname']==""
+"         if v:event['operator']=='d'
+"             for i in range(8,1,-1)
+"                 exe "let @".string(i+1)." = @". string(i)
+"             endfor
+"             if exists("g:last_yank")
+"                 let @1=g:last_yank
+"             endif
+"             let g:last_yank=@"
+"         endif
+"     endif
+" endfunction
+"
+" autocmd TextYankPost * call SaveLastReg()
 
 nnoremap ,? <C-W>=
 function EqualizePanes()
@@ -160,8 +160,10 @@ augroup encrypted
     " autocmd FileType gpg cmap w <nop>
     autocmd FileType gpg vnoremap <Down> gj
     autocmd FileType gpg vnoremap <Up> gk
-    autocmd FileType gpg nnoremap <Down> gj
-    autocmd FileType gpg nnoremap <Up> gk
+    " autocmd FileType gpg nnoremap <Down> gj
+    " autocmd FileType gpg nnoremap <Up> gk
+    autocmd FileType gpg nnoremap j gj
+    autocmd FileType gpg nnoremap k gk
     autocmd FileType gpg set spell syntax=txt
     autocmd FileType gpg nnoremap <leader>cl mJ/%%%%<cr>`J
     autocmd FileType gpg nnoremap <leader>ff mJ/##<cr>`J

@@ -9,3 +9,7 @@ require 'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
 }
+
+-- local python_ops = vim.treesitter.parse_query(
+--     "python",
+-- )
