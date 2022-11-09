@@ -55,6 +55,23 @@ ls.add_snippets("tex", {
     key = "tex",
 })
 
+ls.add_snippets("tex", {
+    s({ trig = "pma", dscr = "() matrix" },
+        {
+            t({ "\\begin{pmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{pmatrix}" }),
+        }),
+    s({ trig = "bma", dscr = "[] matrix" },
+        {
+            t({ "\\begin{bmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{bmatrix}" }),
+        }),
+}, {
+    key = "tex",
+})
+
 ls.add_snippets("bib", {
     s({ trig = "article", dscr = "bib template" },
         {
