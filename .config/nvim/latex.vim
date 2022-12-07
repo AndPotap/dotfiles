@@ -12,9 +12,6 @@ augroup latex
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
     autocmd FileType tex inoremap <C-D> <Nop>
     autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>q <C-G>u\hat{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>z <C-G>u\bar{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-T> <C-G>u\text{}<++><Esc>T{ha
     autocmd FileType tex nnoremap <Enter> g$
     " autocmd FileType tex set columns=150
@@ -53,20 +50,24 @@ augroup latex
     autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
     autocmd FileType tex inoremap ,h <C-G>u\hspace{0.2cm} 
     autocmd FileType tex inoremap ,i <C-G>u\infty
-    autocmd FileType tex inoremap <C-S>x <C-G>u\times 
-    autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{}^{<++>} <++><Esc>2T{i
+    autocmd FileType tex inoremap <C-S>a ,1,
+    autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>d <C-G>u\dotprod{}<++><Esc>T{i
+    autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
+    autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
+    autocmd FileType tex inoremap <C-S>g <C-G>u\quad \text{} \quad <++><Esc>T{i
     autocmd FileType tex inoremap <C-S>i <C-G>u\int_{}^{<++>} <++><Esc>2T{i
     autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{}^{<++>} <++><Esc>2T{i
-    autocmd FileType tex inoremap <C-S>d <C-G>u\dotprod{}<++><Esc>T{i
+    autocmd FileType tex inoremap <C-S>q <C-G>u\hat{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-S>n <C-G>u\norm{}<++><Esc>T{i
-    autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
-    autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
-    autocmd FileType tex inoremap <C-S>a ,1,
-    " Above is connected to the snips
-    autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
-    autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
-    autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>N <C-G>u\Norm{}<++><Esc>T{i
     autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{}^{<++>} <++><Esc>2T{i
+    autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-S>x <C-G>u\times 
+    autocmd FileType tex inoremap <C-S>z <C-G>u\bar{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
     autocmd FileType tex inoremap <C-H> <C-G>u^{}<++><Esc>F{a
     autocmd FileType tex inoremap <C-L> <C-G>u_{}<++><Esc>F{a
     autocmd FileType tex inoremap ,4 <C-G>u$$<++><Esc>F$i
