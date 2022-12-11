@@ -183,11 +183,38 @@ augroup encrypted
     autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
     " Convert all text to encrypted text before writing
-    " autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg ubuntu -ae 2>/dev/null
     autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --default-recipient-self -ae 2>/dev/null
     " Undo the encryption so we are back in the normal text, directly
     " after the file has been written.
     autocmd BufWritePost,FileWritePost *.gpg u
+augroup END
+" ----- }}}
+"
+" Commands for ASC. ---------- {{{
+" Same as above but different ending
+augroup ASCEncrypt
+    au!
+    autocmd BufRead *.asc set filetype=asc
+    autocmd BufRead *.asc set columns=100
+    autocmd FileType asc set wrap linebreak textwidth=0 wrapmargin=0
+    autocmd FileType asc vnoremap <Down> gj
+    autocmd FileType asc vnoremap <Up> gk
+    autocmd FileType asc nnoremap j gj
+    autocmd FileType asc nnoremap k gk
+    autocmd FileType asc set spell syntax=txt
+    autocmd FileType asc nnoremap <leader>cl mJ/%%%%<cr>`J
+    autocmd FileType asc nnoremap <leader>ff mJ/##<cr>`J
+    autocmd FileType asc nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
+    autocmd BufReadPre,FileReadPre *.asc set viminfo=
+    autocmd BufReadPre,FileReadPre *.asc set noswapfile noundofile nobackup
+    autocmd BufReadPre,FileReadPre *.asc set bin
+    autocmd BufReadPre,FileReadPre *.asc let ch_save = &ch|set ch=2
+    autocmd BufReadPost,FileReadPost *.asc '[,']!gpg -r ubuntu --decrypt 2> /dev/null
+    autocmd BufReadPost,FileReadPost *.asc set nobin
+    autocmd BufReadPost,FileReadPost *.asc let &ch = ch_save|unlet ch_save
+    autocmd BufReadPost,FileReadPost *.asc execute ":doautocmd BufReadPost " . expand("%:r")
+    autocmd BufWritePre,FileWritePre *.asc '[,']!gpg -r ubuntu -ae 2>/dev/null
+    autocmd BufWritePost,FileWritePost *.asc u
 augroup END
 " ----- }}}
 
