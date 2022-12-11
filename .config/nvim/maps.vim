@@ -214,6 +214,7 @@ augroup ASCEncrypt
     autocmd BufReadPost,FileReadPost *.asc let &ch = ch_save|unlet ch_save
     autocmd BufReadPost,FileReadPost *.asc execute ":doautocmd BufReadPost " . expand("%:r")
     autocmd BufWritePre,FileWritePre *.asc '[,']!gpg -r ubuntu -ae 2>/dev/null
+    autocmd BufWritePost,FileWritePost *.asc ! gpg-connect-agent reloadagent /bye
     autocmd BufWritePost,FileWritePost *.asc u
 augroup END
 " ----- }}}
