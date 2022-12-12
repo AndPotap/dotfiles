@@ -205,7 +205,7 @@ augroup ASCEncrypt
     autocmd FileType asc nnoremap <leader>cl mJ/%%%%<cr>`J
     autocmd FileType asc nnoremap <leader>ff mJ/##<cr>`J
     autocmd FileType asc nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
-    autocmd BufReadPre,FileReadPre *.asc silent! gpg-connect-agent reloadagent /bye
+    autocmd BufReadPre,FileReadPre *.asc !gpg-connect-agent reloadagent /bye
     autocmd BufReadPre,FileReadPre *.asc set viminfo=
     autocmd BufReadPre,FileReadPre *.asc set noswapfile noundofile nobackup
     autocmd BufReadPre,FileReadPre *.asc set bin
@@ -214,8 +214,8 @@ augroup ASCEncrypt
     autocmd BufReadPost,FileReadPost *.asc set nobin
     autocmd BufReadPost,FileReadPost *.asc let &ch = ch_save|unlet ch_save
     autocmd BufReadPost,FileReadPost *.asc execute ":doautocmd BufReadPost " . expand("%:r")
+    autocmd BufReadPost,FileReadPost *.asc !gpg-connect-agent reloadagent /bye
     autocmd BufWritePre,FileWritePre *.asc '[,']!gpg -r ubuntu -ae 2>/dev/null
-    autocmd BufWritePost,FileWritePost *.asc !gpg-connect-agent reloadagent /bye
     autocmd BufWritePost,FileWritePost *.asc u
 augroup END
 " ----- }}}
