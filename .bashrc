@@ -13,11 +13,11 @@ eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 
-export EDITOR=$HOME/nvim-linux64/bin/nvim
+export EDITOR=nvim
 export TERM=screen-256color
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
-    vi -R -c 'set ft=man nomod nolist' \
+    /usr/local/bin/nvim -R -c 'set ft=man nomod nolist' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
 bind -r '\C-s'
@@ -95,7 +95,7 @@ bash_prompt() {
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
 	local ICONS=':::'
-	local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	local ARROWS=' ->->->'
 	local SEPARATOR_2="\[\033[48;5;172m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
@@ -125,14 +125,14 @@ unset bash_prompt
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/andres_p/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/andres_p/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/andres_p/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/andres_p/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/andres_p/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/andres_p/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/andres_p/anaconda3/bin:$PATH"
+        export PATH="/home/andres_p/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
