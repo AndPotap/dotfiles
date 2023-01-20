@@ -45,6 +45,7 @@ augroup latex
     autocmd FileType tex nnoremap j gj
     autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
     autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
+    autocmd FileType tex inoremap <C-C> <C-G>u\cdot
     autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
     autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
     autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
@@ -76,6 +77,7 @@ augroup latex
     autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
     autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<++><Esc>T{i
     autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
+    autocmd FileType tex inoremap ,sc <C-G>u\textsc{}<++><Esc>T{i
     autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<++><Esc>T{i
     autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
 
