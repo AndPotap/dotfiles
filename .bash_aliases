@@ -14,6 +14,7 @@ alias ls='ls --color'
 alias lsa='ls --color -a'
 alias lst='ls --color -t'
 alias lsl='ls --color -l'
+alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
 
 # Shortcuts to proyects
