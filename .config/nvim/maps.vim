@@ -78,7 +78,7 @@ inoremap <C-j> :<Esc>r;a
 inoremap <C-o> <C-x><C-p>
 inoremap <C-l> <C-x><C-k>
 inoremap TT `
-inoremap RR \|
+inoremap EE \|
 inoremap AA ~
 inoremap ZZ _
 inoremap Dd -

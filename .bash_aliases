@@ -50,7 +50,7 @@ alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
-alias zpa='zathura $HOME/Documents/Books/Coding/Text_and_Web/Regular_Expressions/Mastering_Regular_Expressions,.pdf &'
+alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf & "
 alias dpp='cd ~/Documents/Papers/projects'
 alias dbr='cd ~/Documents/Books/Reading'
 function BranchGit {
