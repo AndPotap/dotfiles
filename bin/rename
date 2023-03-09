@@ -1,0 +1,27 @@
+#! /usr/bin/python3
+import sys
+import re
+import os
+
+
+def extract_name_oreilly(text, max_words=None):
+    pattern = r"-\s?([^-]*)\s?-"
+    out = re.search(pattern, text)
+    name = out.group(1)
+    name_clean = re.sub(r"([\_])+", "", name)
+    name_clean = name_clean.lower()
+    words = name_clean.split(" ")
+    if max_words is not None:
+        new_name = "_".join(words[:max_words])
+    else:
+        new_name = "_".join(words)
+
+    return new_name + ".pdf"
+
+
+if __name__ == "__main__":
+    name = sys.argv[0]
+    max_words = sys.argv[1]
+    new_name = extract_name_oreilly(name, max_words)
+    breakpoint()
+    os.system(f"mv {name} {new_name}")
