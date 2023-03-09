@@ -5,10 +5,11 @@ import os
 
 
 def extract_name_oreilly(text, max_words=None):
-    pattern = r"-\s?([^-]*)\s?-"
+    pattern = r"-\s?(.*)\.pdf"
     out = re.search(pattern, text)
     name = out.group(1)
-    name_clean = re.sub(r"([\_])+", "", name)
+    name_clean = re.sub(r"([\_\'\(\)\\\'’])+", "", name)
+    name_clean = re.sub(r"-OReilly.*", "", name_clean)
     name_clean = name_clean.lower()
     words = name_clean.split(" ")
     if max_words is not None:
