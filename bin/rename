@@ -20,8 +20,7 @@ def extract_name_oreilly(text, max_words=None):
 
 
 if __name__ == "__main__":
-    name = sys.argv[0]
-    max_words = sys.argv[1]
+    name = sys.argv[1]
+    max_words = int(sys.argv[2]) if len(sys.argv) > 2 else None
     new_name = extract_name_oreilly(name, max_words)
-    breakpoint()
-    os.system(f"mv {name} {new_name}")
+    os.rename(name, new_name)
