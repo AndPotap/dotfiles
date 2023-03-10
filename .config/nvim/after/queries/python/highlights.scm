@@ -14,7 +14,18 @@
 ; Attribute docstring
 ((expression_statement (assignment)) . (expression_statement (string) @comment))
 
-((identifier) @bp (#match? @bp "breakpoint\(\)"))
+;((identifier) @bp (#match? @bp "breakpoint\(\)"))
+;(argument_list) @arg (#eq? @arg "()")
+
+(call
+  function: (identifier) @bp (#eq? @bp "breakpoint")
+  arguments: (argument_list) @arg (#eq? @arg "()")
+)
+;(expression_statement (call) @bp (#match? @bp "breakpoint"))
+
+; This change in the highlights file worked like a marvel!
+;["[" "]" "{" "}"] @punctuation.bracket
+;["(" ")" "[" "]" "{" "}"] @punctuation.bracket
 
 ;"return" @bp
 
