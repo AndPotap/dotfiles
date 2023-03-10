@@ -19,7 +19,7 @@
 
 (call
   function: (identifier) @bp (#eq? @bp "breakpoint")
-  arguments: (argument_list) @arg (#eq? @arg "()")
+  arguments: (argument_list) @bpargs (#eq? @bpargs "()")
 )
 ;(expression_statement (call) @bp (#match? @bp "breakpoint"))
 
