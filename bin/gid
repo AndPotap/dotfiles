@@ -1,2 +1,2 @@
 #!/bin/bash
-gpg -d ~/notes/id.gpg | sed -n '3p' | grep "[^\n]" | xclip -sel clip
+gpg -d ~/notes/id.gpg | sed -n '3p' | xclip -sel clip
