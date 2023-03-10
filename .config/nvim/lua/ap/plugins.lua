@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     use 'BurntSushi/ripgrep'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/playground'
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

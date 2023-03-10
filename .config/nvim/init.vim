@@ -28,6 +28,9 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " highlight ColorColumn ctermbg=9
 " set notermguicolors
     " the setting above renders equal colors
+    "
+" hi @comment.python guifg=Blue
+" hi @bp.python guifg=Red
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime
