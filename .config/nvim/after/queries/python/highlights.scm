@@ -17,6 +17,8 @@
 ;((identifier) @bp (#match? @bp "breakpoint\(\)"))
 ;(argument_list) @arg (#eq? @arg "()")
 
+((identifier) @keyword (#match? @keyword "self"))
+
 (call
   function: (identifier) @bp (#eq? @bp "breakpoint")
   arguments: (argument_list) @bpargs (#eq? @bpargs "()")
