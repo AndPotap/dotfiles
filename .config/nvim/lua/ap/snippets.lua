@@ -51,6 +51,18 @@ ls.add_snippets("tex", {
             i(0),
             t({ " \\Biggr)<++>" }),
         }),
+    s({ trig = "pma", dscr = "() matrix" },
+        {
+            t({ "\\begin{pmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{pmatrix}" }),
+        }),
+    s({ trig = "bma", dscr = "[] matrix" },
+        {
+            t({ "\\begin{bmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{bmatrix}" }),
+        }),
 }, {
     key = "tex",
 })
