@@ -12,9 +12,6 @@ augroup latex
     autocmd FileType tex set wrap linebreak textwidth=0 wrapmargin=0
     autocmd FileType tex inoremap <C-D> <Nop>
     autocmd FileType tex inoremap <C-B> <C-G>u\bm{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>q <C-G>u\hat{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>z <C-G>u\bar{}<++><Esc>T{ha
-    autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-T> <C-G>u\text{}<++><Esc>T{ha
     autocmd FileType tex nnoremap <Enter> g$
     " autocmd FileType tex set columns=150
@@ -25,6 +22,7 @@ augroup latex
     autocmd FileType tex iabbrev ppf \begin{proof}<Enter>\end{proof}<esc>k<leader>o
     " autocmd FileType tex nnoremap <leader>q nop
     autocmd FileType tex nnoremap <leader>pa mavipgq`a:%s/\s\s/<Space><Enter>
+    autocmd FileType tex nnoremap <silent> <leader>au :%s/\s\+$//e<Enter>
     autocmd FileType tex nnoremap <leader><space> g^
     autocmd FileType tex nnoremap <leader>no i\noindent<Space>
     autocmd FileType tex nnoremap <leader>pp i\begin{prop}<Enter>\end{prop}<esc>F\kf}a[]<esc>T[i
@@ -47,24 +45,30 @@ augroup latex
     autocmd FileType tex nnoremap j gj
     autocmd Filetype tex inoremap <Right>  <Esc>/<++><Enter>"_c4l
     autocmd Filetype tex nnoremap <Right>  /<++><Enter>"_c4l
+    autocmd FileType tex inoremap <C-C> <C-G>u\cdot
     autocmd FileType tex inoremap <C-O> <C-G>u\left(\right)<++><Esc>10hi
     autocmd FileType tex inoremap <C-Y> <C-G>u\left[\right]<++><Esc>10hi
     autocmd FileType tex inoremap ,u <C-G>u\left\|\right\|<++><Esc>10hi
     autocmd FileType tex inoremap ,h <C-G>u\hspace{0.2cm} 
     autocmd FileType tex inoremap ,i <C-G>u\infty
-    autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{}^{<++>} <++><Esc>2T{i
+    autocmd FileType tex inoremap <C-S>a ,1,
+    autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>d <C-G>u\dotprod{}<++><Esc>T{i
+    autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
+    autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
+    autocmd FileType tex inoremap <C-S>g <C-G>u\quad \text{} \quad <++><Esc>T{i
     autocmd FileType tex inoremap <C-S>i <C-G>u\int_{}^{<++>} <++><Esc>2T{i
     autocmd FileType tex inoremap <C-S>p <C-G>u\prod_{}^{<++>} <++><Esc>2T{i
-    autocmd FileType tex inoremap <C-S>d <C-G>u\dotprod{}<++><Esc>T{i
+    autocmd FileType tex inoremap <C-S>q <C-G>u\hat{}<++><Esc>T{ha
     autocmd FileType tex inoremap <C-S>n <C-G>u\norm{}<++><Esc>T{i
-    autocmd FileType tex inoremap <C-S>f <C-G>u\frac{}{<++>}<++><Esc>10hi
-    autocmd FileType tex inoremap <C-S>b <C-G>u\mathbb{}<++><Esc>4hi
-    autocmd FileType tex inoremap <C-S>a ,1,
-    " Above is connected to the snips
-    autocmd FileType tex inoremap <C-S>e <C-G>u\under{\mathbb{E}}{ \sim <++>}<Esc>2T{4li
-    autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
-    autocmd FileType tex inoremap <C-S>c <C-G>u\mathcal{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>N <C-G>u\Norm{}<++><Esc>T{i
     autocmd FileType tex inoremap <C-S>r <C-G>u\mathrm{}<++><Esc>4hi
+    autocmd FileType tex inoremap <C-S>s <C-G>u\sum_{}^{<++>} <++><Esc>2T{i
+    autocmd FileType tex inoremap <C-S>t <C-G>u\tilde{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-S>x <C-G>u\times 
+    autocmd FileType tex inoremap <C-S>z <C-G>u\bar{}<++><Esc>T{ha
+    autocmd FileType tex inoremap <C-E> <C-G>u\mathbb{E}\left[ \right]<++><Esc>11hi
     autocmd FileType tex inoremap <C-H> <C-G>u^{}<++><Esc>F{a
     autocmd FileType tex inoremap <C-L> <C-G>u_{}<++><Esc>F{a
     autocmd FileType tex inoremap ,4 <C-G>u$$<++><Esc>F$i
@@ -73,6 +77,7 @@ augroup latex
     autocmd FileType tex inoremap ,bb <C-G>u\textbf{}<++><Esc>T{i
     autocmd FileType tex inoremap ,bm <C-G>u\mathbf{}<++><Esc>T{i
     autocmd FileType tex inoremap ,em <C-G>u\emph{}<++><Esc>T{i
+    autocmd FileType tex inoremap ,sc <C-G>u\textsc{}<++><Esc>T{i
     autocmd FileType tex inoremap ,tt <C-G>u\texttt{}<++><Esc>T{i
     autocmd FileType tex nnoremap ,4 o\begin{itemize}<Enter>\end{itemize}<Esc>ko<Space><Space>\item<Space><Space>
 
@@ -173,15 +178,15 @@ augroup latex
     autocmd FileType tex inoremap <C-G>r <C-G>u\rho
     autocmd FileType tex inoremap <C-G>s <C-G>u\sigma
     autocmd FileType tex inoremap <C-G>S <C-G>u\Sigma
-    autocmd FileType tex inoremap <C-G>th <C-G>u\theta
-    autocmd FileType tex inoremap <C-G>Th <C-G>u\Theta
+    autocmd FileType tex inoremap <C-G>t <C-G>u\theta
+    autocmd FileType tex inoremap <C-G>T <C-G>u\Theta
     " Upsilon is disabled since it affect upper scripts, not sure why
     " autocmd FileType tex inoremap <C-G>u <C-G>u\upsilon
     " autocmd FileType tex inoremap <C-G>U <C-G>u\Upsilon
-    autocmd FileType tex inoremap <C-G>ta <C-G>u\tau
-    autocmd FileType tex inoremap <C-G>Ta <C-G>u\Tau
+    autocmd FileType tex inoremap <C-G>y <C-G>u\tau
+    autocmd FileType tex inoremap <C-G>y <C-G>u\Tau
     autocmd FileType tex inoremap <C-G>w <C-G>u\varsigma
-    autocmd FileType tex inoremap <C-G>y <C-G>u\upsilon
+    autocmd FileType tex inoremap <C-G>v <C-G>u\upsilon
     autocmd FileType tex inoremap <C-G>z <C-G>u\zeta
     autocmd FileType tex inoremap <C-G>Z <C-G>u\Zeta
 augroup END
