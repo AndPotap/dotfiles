@@ -28,13 +28,16 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " highlight ColorColumn ctermbg=9
 " set notermguicolors
     " the setting above renders equal colors
+    "
+" hi @comment.python guifg=Blue
+" hi @bp.python guifg=Red
 
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 " Slime
 " ::::::::::::::::::::::::::::::::::::::::::::::::::::::
 let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "{last}"}
-let g:slime_paste_file="$HOME/.slime_paste"
+let g:slime_paste_file=expand("$HOME/.slime_paste")
 let g:slime_dont_ask_default=1
 let g:slime_python_ipython=1
 nnoremap <C-i> <Plug>SlimeLineSend
