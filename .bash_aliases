@@ -4,8 +4,8 @@ function findd {
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='python3'
 alias vc='nvim /tmp/command.txt'
-alias vi='$HOME/nvim-linux64/bin/nvim'
-alias vim='$HOME/nvim-linux64/bin/nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias dot='cd ~/dotfiles'
 alias rm='rm -I'
 alias mv='mv -i'

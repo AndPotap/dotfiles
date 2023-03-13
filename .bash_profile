@@ -2,6 +2,7 @@ if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
 source $HOME/fix_ssh.sh
+conda activate spurious
 
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
@@ -15,3 +16,6 @@ export PYTHONPATH=$PYTHONPATH:"/$HOME/bayesian_benchmarks"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/equivariant-MLP"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/nnet-compression-generalization"
 export PYTHONPATH=$PYTHONPATH:"/$HOME/pytorch-image-models"
+export PYTHONPATH=$PYTHONPATH:"/$HOME/linear_operator"
+export PYTHONPATH=$PYTHONPATH:"/$HOME/linops"
+export PYTHONPATH=$PYTHONPATH:"/$HOME/wilds"
