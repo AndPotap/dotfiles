@@ -49,11 +49,22 @@ alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
-alias zpa='zathura ~/Documents/Papers/projects/pactl/pactl_neurips2022.pdf &'
+alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf & "
 alias dpp='cd ~/Documents/Papers/projects'
+alias dbr='cd ~/Documents/Books/Reading'
 function BranchGit {
     echo "Branch named ${1}"
     git push origin HEAD:${1}
     git branch --set-upstream-to=origin/${1} ${1}
     git push --set-upstream origin ${1}
+}
+function ExpandArXiv {
+    echo "Expanding arXiv source for paper ${2}"
+    mkdir ${2}
+    mv ${1} ${2}.tar
+    mv ${2}.tar ${2}/
+    cd ${2}/
+    tar -xf ${2}.tar
+    rm ${2}.tar
+    cd ..
 }
