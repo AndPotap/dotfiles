@@ -259,3 +259,10 @@ augroup pythonops
     " autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 augroup END
 " ----- }}}
+"
+" Commands for Bib ---- {{{
+augroup references
+    autocmd BufRead *.bib set filetype=bib
+    autocmd FileType bib let @/ = "+++"
+augroup END
+" ----- }}}
