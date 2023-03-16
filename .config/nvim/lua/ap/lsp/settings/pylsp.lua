@@ -5,6 +5,7 @@ return {
             plugins = {
                 pycodestyle = {
                     enabled = true,
+                    ignore = { "E301" },
                     maxLineLength = 100
                 },
                 yapf = {
