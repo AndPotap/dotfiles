@@ -1,17 +1,18 @@
 return {
     settings = {
-        formatCommand = {"yapf"},
+        formatCommand = { "yapf" },
         pylsp = {
             plugins = {
-                autopep8 = {
-                    enabled = false
-                },
                 pycodestyle = {
-                    enabled = false,
+                    enabled = true,
+                    ignore = { "E301" },
                     maxLineLength = 100
                 },
                 yapf = {
                     enabled = true
+                },
+                autopep8 = {
+                    enabled = false
                 }
             }
         }
