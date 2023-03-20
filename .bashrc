@@ -13,11 +13,11 @@ eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 
-export EDITOR='nvim'
+export EDITOR=nvim
 export TERM=screen-256color
 set -o vi
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
-    /usr/local/bin/nvim -R -c 'set ft=man nomod nolist' \
+    nvim -R -c 'set ft=man nomod nolist' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
 bind -r '\C-s'
