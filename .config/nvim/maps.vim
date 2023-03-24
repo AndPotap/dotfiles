@@ -259,3 +259,14 @@ augroup pythonops
     " autocmd FileType python hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 augroup END
 " ----- }}}
+"
+" Commands for Bib ---- {{{
+augroup references
+    autocmd BufRead *.bib set filetype=bib
+    autocmd FileType bib let @/ = "+++"
+    autocmd FileType bib let @n = "Advances in Neural Information Processing Systems (NeurIPS)"
+    autocmd FileType bib let @i = "International Conference on Machine Learning (ICML)"
+    autocmd FileType bib let @a = "International Conference on Artificial Intelligence and Statistics (AISTATS)"
+    autocmd FileType bib let @c = "International Conference on Learning Representations (ICLR)"
+augroup END
+" ----- }}}
