@@ -61,6 +61,8 @@ function BranchGit {
     git push --set-upstream origin ${1}
 }
 function ExpandArXiv {
+    # $1 = 2103.00020  # arXiv file
+    # $2 = clip  # name of folder to create
     echo "Expanding arXiv source for paper ${2}"
     mkdir ${2}
     mv ${1} ${2}.tar
