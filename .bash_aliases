@@ -49,7 +49,7 @@ alias grr='git reset --hard & git fetch --all & git pull'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
-alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf &"
+alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf & "
 alias dpp='cd ~/Documents/Papers/projects'
 alias dbr='cd ~/Documents/Books/Reading'
 function BranchGit {
@@ -59,6 +59,8 @@ function BranchGit {
     git push --set-upstream origin ${1}
 }
 function ExpandArXiv {
+    # $1 = 2103.00020  # arXiv file
+    # $2 = clip  # name of folder to create
     echo "Expanding arXiv source for paper ${2}"
     mkdir ${2}
     mv ${1} ${2}.tar
@@ -67,4 +69,8 @@ function ExpandArXiv {
     tar -xf ${2}.tar
     rm ${2}.tar
     cd ..
+}
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
 }

@@ -21,6 +21,7 @@ def extract_name_oreilly(text, max_words=None):
 
 
 if __name__ == "__main__":
+    # rename <FILE w or wo spaces> 6
     name = sys.argv[1]
     max_words = int(sys.argv[2]) if len(sys.argv) > 2 else None
     new_name = extract_name_oreilly(name, max_words)
