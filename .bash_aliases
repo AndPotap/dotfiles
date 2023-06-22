@@ -2,7 +2,8 @@ function findd {
     find . | grep -i ${@}
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
-alias py='python3'
+# alias py='python3'
+alias py='/home/andres_p/.local/bin/python3'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
@@ -67,7 +68,10 @@ function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
     echo $CUDA_VISIBLE_DEVICES
 }
-
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
+}
 # Computer specific aliases
 # source $HOME/.bash_additional_aliases
 alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'

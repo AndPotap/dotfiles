@@ -10,7 +10,7 @@ set signcolumn=yes
 let $MANPAGER=''
 set background=dark
 set nowrap noerrorbells nohlsearch ignorecase
-" set clipboard=unnamed
+set clipboard=unnamed
 set wildmode=longest,list
 set number relativenumber splitbelow splitright
 set nobackup noswapfile nowritebackup
