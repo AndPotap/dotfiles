@@ -69,3 +69,7 @@ function ExpandArXiv {
     rm ${2}.tar
     cd ..
 }
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
+}
