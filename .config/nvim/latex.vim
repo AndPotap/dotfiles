@@ -31,7 +31,7 @@ augroup latex
     autocmd FileType tex nnoremap <leader>ew o\begin{equation}<Esc>o\end{equation}<Esc>^k<leader>o<C-G>u
     autocmd FileType tex nnoremap <buffer> <leader>EE :!build_tex %:r<CR><CR>
     autocmd FileType tex nnoremap <buffer> <leader>ee :!compiletex %<CR><CR>
-    autocmd FileType tex nnoremap <buffer> <C-E> :!pdflatex % && clear<CR><CR>
+    autocmd FileType tex nnoremap <buffer> <C-E> :!compiletex %<CR><CR>
     autocmd FileType tex inoremap ,f \
     autocmd FileType tex inoremap SS SS
     " autocmd Filetype tex inoremap <C-J>  <Esc>/<++><Enter>"_c4l
