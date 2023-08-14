@@ -1,0 +1,356 @@
+"window.opacity" = 1.0
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[[colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[colors.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[colors.normal]
+black = "0x1D202F"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x24283b"
+foreground = "0xc0caf5"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[cursor.vi_mode_cursor]
+cursor = "#ffffff"
+text = "#000000"
+
+[env]
+TERM = "screen-256color"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[D"
+key = "H"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001B[B"
+key = "J"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001B[A"
+key = "K"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001B[C"
+key = "L"
+mods = "Super"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[schemes.gruvbox_material_hard_dark.bright]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_hard_dark.normal]
+black = "0x32302f"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_hard_dark.primary]
+background = "0x1d2021"
+foreground = "0xd4be98"
+
+[schemes.gruvbox_material_hard_light.bright]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xf2e5bc"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_hard_light.normal]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xf2e5bc"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_hard_light.primary]
+background = "0xf9f5d7"
+foreground = "0x654735"
+
+[schemes.gruvbox_material_medium_dark.bright]
+black = "0x3c3836"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_medium_dark.normal]
+black = "0x3c3836"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_medium_dark.primary]
+background = "0x282828"
+foreground = "0xd4be98"
+
+[schemes.gruvbox_material_medium_light.bright]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xeee0b7"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_medium_light.normal]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xeee0b7"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_medium_light.primary]
+background = "0xfbf1c7"
+foreground = "0x654735"
+
+[schemes.gruvbox_material_soft_dark.bright]
+black = "0x45403d"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_soft_dark.normal]
+black = "0x45403d"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xd4be98"
+yellow = "0xd8a657"
+
+[schemes.gruvbox_material_soft_dark.primary]
+background = "0x32302f"
+foreground = "0xd4be98"
+
+[schemes.gruvbox_material_soft_light.bright]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xe6d5ae"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_soft_light.normal]
+black = "0x654735"
+blue = "0x45707a"
+cyan = "0x4c7a5d"
+green = "0x6c782e"
+magenta = "0x945e80"
+red = "0xc14a4a"
+white = "0xe6d5ae"
+yellow = "0xb47109"
+
+[schemes.gruvbox_material_soft_light.primary]
+background = "0xf2e5bc"
+foreground = "0x654735"
+
+[[schemes.tokyo-night.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[schemes.tokyo-night.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[schemes.tokyo-night.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[schemes.tokyo-night.normal]
+black = "0x15161E"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[schemes.tokyo-night.primary]
+background = "0x1a1b26"
+foreground = "0xc0caf5"
+
+[[schemes.tokyo-night-storm.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[schemes.tokyo-night-storm.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[schemes.tokyo-night-storm.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[schemes.tokyo-night-storm.normal]
+black = "0x1D202F"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[schemes.tokyo-night-storm.primary]
+background = "0x24283b"
+foreground = "0xc0caf5"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "none"
+
+[window.dimensions]
+columns = 140
+lines = 38
+x = 20
+y = 5
+
+[window.padding]
+x = 10
+y = 10
