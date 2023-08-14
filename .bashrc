@@ -76,9 +76,14 @@ bash_prompt() {
 	local TEXT_FORMAT_3="\[\033[1;38;5;0m\]"
     PROMT_FORMAT=$DarkGrey
 
-	if [ "$HOSTNAME" = ubu ]; then
-        TEXT_FORMAT_1=$DarkBlue
-	fi
+    case "$HOSTNAME" in
+        "ubu")
+            TEXT_FORMAT_1=$DarkBlue
+            ;;
+        "ubu-MS")
+            TEXT_FORMAT_1=$DarkBlue
+            ;;
+    esac
 
 	if [ "$USER" = root ]; then
         TEXT_FORMAT_1=$Red
