@@ -76,3 +76,6 @@ function venv {
     source $HOME/venv/$1/bin/activate
     alias py=$HOME/venv/$1/bin/python3
 }
+function set_venv {
+    echo "export VENV=${1}" > $HOME/venv/state.sh
+}

@@ -2,7 +2,12 @@ if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
 
-venv cola
+if [ -e $HOME/venv/state.sh ]; then
+    source $HOME/venv/state.sh
+    venv $VENV
+else
+    venv general
+
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
