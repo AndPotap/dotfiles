@@ -155,7 +155,7 @@ command Eq call EqualizePanes()
 augroup encrypted
     au!
     autocmd BufRead *.gpg set filetype=gpg
-    autocmd BufRead *.gpg set columns=100
+    autocmd BufRead *.gpg set columns=150
     autocmd FileType gpg set wrap linebreak textwidth=0 wrapmargin=0
     " autocmd FileType gpg cmap w <nop>
     autocmd FileType gpg vnoremap <Down> gj
