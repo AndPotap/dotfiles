@@ -2,7 +2,10 @@ return require('packer').startup(function(use)
     use 'jpalardy/vim-slime'
     use 'AndPotap/tokyonight.nvim'
     use 'wbthomason/packer.nvim'
-    use 'neovim/nvim-lspconfig'
+    use {
+        'neovim/nvim-lspconfig',
+        commit = "27c59475ae610cc8ccbb81d9d7859e5ffbd4ec8a"
+    }
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
