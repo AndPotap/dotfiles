@@ -84,7 +84,7 @@ export SCRATCH="/scratch/ap6604"
 export BLOBDIR="${SCRATCH}"
 export OVERLAYFS=/scratch/ap6604/overlayfs/spurious.ext3:ro
 export SIF=/scratch/ap6604/greene.sif
-export LOGDIR=/home/ap6604/spurious/logs
+export LOGDIR=/home/ap6604/afr/logs
 
 function slaunch {
   if [[ ! -z "${GPUS}" ]]; then
@@ -113,7 +113,7 @@ function slaunch {
       ~/.local/bin/runexec "${@}"
 }
 function swandb {
-    cd /home/ap6604/spurious
+    cd /home/ap6604/afr
   WANDB_SWEEP_ID=${1}
   if [[ -z "${WANDB_SWEEP_ID}" ]]; then
     echo "Missing sweep id."
