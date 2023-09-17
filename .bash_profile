@@ -1,8 +1,13 @@
 if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
-source $HOME/fix_ssh.sh
-venv cola
+
+if [ -e $HOME/venv/state.sh ]; then
+    source $HOME/venv/state.sh
+    venv $VENV
+else
+    venv general
+fi
 
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
