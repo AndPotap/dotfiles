@@ -51,6 +51,18 @@ ls.add_snippets("tex", {
             i(0),
             t({ " \\Biggr)<++>" }),
         }),
+    s({ trig = "pma", dscr = "() matrix" },
+        {
+            t({ "\\begin{pmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{pmatrix}" }),
+        }),
+    s({ trig = "bma", dscr = "[] matrix" },
+        {
+            t({ "\\begin{bmatrix}", "    " }),
+            i(1),
+            t({ "", "\\end{bmatrix}" }),
+        }),
 }, {
     key = "tex",
 })
@@ -90,4 +102,23 @@ ls.add_snippets("tex", {
         }),
 }, {
     type = "autosnippets",
+})
+
+-- , "    " creates a new line and adds 4 spaces (conforming with my latex indentation)
+ls.add_snippets("tex", {
+    s({ trig = "brackets", dscr = "Cases" },
+        {
+            t({ "\\left\\{\\begin{array}{lr}" , "    " }),
+            i(1),
+            t({ ", \\quad "}),
+            i(2),
+            t({ " \\\\" , "    "}),
+            i(3),
+            t({ ", \\quad "}),
+            i(4),
+            t({ " \\\\" , "    "}),
+            t({ "\\end{array} \\right." }),
+        }),
+}, {
+    key = "tex",
 })
