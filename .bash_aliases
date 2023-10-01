@@ -52,14 +52,20 @@ alias grr='git reset --hard & git fetch --all & git pull'
 alias sq='squeue -u ap6604'
 alias s1r='singularity shell --overlay /scratch/ap6604/overlayfs/general.ext3:ro /scratch/ap6604/greene.sif'
 alias s1w='singularity shell --overlay /scratch/ap6604/overlayfs/general.ext3 /scratch/ap6604/greene.sif'
-alias s2='singularity shell --overlay /scratch/ap6604/overlayfs/spurious.ext3:ro /scratch/ap6604/greene.sif'
-alias s2nv='singularity shell --overlay /scratch/ap6604/overlayfs/spurious.ext3:ro --nv /scratch/ap6604/greene.sif'
-alias s3='singularity shell --overlay /scratch/ap6604/overlayfs/llms.ext3:ro /scratch/ap6604/greene.sif'
-alias s3nv='singularity shell --overlay /scratch/ap6604/overlayfs/llms.ext3:ro --nv /scratch/ap6604/greene.sif'
 alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 alias scra='cd /scratch/ap6604'
+source env.sh
+function son {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif
+}
+function sinv {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif
+}
+function sin {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif
+}
 function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
     echo $CUDA_VISIBLE_DEVICES
