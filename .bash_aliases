@@ -15,6 +15,7 @@ alias ls='ls --color'
 alias lsa='ls --color -a'
 alias lst='ls --color -t'
 alias lsl='ls --color -l'
+alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
 
 # Shortcuts to proyects
@@ -60,6 +61,8 @@ function BranchGit {
     git push --set-upstream origin ${1}
 }
 function ExpandArXiv {
+    # $1 = 2103.00020  # arXiv file
+    # $2 = clip  # name of folder to create
     echo "Expanding arXiv source for paper ${2}"
     mkdir ${2}
     mv ${1} ${2}.tar
@@ -72,4 +75,7 @@ function ExpandArXiv {
 function venv {
     source $HOME/venv/$1/bin/activate
     alias py=$HOME/venv/$1/bin/python3
+}
+function set_venv {
+    echo "export VENV=${1}" > $HOME/venv/state.sh
 }
