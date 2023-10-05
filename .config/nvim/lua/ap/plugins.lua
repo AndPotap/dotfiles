@@ -20,7 +20,9 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        commit = "7d51950854a3f8853c5c0d570757095e9a5af313",
+        tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'BurntSushi/ripgrep'
