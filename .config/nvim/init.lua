@@ -38,6 +38,9 @@ local function enable_text_keys()
     noremap('<leader>cl', '/%%%%<cr>')
     noremap('<leader>ff', '/##<cr>')
     vim.o.spell = true
+    vim.api.nvim_exec('source ~/.config/nvim/syntax/txt.vim', false)
+    vim.api.nvim_command('syntax=txt')
+    -- vim.opt.syntax = "on"
     -- vim.opt.syntax = "txt"
     -- vim.cmd([[set syntax=txt]])
 end
