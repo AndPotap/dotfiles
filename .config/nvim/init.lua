@@ -45,3 +45,13 @@ autocmd("FileType", { pattern = { "text" },
     callback = enable_text_keys,
     group = grp_text
 })
+
+local grp_latex = vim.api.nvim_create_augroup("latex", { clear = true })
+local function enable_latex_keys()
+    require('ap.latex_maps').setup_tex_keymaps()
+end
+
+autocmd("FileType", { pattern = { "tex" },
+    callback = enable_latex_keys,
+    group = grp_latex
+})
