@@ -37,12 +37,8 @@ local function enable_text_keys()
     noremap('<leader>0', '%s/\\s\\+$//e')
     noremap('<leader>cl', '/%%%%<cr>')
     noremap('<leader>ff', '/##<cr>')
+    noremap('<C-S>', ':set syntax=txt<CR>')
     vim.o.spell = true
-    vim.api.nvim_exec('source ~/.config/nvim/syntax/txt.vim', false)
-    vim.api.nvim_command('syntax=txt')
-    -- vim.opt.syntax = "on"
-    -- vim.opt.syntax = "txt"
-    -- vim.cmd([[set syntax=txt]])
 end
 
 autocmd("FileType", { pattern = { "text" },
