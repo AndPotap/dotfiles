@@ -26,7 +26,6 @@ local function enable_python_keys()
     noremap('<leader>cc', '^<C-V>I#<Space><Esc>j^')
     noremap('<leader>un', '^xxj^')
 end
-
 autocmd("FileType", { pattern = { "python" },
     callback = enable_python_keys,
     group = grp_python
@@ -40,18 +39,13 @@ local function enable_text_keys()
     noremap('<C-S>', ':set syntax=txt<CR>')
     vim.o.spell = true
 end
-
 autocmd("FileType", { pattern = { "text" },
     callback = enable_text_keys,
     group = grp_text
 })
 
 local grp_latex = vim.api.nvim_create_augroup("latex", { clear = true })
-local function enable_latex_keys()
-    require('ap.latex_maps').setup_tex_keymaps()
-end
-
-autocmd("FileType", { pattern = { "tex" },
-    callback = enable_latex_keys,
+autocmd("FileType", { pattern = { "plaintex", "tex" },
+    callback = require('ap.latex_maps').setup_tex_keymaps,
     group = grp_latex
 })
