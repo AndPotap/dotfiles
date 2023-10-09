@@ -13,7 +13,7 @@ augroup encrypted
     autocmd FileType gpg nnoremap <C-S> :set syntax=txt<CR>
     autocmd FileType gpg nnoremap <leader>cl mJ/%%%%<cr>`J
     autocmd FileType gpg nnoremap <leader>ff mJ/##<cr>`J
-    autocmd FileType gpg nnoremap<leader>w mxHmw:w<Enter><Enter>'wzt`x
+    autocmd FileType gpg nnoremap <leader>w mxHmw:w<Enter><Enter>'wzt`x
     "
     " First make sure nothing is written to ~/.viminfo while editing an encrypted file.
     autocmd BufReadPre,FileReadPre *.gpg set viminfo=
@@ -21,12 +21,13 @@ augroup encrypted
     autocmd BufReadPre,FileReadPre *.gpg set noswapfile noundofile nobackup
     " Switch to binary mode to read the encrypted file (and avoid modifying it)
     autocmd BufReadPre,FileReadPre *.gpg set bin
-    autocmd BufReadPre,FileReadPre *.gpg let ch_save = &ch|set ch=2
+    autocmd BufReadPre,FileReadPre *.gpg let ch_save = &ch|set ch=2  " is this needed?
 
     autocmd BufReadPost,FileReadPost *.gpg '[,']!gpg --decrypt 2> /dev/null
     " Switch to normal mode for editing
     autocmd BufReadPost,FileReadPost *.gpg set nobin
-    autocmd BufReadPost,FileReadPost *.gpg let &ch = ch_save|unlet ch_save
+    autocmd BufReadPost,FileReadPost *.gpg let &ch = ch_save|unlet ch_save " is this needd?
+    " I'm not sure if the next line is needed
     autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
     " Convert all text to encrypted text before writing
