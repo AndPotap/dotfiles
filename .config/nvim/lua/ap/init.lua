@@ -4,5 +4,6 @@ require('ap.lsp')
 require('ap.cmp')
 require('ap.status')
 require('ap.signature')
+require('ap.tree')
 
 vim.cmd.colorscheme("tokyonight")
