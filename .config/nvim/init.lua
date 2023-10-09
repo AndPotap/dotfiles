@@ -10,6 +10,8 @@ require('ap.slime')
 
 vim.cmd.colorscheme("tokyonight")
 
+vim.api.nvim_exec('source ~/.config/nvim/autogroups.vim', false)
+
 local autocmd = vim.api.nvim_create_autocmd
 
 local function noremap(k, v)
