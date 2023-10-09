@@ -10,4 +10,5 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'AndPotap/tokyonight.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'ray-x/lsp_signature.nvim'
 end)
