@@ -12,4 +12,10 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+  use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.3',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+  use 'BurntSushi/ripgrep'
 end)
