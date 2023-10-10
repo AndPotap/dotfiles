@@ -8,6 +8,7 @@ require("ap.signature")
 require("ap.tree")
 require("ap.teles")
 require("ap.slime")
+require("ap.undotree")
 
 vim.cmd.colorscheme("tokyonight")
 -- vim.api.nvim_exec('source ~/.config/nvim/autogroups.vim', false)

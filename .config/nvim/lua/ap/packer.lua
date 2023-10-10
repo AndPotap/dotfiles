@@ -19,4 +19,5 @@ return require("packer").startup(function(use)
     }
   use "BurntSushi/ripgrep"
   use "jpalardy/vim-slime"
+  use "mbbill/undotree"
 end)
