@@ -18,4 +18,5 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } }
     }
   use "BurntSushi/ripgrep"
+  use "jpalardy/vim-slime"
 end)
