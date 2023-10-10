@@ -8,5 +8,6 @@ require("ap.tree")
 require("ap.signature")
 require("ap.teles")
 require("ap.slime")
+require("ap.undotree")
 
 vim.cmd.colorscheme("tokyonight")
