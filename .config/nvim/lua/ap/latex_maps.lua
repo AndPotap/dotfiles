@@ -12,8 +12,8 @@ M.setup_tex_keymaps = function ()
     vim.opt.textwidth = 0
     vim.opt.wrapmargin = 0
 
-    vim.api.nvim_buf_set_keymap(0, 'n', vim.g.mapleader .. "EE", ':!build_tex %:r<CR><CR>', { noremap = true, silent = false})
-    vim.api.nvim_buf_set_keymap(0, 'n', "<C-E>", ':!compiletex %<CR><CR>', { noremap = true, silent = false})
+    vim.api.nvim_buf_set_keymap(0, "n", vim.g.mapleader .. "EE", ":!build_tex %:r<CR><CR>", { noremap = true, silent = false})
+    vim.api.nvim_buf_set_keymap(0, "n", "<C-E>", ":!compiletex %<CR><CR>", { noremap = true, silent = false})
 
     vim.keymap.set("i", "<Left>", "<nop>", { noremap = true })
     -- vim.keymap.set("i", "<Right>", " <Esc>/<++>\n"_c4l")

@@ -1,6 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 telescope.setup {
     defaults = {
         file_ignore_patterns = { "%.ipynb", "%.yaml", "%.pkl", "%.log", "%.png", "%.pyc", "%.npy", "%.pdf", "%/logs"},
@@ -22,9 +22,11 @@ telescope.setup {
         }
     }
 }
-telescope.load_extension('fzf')
+telescope.load_extension("fzf")
 
-vim.keymap.set('n', '<leader>g', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set("n", "<leader>g", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>?", builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>fr", builtin.registers, {})
