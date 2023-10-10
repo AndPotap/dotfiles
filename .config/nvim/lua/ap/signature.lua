@@ -1,3 +1,5 @@
+local lsp_signature = require("lsp_signature")
+
 local signature_config = {
     log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
     debug = false,
@@ -7,4 +9,4 @@ local signature_config = {
     max_width = 80,
 }
 
-require("lsp_signature").setup(signature_config)
+lsp_signature.setup(signature_config)
