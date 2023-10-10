@@ -11,4 +11,5 @@ return require("packer").startup(function(use)
   use "AndPotap/tokyonight.nvim"
   use "nvim-lualine/lualine.nvim"
   use "nvim-treesitter/nvim-treesitter"
+  use "ray-x/lsp_signature.nvim"
 end)
