@@ -1,4 +1,4 @@
-vim.opt.textwidth = 100
+vim.opt.textwidth = 120
 vim.opt.clipboard = "unnamed"
 vim.o.mouse = ""
 vim.g.mapleader = " "
