@@ -6,19 +6,15 @@ location = os.getcwd()
 web_location = "/home/andpotap" + location[len(home):]
 
 
-def rsync(do_dry=True):
-    code = "nvcr"
-    text = "Dry run"
-    if not do_dry:
-        code = "vcr"
-        text = "Syncing"
-    print(f"{text} from local to server")
+def rsync(run_dry, server_name):
+    code, text = ("nvcr", "Dry run") if run_dry else ("vcr", "Syncing")
     print(f"{text} from {location}/* to {web_location} ")
-    cmd = f"rsync -{code} {location}/* webpage:{web_location}"
+    cmd = f"rsync -{code} {location}/* {server_name}:{web_location}"
     os.system(cmd)
 
 
 if __name__ == "__main__":
-    aux = input("Sync actual contents (YES - case sensitive) ")
-    do_dry = False if aux == "YES" else True
-    rsync(do_dry)
+    print("Local to Server")
+    ans = input("Sync actual contents (YES - case sensitive) ")
+    run_dry = False if ans == "YES" else True
+    rsync(run_dry, server_name="webpage")
