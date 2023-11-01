@@ -2,6 +2,8 @@ if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
 
+source $HOME/fix_ssh.sh
+
 if [ -e $HOME/venv/state.sh ]; then
     source $HOME/venv/state.sh
     venv $VENV
@@ -20,3 +22,4 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/gpytorch"
 export PYTHONPATH=$PYTHONPATH:"$HOME/linear_operator"
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
+export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
