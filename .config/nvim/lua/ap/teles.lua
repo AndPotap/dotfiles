@@ -3,7 +3,7 @@ local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 telescope.setup {
     defaults = {
-        file_ignore_patterns = { "%.ipynb", "%.yaml", "%.pkl", "%.log", "%.png", "%.pyc", "%.npy", "%.pdf", "%/logs"},
+        file_ignore_patterns = { "%.ipynb", "%.yaml", "%.pkl", "%.log", "%.png", "%.pyc", "%.npy", "%.pdf", "%.mtx", "%/logs"},
         mappings = {
             i = {
                 ["<CR>"] = actions.select_vertical,
