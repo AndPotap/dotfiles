@@ -44,8 +44,8 @@ M.setup_tex_keymaps = function ()
 
     local other_i_pairs = {
         ["<C-D>"] = "<nop>",
-        ["<C-B>"] = "<C-G>u\bm{}<++><Esc>T{ha",
-        ["<C-T>"] = "<C-G>u\text{}<++><Esc>T{ha",
+        ["<C-B>"] = "<C-G>u\\bm{}<++><Esc>T{ha",
+        ["<C-T>"] = "<C-G>u\\text{}<++><Esc>T{ha",
         ["SS"] = "SS",
         [",f"] = "\\",
         [",u"] = "<C-G>u\\left|\\right|<++><Esc>10hi",
