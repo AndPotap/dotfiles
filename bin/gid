@@ -1,2 +1,0 @@
-#!/bin/bash
-gpg -d ~/notes/id.gpg | sed -n '3p' | xclip -sel clip

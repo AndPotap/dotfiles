@@ -1,44 +1,61 @@
 #!/bin/bash
 
-cd $HOME/dotfiles
-source $HOME/dotfiles/util_fns.sh
-
-files2back=(".bashrc" ".bash_profile" ".profile")
-backupFiles files2back
-
-allDirs=$(find . -type d -not -path './.git/*' -not -path '.' -not -path './.git' -not -path './.gnupg')
-createDirs allDirs
-
-allFiles=$(find . -type f -not -path './.git/*')
-excludedFiles=("./README.md" "./.gitignore" "./colors.txt" "./util_fns.sh")
-totalFiles=0
-for f in $allFiles
+dirs_to_create=(vim vim/colors .config .config/nvim .config/nvim/syntax
+               .config/nvim/colors bin .config/alacritty .config/kitty
+               .ssh .config/zathura)
+for dir in "${dirs_to_create[@]}"
 do
-    totalFiles=$((totalFiles + 1))
-    check=$(fileCheck excludedFiles $f)
-    if [ "$check" == "NOT IN" ]
+    if [ ! -d ~/$dir ]
     then
-        file=$(stripFirstTwo $f)
-        path="$HOME/$file"
-        if [ -h $path ]
-        # -h Returns true if file exists and is a symlink
+        mkdir ~/$dir
+    fi
+done
+
+files_to_create=(.vimrc .bashrc .bash_profile .bash_aliases
+                 .inputrc .tmux.conf .ideavimrc .config/flake8
+                 .config/alacritty/alacritty.yml
+                 .dir_colors
+                 .config/zathura/zathurarc
+                 vim/colors/gruv.vim .config/nvim/init.vim .config/nvim/maps.vim
+                 .config/nvim/syntax/txt.vim .config/nvim/colors/gruv.vim
+                 .config/kitty/kitty.conf
+                 .spectrwm.conf
+                 .pylintrc
+                 .config/nvim/latex.vim
+                 .gnupg/gpg-agent.conf
+                 .xmodmap
+                 .ssh/config
+                 baraction.sh
+                 .spectrwm_us.conf)
+for f in "${files_to_create[@]}"
+do
+    path=~/$f
+    echo "linked $path"
+    # -h Returns true if file exists and is a symlink
+    if [ -h $path ]
+    then
+        rm $path
+        ln -s ~/dotfiles/$f $path
+    else
+        ln -s ~/dotfiles/$f $path
+    fi
+done
+
+for f in ~/dotfiles/bin/*
+do
+    if [[ $f != *.sh ]]
+    then
+        base=$(basename $f)
+        path=~/bin/$base
+        echo "linked $path"
+        if [ -h $path ] || [ -f $path ]
         then
             rm $path
-            ln -s ~/dotfiles/$file $path
-            totalLinked=$((totalLinked + 1))
-        elif [ -f $path ]
-        # Returns true if file exits but it is not symlinked
-        then
-            echo "Exists: $path exists!"
-            echo "Need to erase or backup"
+            # cp $f $path
+            ln -s $f $path
         else
-            ln -s ~/dotfiles/$file $path
-            totalLinked=$((totalLinked + 1))
+            # cp $f $path
+            ln -s $f $path
         fi
     fi
 done
-totalFiles=$((totalFiles - ${#excludedFiles[@]}))
-if [ $totalLinked -eq $totalFiles ]
-then
-    echo "ALL LINKED"
-fi
