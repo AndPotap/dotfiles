@@ -4,12 +4,14 @@ fi
 
 source $HOME/fix_ssh.sh
 
-if [ -e $HOME/venv/state.sh ]; then
-    source $HOME/venv/state.sh
-    venv $VENV
-else
-    venv general
-fi
+conda activate struct
+
+# if [ -e $HOME/venv/state.sh ]; then
+#     source $HOME/venv/state.sh
+#     venv $VENV
+# else
+#     venv general
+# fi
 
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
