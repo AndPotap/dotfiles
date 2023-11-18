@@ -3,3 +3,5 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 # source $HOME/fix_ssh.sh
 source $HOME/.bash_paths
+
+export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"

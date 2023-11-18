@@ -1,6 +1,3 @@
-function findd {
-    find . | grep -i ${@}
-}
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='/ext3/miniconda3/bin/python3'
 alias vc='nvim /tmp/command.txt'
@@ -50,32 +47,39 @@ alias grr='git reset --hard & git fetch --all & git pull'
 # Computer specific aliases
 # source $HOME/.bash_additional_aliases
 alias sq='squeue -u ap6604'
-alias s1r='singularity shell --overlay /scratch/ap6604/overlayfs/general.ext3:ro /scratch/ap6604/greene.sif'
-alias s1w='singularity shell --overlay /scratch/ap6604/overlayfs/general.ext3 /scratch/ap6604/greene.sif'
 alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 alias scra='cd /scratch/ap6604'
-source env.sh
-function son {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif
-}
-function sinv {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif
-}
-function sin {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif
-}
-function sGPU {
-    export CUDA_VISIBLE_DEVICES=${1}
-    echo $CUDA_VISIBLE_DEVICES
-}
 
+# Sourcing env characteristics
+source env.sh
+#
+
+function findd {
+    find . | grep -i ${@}
+}
 function BranchGit {
     echo "Branch named ${1}"
     git push origin HEAD:${1}
     git branch --set-upstream-to=origin/${1} ${1}
     git push --set-upstream origin ${1}
+}
+function sw {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif
+}
+function swnv {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv /scratch/ap6604/greene.sif
+}
+function srnv {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif
+}
+function sr {
+    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif
+}
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
 }
 function sto { tail -n100 -f "./slurm-${1}.out"; }
 function slo { less "./slurm-${1}.out"; }
