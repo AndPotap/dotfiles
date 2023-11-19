@@ -52,10 +52,6 @@ alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 alias scra='cd /scratch/ap6604'
 
-# Sourcing env characteristics
-source env.sh
-#
-
 function findd {
     find . | grep -i ${@}
 }
