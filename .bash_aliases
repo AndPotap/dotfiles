@@ -86,3 +86,18 @@ function venv {
 function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
+get_free_gpu() {
+    # Get the list of GPU IDs to check, or default to all GPUs
+    local IDs=${1:-$(nvidia-smi --query-gpu=index --format=csv,noheader,nounits | tr '\n' ' ')}
+
+    for ID in $IDs; do
+        MEM_USED=$(nvidia-smi --id=$ID --query-gpu=memory.used --format=csv,nounits,noheader)
+        if [ "$MEM_USED" -lt 500 ]; then
+            echo "$ID"
+            return 0
+        fi
+    done
+
+    sleep 10
+    get_free_gpu "$IDs"
+}
