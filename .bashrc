@@ -64,8 +64,8 @@ bash_prompt() {
 
     # Modify below to change the background / sync with TMUX
     local BACKGROUND=$GREEN
-
     local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+
     case "$HOSTNAME" in
         "ubu")
             TEXT_FORMAT_1="\[\033[0;38;5;${DARKBLUE}m\]"

@@ -26,5 +26,3 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/febo"
 export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
 export PYTHONPATH=$PYTHONPATH:"$HOME/pytreeclass"
-export GOPATH=${HOME}/go
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
