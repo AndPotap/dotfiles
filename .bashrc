@@ -76,9 +76,14 @@ bash_prompt() {
 	local TEXT_FORMAT_3="\[\033[1;38;5;0m\]"
     PROMT_FORMAT=$DarkGrey
 
-	if [ "$HOSTNAME" = ubu ]; then
-        TEXT_FORMAT_1=$DarkBlue
-	fi
+    case "$HOSTNAME" in
+        "ubu")
+            TEXT_FORMAT_1=$DarkBlue
+            ;;
+        "ubu-MS")
+            TEXT_FORMAT_1=$DarkBlue
+            ;;
+    esac
 
 	if [ "$USER" = root ]; then
         TEXT_FORMAT_1=$Red
@@ -95,9 +100,9 @@ bash_prompt() {
 	local PROMT_INPUT=$"$PROMT_FORMAT "
 
 	local ICONS=':::'
-	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4 '
-	local ARROWS='->->->'
-	local SEPARATOR_2="\[\033[48;5;172m\]\[\033[1;38;5;0m\]${ICONS}"
+	# local ARROWS=' '$'\u27A4'' '$'\u27A4'' '$'\u27A4'
+	local ARROWS=' ->->->'
+	local SEPARATOR_2="\[\033[48;5;73m\]\[\033[1;38;5;0m\]${ICONS}"
 	local SEPARATOR_3="\[\033[1;38;5;4m\]${ARROWS}"
 
 	case $TERM in

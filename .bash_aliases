@@ -1,5 +1,7 @@
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='/ext3/miniconda3/bin/python3'
+# alias py='python3'
+# alias py='/usr/local/bin/python3'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
@@ -11,6 +13,7 @@ alias ls='ls --color'
 alias lsa='ls --color -a'
 alias lst='ls --color -t'
 alias lsl='ls --color -l'
+alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
 
 # Shortcuts to proyects
@@ -60,6 +63,25 @@ function BranchGit {
     git push origin HEAD:${1}
     git branch --set-upstream-to=origin/${1} ${1}
     git push --set-upstream origin ${1}
+}
+function ExpandArXiv {
+    # $1 = 2103.00020  # arXiv file
+    # $2 = clip  # name of folder to create
+    echo "Expanding arXiv source for paper ${2}"
+    mkdir ${2}
+    mv ${1} ${2}.tar
+    mv ${2}.tar ${2}/
+    cd ${2}/
+    tar -xf ${2}.tar
+    rm ${2}.tar
+    cd ..
+}
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
+}
+function set_venv {
+    echo "export VENV=${1}" > $HOME/venv/state.sh
 }
 function sw {
     singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif
