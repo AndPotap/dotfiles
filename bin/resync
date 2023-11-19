@@ -1,33 +1,12 @@
 #! /usr/bin/python3
 import os
-<<<<<<< HEAD
-=======
 import subprocess
->>>>>>> master
 
 home = os.environ["HOME"]
 location = os.getcwd()
 web_location = "/home/andpotap" + location[len(home):]
 
 
-<<<<<<< HEAD
-def rsync(do_dry=True):
-    code = "nvcr"
-    text = "Reverse Dry run"
-    if not do_dry:
-        code = "vcr"
-        text = "Reverse Syncing"
-    print(f"{text} from server to local")
-    print(f"{text} from {web_location} to {location}/*")
-    cmd = f"rsync -{code} webpage:{web_location}/* {location}"
-    os.system(cmd)
-
-
-if __name__ == "__main__":
-    aux = input("Sync actual contents (YES - case sensitive) ")
-    do_dry = False if aux == "YES" else True
-    rsync(do_dry)
-=======
 def rsync(run_dry, server_name):
     code, text = ("nvcr", "Dry run") if run_dry else ("vcr", "Syncing")
     print(f"{text} from {web_location} to \n{location}/*")
@@ -42,4 +21,3 @@ if __name__ == "__main__":
     ans = input("Sync actual contents (YES - case sensitive) ")
     run_dry = False if ans == "YES" else True
     rsync(run_dry, server_name="webpage")
->>>>>>> master
