@@ -124,19 +124,6 @@ ls.add_snippets("tex", {
 })
 
 ls.add_snippets("tex", {
-    s({ trig = "defi", dscr = "definition" },
-        {
-            t({ "\\begin{defi}[" }),
-            i(1),
-            t({ "]" }),
-            t({ "", "    <++>" }),
-            t({ "    ", "\\end{defi}" }),
-        }),
-}, {
-    key = "tex",
-})
-
-ls.add_snippets("tex", {
     s({ trig = "thm", dscr = "theorem" },
         {
             t({ "\\begin{thm}[" }),
@@ -145,6 +132,15 @@ ls.add_snippets("tex", {
             t({ "", "    <++>" }),
             t({ "    ", "\\end{thm}" }),
         }),
-}, {
-    key = "tex",
-})
+    s({ trig = "defi", dscr = "definition" },
+        {
+            t({ "\\begin{defi}[" }),
+            i(1),
+            t({ "]" }),
+            t({ "", "    <++>" }),
+            t({ "    ", "\\end{defi}" }),
+        }),
+    }, {
+        key = "tex",
+    }
+)
