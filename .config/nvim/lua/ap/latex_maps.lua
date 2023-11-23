@@ -12,6 +12,12 @@ M.setup_tex_keymaps = function ()
     vim.opt.textwidth = 0
     vim.opt.wrapmargin = 0
 
+    -- This lines below did not fix the issue
+    -- vim.o.autoindent = false
+    -- vim.o.smartindent = false
+    -- vim.bo.autoindent = false
+    -- vim.bo.smartindent = false
+
     vim.api.nvim_buf_set_keymap(0, "n", vim.g.mapleader .. "EE", ":!build_tex %:r<CR><CR>", { noremap = true, silent = false})
     vim.api.nvim_buf_set_keymap(0, "n", "<C-E>", ":!compiletex %<CR><CR>", { noremap = true, silent = false})
 
