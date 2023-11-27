@@ -140,6 +140,13 @@ ls.add_snippets("tex", {
             t({ "", "  <++>" }),
             t({ "", "\\end{defi}" }),
         }),
+    s({ trig = "iti", dscr = "itemize" },
+        {
+            t({ "\\begin{itemize}" }),
+            t({ "", "  \\item " }),
+            i(1),
+            t({ "", "\\end{itemize}" }),
+        }),
     }, {
         key = "tex",
     }
