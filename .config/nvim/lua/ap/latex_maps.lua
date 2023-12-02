@@ -22,6 +22,8 @@ M.setup_tex_keymaps = function ()
     vim.api.nvim_buf_set_keymap(0, "n", "<C-E>", ":!compiletex %<CR><CR>", { noremap = true, silent = false})
 
     vim.keymap.set("i", "<Left>", "<nop>", { noremap = true })
+    vim.keymap.set("i", "<Up>", "<nop>", { noremap = true })
+    vim.keymap.set("i", "<Down>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Right>", "<Esc>/<++><Enter>c4l")
 
     local other_n_pairs = {
