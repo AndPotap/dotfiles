@@ -25,6 +25,7 @@ M.setup_tex_keymaps = function ()
     vim.keymap.set("i", "<Up>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Down>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Right>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("n", "<Right>", "<Esc>/<++><Enter>c4l")
 
     local other_n_pairs = {
         ["<Up>"] =  "k",
@@ -38,7 +39,8 @@ M.setup_tex_keymaps = function ()
         ["<leader>pp"] = "i\\begin{prop}\n\\end{prop}<esc>F\\kf}a[]<esc>T[i",
         ["<leader>Eq"] = "o\\begin{equation}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation}<Esc>^2k<leader>o<C-G>u",
         ["<leader>eq"] = "o\\begin{equation*}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation*}<Esc>^2k<leader>o<C-G>u",
-        ["<leader>ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
+        ["<leader>ew"] = "o\\begin{equation*}<Esc>o\\end{equation*}<Esc>^k<leader>o<C-G>u",
+        ["<leader>Ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
         [",5"] = "o<C-G>u\\textcolor{blue}{\\textbf{Note:}} \\textcolor{gray}{}<Esc>T{",
         [",4"] = "o\\begin{itemize}<Enter>\\end{itemize}<Esc>ko<Space><Space>\\item<Space><Space>",
         [",3"] = "o\\begin{figure}<Esc>o\\centering<Esc>o\\includegraphics[<++>]{<++>}<Esc>o\\caption{<++>}\\label{<++>}<Esc>o\\end{figure}<Esc>2k^/<++><CR>h",
