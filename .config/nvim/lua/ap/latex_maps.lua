@@ -96,6 +96,7 @@ M.setup_tex_keymaps = function ()
         ["<C-S>r"] = "<C-G>u\\mathrm{}<++><Esc>4hi",
         ["<C-S>s"] = "<C-G>u\\sum_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>t"] = "<C-G>u\\tilde{}<++><Esc>T{ha",
+        ["<C-S>T"] = "<C-G>u\\intercal",
         ["<C-S>x"] = "<C-G>u\\times ",
         ["<C-S>z"] = "<C-G>u\\bar{}<++><Esc>T{ha",
     }
