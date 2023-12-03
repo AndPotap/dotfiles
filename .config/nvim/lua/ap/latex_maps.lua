@@ -36,6 +36,7 @@ M.setup_tex_keymaps = function ()
         ["<leader>au"] = ":%s/\\s\\+$//e\n",
         ["<leader> "] = "g^",
         ["<leader>no"] = "i\\noindent ",
+        ["<leader>tc"] = "i\\textcolor{}{<++>}<++><esc>F{F{a",
         ["<leader>pp"] = "i\\begin{prop}\n\\end{prop}<esc>F\\kf}a[]<esc>T[i",
         ["<leader>Eq"] = "o\\begin{equation}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation}<Esc>^2k<leader>o<C-G>u",
         ["<leader>eq"] = "o\\begin{equation*}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation*}<Esc>^2k<leader>o<C-G>u",
