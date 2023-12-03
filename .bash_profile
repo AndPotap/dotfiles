@@ -9,6 +9,7 @@ conda activate struct
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
+export PYTHONPATH=$PYTHONPATH:"$HOME/second-diffusion"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
