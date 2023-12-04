@@ -6,7 +6,7 @@ if [[ ! -z \"${SLURM_JOBTMP}\" ]]; then
 fi
 
 EXT3_NAME=${EXT3_NAME:-$(basename $(pwd))}
-OVERLAY_ARGS="--overlay /scratch/ap6604/overlayfs/spurious.ext3:ro"
+OVERLAY_ARGS="--overlay $OVERLAYFS"
 if [[ -e /dev/nvidia0 ]]; then NV_ARGS="--nv"; fi
 
 args=''

@@ -103,9 +103,13 @@ function sto { tail -n100 -f "./slurm-${1}.out"; }
 function slo { less "./slurm-${1}.out"; }
 
 ## Slurm aliases
-# Requirements: runexec chmod +x ~/.local/bin/runexec
-# Requirements: runwandb chmod +x ~/.local/bin/runwandb
+# Requirements: runexec chmod +x ~/bin/runexec
+# Requirements: runwandb chmod +x ~/bin/runwandb
 # Example: HH=1 MEM=16 CPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
+# The next two variables is what I need to modify for my projects
+export PROJECT_PATH=$HOME/struct_approx
+export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
+export LOGDIR=/home/ap6604/struct_approx/logs
 export OMP_NUM_THREADS=4
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 # export WANDB_USERNAME=andpotap
@@ -113,9 +117,7 @@ export WANDB_API_KEY=4d5eeaaa6c9490983c150734414d605e0c126b7a
 export WANDB_USERNAME=ap3635
 export SCRATCH="/scratch/ap6604"
 export BLOBDIR="${SCRATCH}"
-export OVERLAYFS=/scratch/ap6604/overlayfs/spurious.ext3:ro
 export SIF=/scratch/ap6604/greene.sif
-export LOGDIR=/home/ap6604/afr/logs
 
 function slaunch {
   if [[ ! -z "${GPUS}" ]]; then
@@ -141,15 +143,15 @@ function slaunch {
       --cpus-per-task=${CPUS:-4} \
       --mem=${MEM:-16}G \
       --time=${HH:-16}:00:00 \
-      ~/.local/bin/runexec "${@}"
+      ~/bin/runexec "${@}"
 }
 function swandb {
-    cd /home/ap6604/afr
+    cd PROJECT_PATH
   WANDB_SWEEP_ID=${1}
   if [[ -z "${WANDB_SWEEP_ID}" ]]; then
     echo "Missing sweep id."
     exit 1
   fi
-  JOB_NAME=${WANDB_SWEEP_ID} slaunch runwandb ${@}
+  JOB_NAME=${WANDB_SWEEP_ID} slaunch ~/bin/runwandb ${@}
 }
 function swandb-gpu { GPUS="${GPUS:-1}" swandb "${@}"; }
