@@ -107,8 +107,10 @@ function slo { less "./slurm-${1}.out"; }
 # Requirements: runwandb chmod +x ~/.local/bin/runwandb
 # Example: HH=1 MEM=16 CPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
 export OMP_NUM_THREADS=4
-export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
-export WANDB_USERNAME=andpotap
+# export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
+# export WANDB_USERNAME=andpotap
+export WANDB_API_KEY=4d5eeaaa6c9490983c150734414d605e0c126b7a
+export WANDB_USERNAME=ap3635
 export SCRATCH="/scratch/ap6604"
 export BLOBDIR="${SCRATCH}"
 export OVERLAYFS=/scratch/ap6604/overlayfs/spurious.ext3:ro
