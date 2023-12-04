@@ -146,7 +146,7 @@ function slaunch {
       ~/bin/runexec "${@}"
 }
 function swandb {
-    cd PROJECT_PATH
+    cd $PROJECT_PATH
   WANDB_SWEEP_ID=${1}
   if [[ -z "${WANDB_SWEEP_ID}" ]]; then
     echo "Missing sweep id."
