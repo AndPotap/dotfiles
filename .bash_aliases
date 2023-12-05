@@ -53,6 +53,7 @@ alias grr='git reset --hard & git fetch --all & git pull'
 alias white='totem ~/Videos/white.mp4'
 alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf & "
 alias dpp='cd ~/Documents/Papers/projects'
+alias dpr='cd ~/Documents/Papers/reading'
 alias dbr='cd ~/Documents/Books/Reading'
 function BranchGit {
     echo "Branch named ${1}"
