@@ -12,11 +12,20 @@ M.setup_tex_keymaps = function ()
     vim.opt.textwidth = 0
     vim.opt.wrapmargin = 0
 
+    -- This lines below did not fix the issue
+    -- vim.o.autoindent = false
+    -- vim.o.smartindent = false
+    -- vim.bo.autoindent = false
+    -- vim.bo.smartindent = false
+
     vim.api.nvim_buf_set_keymap(0, "n", vim.g.mapleader .. "EE", ":!build_tex %:r<CR><CR>", { noremap = true, silent = false})
     vim.api.nvim_buf_set_keymap(0, "n", "<C-E>", ":!compiletex %<CR><CR>", { noremap = true, silent = false})
 
     vim.keymap.set("i", "<Left>", "<nop>", { noremap = true })
+    vim.keymap.set("i", "<Up>", "<nop>", { noremap = true })
+    vim.keymap.set("i", "<Down>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Right>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("n", "<Right>", "<Esc>/<++><Enter>c4l")
 
     local other_n_pairs = {
         ["<Up>"] =  "k",
@@ -27,10 +36,12 @@ M.setup_tex_keymaps = function ()
         ["<leader>au"] = ":%s/\\s\\+$//e\n",
         ["<leader> "] = "g^",
         ["<leader>no"] = "i\\noindent ",
+        ["<leader>tc"] = "i\\textcolor{}{<++>}<++><esc>F{F{a",
         ["<leader>pp"] = "i\\begin{prop}\n\\end{prop}<esc>F\\kf}a[]<esc>T[i",
         ["<leader>Eq"] = "o\\begin{equation}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation}<Esc>^2k<leader>o<C-G>u",
         ["<leader>eq"] = "o\\begin{equation*}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation*}<Esc>^2k<leader>o<C-G>u",
-        ["<leader>ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
+        ["<leader>ew"] = "o\\begin{equation*}<Esc>o\\end{equation*}<Esc>^k<leader>o<C-G>u",
+        ["<leader>Ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
         [",5"] = "o<C-G>u\\textcolor{blue}{\\textbf{Note:}} \\textcolor{gray}{}<Esc>T{",
         [",4"] = "o\\begin{itemize}<Enter>\\end{itemize}<Esc>ko<Space><Space>\\item<Space><Space>",
         [",3"] = "o\\begin{figure}<Esc>o\\centering<Esc>o\\includegraphics[<++>]{<++>}<Esc>o\\caption{<++>}\\label{<++>}<Esc>o\\end{figure}<Esc>2k^/<++><CR>h",
@@ -56,7 +67,7 @@ M.setup_tex_keymaps = function ()
         [",em"] = "<C-G>u\\emph{}<++><Esc>T{i",
         [",sc"] = "<C-G>u\\textsc{}<++><Esc>T{i",
         [",tt"] = "<C-G>u\\texttt{}<++><Esc>T{i",
-        ["<C-C>"] = "<C-G>u\\cdot",
+        ["<C-C>"] = "<C-G>u\\cdots",
         ["<C-O>"] = "<C-G>u\\left(\\right)<++><Esc>10hi",
         ["<C-Y>"] = "<C-G>u\\left[\\right]<++><Esc>10hi",
         ["<C-E>"] = "<C-G>u\\mathbb{E}\\left[ \\right]<++><Esc>11hi",
@@ -80,11 +91,13 @@ M.setup_tex_keymaps = function ()
         ["<C-S>i"] = "<C-G>u\\int_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>p"] = "<C-G>u\\prod_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>q"] = "<C-G>u\\hat{}<++><Esc>T{ha",
+        ["<C-S>o"] = "<C-G>u\\overline{}<++><Esc>T{ha",
         ["<C-S>n"] = "<C-G>u\\norm{}<++><Esc>T{i",
         ["<C-S>N"] = "<C-G>u\\Norm{}<++><Esc>T{i",
         ["<C-S>r"] = "<C-G>u\\mathrm{}<++><Esc>4hi",
         ["<C-S>s"] = "<C-G>u\\sum_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>t"] = "<C-G>u\\tilde{}<++><Esc>T{ha",
+        ["<C-S>T"] = "<C-G>u\\intercal",
         ["<C-S>x"] = "<C-G>u\\times ",
         ["<C-S>z"] = "<C-G>u\\bar{}<++><Esc>T{ha",
     }
