@@ -4,7 +4,7 @@ fi
 
 source $HOME/fix_ssh.sh
 
-USE_CONDA=1
+USE_CONDA=0
 
 if [ "$USE_CONDA" -eq 1 ]; then
     # >>> conda initialize >>>
@@ -44,3 +44,4 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/linear_operator"
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
+export PYTHONPATH=$PYTHONPATH:"$HOME/second-diffusion"
