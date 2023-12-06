@@ -6,15 +6,20 @@ location = os.getcwd()
 web_location = "/home/andpotap" + location[len(home):]
 
 
-def rsync(run_dry, server_name):
+def rsync(case, server_name):
+    run_dry, should_delete = case
     code, text = ("nvcr", "Dry run") if run_dry else ("vcr", "Syncing")
+    if should_delete:
+        code += " --delete "
     print(f"{text} from {location}/* to {web_location} ")
-    cmd = f"rsync -{code} {location}/* {server_name}:{web_location}"
+    cmd = f"rsync -{code} {location}/ {server_name}:{web_location}"
     os.system(cmd)
 
 
 if __name__ == "__main__":
     print("Local to Server")
     ans = input("Sync actual contents (YES - case sensitive) ")
+    should_delete = input("Should delete (YES - case sensitive) ")
     run_dry = False if ans == "YES" else True
-    rsync(run_dry, server_name="webpage")
+    should_delete = True if should_delete == "YES" else False
+    rsync(case=(run_dry, should_delete), server_name="webpage")
