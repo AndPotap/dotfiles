@@ -26,6 +26,8 @@ M.setup_tex_keymaps = function ()
     vim.keymap.set("i", "<Down>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Right>", "<Esc>/<++><Enter>c4l")
     vim.keymap.set("n", "<Right>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("i", "<Tab>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("n", "<Tab>", "<Esc>/<++><Enter>c4l")
 
     local other_n_pairs = {
         ["<Up>"] =  "k",
