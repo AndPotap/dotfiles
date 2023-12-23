@@ -1,6 +1,41 @@
-#!/bin/bash
+#!/usr/bin/python3
+import os
+import re
+import subprocess
 
-for file in *.pdf
-do
-    mv -- "$file" "${file// /_}"
-done
+
+def main():
+    pdf_s = [file for file in os.listdir(".") if file.endswith("pdf")]
+    for pdf in pdf_s:
+        pdf_new = sanitize_pdf(pdf)
+        if not pdf_new == pdf:
+            subprocess.run(["mv", f"{pdf}", f"{pdf_new}"], text=True,
+                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+
+def sanitize_pdf(filename):
+    extension = filename[-4:]
+    text = filename[:-4]
+
+    clear_pattern = ["?", ":", ";", "'"]
+    for pat in clear_pattern:
+        text = text.replace(pat, "")
+
+    wordS = text.split()
+    text = ""
+    for word in wordS:
+        aux = re.findall(r"\b\w+\b", word)
+        is_multiple = len(aux) > 1
+        if is_multiple:
+            text += word + "_"
+        elif word.isupper():
+            text += word + "_"
+        else:
+            text += word.title() + "_"
+
+    return text[:-1] + extension
+
+
+if __name__ == "__main__":
+    print("Cleaning PDF names")
+    main()
