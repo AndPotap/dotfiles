@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+import sys
+from random import randint
+
+
+def print_random_number(total):
+    out = randint(1, total)
+    print(out)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: <total> | Example: 44")
+    else:
+        total = int(sys.argv[1])
+    print_random_number(total=total)

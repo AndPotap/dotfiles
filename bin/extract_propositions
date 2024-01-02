@@ -1,0 +1,104 @@
+#!/usr/bin/python3
+import sys
+import re
+from os.path import join
+from os.path import splitext
+
+
+def extract_propositions(root, file, filter_name=None):
+    filter_fn = get_filter(filter_name)
+    file, ext = splitext(file)
+    file_input = join(root, file + ext)
+    file_output = join(root, "prop_" + file + ext)
+
+    contents = open(file_input, mode='r')
+    lines = contents.readlines()
+    contents.close()
+
+    preamble_lines, propositions = [], []
+
+    find_beginning = re.compile(r'\\begin{document}')
+    for line in lines:
+        found_match = find_beginning.search(line)
+        if found_match:
+            preamble_lines.append(line)
+            break
+        else:
+            preamble_lines.append(line)
+    start_options = [re.compile(r'\\begin{prop}'),
+                     re.compile(r'\\begin{thm}'),
+                     re.compile(r'\\begin{lemma}')]
+    end_options = [re.compile(r'\\end{prop}'),
+                   re.compile(r'\\end{thm}'),
+                   re.compile(r'\\end{lemma}')]
+    proposition_count, proposition_start = 0, 0
+    is_recruiting = False
+
+    for idx, line in enumerate(lines):
+        for find_start in start_options:
+            found_start = find_start.search(line)
+            if found_start:
+                is_recruiting = filter_fn(line)
+                break
+        for find_end in end_options:
+            found_end = find_end.search(line)
+            if found_end:
+                break
+        if is_recruiting:
+            if found_start:
+                proposition_count += 1
+                proposition_start = idx
+            elif found_end:
+                propositions += lines[proposition_start:idx + 1]
+                propositions += ['\n']
+                proposition_start = 0
+
+    print(f'Found {proposition_count} propositions')
+
+    output = preamble_lines + ['\n']
+    output += propositions
+    output += ['\\end{document}\n']
+
+    with open(file=file_output, mode='w') as f:
+        for line in output:
+            f.write(line)
+
+
+def get_filter(filter_name):
+    if filter_name is None:
+        return lambda x: True
+    elif filter_name == "p3" or filter_name == "p2" or filter_name == "p1":
+        return construct_filter(filter_name)
+    elif filter_name == "p123":
+        def filter_fn(line):
+            out1 = construct_filter("p1")(line)
+            out2 = construct_filter("p2")(line)
+            out3 = construct_filter("p3")(line)
+            out = out1 or out2 or out3
+            return out
+        return filter_fn
+    else:
+        raise NotImplementedError("Unknown filter pattern")
+
+
+def construct_filter(case):
+    def filter_fn(line):
+        pattern = f'textcolor{{{case}}}'
+        if re.search(pattern, line) is not None:
+            return True
+        else:
+            return False
+    return filter_fn
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: <root_dir> <file_path> | Example: ./ abc.tex p3")
+    else:
+        root = sys.argv[1]
+        file = sys.argv[2]
+        if len(sys.argv) > 3:
+            filter_name = sys.argv[3]
+        else:
+            filter_name = None
+        extract_propositions(root, file, filter_name)
