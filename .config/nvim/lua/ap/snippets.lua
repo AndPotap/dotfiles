@@ -72,6 +72,13 @@ ls.add_snippets("tex", {
             t({ "", "  <++>" }),
             t({ "", "\\end{thm}" }),
         }),
+    s({ trig = "proof", dscr = "proof" },
+        {
+            t({ "\\begin{proof}" }),
+            t({ "", "  " }),
+            i(1),
+            t({ "", "\\end{proof}" }),
+        }),
     s({ trig = "defi", dscr = "definition" },
         {
             t({ "\\begin{defi}[" }),
