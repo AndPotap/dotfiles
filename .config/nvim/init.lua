@@ -8,8 +8,9 @@ require("ap.tree")
 require("ap.signature")
 require("ap.teles")
 require("ap.slime")
-require("ap.undotree")
 require("ap.snippets")
+-- require("ap.undotree")
+-- require("ap.iron")
 
 vim.cmd.colorscheme("tokyonight")
 
