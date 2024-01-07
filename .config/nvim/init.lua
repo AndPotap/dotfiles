@@ -45,3 +45,32 @@ vim.cmd.colorscheme("tokyonight")
 --         vim.api.nvim_buf_add_highlight(0, ns_id, hl_group, srow - 1, scol - 1, ecol - 1)
 --     end
 -- end
+
+-- NOTE: The function below pastes into the Neovim terminal
+-- local function copy_line_to_other_pane()
+--     -- Save the current window and buffer
+--     local original_win = vim.api.nvim_get_current_win()
+--     local original_buf = vim.api.nvim_win_get_buf(original_win)
+-- 
+--     -- Yank the current line
+--     vim.api.nvim_command('normal yy')
+-- 
+--     -- Find and switch to the next window
+--     vim.api.nvim_command('wincmd w')
+-- 
+--     -- Paste the line in the next window
+--     vim.api.nvim_command('normal p')
+-- 
+--     -- Enter insert mode and press Enter
+--     vim.api.nvim_command('startinsert')
+--     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, false, true), 'n', true)
+-- 
+--     -- Return to the original window and buffer
+--     vim.api.nvim_set_current_win(original_win)
+--     vim.api.nvim_set_current_buf(original_buf)
+-- end
+-- 
+-- vim.api.nvim_create_user_command('CopyLineToOtherPane', copy_line_to_other_pane, {})
+-- 
+-- 
+-- vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>lua copy_line_to_other_pane()<CR>', { noremap = true, silent = true })
