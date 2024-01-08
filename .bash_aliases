@@ -84,16 +84,16 @@ function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
 function sw {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif /bin/bash -l
 }
 function swnv {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv /scratch/ap6604/greene.sif
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv /scratch/ap6604/greene.sif /bin/bash -l
 }
 function srnv {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif /bin/bash -l
 }
 function sr {
-    singularity shell --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif /bin/bash -l
 }
 function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
@@ -109,7 +109,7 @@ function slo { less "./slurm-${1}.out"; }
 # The next two variables is what I need to modify for my projects
 export PROJECT_PATH=$HOME/struct_approx
 export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
-export LOGDIR=/home/ap6604/struct_approx/logs
+export LOGDIR=/scratch/ap6604/struct_approx/logs
 export OMP_NUM_THREADS=4
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 # export WANDB_USERNAME=andpotap
