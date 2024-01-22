@@ -44,6 +44,7 @@ M.setup_tex_keymaps = function ()
         ["<leader>eq"] = "o\\begin{equation*}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation*}<Esc>^2k<leader>o<C-G>u",
         ["<leader>ew"] = "o\\begin{equation*}<Esc>o\\end{equation*}<Esc>^k<leader>o<C-G>u",
         ["<leader>Ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
+        [",6"] = ":%y+<CR>",
         [",5"] = "o<C-G>u\\textcolor{blue}{\\textbf{Note:}} \\textcolor{gray}{}<Esc>T{",
         [",4"] = "o\\begin{itemize}<Enter>\\end{itemize}<Esc>ko<Space><Space>\\item<Space><Space>",
         [",3"] = "o\\begin{figure}<Esc>o\\centering<Esc>o\\includegraphics[<++>]{<++>}<Esc>o\\caption{<++>}\\label{<++>}<Esc>o\\end{figure}<Esc>2k^/<++><CR>h",
