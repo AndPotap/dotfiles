@@ -55,7 +55,7 @@ ls.add_snippets("tex", {
             t({ "}" }),
             i(0),
         }),
-    s({ trig = "..", dscr = "Dotted" },
+    s({ trig = "....", dscr = "Dotted" },
         {
             t({ "\\dots" }),
         }),
