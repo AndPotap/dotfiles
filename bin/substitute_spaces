@@ -17,7 +17,7 @@ def sanitize_pdf(filename):
     extension = filename[-4:]
     text = filename[:-4]
 
-    clear_pattern = ["?", ":", ";", "'"]
+    clear_pattern = ["?", ":", ";", "'", "(", ")"]
     for pat in clear_pattern:
         text = text.replace(pat, "")
 
