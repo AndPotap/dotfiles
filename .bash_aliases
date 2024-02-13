@@ -81,3 +81,9 @@ function venv {
 function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
+function gpgA {
+    touch ${1}
+    gpg -r AndPotap -ae ${1}
+    mv "${1}.asc" "${1}.gpg"
+    rm ${1}
+}
