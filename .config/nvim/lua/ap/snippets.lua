@@ -35,7 +35,7 @@ ls.add_snippets("bib", {
             i(2),
             t({ "}},", "    author={" }),
             i(3),
-            t({ "},", "    journal={Preprint arXiv " }),
+            t({ "},", "    journal={arXiv " }),
             i(4),
             t({ "},", "    year={20" }),
             i(5),
