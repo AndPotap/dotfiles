@@ -93,6 +93,7 @@ M.setup_tex_keymaps = function ()
         ["<C-S>g"] = "<C-G>u\\quad \\text{} \\quad <++><Esc>T{i",
         ["<C-S>i"] = "<C-G>u\\int_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>p"] = "<C-G>u\\prod_{}^{<++>} <++><Esc>2T{i",
+        ["<C-S>P"] = "<C-G>u\\prime",
         ["<C-S>q"] = "<C-G>u\\hat{}<++><Esc>T{ha",
         ["<C-S>o"] = "<C-G>u\\overline{}<++><Esc>T{ha",
         ["<C-S>n"] = "<C-G>u\\norm{}<++><Esc>T{i",
