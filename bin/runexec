@@ -7,6 +7,8 @@ fi
 
 EXT3_NAME=${EXT3_NAME:-$(basename $(pwd))}
 OVERLAY_ARGS="--overlay $OVERLAYFS"
+BINDING_ARGS=""
+if [[ ${#BINDING} -gt 1 ]]; then BINDING_ARGS="--bind $BINDING"; fi
 if [[ -e /dev/nvidia0 ]]; then NV_ARGS="--nv"; fi
 
 args=''
@@ -15,5 +17,5 @@ for i in "$@"; do
   args="$args \"${i//\"/\\\"}\""
 done
 
-singularity exec ${NV_ARGS} ${OVERLAY_ARGS} ${SIF} \
+singularity exec ${BINDING_ARGS} ${NV_ARGS} ${OVERLAY_ARGS} ${SIF} \
   /bin/bash -l -c "${args}"

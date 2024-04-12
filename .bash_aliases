@@ -54,6 +54,7 @@ alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_V
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 alias scra='cd /scratch/ap6604'
+alias save="source $HOME/.bash_profile"
 
 function findd {
     find . | grep -i ${@}
@@ -89,11 +90,17 @@ function sw {
 function swnv {
     singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv /scratch/ap6604/greene.sif /bin/bash -l
 }
+function swnvb {
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache --nv /scratch/ap6604/greene.sif /bin/bash -l
+}
 function srnv {
     singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif /bin/bash -l
 }
 function sr {
     singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif /bin/bash -l
+}
+function srnvb {
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro --nv /scratch/ap6604/greene.sif /bin/bash -l
 }
 function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
@@ -106,18 +113,24 @@ function slo { less "./slurm-${1}.out"; }
 # Requirements: runexec chmod +x ~/bin/runexec
 # Requirements: runwandb chmod +x ~/bin/runwandb
 # Example: HH=1 MEM=16 CPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
-# The next two variables is what I need to modify for my projects
-export PROJECT_PATH=$HOME/struct_approx
-export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
-export LOGDIR=/scratch/ap6604/struct_approx/logs
-export OMP_NUM_THREADS=4
+# Example: HH=1 MEM=16 CPUS=1 GPUS=1 slaunch python3 run.py experiment=wt103/gpt2-monarch.yaml train.optimizer.lr=1.8e-3
+# The next variables is what I need to modify for my projects
+# export PROJECT_PATH=$HOME/fly
+# export LOGDIR=/scratch/ap6604/fly/logs
+# export OVERLAYFS=/scratch/ap6604/overlayfs/monarch.ext3:ro
+export PROJECT_PATH=$HOME/ssm
+export LOGDIR=/scratch/ap6604/ssm
+export OVERLAYFS=/scratch/ap6604/overlayfs/ssm.ext3:ro
+export BINDING="/home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro"
+
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 # export WANDB_USERNAME=andpotap
 export WANDB_API_KEY=4d5eeaaa6c9490983c150734414d605e0c126b7a
 export WANDB_USERNAME=ap3635
 export SCRATCH="/scratch/ap6604"
-export BLOBDIR="${SCRATCH}"
 export SIF=/scratch/ap6604/greene.sif
+export BLOBDIR="${SCRATCH}"
+export OMP_NUM_THREADS=4
 
 function slaunch {
   if [[ ! -z "${GPUS}" ]]; then
@@ -155,3 +168,18 @@ function swandb {
   JOB_NAME=${WANDB_SWEEP_ID} slaunch ~/bin/runwandb ${@}
 }
 function swandb-gpu { GPUS="${GPUS:-1}" swandb "${@}"; }
+get_free_gpu() {
+    # Get the list of GPU IDs to check, or default to all GPUs
+    local IDs=${1:-$(nvidia-smi --query-gpu=index --format=csv,noheader,nounits | tr '\n' ' ')}
+
+    for ID in $IDs; do
+        MEM_USED=$(nvidia-smi --id=$ID --query-gpu=memory.used --format=csv,nounits,noheader)
+        if [ "$MEM_USED" -lt 500 ]; then
+            echo "$ID"
+            return 0
+        fi
+    done
+
+    sleep 10
+    get_free_gpu "$IDs"
+}
