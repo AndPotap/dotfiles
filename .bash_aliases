@@ -112,15 +112,15 @@ function slo { less "./slurm-${1}.out"; }
 ## Slurm aliases
 # Requirements: runexec chmod +x ~/bin/runexec
 # Requirements: runwandb chmod +x ~/bin/runwandb
-# Example: HH=1 MEM=16 CPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
+# Example: HH=1 MEM=16 CPUS=1 GPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
 # Example: HH=1 MEM=16 CPUS=1 GPUS=1 slaunch python3 run.py experiment=wt103/gpt2-monarch.yaml train.optimizer.lr=1.8e-3
 # The next variables is what I need to modify for my projects
-# export PROJECT_PATH=$HOME/fly
-# export LOGDIR=/scratch/ap6604/fly/logs
-# export OVERLAYFS=/scratch/ap6604/overlayfs/monarch.ext3:ro
-export PROJECT_PATH=$HOME/ssm
-export LOGDIR=/scratch/ap6604/ssm
-export OVERLAYFS=/scratch/ap6604/overlayfs/ssm.ext3:ro
+export PROJECT_PATH=$HOME/struct_approx
+export LOGDIR=/scratch/ap6604/struct_approx/logs
+export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
+# export PROJECT_PATH=$HOME/ssm
+# export LOGDIR=/scratch/ap6604/ssm
+# export OVERLAYFS=/scratch/ap6604/overlayfs/ssm.ext3:ro
 export BINDING="/home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro"
 
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
