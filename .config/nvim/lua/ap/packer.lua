@@ -19,7 +19,8 @@ return require("packer").startup(function(use)
     }
   use "BurntSushi/ripgrep"
   use "jpalardy/vim-slime"
-  use "mbbill/undotree"
+  -- use "mbbill/undotree"
+  -- use "Vigemus/iron.nvim"
   use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,

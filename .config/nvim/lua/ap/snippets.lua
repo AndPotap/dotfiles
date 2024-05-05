@@ -35,7 +35,7 @@ ls.add_snippets("bib", {
             i(2),
             t({ "}},", "    author={" }),
             i(3),
-            t({ "},", "    journal={Preprint arXiv " }),
+            t({ "},", "    journal={arXiv " }),
             i(4),
             t({ "},", "    year={20" }),
             i(5),
@@ -55,7 +55,7 @@ ls.add_snippets("tex", {
             t({ "}" }),
             i(0),
         }),
-    s({ trig = "..", dscr = "Dotted" },
+    s({ trig = "....", dscr = "Dotted" },
         {
             t({ "\\dots" }),
         }),
@@ -71,6 +71,13 @@ ls.add_snippets("tex", {
             t({ "]" }),
             t({ "", "  <++>" }),
             t({ "", "\\end{thm}" }),
+        }),
+    s({ trig = "proof", dscr = "proof" },
+        {
+            t({ "\\begin{proof}" }),
+            t({ "", "  " }),
+            i(1),
+            t({ "", "\\end{proof}" }),
         }),
     s({ trig = "defi", dscr = "definition" },
         {

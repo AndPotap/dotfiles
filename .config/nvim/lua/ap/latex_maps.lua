@@ -26,6 +26,8 @@ M.setup_tex_keymaps = function ()
     vim.keymap.set("i", "<Down>", "<nop>", { noremap = true })
     vim.keymap.set("i", "<Right>", "<Esc>/<++><Enter>c4l")
     vim.keymap.set("n", "<Right>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("i", "<Tab>", "<Esc>/<++><Enter>c4l")
+    vim.keymap.set("n", "<Tab>", "<Esc>/<++><Enter>c4l")
 
     local other_n_pairs = {
         ["<Up>"] =  "k",
@@ -42,6 +44,7 @@ M.setup_tex_keymaps = function ()
         ["<leader>eq"] = "o\\begin{equation*}<Esc>o<Space><Space>\\begin{split}<Enter>\\end{split}<Enter>\\end{equation*}<Esc>^2k<leader>o<C-G>u",
         ["<leader>ew"] = "o\\begin{equation*}<Esc>o\\end{equation*}<Esc>^k<leader>o<C-G>u",
         ["<leader>Ew"] = "o\\begin{equation}<Esc>o\\end{equation}<Esc>^k<leader>o<C-G>u",
+        [",6"] = ":%y+<CR>",
         [",5"] = "o<C-G>u\\textcolor{blue}{\\textbf{Note:}} \\textcolor{gray}{}<Esc>T{",
         [",4"] = "o\\begin{itemize}<Enter>\\end{itemize}<Esc>ko<Space><Space>\\item<Space><Space>",
         [",3"] = "o\\begin{figure}<Esc>o\\centering<Esc>o\\includegraphics[<++>]{<++>}<Esc>o\\caption{<++>}\\label{<++>}<Esc>o\\end{figure}<Esc>2k^/<++><CR>h",
@@ -90,6 +93,7 @@ M.setup_tex_keymaps = function ()
         ["<C-S>g"] = "<C-G>u\\quad \\text{} \\quad <++><Esc>T{i",
         ["<C-S>i"] = "<C-G>u\\int_{}^{<++>} <++><Esc>2T{i",
         ["<C-S>p"] = "<C-G>u\\prod_{}^{<++>} <++><Esc>2T{i",
+        ["<C-S>P"] = "<C-G>u\\prime",
         ["<C-S>q"] = "<C-G>u\\hat{}<++><Esc>T{ha",
         ["<C-S>o"] = "<C-G>u\\overline{}<++><Esc>T{ha",
         ["<C-S>n"] = "<C-G>u\\norm{}<++><Esc>T{i",
@@ -114,8 +118,8 @@ M.setup_tex_keymaps = function ()
         ["<C-G>D"] = "<C-G>u\\Delta",
         ["<C-G>e"] = "<C-G>u\\epsilon",
         ["<C-G>E"] = "<C-G>u\\varepsilon",
-        ["<C-G>f"] = "<C-G>u\\varphi",
-        ["<C-G>F"] = "<C-G>u\\varPhi",
+        ["<C-G>f"] = "<C-G>u\\phi",
+        ["<C-G>F"] = "<C-G>u\\Phi",
         ["<C-G>g"] = "<C-G>u\\gamma",
         ["<C-G>G"] = "<C-G>u\\Gamma",
         ["<C-G>h"] = "<C-G>u\\eta",
@@ -131,8 +135,8 @@ M.setup_tex_keymaps = function ()
         ["<C-G>O"] = "<C-G>u\\Omega",
         ["<C-G>p"] = "<C-G>u\\pi",
         ["<C-G>P"] = "<C-G>u\\Pi",
-        ["<C-G>q"] = "<C-G>u\\phi",
-        ["<C-G>Q"] = "<C-G>u\\Phi",
+        ["<C-G>q"] = "<C-G>u\\varphi",
+        ["<C-G>Q"] = "<C-G>u\\varPhi",
         ["<C-G>r"] = "<C-G>u\\rho",
         ["<C-G>s"] = "<C-G>u\\sigma",
         ["<C-G>S"] = "<C-G>u\\Sigma",
