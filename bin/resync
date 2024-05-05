@@ -22,7 +22,10 @@ def rsync(case, server_name):
 if __name__ == "__main__":
     print("Server to Local")
     ans = input("Sync actual contents (YES - case sensitive) ")
-    should_delete = input("Should delete (YES - case sensitive) ")
     run_dry = False if ans == "YES" else True
-    should_delete = True if should_delete == "YES" else False
+    if not run_dry:
+        should_delete = input("Should delete (YES - case sensitive) ")
+        should_delete = True if should_delete == "YES" else False
+    else:
+        should_delete = False
     rsync(case=(run_dry, should_delete), server_name="webpage")
