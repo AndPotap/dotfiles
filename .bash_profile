@@ -4,7 +4,7 @@ fi
 
 source $HOME/fix_ssh.sh
 
-USE_CONDA=0
+USE_CONDA=1
 
 if [ "$USE_CONDA" -eq 1 ]; then
     # >>> conda initialize >>>
@@ -32,16 +32,15 @@ else
     fi
 fi
 
+export OMP_NUM_THREADS=4
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=${HOME}/go
 export PYTHONSTARTUP="$(python3 -m jedi repl)"
-export PYTHONPATH=$PYTHONPATH:"$HOME/tetradic-delights"
-export PYTHONPATH=$PYTHONPATH:"$HOME/gpytorch"
-export PYTHONPATH=$PYTHONPATH:"$HOME/linear_operator"
+export PYTHONPATH=""
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
-export PYTHONPATH=$PYTHONPATH:"$HOME/second-diffusion"
+export PYTHONPATH=$PYTHONPATH:"$HOME/ssm"
