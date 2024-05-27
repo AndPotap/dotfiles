@@ -1,4 +1,5 @@
 require("ap.maps")
+require("ap.lazy")
 require("ap.autocmd")
 require("ap.lsp")
 require("ap.cmp")
@@ -10,41 +11,6 @@ require("ap.slime")
 require("ap.snippets")
 
 -- vim.cmd.colorscheme("tokyonight")
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
-  "wbthomason/packer.nvim",
-  "neovim/nvim-lspconfig",
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-path",
-  "BurntSushi/ripgrep",
-  "jpalardy/vim-slime",
-  "saadparwaiz1/cmp_luasnip",
-  "L3MON4D3/LuaSnip",
-  { "AndPotap/tokyonight.nvim", priority = 1000, config = function() vim.cmd.colorscheme("tokyonight") end },
-  "nvim-lualine/lualine.nvim",
-  "nvim-treesitter/nvim-treesitter",
-  "ray-x/lsp_signature.nvim",
-  "tzachar/fuzzy.nvim",
-  "tzachar/cmp-fuzzy-buffer",
-  "nvim-lua/plenary.nvim",
-  "nvim-telescope/telescope.nvim",
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
-})
-
 
 -- vim.api.nvim_exec('source ~/.config/nvim/autogroups.vim', false)
 
