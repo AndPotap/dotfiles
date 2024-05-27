@@ -1,0 +1,20 @@
+require("lazy").setup({
+  "wbthomason/packer.nvim",
+  "neovim/nvim-lspconfig",
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-path",
+  "BurntSushi/ripgrep",
+  "jpalardy/vim-slime",
+  "saadparwaiz1/cmp_luasnip",
+  "L3MON4D3/LuaSnip",
+  "AndPotap/tokyonight.nvim",
+  "nvim-lualine/lualine.nvim",
+  "nvim-treesitter/nvim-treesitter",
+  "ray-x/lsp_signature.nvim",
+  "tzachar/fuzzy.nvim",
+  "tzachar/cmp-fuzzy-buffer",
+  "nvim-lua/plenary.nvim",
+  "nvim-telescope/telescope.nvim",
+  { "nvim-telescope/telescope-fzf-native.nvim", cmd = "make" }
+})
