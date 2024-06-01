@@ -1,5 +1,6 @@
 require("ap.maps")
-require("ap.lazy")
+-- require("ap.lazy")
+require("ap.packer")
 require("ap.autocmd")
 require("ap.lsp")
 require("ap.cmp")
@@ -10,7 +11,7 @@ require("ap.teles")
 require("ap.slime")
 require("ap.snippets")
 
--- vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight")
 
 -- vim.api.nvim_exec('source ~/.config/nvim/autogroups.vim', false)
 
