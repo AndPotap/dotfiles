@@ -1,17 +1,18 @@
 local lspconfig = require("lspconfig")
 
+-- Unfortunately, the besied formatCommand the rest of the configs do not function
 lspconfig.pylsp.setup{
     settings = {
         formatCommand = { "yapf" },
         pylsp = {
             plugins = {
                 pycodestyle = {
-                    enabled = true,
+                    enabled = false,
                     ignore = { "E301" },
                     maxLineLength = 100
                 },
                 yapf = {
-                    enabled = true
+                    enabled = false
                 },
                 autopep8 = {
                     enabled = false
