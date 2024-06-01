@@ -1,8 +1,7 @@
 # Step-by-step NVIM config
 
-This guide is documents the step-by-step introduction of each plugin (or set of plugins) and
-their intended use.
-Thus, this procedure can go from the most minimal config to the whole 9 yards.
+This guide documents the step-by-step introduction of each plugin (or set of plugins) along with their intended use.
+Therefore, this procedure goes from the most minimal config to the whole 9 yards.
 Also the procedure is documented neatly by going from commit: `93a7ec7`
 to commit: `49f2bba` linearly.
 
@@ -21,7 +20,7 @@ Also this commit is interesting as it shows how do modularly introduce code thro
 
 ## Adding packer (plugin manager)
 In this commit `git checkout 58847a1807c524bdccf4ae0eb29e44fd0d966f4e`, I install packer.
-Obviously, you have to install packer first by cloning (`git clone`) the repo as indicated in their
+Note that you have to install packer first by cloning (`git clone`) the repo as indicated in their
 `README.md`.
 
 ## Adding LSP support
