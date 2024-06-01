@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "wbthomason/packer.nvim",
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
@@ -28,6 +27,5 @@ require("lazy").setup({
   "tzachar/fuzzy.nvim",
   "tzachar/cmp-fuzzy-buffer",
   "nvim-lua/plenary.nvim",
-  "nvim-telescope/telescope.nvim",
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, },
 })
