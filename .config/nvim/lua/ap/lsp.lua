@@ -1,6 +1,8 @@
 local lspconfig = require("lspconfig")
 
--- Unfortunately, the besied formatCommand the rest of the configs do not function
+-- Unfortunately, the code below is completely non-functional to modify
+-- the behaviour of pylsp. However, modifying the configs of the pylsp elements
+-- yapf, flake8, autopep8, works.
 lspconfig.pylsp.setup{
     settings = {
         formatCommand = { "yapf" },
