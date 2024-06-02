@@ -61,10 +61,11 @@ bash_prompt() {
 	local TOXIC_GREEN="118"
     local GREEN="73"
 	local ORANGE="172"
+	local YELLOW="227"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$YELLOW
+    local TEXT_FORMAT_1="\[\033[1;38;5;${YELLOW}m\]"
 
     case "$HOSTNAME" in
         "ubu")
@@ -117,3 +118,7 @@ bash_prompt() {
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
+. "$HOME/.cargo/env"
+
+export PATH=$PATH:/Users/andpotap/.toolbox/bin
+source /Users/andpotap/extra/completions/alacritty.bash
