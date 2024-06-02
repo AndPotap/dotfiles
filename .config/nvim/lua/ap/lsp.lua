@@ -11,10 +11,10 @@ lspconfig.pylsp.setup{
                     maxLineLength = 100
                 },
                 yapf = {
-                    enabled = true
+                    enabled = true,
                 },
                 autopep8 = {
-                    enabled = false
+                    enabled = false,
                 }
             }
         }

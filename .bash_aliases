@@ -3,6 +3,7 @@ function findd {
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 # alias py='python3'
+alias gsg='gpustat -cpu'
 alias py='/usr/local/bin/python3'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
@@ -73,6 +74,11 @@ function ExpandArXiv {
     tar -xf ${2}.tar
     rm ${2}.tar
     cd ..
+}
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
 }
 function venv {
     source $HOME/venv/$1/bin/activate

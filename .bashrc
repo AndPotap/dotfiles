@@ -28,7 +28,6 @@ bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -63,8 +62,8 @@ bash_prompt() {
 	local ORANGE="172"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$ORANGE
+    local TEXT_FORMAT_1="\[\033[1;38;5;${ORANGE}m\]"
 
     case "$HOSTNAME" in
         "ubu")
