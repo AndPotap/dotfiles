@@ -37,7 +37,8 @@ alias grep='grep --color=auto'
 alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
-alias pic='eog'
+# alias pic='eog'
+alias pic='open -a Preview'
 
 # Git aliases
 alias gac='git add . && git commit'
