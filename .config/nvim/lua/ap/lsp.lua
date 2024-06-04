@@ -1,17 +1,20 @@
 local lspconfig = require("lspconfig")
 
+-- Unfortunately, the code below is completely non-functional to modify
+-- the behaviour of pylsp. However, modifying the configs of the pylsp elements
+-- yapf, flake8, autopep8, works.
 lspconfig.pylsp.setup{
     settings = {
         formatCommand = { "yapf" },
         pylsp = {
             plugins = {
                 pycodestyle = {
-                    enabled = true,
+                    enabled = false,
                     ignore = { "E301" },
                     maxLineLength = 100
                 },
                 yapf = {
-                    enabled = true
+                    enabled = false
                 },
                 autopep8 = {
                     enabled = false
