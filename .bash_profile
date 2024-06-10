@@ -9,6 +9,7 @@ else
     venv general
 fi
 
+export DEEP_TS_PATH="$HOME/efs/andpotap/"
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin

@@ -2,9 +2,8 @@ function findd {
     find . | grep -i ${@}
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
-# alias py='python3'
+alias py='python3'
 alias gsg='gpustat -cpu'
-alias py='/usr/local/bin/python3'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
@@ -44,7 +43,6 @@ alias gac='git add . && git commit'
 alias gapp='git add . && git commit -m "Added" && git pull && git push'
 alias gp='git pull'
 alias gh='git push'
-alias gpp='git pull && git push'
 alias gs='clear && git status'
 alias gc='git commit'
 alias ga='git add'

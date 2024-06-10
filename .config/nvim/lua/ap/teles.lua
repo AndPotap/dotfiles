@@ -30,8 +30,8 @@ telescope.load_extension("fzf")
 
 search_specific_dir = function()
     builtin.find_files({
-        prompt_title = "< CoLA >",
-        cwd = "~/cola",
+        prompt_title = "< DeepTS >",
+        cwd = "~/efs/andpotap/ForecastingDeepTS/python",
         -- attach_mappings = function(_, map)
         --     map("i", "<CR>", actions.select_vertical + actions.center)
         --     map("n", "<CR>", actions.select_vertical + actions.center)
