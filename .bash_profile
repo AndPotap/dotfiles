@@ -9,6 +9,9 @@ else
     venv general
 fi
 
+random_number=$((RANDOM % 8))
+sGPU $random_number
+
 export DEEP_TS_PATH="$HOME/efs/andpotap/"
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"

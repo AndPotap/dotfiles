@@ -76,7 +76,7 @@ function ExpandArXiv {
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
-    echo $CUDA_VISIBLE_DEVICES
+    echo "GPU=$CUDA_VISIBLE_DEVICES"
 }
 function venv {
     source $HOME/venv/$1/bin/activate
