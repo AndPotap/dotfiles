@@ -1,25 +1,5 @@
 local lspconfig = require("lspconfig")
 
-lspconfig.pylsp.setup{
-    settings = {
-        formatCommand = { "yapf" },
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    enabled = true,
-                    ignore = { "E301" },
-                    maxLineLength = 100
-                },
-                yapf = {
-                    enabled = true
-                },
-                autopep8 = {
-                    enabled = false
-                }
-            }
-        }
-    }
-}
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
