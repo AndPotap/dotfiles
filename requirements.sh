@@ -6,6 +6,8 @@ python3 -m pip install pytest pyarrow pandas numpy matplotlib dataclasses-json p
 python3 -m pip install docker --no-cache-dir
 python3 -m pip install ~/gpustat/.
 python3 -m pip install "python-lsp-server[all]" --no-cache-dir
+python3 -m pip install ruff --no-cache-dir
 python3 -m pip uninstall autopep8 -y
-python3 -m pip install python-lsp-black --no-cache-dir
-python3 -m pip install python-lsp-isort --no-cache-dir
+python3 -m pip install python-lsp-ruff --no-cache-dir
+# python3 -m pip install python-lsp-black --no-cache-dir
+# python3 -m pip install python-lsp-isort --no-cache-dir

@@ -21,4 +21,6 @@ export GOPATH=${HOME}/go
 export PYTHONSTARTUP="$(python3 -m jedi repl)"
 export PYTHONPATH=""
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
+export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/efs/andpotap/ForecastingDeepTS/python"
+# export PYTHONPATH=$PYTHONPATH:"$HOME/neuralforecast"
