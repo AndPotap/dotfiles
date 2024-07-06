@@ -25,6 +25,7 @@ local function prep_gpg()
     noremap("<leader>ff", "mJ/##<CR>`J")
     noremap("<leader>cl", "mJ/%%%%<CR>`J")
     noremap("<C-S>", ":set syntax=txt<CR>")
+    vim.cmd("set syntax=txt")
     vim.o.spell = true
     vim.g.bin = true
 end
