@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from pathlib import Path
 import os
 import re
 import subprocess
@@ -23,8 +24,9 @@ def sanitize_filetype(ft="pdf"):
 
 
 def sanitize(filename):
-    extension = filename[-4:]
-    text = filename[:-4]
+    filename = Path(filename)
+    extension = filename.suffix
+    text = filename.stem
 
     clear_pattern = ["&", "?", ":", ";", "'", "(", ")", "!", ","]
     for pat in clear_pattern:
