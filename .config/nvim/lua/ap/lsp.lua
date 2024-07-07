@@ -1,5 +1,9 @@
 local lspconfig = require("lspconfig")
 
+-- vim.lsp.set_log_level("debug")
+-- Enable above to see logs from :LspLog
+
+lspconfig.rust_analyzer.setup{}
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
