@@ -5,6 +5,10 @@ local lspconfig = require("lspconfig")
 
 lspconfig.rust_analyzer.setup{}
 
+lspconfig.clangd.setup{
+    cmd = { "clangd-12" }
+}
+
 -- lspconfig.ruff_lsp.setup{}
 -- couldn't get it to work, there was a bug
 
