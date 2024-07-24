@@ -6,6 +6,7 @@ python3 -m pip install torch torchvision torchaudio --index-url https://download
 python3 -m pip install neuralforecast matplotlib jupyter --no-cache-dir
 python3 -m pip install pytest pyarrow pandas numpy matplotlib dataclasses-json psutil boto3 tensorboard lightning --no-cache-dir
 python3 -m pip install docker --no-cache-dir
+python3 -m pip install rich --no-cache-dir
 python3 -m pip install ~/gpustat/.
 python3 -m pip install ruff --no-cache-dir
 python3 -m pip install python-lsp-ruff --no-cache-dir
