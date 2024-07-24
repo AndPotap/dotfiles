@@ -97,7 +97,7 @@ get_free_gpu() {
 
     for ID in $IDs; do
         MEM_USED=$(nvidia-smi --id=$ID --query-gpu=memory.used --format=csv,nounits,noheader)
-        if [ "$MEM_USED" -lt 500 ]; then
+        if [ "$MEM_USED" -lt 10 ]; then
             echo "$ID"
             return 0
         fi
