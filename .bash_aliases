@@ -19,6 +19,7 @@ alias lst='ls --color -t'
 alias lsl='ls --color -l'
 alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
+alias pdf='open -a Preview '
 
 # Shortcuts to proyects
 alias pro='cd ~/r-roulette-gps'

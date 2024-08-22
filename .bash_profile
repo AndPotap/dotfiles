@@ -29,6 +29,7 @@ fi
 
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
+export PATH=$PATH:"/opt/homebrew/bin"
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=${HOME}/go
