@@ -1,5 +1,5 @@
 vim.opt.textwidth = 120
--- vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamed"
 vim.o.mouse = ""
 vim.g.mapleader = " "
 vim.wo.signcolumn = "yes"

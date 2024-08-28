@@ -1,11 +1,11 @@
 require("nvim-treesitter.configs").setup {
-    ensure_installed = { "python", "lua", "markdown", "vim", "yaml" },
+    ensure_installed = { "python", "markdown", "vim", "yaml" },
     sync_install = false,
     auto_install = true,
     ignore_install = { "c" },
     highlight = {
         enable = true,
-        disable = { "markdown", "vim", "gpg" },
+        disable = { "markdown", "vim", "latex", "gpg" },
         additional_vim_regex_highlighting = false,
     },
 }
