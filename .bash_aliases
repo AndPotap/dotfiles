@@ -77,6 +77,8 @@ function ExpandArXiv {
     rm ${2}.tar
     cd ..
 }
+# export SIF=/scratch/ap6604/greene.sif
+export SIF=/scratch/ap6604/greene_cu12.sif
 function venv {
     source $HOME/venv/$1/bin/activate
     alias py=$HOME/venv/$1/bin/python3
@@ -85,22 +87,22 @@ function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
 function sw {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 $SIF /bin/bash -l
 }
 function swnv {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --nv $SIF /bin/bash -l
 }
 function swnvb {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache --nv /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3 --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache --nv $SIF /bin/bash -l
 }
 function srnv {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --nv $SIF /bin/bash -l
 }
 function sr {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro $SIF /bin/bash -l
 }
 function srnvb {
-    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro --nv /scratch/ap6604/greene.sif /bin/bash -l
+    singularity exec --overlay /scratch/ap6604/overlayfs/${1}.ext3:ro --bind /home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro --nv $SIF /bin/bash -l
 }
 function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
@@ -119,18 +121,17 @@ export PROJECT_PATH=$HOME/struct_approx
 export LOGDIR=/scratch/ap6604/struct_approx/logs
 export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
 # export PROJECT_PATH=$HOME/ssm
-# export LOGDIR=/scratch/ap6604/ssm
+#export LOGDIR=/scratch/ap6604/ssm/logs
 # export OVERLAYFS=/scratch/ap6604/overlayfs/ssm.ext3:ro
-export BINDING="/home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro"
 
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 # export WANDB_USERNAME=andpotap
 export WANDB_API_KEY=4d5eeaaa6c9490983c150734414d605e0c126b7a
 export WANDB_USERNAME=ap3635
 export SCRATCH="/scratch/ap6604"
-export SIF=/scratch/ap6604/greene.sif
+export BINDING="/home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro"
 export BLOBDIR="${SCRATCH}"
-export OMP_NUM_THREADS=4
+export OMP_NUM_THREADS=2
 
 function slaunch {
   if [[ ! -z "${GPUS}" ]]; then
