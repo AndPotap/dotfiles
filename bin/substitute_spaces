@@ -1,6 +1,52 @@
-#!/bin/bash
+#!/usr/bin/python3
+from pathlib import Path
+import os
+import re
+import subprocess
 
-for file in *.pdf
-do
-    mv -- "$file" "${file// /_}"
-done
+
+def main():
+    sanitize_filetype("pdf")
+    sanitize_filetype("epub")
+
+
+def sanitize_filetype(ft="pdf"):
+    pdf_s = [file for file in os.listdir(".") if file.endswith(ft)]
+    for pdf in pdf_s:
+        pdf_new = sanitize(pdf)
+        if not pdf_new == pdf:
+            subprocess.run(
+                ["mv", f"{pdf}", f"{pdf_new}"],
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+
+
+def sanitize(filename):
+    filename = Path(filename)
+    extension = filename.suffix
+    text = filename.stem
+
+    clear_pattern = ["&", "?", ":", ";", "'", "(", ")", "!", ","]
+    for pat in clear_pattern:
+        text = text.replace(pat, "")
+
+    wordS = text.split()
+    text = ""
+    for word in wordS:
+        aux = re.findall(r"\b\w+\b", word)
+        is_multiple = len(aux) > 1
+        if is_multiple:
+            text += word + "_"
+        elif word.isupper():
+            text += word + "_"
+        else:
+            text += word.title() + "_"
+
+    return text[:-1] + extension
+
+
+if __name__ == "__main__":
+    print("Cleaning names")
+    main()
