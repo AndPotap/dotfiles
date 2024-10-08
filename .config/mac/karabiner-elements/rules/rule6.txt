@@ -1,0 +1,27 @@
+{
+    "description": "Ctrl+Left Click => Command+Left Click (Select multiple items)",
+    "manipulators": [
+        {
+            "from": {
+                "modifiers": {
+                    "mandatory": [
+                        "control"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                },
+                "pointing_button": "button3"
+            },
+            "to": [
+                {
+                    "modifiers": [
+                        "command"
+                    ],
+                    "pointing_button": "button3"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
