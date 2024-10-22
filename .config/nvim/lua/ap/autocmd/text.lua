@@ -13,7 +13,7 @@ local function enable_text_keys()
     vim.cmd("set syntax=txt")
     vim.o.spell = true
 end
-autocmd("FileType", { pattern = { "text" },
+autocmd("BufEnter", { pattern = { "*txt" },
     callback = enable_text_keys,
     group = grp_text
 })
