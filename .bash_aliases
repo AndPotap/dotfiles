@@ -56,7 +56,7 @@ alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.
 alias dpp='cd ~/Documents/Papers/projects'
 alias dpr='cd ~/Documents/Papers/reading'
 alias dbr='cd ~/Documents/Books/Reading'
-alias hpc='ssh-keygen -f "/home/popos/.ssh/known_hosts" -R "gw.hpc.nyu.edu" & ssh hpc'
+alias hpc='ssh-keygen -f "$HOME/.ssh/known_hosts" -R "gw.hpc.nyu.edu" & ssh hpc'
 function BranchGit {
     echo "Branch named ${1}"
     git push origin HEAD:${1}
