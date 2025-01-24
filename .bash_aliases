@@ -7,6 +7,7 @@ alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
 alias dot='cd ~/dotfiles'
+alias rcf="ruff check --fix"
 alias luap='cd ~/dotfiles/.config/nvim/lua/ap'
 alias rm='rm -I'
 alias mv='mv -i'
