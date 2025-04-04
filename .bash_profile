@@ -32,6 +32,8 @@ else
     fi
 fi
 
+randomGPU
+
 export OMP_NUM_THREADS=4
 export TORCH_CUDA_ARCH_LIST="7.5"
 export PATH=$PATH:"$HOME/bin"
@@ -49,6 +51,7 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/ssm"
 export PYTHONPATH=$PYTHONPATH:"$HOME/neuralforecast"
 export PYTHONPATH=$PYTHONPATH:"$HOME/time-series-ml"
 export PYTHONPATH=$PYTHONPATH:"$HOME/epftoolbox"
+export PYTHONPATH=$PYTHONPATH:"$HOME/chronos-forecasting/src"
 export CPATH=""
 export CPATH=$CPATH:"/home/andres_p/cutlass/include"
 export CPATH=$CPATH:"/home/andres_p/cutlass/tools/util/include"
