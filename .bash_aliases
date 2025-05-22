@@ -77,7 +77,7 @@ function venv {
 }
 # Computer specific aliases
 # source $HOME/.bash_additional_aliases
-alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 6 ))) && echo $CUDA_VISIBLE_DEVICES'
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 function venv {
