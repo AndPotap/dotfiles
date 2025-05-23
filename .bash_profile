@@ -3,17 +3,13 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 agent_file="$HOME/.ssh/agent_env"
-
 if [[ ! -S $HOME/.ssh/ssh-agent.sock ]]; then
     rm -f $HOME/.ssh/ssh-agent.sock
     eval $(ssh-agent -a $HOME/.ssh/ssh-agent.sock) > "$agent_file"
     ssh-add ~/.ssh/id_git_24
 fi
-
-# Source the agent env to get SSH_AUTH_SOCK
-export SSH_AUTH_SOCK=/home/andres_p/.ssh/ssh-agent.sock
+export SSH_AUTH_SOCK="$HOME/.ssh/ssh-agent.sock"
 ssh-add -l >/dev/null 2>&1
-# [ -f "$agent_file" ] && source "$agent_file"
 
 
 USE_CONDA=0
