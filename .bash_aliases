@@ -54,6 +54,7 @@ alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_V
 alias GPU='echo $CUDA_VISIBLE_DEVICES'
 alias gsg='gpustat -cpu'
 alias scra='cd /scratch/ap6604'
+alias slogs="cd $LOGDIR"
 alias save="source $HOME/.bash_profile"
 
 function findd {
@@ -117,17 +118,19 @@ function slo { less "./slurm-${1}.out"; }
 # Example: HH=1 MEM=16 CPUS=1 GPUS=1 ARRAY=1-4 swandb deeplearn/dummyMNIST/1qsc68iw
 # Example: HH=1 MEM=16 CPUS=1 GPUS=1 slaunch python3 run.py experiment=wt103/gpt2-monarch.yaml train.optimizer.lr=1.8e-3
 # The next variables is what I need to modify for my projects
-export PROJECT_PATH=$HOME/struct_approx
-export LOGDIR=/scratch/ap6604/struct_approx/logs
-export OVERLAYFS=/scratch/ap6604/overlayfs/mlp.ext3:ro
-# export PROJECT_PATH=$HOME/ssm
-#export LOGDIR=/scratch/ap6604/ssm/logs
-# export OVERLAYFS=/scratch/ap6604/overlayfs/ssm.ext3:ro
+# export PROJECT_PATH=$HOME/fast_gen
+# export LOGDIR=/scratch/ap6604/fast_gen/logs
+# export OVERLAYFS=/scratch/ap6604/overlayfs/sparse.ext3:ro
+export PROJECT_PATH=$HOME/transformers-nla
+export LOGDIR=/scratch/ap6604/auto/
+export OVERLAYFS=/scratch/ap6604/overlayfs/auto.ext3:ro
 
 # export WANDB_API_KEY=1acdbe06e1ba19e0c9dd6cb839baa5284745a413
 # export WANDB_USERNAME=andpotap
 export WANDB_API_KEY=4d5eeaaa6c9490983c150734414d605e0c126b7a
 export WANDB_USERNAME=ap3635
+# export WANDB_API_KEY=6a47f093d2a55e4f4e85b33767423f2db66355b8
+# export WANDB_USERNAME=alanamin
 export SCRATCH="/scratch/ap6604"
 export BINDING="/home/ap6604/tmp/ld.so.cache:/etc/ld.so.cache:ro"
 export BLOBDIR="${SCRATCH}"
