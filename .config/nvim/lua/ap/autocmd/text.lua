@@ -10,9 +10,10 @@ local function enable_text_keys()
     noremap("<leader>cl", "/%%%%<cr>")
     noremap("<leader>ff", "/##<cr>")
     noremap("<C-S>", ":set syntax=txt<CR>")
+    vim.cmd("set syntax=txt")
     vim.o.spell = true
 end
-autocmd("FileType", { pattern = { "text" },
+autocmd("BufEnter", { pattern = { "*txt" },
     callback = enable_text_keys,
     group = grp_text
 })

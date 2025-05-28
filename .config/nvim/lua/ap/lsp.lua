@@ -1,28 +1,19 @@
 local lspconfig = require("lspconfig")
 
--- Unfortunately, the code below is completely non-functional to modify
--- the behaviour of pylsp. However, modifying the configs of the pylsp elements
--- yapf, flake8, autopep8, works.
-lspconfig.pylsp.setup{
-    settings = {
-        formatCommand = { "yapf" },
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    enabled = false,
-                    ignore = { "E301" },
-                    maxLineLength = 100
-                },
-                yapf = {
-                    enabled = false
-                },
-                autopep8 = {
-                    enabled = false
-                }
-            }
-        }
-    }
+-- vim.lsp.set_log_level("debug")
+-- Enable above to see logs from :LspLog
+
+lspconfig.rust_analyzer.setup{}
+
+lspconfig.clangd.setup{
+    cmd = { "clangd-12" }
 }
+
+-- lspconfig.ruff_lsp.setup{}
+-- couldn't get it to work, there was a bug
+
+-- lspconfig.pylsp.setup{}
+-- currently PyLSP is being attached from cmp.lua
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -31,6 +22,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)

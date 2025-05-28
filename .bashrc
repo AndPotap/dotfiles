@@ -28,7 +28,6 @@ bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -118,7 +117,3 @@ bash_prompt() {
 PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
-. "$HOME/.cargo/env"
-
-export PATH=$PATH:/Users/andpotap/.toolbox/bin
-source /Users/andpotap/extra/completions/alacritty.bash

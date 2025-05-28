@@ -3,12 +3,11 @@ function findd {
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='python3'
-# alias py='/usr/local/bin/python3'
-alias tmux='/opt/homebrew/Cellar/tmux/3.4_1/bin/tmux'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
 alias dot='cd ~/dotfiles'
+alias rcf="ruff check --fix"
 alias luap='cd ~/dotfiles/.config/nvim/lua/ap'
 alias rm='rm -I'
 alias mv='mv -i'
@@ -38,7 +37,6 @@ alias grep='grep --color=auto'
 alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
-# alias pic='eog'
 alias pic='open -a Preview'
 
 # Git aliases
@@ -59,6 +57,7 @@ alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.
 alias dpp='cd ~/Documents/Papers/projects'
 alias dpr='cd ~/Documents/Papers/reading'
 alias dbr='cd ~/Documents/Books/Reading'
+alias hpc='ssh-keygen -f "$HOME/.ssh/known_hosts" -R "gw.hpc.nyu.edu" & ssh hpc'
 function BranchGit {
     echo "Branch named ${1}"
     git push origin HEAD:${1}
