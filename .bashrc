@@ -8,7 +8,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
-eval `dircolors -b $HOME/.dir_colors`
+# eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 

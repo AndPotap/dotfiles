@@ -41,4 +41,4 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH=$PATH:/Users/andpotap/.toolbox/bin
-source /Users/andpotap/extra/completions/alacritty.bash
+# source /Users/andpotap/extra/completions/alacritty.bash
