@@ -3,6 +3,7 @@ TERM = "screen-256color"
 
 [terminal.shell]
 program = "/bin/bash"
+args = ["--login", "-i"]
 
 [font]
 size = 13.0

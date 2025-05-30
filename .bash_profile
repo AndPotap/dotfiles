@@ -39,6 +39,4 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
 export PYTHONPATH=$PYTHONPATH:"$HOME/plum"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 export PATH=$PATH:/Users/andpotap/.toolbox/bin
-# source /Users/andpotap/extra/completions/alacritty.bash
