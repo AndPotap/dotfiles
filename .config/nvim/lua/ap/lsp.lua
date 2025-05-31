@@ -3,11 +3,11 @@ local lspconfig = require("lspconfig")
 -- vim.lsp.set_log_level("debug")
 -- Enable above to see logs from :LspLog
 
--- lspconfig.rust_analyzer.setup{}
+lspconfig.rust_analyzer.setup{}
 
--- lspconfig.clangd.setup{
---     cmd = { "clangd-12" }
--- }
+lspconfig.clangd.setup{
+    cmd = { "clangd-12" }
+}
 
 -- lspconfig.ruff_lsp.setup{}
 -- couldn't get it to work, there was a bug
