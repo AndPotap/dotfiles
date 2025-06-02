@@ -18,15 +18,15 @@ else
     venv general
 fi
 
-random_number=$((RANDOM % 8))
-sGPU $random_number
+# random_number=$((RANDOM % 8))
+# sGPU $random_number
 
 export DEEP_TS_PATH="$HOME/efs/andpotap/"
-export CUDA_HOME="/usr/local/cuda-11.8"
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib
+# export CUDA_HOME="/usr/local/cuda-11.8"
+# export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib
 export GOPATH=${HOME}/go
 # export PATH=/usr/bin/
-export PATH=$PATH:${CUDA_HOME}/bin
+# export PATH=$PATH:${CUDA_HOME}/bin
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 export PATH=$PATH:"$HOME/.fzf/bin"
@@ -38,5 +38,6 @@ export PYTHONSTARTUP="$(python3 -m jedi repl)"
 export PYTHONPATH=""
 export PYTHONPATH=$PYTHONPATH:"$HOME/cola"
 export PYTHONPATH=$PYTHONPATH:"$HOME/trainkit"
-export PYTHONPATH=$PYTHONPATH:"$HOME/ts-forecasting"
-export PYTHONPATH=$PYTHONPATH:"$HOME/efs/andpotap/ForecastingDeepTS/python"
+export PYTHONPATH=$PYTHONPATH:"$HOME/tabpfn-time-series"
+# export PYTHONPATH=$PYTHONPATH:"$HOME/ts-forecasting"
+# export PYTHONPATH=$PYTHONPATH:"$HOME/efs/andpotap/ForecastingDeepTS/python"
