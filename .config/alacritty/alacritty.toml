@@ -6,7 +6,7 @@ program = "/bin/bash"
 args = ["--login", "-i"]
 
 [font]
-size = 13.0
+size = 15.0
 
 [font.bold]
 family = "Menlo"
