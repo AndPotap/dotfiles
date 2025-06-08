@@ -7,9 +7,13 @@ telescope.setup {
         mappings = {
             i = {
                 ["<CR>"] = actions.select_vertical,
+                ["<C-d>"] = actions.close,
+                ["<C-y>"] = actions.select_tab,
             },
             n = {
                 ["<CR>"] = actions.select_vertical,
+                ["<C-d>"] = actions.close,
+                ["<C-y>"] = actions.select_tab,
             },
         },
         extensions = {
