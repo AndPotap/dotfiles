@@ -29,7 +29,6 @@ stty intr ^P
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -62,10 +61,11 @@ bash_prompt() {
 	local TOXIC_GREEN="118"
     local GREEN="73"
 	local ORANGE="172"
+	local PURPLE="99"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$PURPLE
+    local TEXT_FORMAT_1="\[\033[1;38;5;${PURPLE}m\]"
 
     case "$HOSTNAME" in
         "ubu")
