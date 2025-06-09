@@ -2,18 +2,16 @@ function findd {
     find . | grep -i ${@}
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
-alias py='python3'
+alias py="python3"
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
 alias dot='cd ~/dotfiles'
 alias rcf="ruff check --fix"
-alias luap='cd ~/dotfiles/.config/nvim/lua/ap'
 alias rm='rm -I'
 alias mv='mv -i'
 alias c='clear'
 alias ls='ls --color'
-alias lsnc='ls --color=never'
 alias lsa='ls --color -a'
 alias lst='ls --color -t'
 alias lsl='ls --color -l'
@@ -51,13 +49,6 @@ alias ga='git add'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
 
-# Computer specific aliases
-alias white='totem ~/Videos/white.mp4'
-alias zpa="zathura $HOME/Documents/Books/Reading/Mastering_Regular_Expressions,.pdf & "
-alias dpp='cd ~/Documents/Papers/projects'
-alias dpr='cd ~/Documents/Papers/reading'
-alias dbr='cd ~/Documents/Books/Reading'
-alias hpc='ssh-keygen -f "$HOME/.ssh/known_hosts" -R "gw.hpc.nyu.edu" & ssh hpc'
 function BranchGit {
     echo "Branch named ${1}"
     git push origin HEAD:${1}
@@ -76,6 +67,19 @@ function ExpandArXiv {
     rm ${2}.tar
     cd ..
 }
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
+}
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
+}
+# Computer specific aliases
+# source $HOME/.bash_additional_aliases
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 6 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
+alias gsg='gpustat -cpu'
 function venv {
     source $HOME/venv/$1/bin/activate
     alias py=$HOME/venv/$1/bin/python3
@@ -83,9 +87,18 @@ function venv {
 function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
-function gpgA {
-    touch ${1}
-    gpg -r AndPotap -ae ${1}
-    mv "${1}.asc" "${1}.gpg"
-    rm ${1}
+get_free_gpu() {
+    # Get the list of GPU IDs to check, or default to all GPUs
+    local IDs=${1:-$(nvidia-smi --query-gpu=index --format=csv,noheader,nounits | tr '\n' ' ')}
+
+    for ID in $IDs; do
+        MEM_USED=$(nvidia-smi --id=$ID --query-gpu=memory.used --format=csv,nounits,noheader)
+        if [ "$MEM_USED" -lt 500 ]; then
+            echo "$ID"
+            return 0
+        fi
+    done
+
+    sleep 10
+    get_free_gpu "$IDs"
 }
