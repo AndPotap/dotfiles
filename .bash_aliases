@@ -13,12 +13,12 @@ alias rm='rm -I'
 alias mv='mv -i'
 alias c='clear'
 alias ls='ls --color'
-alias lsnc='ls --color=never'
 alias lsa='ls --color -a'
 alias lst='ls --color -t'
 alias lsl='ls --color -l'
 alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
+alias zathura='open -a Preview '
 
 # Shortcuts to proyects
 alias pro='cd ~/r-roulette-gps'
@@ -37,7 +37,7 @@ alias grep='grep --color=auto'
 alias upd='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias shut='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
-alias pic='eog'
+alias pic='open -a Preview'
 
 # Git aliases
 alias gac='git add . && git commit'

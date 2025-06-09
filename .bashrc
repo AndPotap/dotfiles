@@ -8,7 +8,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
-eval `dircolors -b $HOME/.dir_colors`
+# eval `dircolors -b $HOME/.dir_colors`
 
 export NVIMPY=$(which python3)
 
@@ -24,12 +24,12 @@ bind '";":"\e"'
 bind "set completion-ignore-case on"
 bind -m vi-command '"\C-f": "\C-z\ec\C-z"'
 bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
+# bind -x '"\C-y": "\C-c"'
 stty intr ^P
 # https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -62,10 +62,11 @@ bash_prompt() {
 	local TOXIC_GREEN="118"
     local GREEN="73"
 	local ORANGE="172"
+	local YELLOW="227"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$YELLOW
+    local TEXT_FORMAT_1="\[\033[1;38;5;${YELLOW}m\]"
 
     case "$HOSTNAME" in
         "ubu")
