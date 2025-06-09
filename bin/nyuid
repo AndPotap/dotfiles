@@ -1,2 +1,2 @@
 #!/bin/bash
-gpg -d ~/notes/id.gpg | sed -n '1p' | grep "[0-9a-zA-Z]" | tr -d "\n" |xclip -sel clip
+gpg -d ~/notes/id.gpg | sed -n '1p' | grep "[0-9a-zA-Z]" | tr -d "\n" | xclip -sel clip
