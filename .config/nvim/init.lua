@@ -1,4 +1,5 @@
 require("ap.maps")
+require("ap.autocmd")
 require("ap.lazy")
 require("ap.lsp")
 require("ap.cmp")
