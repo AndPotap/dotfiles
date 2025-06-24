@@ -52,6 +52,13 @@ bash_prompt_command() {
 }
 
 bash_prompt() {
+    # Determine color here
+    export NAME="p4"
+    declare -A colors
+    colors["p4"]=129
+    colors["ts"]=99
+    colors["g4"]=147
+    tmux set -g status-bg colour"${colors[$NAME]}"
 
 	local ELIMINATE_FORMAT="\[\033[0m\]"
 	local DARKBLUE="4"
@@ -64,8 +71,8 @@ bash_prompt() {
 	local PURPLE="99"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$PURPLE
-    local TEXT_FORMAT_1="\[\033[1;38;5;${PURPLE}m\]"
+    local BACKGROUND=${colors[$NAME]}
+    local TEXT_FORMAT_1="\[\033[1;38;5;${colors[$NAME]}m\]"
 
     case "$HOSTNAME" in
         "ubu")
