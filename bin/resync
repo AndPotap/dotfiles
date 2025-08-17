@@ -4,7 +4,7 @@ import subprocess
 
 home = os.environ["HOME"]
 location = os.getcwd()
-web_location = "/home/andpotap" + location[len(home):]
+web_location = "/mnt/BandP" + location[len(home):]
 
 
 def rsync(case, server_name):
@@ -28,4 +28,4 @@ if __name__ == "__main__":
         should_delete = True if should_delete == "YES" else False
     else:
         should_delete = False
-    rsync(case=(run_dry, should_delete), server_name="webpage")
+    rsync(case=(run_dry, should_delete), server_name="linode")
