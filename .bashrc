@@ -53,12 +53,14 @@ bash_prompt_command() {
 
 bash_prompt() {
     # Determine color here
-    export NAME="g4"
+    export NAME="g4_1"
     declare -A colors
     colors["p4"]=129
     colors["ts"]=12
-    colors["g4"]=177
-    colors["g4_2"]=147
+    colors["g4_1"]=2
+    colors["g4_2"]=49
+    colors["g4_3"]=71
+    colors["g4_4"]=82
     tmux set -g status-bg colour"${colors[$NAME]}"
 
 	local ELIMINATE_FORMAT="\[\033[0m\]"
