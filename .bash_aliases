@@ -18,7 +18,8 @@ alias lst='ls --color -t'
 alias lsl='ls --color -l'
 alias sync='$HOME/bin/sync'
 alias myip='curl ifconfig.me'
-alias zathura='open -a Preview '
+# alias zathura='open -a Preview '
+alias zathura='open -a Skim '
 
 # Shortcuts to proyects
 alias pro='cd ~/r-roulette-gps'
