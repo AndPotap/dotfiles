@@ -1,3 +1,7 @@
+if [[ ! -d "$HOME/efs/andpotap" ]]; then
+    sudo mount -t efs -o tls,iam fs-9c2846d5 $HOME/efs/
+fi
+
 if [ -f "$HOME/.bashrc" ]; then
 	source "$HOME/.bashrc"
 fi
