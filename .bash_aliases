@@ -110,3 +110,57 @@ get_free_gpu() {
     sleep 10
     get_free_gpu "$IDs"
 }
+aws_dns() {
+    local code="$1"
+    local config_file="$HOME/.aws_instance_mappings"
+    local instance_id=$(grep "^$code=" "$config_file" | cut -d'=' -f2)
+
+    if [[ -z "$instance_id" ]]; then
+        echo "Error: No instance found for code '$code'"
+        echo "Available codes:"
+        grep -v '^#' "$config_file" | cut -d'=' -f1
+        return 1
+    fi
+
+    echo "Looking up DNS for instance: $instance_id ($code)"
+    aws ec2 describe-instances \
+        --instance-ids "$instance_id" \
+        --query 'Reservations[*].Instances[*].PublicDnsName' \
+        --output text
+}
+aws_describe() {
+    aws ec2 describe-instances \
+        --filters "Name=tag:Name,Values=andpotap*" \
+        --query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`].Value|[0],State.Name]' \
+        --output table
+}
+aws_start() {
+    local code="$1"
+    local config_file="$HOME/.aws_instance_mappings"
+    local instance_id=$(grep "^$code=" "$config_file" | cut -d'=' -f2)
+
+    if [[ -z "$instance_id" ]]; then
+        echo "Error: No instance found for code '$code'"
+        echo "Available codes:"
+        grep -v '^#' "$config_file" | cut -d'=' -f1
+        return 1
+    fi
+
+    echo "Looking up DNS for instance: $instance_id ($code)"
+    aws ec2 start-instances --instance-ids "$instance_id"
+}
+aws_stop() {
+    local code="$1"
+    local config_file="$HOME/.aws_instance_mappings"
+    local instance_id=$(grep "^$code=" "$config_file" | cut -d'=' -f2)
+
+    if [[ -z "$instance_id" ]]; then
+        echo "Error: No instance found for code '$code'"
+        echo "Available codes:"
+        grep -v '^#' "$config_file" | cut -d'=' -f1
+        return 1
+    fi
+
+    echo "Looking up DNS for instance: $instance_id ($code)"
+    aws ec2 stop-instances --instance-ids "$instance_id"
+}
