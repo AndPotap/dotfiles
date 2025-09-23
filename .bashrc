@@ -24,7 +24,9 @@ bind '";":"\e"'
 bind "set completion-ignore-case on"
 bind -m vi-command '"\C-f": "\C-z\ec\C-z"'
 bind -m vi-insert '"\C-f": "\C-z\ec\C-z"'
-stty intr ^P
+if [ -t 0 ]; then
+    stty intr ^P
+fi
 # https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash
 # stty -ixon
 #   Not sure why I added this command on the first place
