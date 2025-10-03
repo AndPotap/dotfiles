@@ -124,12 +124,14 @@ aws_dns() {
 
     echo "Looking up DNS for instance: $instance_id ($code)"
     aws ec2 describe-instances \
+        --region "us-east-1" \
         --instance-ids "$instance_id" \
         --query 'Reservations[*].Instances[*].PublicDnsName' \
         --output text
 }
 aws_describe() {
     aws ec2 describe-instances \
+        --region "us-east-1" \
         --filters "Name=tag:Name,Values=andpotap*" \
         --query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`].Value|[0],State.Name]' \
         --output table
@@ -147,7 +149,7 @@ aws_start() {
     fi
 
     echo "Looking up DNS for instance: $instance_id ($code)"
-    aws ec2 start-instances --instance-ids "$instance_id"
+    aws ec2 start-instances --region "us-east-1" --instance-ids "$instance_id"
 }
 aws_stop() {
     local code="$1"
@@ -162,5 +164,5 @@ aws_stop() {
     fi
 
     echo "Looking up DNS for instance: $instance_id ($code)"
-    aws ec2 stop-instances --instance-ids "$instance_id"
+    aws ec2 stop-instances --region "us-east-1" --instance-ids "$instance_id"
 }
