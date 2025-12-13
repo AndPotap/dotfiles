@@ -18,6 +18,14 @@ lspconfig.clangd.setup{
 
 lspconfig.rust_analyzer.setup{}
 
+-- lspconfig.mojo.setup{
+--     cmd = {"mojo-lsp-server"},
+--     filetypes = {"mojo"},
+--     root_dir = lspconfig.util.root_pattern(".git", "mojo.toml"),
+--     -- root_dir = vim.loop.cwd(),
+--     -- capabilities = capabilities,
+-- }
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
