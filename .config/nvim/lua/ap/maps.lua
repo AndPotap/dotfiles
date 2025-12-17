@@ -29,6 +29,14 @@ vim.opt.colorcolumn = "50,100"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 7
 
+-- vim.keymap.set("n", "<space>f", function()
+--   if vim.bo.filetype == "mojo" then
+--     vim.cmd("!mojo format %")
+--   else
+--     vim.lsp.buf.format()
+--   end
+-- end, { desc = "Format buffer" })
+
 vim.keymap.set({"n", "v"}, "<C-Y>", [["+y]])
 
 -- nnoremap <silent> <C-L> :syntax sync fromstart <CR>
