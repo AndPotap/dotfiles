@@ -76,6 +76,19 @@ function ExpandArXiv {
     rm ${2}.tar
     cd ..
 }
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
+}
+function venv {
+    source $HOME/venv/$1/bin/activate
+    alias py=$HOME/venv/$1/bin/python3
+}
+# Computer specific aliases
+# source $HOME/.bash_additional_aliases
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 6 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
+alias gsg='gpustat -cpu'
 function venv {
     source $HOME/venv/$1/bin/activate
     alias py=$HOME/venv/$1/bin/python3
@@ -83,9 +96,18 @@ function venv {
 function set_venv {
     echo "export VENV=${1}" > $HOME/venv/state.sh
 }
-function gpgA {
-    touch ${1}
-    gpg -r AndPotap -ae ${1}
-    mv "${1}.asc" "${1}.gpg"
-    rm ${1}
+get_free_gpu() {
+    # Get the list of GPU IDs to check, or default to all GPUs
+    local IDs=${1:-$(nvidia-smi --query-gpu=index --format=csv,noheader,nounits | tr '\n' ' ')}
+
+    for ID in $IDs; do
+        MEM_USED=$(nvidia-smi --id=$ID --query-gpu=memory.used --format=csv,nounits,noheader)
+        if [ "$MEM_USED" -lt 500 ]; then
+            echo "$ID"
+            return 0
+        fi
+    done
+
+    sleep 10
+    get_free_gpu "$IDs"
 }
