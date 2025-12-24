@@ -1,5 +1,3 @@
-local lspconfig = require("lspconfig")
-
 -- vim.lsp.set_log_level("debug")
 -- Enable above to see logs from :LspLog
 
@@ -12,11 +10,13 @@ local lspconfig = require("lspconfig")
 -- lspconfig.pylsp.setup{}
 -- currently PyLSP is being attached from cmp.lua
 
-lspconfig.clangd.setup{
-    cmd = { "clangd-12" }
-}
+-- lspconfig.clangd.setup{
+--     cmd = { "clangd-12" }
+-- }
+vim.lsp.config('clangd', { cmd = { "clangd-12" } })
 
-lspconfig.rust_analyzer.setup{}
+-- lspconfig.rust_analyzer.setup{}
+vim.lsp.config("rust_analyzer", {})
 
 -- lspconfig.mojo.setup{
 --     cmd = {"mojo-lsp-server"},
