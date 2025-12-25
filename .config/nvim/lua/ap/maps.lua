@@ -29,21 +29,18 @@ vim.opt.colorcolumn = "50,100"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 7
 
--- vim.keymap.set("n", "<space>f", function()
---   if vim.bo.filetype == "mojo" then
---     vim.cmd("!mojo format %")
---   else
---     vim.lsp.buf.format()
---   end
--- end, { desc = "Format buffer" })
+vim.keymap.set("n", "<leader>au", function()
+    if vim.bo.filetype == "mojo" then
+      vim.cmd("write")
+      vim.fn.jobstart({ "mojo", "format", vim.api.nvim_buf_get_name(0) }, {
+        on_exit = function() vim.schedule(vim.cmd.checktime) end
+      })
+    else
+        vim.lsp.buf.format({ async = true })
+    end
+end, { desc = "Format with mojo format" })
 
 vim.keymap.set({"n", "v"}, "<C-Y>", [["+y]])
-
--- nnoremap <silent> <C-L> :syntax sync fromstart <CR>
--- nnoremap <silent> * *N
--- nnoremap <silent> M :call cursor(0, 50)<CR>
--- nnoremap <silent> T :call cursor(0, 100)<CR>
-
 vim.keymap.set("v", "<Enter>", "$", { noremap = true })
 
 local n_pairs = {
