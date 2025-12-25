@@ -1,30 +1,9 @@
 -- vim.lsp.set_log_level("debug")
 -- Enable above to see logs from :LspLog
 
--- lspconfig.ruff.setup{
---     cmd = { "ruff", "server", "--preview" },
---     filetypes = { "python" },
--- }
--- I don't see additonal features from pip install python-lsp-ruff
-
--- lspconfig.pylsp.setup{}
--- currently PyLSP is being attached from cmp.lua
-
--- lspconfig.clangd.setup{
---     cmd = { "clangd-12" }
--- }
-vim.lsp.config('clangd', { cmd = { "clangd-12" } })
-
--- lspconfig.rust_analyzer.setup{}
+vim.lsp.config("clangd", { cmd = { "clangd-12" } })
+-- vim.lsp.config("mojo", { cmd = {"mojo-lsp-server"}, filetypes = { "mojo" } })
 vim.lsp.config("rust_analyzer", {})
-
--- lspconfig.mojo.setup{
---     cmd = {"mojo-lsp-server"},
---     filetypes = {"mojo"},
---     root_dir = lspconfig.util.root_pattern(".git", "mojo.toml"),
---     -- root_dir = vim.loop.cwd(),
---     -- capabilities = capabilities,
--- }
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -38,8 +17,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
     vim.keymap.set("n", "ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<space>au", function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
+    vim.keymap.set("n", "<space>au", function() vim.lsp.buf.format { async = true } end, opts)
   end,
 })
