@@ -1,17 +1,11 @@
--- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { "pylsp", "clangd", "mojo" }
 for _, lsp in ipairs(servers) do
-    vim.lsp.config(lsp, {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  })
+  vim.lsp.enable(lsp, { capabilities = capabilities })
 end
 
 local luasnip = require("luasnip")
-
 local kind_icons = {
     Text = "T",
     Method = "M",
