@@ -29,7 +29,7 @@ vim.opt.colorcolumn = "50,100"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 7
 
-vim.keymap.set("n", "<leader>au", function()
+vim.keymap.set("n", "<leader>mf", function()
     if vim.bo.filetype == "mojo" then
       vim.cmd("write")
       vim.fn.jobstart({ "mojo", "format", vim.api.nvim_buf_get_name(0) }, {
