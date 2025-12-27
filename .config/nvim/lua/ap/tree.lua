@@ -1,4 +1,4 @@
-require("nvim-treesitter.configs").setup {
+require("nvim-treesitter").setup {
     ensure_installed = { "python", "markdown", "vim", "yaml" },
     sync_install = false,
     auto_install = true,
@@ -10,7 +10,7 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
-require("nvim-treesitter.configs").setup {
+require("nvim-treesitter").setup {
   playground = {
     enable = true,
     disable = {},
