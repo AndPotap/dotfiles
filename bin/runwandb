@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+##
+# Usage: runwandb <project>/<entity>/<sweep_id>
+#
+
+WANDB_SWEEP_ID="${1}"
+if [[ -z "${WANDB_SWEEP_ID}" ]]; then
+  echo "Missing WANDB_SWEEP_ID."
+  exit 1
+fi
+
+if [[ -z "${WANDB_API_KEY}" || -z "${WANDB_USERNAME}" ]]; then
+  echo "Missing WANDB credentials."
+  exit 1
+fi
+
+export WANDB_DISABLE_CODE=true
+export WANDB_DIR="${LOGDIR}/${WANDB_SWEEP_ID}"
+export WANDB_MODE=${WANDB_MODE:-online}
+export WANDB_NAME="$(hostname)-$(date +%Y-%m-%dT%H-%M-%S)"
+if [[ ! -z "${SLURM_JOB_ID}" ]]; then
+  export WANDB_NAME="${SLURM_JOB_ID}-${SLURM_JOB_NAME}"
+  if [[ ! -z "${SLURM_ARRAY_JOB_ID}" ]]; then
+    export WANDB_NAME="${SLURM_ARRAY_TASK_ID}_${WANDB_NAME}"
+  fi
+fi
+
+mkdir -p "${WANDB_DIR}/wandb"
+
+wandb agent "${@}"
