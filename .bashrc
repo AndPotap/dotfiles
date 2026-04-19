@@ -10,6 +10,12 @@ GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
 
+# # Start ssh-agent if not already running
+# if [ -z "$SSH_AUTH_SOCK" ]; then
+#     eval "$(ssh-agent -s)"
+#     ssh-add ~/.ssh/tpu_deploy
+# fi
+
 export NVIMPY=$(which python3)
 
 export EDITOR=nvim
@@ -122,3 +128,9 @@ bash_prompt
 unset bash_prompt
 
 export PATH="/home/ubu/.pixi/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
