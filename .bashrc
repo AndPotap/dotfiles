@@ -10,10 +10,9 @@ GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
 
-# # Start ssh-agent if not already running
-# if [ -z "$SSH_AUTH_SOCK" ]; then
-#     eval "$(ssh-agent -s)"
-#     ssh-add ~/.ssh/tpu_deploy
+# if [$- == *i*] && [ -z "$SSH_AUTH_SOCK" ]; then
+#     eval "$(ssh-agent -s)" > /dev/null 2>&1
+#     ssh-add ~/.ssh/tpu_deploy 2>/dev/null
 # fi
 
 export NVIMPY=$(which python3)
@@ -72,8 +71,8 @@ bash_prompt() {
 	local ORANGE="172"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$DARKPURPLE
+    local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
     case "$HOSTNAME" in
         "ubu")
@@ -127,10 +126,10 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
-export PATH="/home/ubu/.pixi/bin:$PATH"
+export PATH="$HOME/.pixi/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/home/popos/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/popos/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/home/popos/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/popos/Downloads/google-cloud-sdk/completion.bash.inc'; fi
