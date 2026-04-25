@@ -69,9 +69,10 @@ bash_prompt() {
 	local TOXIC_GREEN="118"
     local GREEN="73"
 	local ORANGE="172"
+	local BLUE="32"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$DARKPURPLE
+    local BACKGROUND=$BLUE
     local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
     case "$HOSTNAME" in
