@@ -73,17 +73,8 @@ bash_prompt() {
 	local BLUE="32"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$BLUE
+    local BACKGROUND=$GREEN
     local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
-
-    case "$HOSTNAME" in
-        "ubu")
-            TEXT_FORMAT_1="\[\033[0;38;5;${DARKBLUE}m\]"
-            ;;
-        "ubu-MS")
-            TEXT_FORMAT_1="\[\033[0;38;5;${DARKBLUE}m\]"
-            ;;
-    esac
 
 	if [ "$USER" = root ]; then
         TEXT_FORMAT_1="\[\033[1;38;5;${RED}m\]"
