@@ -70,10 +70,11 @@ bash_prompt() {
 	local TOXIC_GREEN="118"
     local GREEN="73"
 	local ORANGE="172"
+	local BLUE="32"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
-    local TEXT_FORMAT_1="\[\033[1;38;5;${TOXIC_GREEN}m\]"
+    local BACKGROUND=$BLUE
+    local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
     case "$HOSTNAME" in
         "ubu")
@@ -127,10 +128,10 @@ PROMPT_COMMAND=bash_prompt_command
 bash_prompt
 unset bash_prompt
 
-export PATH="/home/ubu/.pixi/bin:$PATH"
+export PATH="$HOME/.pixi/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/home/popos/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/popos/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/home/popos/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/popos/Downloads/google-cloud-sdk/completion.bash.inc'; fi
