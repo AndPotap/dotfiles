@@ -3,6 +3,7 @@ function findd {
 }
 alias alacritty="$HOME/alacritty/target/release/alacritty"
 alias py='python3'
+alias act='source .venv/bin/activate'
 alias vc='nvim /tmp/command.txt'
 alias vi='nvim'
 alias vim='nvim'
