@@ -10,8 +10,8 @@ set keymap vi-command
 
 set keymap vi-insert
 ";":"\e"
-",t": "| tee /tmp/command.txt"
-",o": "| tee command.txt"
+# ",t": "| tee /tmp/command.txt"
+# ",o": "| tee command.txt"
 "TT": "`"
 "ZZ": "_"
 "EE": "|"

@@ -11,10 +11,10 @@ export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
 eval `dircolors -b $HOME/.dir_colors`
 
 # Start ssh-agent if not already running
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/tpu_deploy
-fi
+# if [ -z "$SSH_AUTH_SOCK" ]; then
+#     eval "$(ssh-agent -s)"
+#     ssh-add ~/.ssh/tpu_deploy
+# fi
 
 export NVIMPY=$(which python3)
 
