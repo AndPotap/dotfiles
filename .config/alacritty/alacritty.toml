@@ -1,19 +1,23 @@
 [env]
 TERM = "screen-256color"
 
+[terminal.shell]
+program = "/bin/bash"
+args = ["--login", "-i"]
+
 [font]
-size = 13.0
+size = 15.0
 
 [font.bold]
-family = "monospace"
+family = "Menlo"
 style = "Bold"
 
 [font.italic]
-family = "monospace"
+family = "Menlo"
 style = "Italic"
 
 [font.normal]
-family = "monospace"
+family = "Menlo"
 style = "Regular"
 
 [colors]
@@ -60,6 +64,7 @@ history = 10000
 multiplier = 3
 
 [window]
+startup_mode = "Maximized"
 decorations = "none"
 dynamic_padding = true
 opacity = 1.0
@@ -67,3 +72,32 @@ opacity = 1.0
 [window.padding]
 x = 10
 y = 10
+
+[keyboard]
+bindings = [
+  { key = "A", mods = "Command", chars = "\u0001" },
+  { key = "B", mods = "Command", chars = "\u0002" },
+  { key = "D", mods = "Command", chars = "\u0004" },
+  { key = "E", mods = "Command", chars = "\u0005" },
+  { key = "F", mods = "Command", chars = "\u0006" },
+  { key = "G", mods = "Command", chars = "\u0007" },
+  { key = "H", mods = "Command", chars = "\u0008" },
+  { key = "I", mods = "Command", chars = "\u0009" },
+  { key = "J", mods = "Command", chars = "\u000A" },
+  { key = "K", mods = "Command", chars = "\u000B" },
+  { key = "L", mods = "Command", chars = "\u000C" },
+  { key = "M", mods = "Command", chars = "\u000D" },
+  # { key = "N", mods = "Command", chars = "\u000E" },
+  { key = "N", mods = "Command", action = "CreateNewWindow" },
+  { key = "O", mods = "Command", chars = "\u000F" },
+  { key = "P", mods = "Command", chars = "\u0010" },
+  { key = "Q", mods = "Command", chars = "\u0011" },
+  { key = "R", mods = "Command", chars = "\u0012" },
+  { key = "S", mods = "Command", chars = "\u0013" },
+  { key = "T", mods = "Command", chars = "\u0014" },
+  { key = "U", mods = "Command", chars = "\u0015" },
+  { key = "W", mods = "Command", chars = "\u0017" },
+  { key = "X", mods = "Command", chars = "\u0018" },
+  { key = "Y", mods = "Command", chars = "\u0019" },
+  { key = "Z", mods = "Command", chars = "\u001A" },
+]

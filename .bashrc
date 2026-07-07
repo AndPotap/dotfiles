@@ -8,7 +8,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:history:c:cg:g[acds]:gpp:gac"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36'
 export GCC_COLORS+=':caret=01;32:locus=01:quote=01'
-eval `dircolors -b $HOME/.dir_colors`
+# eval `dircolors -b $HOME/.dir_colors`
 
 # Start ssh-agent if not already running
 # if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -37,7 +37,6 @@ fi
 # stty -ixon
 #   Not sure why I added this command on the first place
 
-source "$HOME/.cargo/env"
 source "$HOME/.bash_aliases"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -71,9 +70,10 @@ bash_prompt() {
     local GREEN="73"
 	local ORANGE="172"
 	local BLUE="32"
+	local YELLOW="227"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
+    local BACKGROUND=$YELLOW
     local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
 	if [ "$USER" = root ]; then
@@ -126,3 +126,6 @@ if [ -f '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/ub
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+. "$HOME/.cargo/env"
+
+export PATH=$HOME/.toolbox/bin:$PATH
