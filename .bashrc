@@ -61,6 +61,15 @@ bash_prompt_command() {
 }
 
 bash_prompt() {
+    export INS_NAME="ts"
+    declare -A colors
+    colors["p4"]=129
+    colors["ts"]=12
+    colors["g4_1"]=2
+    colors["g4_2"]=49
+    colors["g4_3"]=71
+    colors["g4_4"]=82
+    tmux set -g status-bg colour"${colors[$INS_NAME]}"
 
 	local ELIMINATE_FORMAT="\[\033[0m\]"
 	local DARKBLUE="4"
@@ -73,7 +82,8 @@ bash_prompt() {
 	local BLUE="32"
 
     # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
+    # local BACKGROUND=$GREEN
+    local BACKGROUND=${colors[$INS_NAME]}
     local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
 	if [ "$USER" = root ]; then
@@ -126,3 +136,6 @@ if [ -f '/home/ubu/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/ub
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ubu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+. "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"
