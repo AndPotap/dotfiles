@@ -51,6 +51,7 @@ alias gc='git commit'
 alias ga='git add'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
+alias gsg='gpustat -cpu'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'
@@ -90,3 +91,9 @@ function gpgA {
     mv "${1}.asc" "${1}.gpg"
     rm ${1}
 }
+function sGPU {
+    export CUDA_VISIBLE_DEVICES=${1}
+    echo $CUDA_VISIBLE_DEVICES
+}
+alias randomGPU="export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES"
+alias GPU="echo $CUDA_VISIBLE_DEVICES"

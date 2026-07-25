@@ -45,3 +45,5 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/FarsightA"
 . "$HOME/.cargo/env"
 
 . "$HOME/.local/bin/env"
+unset LD_LIBRARY_PATH
+export OWT_CACHE_DIR=/opt/dlami/nvme/c4_eval
