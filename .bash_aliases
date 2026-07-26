@@ -95,5 +95,5 @@ function sGPU {
     export CUDA_VISIBLE_DEVICES=${1}
     echo $CUDA_VISIBLE_DEVICES
 }
-alias randomGPU="export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES"
-alias GPU="echo $CUDA_VISIBLE_DEVICES"
+alias randomGPU='export CUDA_VISIBLE_DEVICES=$((( RANDOM % 8 ))) && echo $CUDA_VISIBLE_DEVICES'
+alias GPU='echo $CUDA_VISIBLE_DEVICES'
