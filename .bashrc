@@ -61,7 +61,7 @@ bash_prompt_command() {
 }
 
 bash_prompt() {
-    export INS_NAME="p4"
+    export INS_NAME="ts"
     declare -A colors
     colors["p4"]=129
     colors["ts"]=12
