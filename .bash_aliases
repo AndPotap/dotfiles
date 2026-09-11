@@ -51,6 +51,7 @@ alias gc='git commit'
 alias ga='git add'
 alias gd='git diff'
 alias grr='git reset --hard & git fetch --all & git pull'
+alias gsg='gpustat -cpu'
 
 # Computer specific aliases
 alias white='totem ~/Videos/white.mp4'

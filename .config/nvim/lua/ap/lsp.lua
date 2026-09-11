@@ -1,6 +1,7 @@
 vim.lsp.config("clangd", { cmd = { "clangd-12" } })
 vim.lsp.config("rust_analyzer", {})
 vim.lsp.config("mojo", { cmd = { "mojo-lsp-server" }, filetypes = { "mojo" } })
+vim.lsp.enable("ruff")
 
 local function format_fn()
   if vim.bo.filetype ~= "mojo" then
