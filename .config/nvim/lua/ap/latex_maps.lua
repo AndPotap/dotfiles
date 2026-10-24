@@ -74,7 +74,7 @@ M.setup_tex_keymaps = function ()
         ["<C-O>"] = "<C-G>u\\left(\\right)<++><Esc>10hi",
         ["<C-Y>"] = "<C-G>u\\left[\\right]<++><Esc>10hi",
         ["<C-E>"] = "<C-G>u\\mathbb{E}\\left[ \\right]<++><Esc>11hi",
-        ["<C-H>"] = "<C-G>u^{}<++><Esc>F{a",
+        ["<C-U>"] = "<C-G>u^{}<++><Esc>F{a",
         ["<C-L>"] = "<C-G>u_{}<++><Esc>F{a",
         ["<C-F>"] = "<C-G>u$$<++><Esc>F$i",
     }

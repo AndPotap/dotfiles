@@ -72,8 +72,7 @@ bash_prompt() {
 	local ORANGE="172"
 	local BLUE="32"
 
-    # Modify below to change the background / sync with TMUX
-    local BACKGROUND=$GREEN
+    local BACKGROUND=${BOX_COLOR:-$GREEN}
     local TEXT_FORMAT_1="\[\033[1;38;5;${BACKGROUND}m\]"
 
 	if [ "$USER" = root ]; then
@@ -115,7 +114,62 @@ bash_prompt() {
     PS1+="${ELIMINATE_FORMAT}"
 }
 
+# ---------------------------------------------------------------------------
+BOX_COLOR_FILE="$HOME/.box_color"
+BOX_COLOR_DEFAULT=73
+BOX_COLOR_PALETTE=(73 118 135 172 32 203 214 42 69 141 180 110)
+
+box_color_identity() {
+    local meta=/opt/ml/metadata/resource-metadata.json id=""
+    if [ -r "$meta" ]; then
+        id=$(sed -n 's/.*"SpaceName":"\([^"]*\)".*/\1/p' "$meta")
+    fi
+    [ -z "$id" ] && [ -r /etc/machine-id ] && id=$(cat /etc/machine-id)
+    [ -z "$id" ] && id=$(hostname)
+    printf '%s' "$id"
+}
+
+box_color_suggest() {
+    local n
+    n=$(box_color_identity | cksum | cut -d' ' -f1)
+    echo "${BOX_COLOR_PALETTE[$(( n % ${#BOX_COLOR_PALETTE[@]} ))]}"
+}
+
+box_color_pick() {
+    local suggestion answer c
+    suggestion=$(box_color_suggest)
+    bash "$HOME/dotfiles/colors.txt"
+    echo
+    printf 'Curated (readable with black text): '
+    for c in "${BOX_COLOR_PALETTE[@]}"; do
+        printf '%s%s%s ' "$(tput setaf "$c")" "$c" "$(tput sgr0)"
+    done
+    echo
+    read -r -p "Box color 0-255 for $(box_color_identity) [$(tput setaf "$suggestion")${suggestion}$(tput sgr0)]: " answer
+    answer=${answer:-$suggestion}
+    if ! [[ "$answer" =~ ^[0-9]+$ ]] || [ "$answer" -gt 255 ]; then
+        echo "Invalid color '$answer', using $suggestion" >&2
+        answer=$suggestion
+    fi
+    echo "$answer" > "$BOX_COLOR_FILE"
+    echo "Saved $answer to $BOX_COLOR_FILE"
+}
+
+box_color_init() {
+    BOX_COLOR=""
+    if [ -r "$BOX_COLOR_FILE" ]; then
+        read -r BOX_COLOR < "$BOX_COLOR_FILE"
+    elif [[ $- == *i* ]] && [ -t 0 ] && [ -t 1 ]; then
+        box_color_pick
+        read -r BOX_COLOR < "$BOX_COLOR_FILE"
+    fi
+    [[ "$BOX_COLOR" =~ ^[0-9]+$ ]] || BOX_COLOR=$BOX_COLOR_DEFAULT
+    export BOX_COLOR
+}
+# ---------------------------------------------------------------------------
+
 PROMPT_COMMAND=bash_prompt_command
+box_color_init
 bash_prompt
 unset bash_prompt
 

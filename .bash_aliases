@@ -91,3 +91,34 @@ function gpgA {
     mv "${1}.asc" "${1}.gpg"
     rm ${1}
 }
+
+# box-color          show current color
+# box-color 172      set color
+# box-color --pick   show swatch and choose interactively
+# box-color --reset  delete the file; next interactive shell asks again
+function box-color {
+    case "${1:-}" in
+        "")
+            printf 'BOX_COLOR=%s %s(sample)%s  file: %s\n' \
+                "${BOX_COLOR:-unset}" "$(tput setaf "${BOX_COLOR:-73}")" "$(tput sgr0)" "$BOX_COLOR_FILE"
+            return 0 ;;
+        --pick)
+            box_color_pick ;;
+        --reset)
+            command rm -f "$BOX_COLOR_FILE" && echo "Removed $BOX_COLOR_FILE"
+            return 0 ;;
+        *)
+            if [[ "$1" =~ ^[0-9]+$ ]] && [ "$1" -le 255 ]; then
+                echo "$1" > "$BOX_COLOR_FILE"
+            else
+                echo "Usage: box-color [0-255 | --pick | --reset]" >&2
+                return 1
+            fi ;;
+    esac
+    # Re-apply to this shell (bash_prompt is unset after load, so re-source)
+    # and to the tmux status bar if we are inside tmux.
+    # source "$HOME/.bashrc"
+    # if [ -n "$TMUX" ]; then
+    #     tmux set -g status-bg "colour${BOX_COLOR}"
+    # fi
+}
